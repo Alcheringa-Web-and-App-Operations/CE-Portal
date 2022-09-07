@@ -6,6 +6,13 @@
     <title>Landing page</title>
   </head>
   <body>
-    this is the landing
+    this is the landing page
+    <ul>
+      {% for city in cities%}
+      <li>
+        <a href="{% url 'dashboard-template' city.id %}">{{city.cityName}}</a>
+      </li>
+      {% endfor %}
+    </ul>
   </body>
 </html>
