@@ -21,9 +21,9 @@ from django.conf.urls.static import serve
 
 
 urlpatterns = [
-    path('city/', include('city.urls')),
+    path('', include('city.urls')),
     path('admin/', admin.site.urls),
-    path('',include('users.urls') ),
+    path('users/',include('users.urls') ),
 ]
 
 if settings.DEBUG:
