@@ -13,6 +13,7 @@ def dashboard(request,pk) :
     data = {
         'city' : city,
         'competitions': city.cityCompetitions.all(),
+        'range' : enumerate(city.cityCompetitions.all()),
     }
     return render(request, 'city/dashboard.html',data)
 

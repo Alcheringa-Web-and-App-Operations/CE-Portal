@@ -1,4 +1,310 @@
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'city/Styles/dashboard.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>City Elimination | Alcheringa</title>
+  </head>
+
+  <body>
+    <!--**************************Nav Bar ***********************************-->
+    <div class="flex-container-1">
+      <div class="flex-item-1" id="flex-item-11">
+        <img src="{%static 'city\images\image43.png' %}" alt="logo" />
+      </div>
+
+      <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+      <div class="flex-item-1" id="flex-item-13">
+        <a href="#"> About Us</a>
+      </div>
+
+      <div class="flex-item-1" id="flex-item-14">
+        <a href="#"> Contact</a>
+      </div>
+
+      <div class="flex-item-1" id="flex-item-15">
+        <a href="#"> Schedule</a>
+      </div>
+
+      <div class="flex-item-1" id="flex-item-16">
+        <a href="#"> Register</a>
+      </div>
+    </div>
+
+    <!--************************** City ***********************************-->
+    <div
+      class="city-container"
+      style="
+        background-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0)
+          ),
+          url('{{ city.cityImage.url }}');
+        background-size: contain;
+      "
+    >
+      <div class="city-link">
+        Not your city?
+        <a href="{% url 'landing-page' %}">Click here.</a>
+      </div>
+    </div>
+
+    <!-- ******************** Competitions ************** -->
+    <div class="dmsans comp-main">
+      <div style="padding-top: 3%">
+        <h1 id="competition" class="coolvetica">Competitions</h1>
+        {% for i,comp in range %} {% if i|divisibleby:"2" %}
+        <div class="row">
+          <div id="dancetext">
+            <h1 class="coolvetica">{{comp.competitionName}}</h1>
+            <p class="comp-desc">
+              A brief description and details and dummy text dummy text dummy
+              text dummy text dummy text.A brief description and details and
+              dummy text dummy text dummy text dummy text dummy text.
+            </p>
+            <div class="date coolvetica">Sunday, 14th August 2022</div>
+            <div style="margin-top: 6%; margin-bottom: 6%">
+              <span style="border-style: none solid none none; font-size: 17px"
+                >Guidelines &nbsp;
+              </span>
+              <span style="font-size: 17px">&nbsp; more info</span>
+            </div>
+            <button type="button" class="btn">Register</button>
+          </div>
+          <div style="padding-right: 12%">
+            <img
+              src="{{comp.competitionImage1.url}}"
+              style="width: 40vw; height: auto; margin-left: 2%"
+            />
+            <img src="{{comp.competitionImage2.url}}" class="img2" />
+          </div>
+        </div>
+        {% else %}
+        <div class="row">
+          <div style="padding-left: 10%; margin-right: 2%">
+            <img
+              src="{{comp.competitionImage1.url}}"
+              style="width: 40vw; height: auto; margin-left: 2%"
+            />
+            <img src="{{comp.competitionImage2.url}}" class="img2" />
+          </div>
+          <div id="singingtext">
+            <h1 class="coolvetica">{{comp.competitionName}}</h1>
+            <p class="comp-desc">
+              A brief description and details and dummy text dummy text dummy
+              text dummy text dummy text.A brief description and details and
+              dummy text dummy text dummy text dummy text dummy text.
+            </p>
+            <div class="date coolvetica">Sunday, 14th August 2022</div>
+            <div style="margin-top: 6%; margin-bottom: 6%">
+              <span style="border-style: none solid none none; font-size: 17px"
+                >Guidelines &nbsp;
+              </span>
+              <span style="font-size: 17px">&nbsp; more info</span>
+            </div>
+            <button type="button" class="btn">Register</button>
+          </div>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+      <div style="height: 20px"></div>
+    </div>
+
+    <!--------------------  Schedule  ------------------------>
+
+    <div>
+      <div class="table">
+        <table style="border: 5px solid #f2e9e9; border-spacing: 0px">
+          <!-- <caption>Life Expectancy By Current Age</caption> -->
+          <tr style="margin: 0px; padding: 0px; border-spacing: 0px">
+            <th colspan="8" class="Schedule">Schedule</th>
+
+            <td rowspan="1100" class="verticalrow">Don't miss it!</td>
+          </tr>
+          <tr style="border: 5px solid #f2e9e9; border-spacing: 0px">
+            <th
+              colspan="2"
+              class="dates"
+              style="
+                border-bottom: 5px solid #f2e9e9;
+                border-right: 5px solid #f2e9e9;
+              "
+            >
+              14/9/22
+            </th>
+            <th
+              colspan="2"
+              class="dates"
+              style="
+                border-bottom: 5px solid #f2e9e9;
+                border-right: 5px solid #f2e9e9;
+              "
+            >
+              15/9/22
+            </th>
+            <th
+              colspan="2"
+              class="dates"
+              style="
+                border-bottom: 5px solid #f2e9e9;
+                border-right: 5px solid #f2e9e9;
+              "
+            >
+              16/9/22
+            </th>
+            <th
+              colspan="2"
+              class="dates"
+              style="
+                border-bottom: 5px solid #f2e9e9;
+                border-right: 5px solid #f2e9e9;
+              "
+            >
+              17/9/22
+            </th>
+          </tr>
+          <tr>
+            <td class="event">Electric Heels</td>
+            <td class="eventtime">10:00 AM</td>
+            <td class="event">Voice of Alcheringa</td>
+            <td class="eventtime">10:00 AM</td>
+            <td class="event">Haute Couture</td>
+            <td class="eventtime">10:00 AM</td>
+            <td class="event">Step Up</td>
+            <td class="eventtime">10:00 AM</td>
+          </tr>
+          <tr>
+            <td class="event">So You Think You Can Dance</td>
+            <td class="eventtime">11:00 AM</td>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+            <td class="event">Raga High</td>
+            <td class="eventtime">11:00 AM</td>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+          </tr>
+
+          <tr>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+            <td class="event">Rock-o-Phonenix</td>
+            <td class="eventtime">12:00 AM</td>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+          </tr>
+          <tr>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+            <td class="event"></td>
+            <td class="eventtime"></td>
+          </tr>
+        </table>
+      </div>
+
+      <!--------------------  About Alcheringa  ------------------------>
+
+      <div class="container">
+        <div class="c1">
+          <div class="Heading">
+            About<br />
+            Alcheringa
+          </div>
+
+          <div class="text">
+            Alcheringa is the annual cultural festival of the Indian Institute
+            of Technology (IIT), Guwahati. Started in 1996 by a group of
+            students, Alcheringa, IIT Guwahati has become one of Asia’s most
+            significant college-level cultural fests. Spread over three days and
+            four nights, Alcheringa attracts people from all over the world with
+            its spectacular events and competitions.
+          </div>
+        </div>
+        <div class="c2">
+          <div class="text">
+            Alcheringa is the annual cultural festival of the Indian Institute
+            of Technology (IIT), Guwahati. Started in 1996 by a group of
+            students, Alcheringa, IIT Guwahati has become one of Asia’s most
+            significant college-level cultural fests. Spread over three days and
+            four nights, Alcheringa attracts people from all over the world with
+            its spectacular events and competitions.
+          </div>
+          <div class="Heading">Highway to<br />Alcher</div>
+        </div>
+      </div>
+
+      <!--------------------  Sponsors  ------------------------>
+
+      <div class="sponsers">
+        <br />
+        <div class="heading">Sponsors</div>
+
+        <div class="marquee-body" style="z-index: 100">
+          <div class="marquee">
+            <ul class="marquee-content">
+              <li>
+                <img
+                  src="{%static 'city\images\image 47.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\image 50.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\image 51.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br /><br /><br />
+      </div>
+    </div>
+    <!---------------------- Footer------------------------->
+  </body>
+
+  <script
+    src="https://kit.fontawesome.com/9f36b35b03.js"
+    crossorigin="anonymous"
+  >
+
+
+    const root = document.documentElement;
+    const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
+    const marqueeContent = document.querySelector("ul.marquee-content");
+
+    root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+
+    for (let i = 0; i < marqueeElementsDisplayed; i++) {
+        marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+    }
+  </script>
+</html>
+
+<!-- <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -23,4 +329,4 @@
     </li>
     {% endfor %}
   </body>
-</html>
+</html> -->
