@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dependent Dropdown in Django</title>
+</head>
+<body>
+
+
+<form method="post" id="personForm">
+    {% csrf_token %}
+   
+    <div style="padding-right:300px;" >
+        <div style="text-align:left;margin-left: 40px;margin-top: 30px;">
+           <bold style="font-size:25px;">Register </bold>
+        </div>
+        <div style="text-align:left;margin-left: 40px;margin-top: 120px;margin-bottom: 100px;opacity: 0.5;">
+            *Fields are required to be filled 
+        </div>
+           
+        <div style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;" >
+            <div>
+            *Name
+            </div>
+           <div >
+           
+            {{ form.name }}
+           </div>
+        </div>
+        <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
+            
+            
+            <div>
+             *Field
+            </div>
+            
+        
+             <div >
+            {{ form.field }}
+             </div>
+
+         </div>  
+         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
+            
+            
+            <div>
+             *Contact No
+            </div>
+            
+        
+             <div >
+            {{ form.Contactno }}
+             </div>
+
+         </div> 
+         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
+            
+            
+            <div>
+             *Email
+            </div>
+            
+        
+             <div >
+             {{ form.Email }}
+             </div>
+
+         </div>  
+         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
+            
+            
+            <div>
+             *City
+            </div>
+            
+        
+             <div >
+             {{ form.city }}
+             </div>
+
+         </div> 
+         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
+            
+            
+            <div>
+             *competitions
+            </div>
+            
+        
+             <div >
+             {{ form.competition }}
+             </div>
+
+         </div>    
+               
+                 <div style="margin-left: 600px;margin-top: 60px;">
+                    <button style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Register</button>
+                 </div>  
+               
+        
+        
+            </div>
+        </div>
+      
+    <!-- <input  style="margin-left: 600px;margin-top: 60px;" type="submit" value="Submit">
+    <button style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Register</button> -->
+</form>
+
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $("#id_city").change(function () {
+        const url = $("#personForm").attr("data-competitions-url");  // get the url of the `load_cities` view
+        const cityId = $(this).val();  // get the selected country ID from the HTML input
+
+        $.ajax({                       // initialize an AJAX request
+            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+            data: {
+                'city_id': cityId       // add the country id to the GET parameters
+            },
+            success: function (data) {   // `data` is the return of the `load_cities` view function
+                $("#id_competition").html(data);  // replace the contents of the city input with the data that came from the server
+                /*
+
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (city) {
+                      html_data += `<option value="${city.id}">${city.name}</option>`
+                });
+                console.log(html_data);
+                $("#id_city").html(html_data);
+
+                */
+            }
+        });
+
+    });
+</script> -->
+
+</body>
+</html>
+

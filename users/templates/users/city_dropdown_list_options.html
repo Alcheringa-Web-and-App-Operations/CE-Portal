@@ -1,0 +1,4 @@
+<option  id=" city" value="">---------</option>
+{% for competition in competitions %}
+<option value="{{ competition.pk }}">{{ competition.name }}</option>
+{% endfor %}
