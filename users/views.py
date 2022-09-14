@@ -63,16 +63,18 @@ def teamForm(request):
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = data.get('competition')).first()
         for i in range( int(data.get('number'))):
-            applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)), contactno = data.get('phoneNo' + str(i)), city = city, competition = competition, solo = 0)
-            querySet = Person.objects.filter(email = data.get('email' + str(i)))
-            if querySet:
-                querySet.solo = 0
+            if data.get('name' + str(i)) == "":
+                continue
             else:
-                applicant.save()
-            team.members.add(Person.objects.all().last().id)
-        print(data)
+                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)), contactno = data.get('phoneNo' + str(i)), city = city, competition = competition, solo = 0)
+                querySet = Person.objects.filter(email = data.get('email' + str(i)))
+                if querySet:
+                    querySet.solo = 0
+                else:
+                    applicant.save()
+                team.members.add(Person.objects.all().last().id)
+        # print(data)
         return redirect('/')
-
     else:
         form = EntryForm()
         return render(request, 'team/team.html',{'form': form})
