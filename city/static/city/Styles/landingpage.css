@@ -1,0 +1,179 @@
+.LandingPage{
+    background-color: #2C3D73;
+    /* height: 100vh;
+    width: 100vw; */
+    margin: 0px;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    background-color: #2C3D73;
+
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: underline;
+    color: white;
+}
+.navbar{
+    height: 9.6vh;
+    width: 100vw;
+}
+.width500{
+    width: 47vw;
+    height: 9.6vh;
+
+}
+.flex100{
+    display: flex;
+    align-items: center; 
+    /* flex-direction: row; */
+}
+.width600{
+    width: 20vw;
+    height: 7vh;
+
+
+}
+.city{
+    height: 87vh;
+    width: 100vw;
+  box-sizing: border-box;
+  display: flex;
+  /* align-items: center;  */
+  flex-direction: row;
+  justify-content:space-between ;
+  padding-bottom: 10px;
+}
+.margin1000{
+    padding-left: 50px;
+    padding-right: 50px;
+   
+  box-sizing: border-box;
+   
+ 
+}
+.margin500{
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    
+  box-sizing: border-box;
+}
+.button{
+    height: 6vh;
+    width: 8vw;
+    color: #F29E6D;
+    font-weight: 400;
+    font-size: 30px;
+line-height: 36px;
+ text-align:center;
+ padding-top: 10px;
+ padding-left: 5px;
+  box-sizing: border-box;
+  padding-right: 5px;
+
+}
+.width700{
+    width: 66px;
+    height: 60px; 
+}
+.img100{
+    width: 45px;
+    height: 53px;
+    margin-top:10px;
+    }
+.font_size{
+    font-size: 40px;
+    line-height: 58px;
+    width: 80%;
+    font-weight: 600;
+    margin-top:20px;
+
+
+
+
+
+    color: #FFFFFF;
+
+
+}
+.width500 div a{
+   text-decoration: none; 
+   color: #F29E6D;
+
+}
+.width500  div:hover{
+    background-color: #F24405;
+    border-radius: 25px;
+    padding-top: 10px;
+color: #FFFFFF;
+text-decoration: none; 
+box-sizing: border-box;
+
+
+}
+.width500 div a:hover{
+    text-decoration: none; 
+    color: #FFFFFF;
+  
+ }
+ .india{
+width: 80vw;
+display: flex;
+align-items: center;
+justify-items: center;
+ }
+ .way{
+    box-sizing: border-box;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+   height: 85vh;
+    justify-items: center;
+    align-content: space-between;
+    font-family: 'Bohemian Soul';
+font-style: normal;
+font-weight: 400;
+font-size:9vw;
+line-height: 10vw;
+margin-top: 50px;
+color: #FFF3F9;
+padding-left: -20vw;
+
+
+ }
+ .india img{
+    width: 50vw;
+    height: 82vh;
+ }
+ .country-state{
+    width: 300px;
+    height: 72px;
+    border-radius: 40px;
+padding-left: 30px;
+position: relative;
+top:-30px;
+
+font-weight: 400;
+font-size: 28px;
+line-height: 43px;
+
+
+
+
+/* //imp */
+
+  
+    /** for the dropdown indicator */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+
+ }
