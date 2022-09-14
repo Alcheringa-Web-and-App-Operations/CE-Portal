@@ -1,4 +1,16 @@
-<option  id=" city" value="">---------</option>
-{% for competition in competitions %}
-<option value="{{ competition.pk }}">{{ competition.name }}</option>
-{% endfor %}
+{% if competition_value == "" %}
+    <option  id=" city" value="" >---------</option>
+        {% for competition in competitions %}
+            <option value="{{ competition.pk }}" >{{ competition.competitionName }}</option>
+        {% endfor %}
+{% else %}
+            <option  id=" city" value="{{competition_value}}" >{{currentCompetition}}</option>
+    {% for competition in competitions %}
+        {% if competition.pk != competition_value %}
+            <option value="{{ competition.pk }}" >{{competition.competitionName }}</option>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+
+

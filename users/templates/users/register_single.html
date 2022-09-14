@@ -137,7 +137,56 @@
 
     });
 </script> -->
-
+<script>
+    let city=document.getElementById("id_city")
+    let competition=document.getElementById("id_competition")
+    console.log(city.value)
+        competition.addEventListener('change',(e)=>{
+        const competition_id=e.target.value
+        const city_value=city.value
+        fetch("{% url 'load_city' %}",{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json',
+            "X-Requested-With": "XMLHttpRequest"
+          },
+        body:JSON.stringify({"competition_id":competition_id,"current_city":city_value})
+        })
+        .then(data=>{
+        return data.text()
+        })
+        .then(data=>{
+        console.log(data)
+        document.getElementById("id_city").innerHTML=data
+        })
+    
+    })
+    
+    
+    city.addEventListener("change",(e)=>{
+        const city_id=e.target.value
+        const competition_value=competition.value
+        console.log(city_id)
+        fetch("{% url 'load_competitions' %}",{
+        method:"POST",
+        headers: {
+            'Content-Type': 'application/json',
+            "X-Requested-With": "XMLHttpRequest"
+          },
+        body:JSON.stringify({"city_id":city_id,"current_competition":competition_value})
+    })
+    .then(data=>{
+        return data.text()
+    })
+    .then(data=>{
+        console.log(data)
+        console.log(city.value)
+        document.getElementById("id_competition").innerHTML=data
+    })
+    })
+    
+    
+</script>
 </body>
 </html>
 

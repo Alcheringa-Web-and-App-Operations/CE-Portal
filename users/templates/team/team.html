@@ -1,0 +1,67 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dependent Dropdown in Django</title>
+</head>
+
+<body>
+
+
+    <form method=POST id="personForm" data-competitions-url="{% url 'ajax_load_competitions' %}">
+        {% csrf_token %}
+        <input type="hidden" name="number" value=1 id="num">
+        <div>
+            <div id="a">
+                <h1>Team</h1>
+                <p>
+                    <label for="id_name"> Team Name:</label>
+                    <input type="text" name="name" maxlength="50" required="" id="id_name">
+                </p>
+                <p>
+                    <label for="id_city"> City:</label>
+                    {{ form.city }}
+                </p>
+                <p>
+                    <label for="id_competition">Competition:</label>
+                    {{ form.competition }}
+                </p>
+            </div>
+            <div id="a">
+                <h1>Candidate 1</h1>
+                <p>
+                    <label for="id_name">Name:</label>
+                    <input type="text" name="name0" maxlength="50" required="" id="id_name">
+
+
+                </p>
+                <p>
+                    <label for="id_name">Contact No:</label>
+                    <input type="text" name="phoneNo0" maxlength="50" required="" id="id_name">
+
+
+                </p>
+                <p>
+                    <label for="id_email">Email:</label>
+                    <input type="email" name="email0" maxlength="254" required="" id="id_email">
+                </p>
+            </div>
+        </div>
+        <div id="main">
+
+        </div>    
+        <button id="button1">Add</button>
+        <button class="button" type="submit"><span style="color:red"><b>Register</b></span></button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'form/button.js' %}"></script>
+    <script src = "{% static 'form/dynamic_dropdown_form.js' %}"></script>
+
+</body>
+
+</html>
