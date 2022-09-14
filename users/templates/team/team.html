@@ -13,55 +13,147 @@
 <body>
 
 
-    <form method=POST id="personForm" data-competitions-url="{% url 'ajax_load_competitions' %}">
+    <form method="post" id="personForm">
         {% csrf_token %}
         <input type="hidden" name="number" value=1 id="num">
-        <div>
-            <div id="a">
-                <h1>Team</h1>
-                <p>
-                    <label for="id_name"> Team Name:</label>
-                    <input type="text" name="name" maxlength="50" required="" id="id_name">
-                </p>
-                <p>
-                    <label for="id_city"> City:</label>
-                    {{ form.city }}
-                </p>
-                <p>
-                    <label for="id_competition">Competition:</label>
-                    {{ form.competition }}
-                </p>
+        <div style="padding-right:300px;">
+            <div>
+                <div style="text-align:left;margin-left: 40px;margin-top: 30px;">
+                    <bold style="font-size:25px;">Team Registeration </bold>
+                </div>
+                <div style="text-align:left;margin-left: 40px;margin-top: 60px;margin-bottom: 50px;opacity: 0.5;">
+                    *Fields are required to be filled
+                </div>
+
+                <div
+                    style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;">
+                    <div>
+                        <label for="id_name">Team Name:</label>
+                    </div>
+                    <div>
+                        <input type="text" name="name" maxlength="50" required="" id="id_name">
+                    </div>
+                </div>
+                <div
+                    style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
+
+
+                    <div>
+                        *City
+                    </div>
+
+
+                    <div>
+                        {{ form.city }}
+                    </div>
+
+                </div>
+                <div
+                    style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
+
+
+                    <div>
+                        *competitions
+                    </div>
+
+
+                    <div>
+                        {{ form.competition }}
+                    </div>
+
+                </div>
+                <div
+                    style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;">
+                    <h3>Candidate 1</h3>
+                    <p>
+                    <div>
+                        <label for="id_name">Name:</label>
+                    </div>
+                    <div>
+                        <input type="text" name="name0" maxlength="50" required="" id="id_name">
+                    </div>
+                    <div>
+                        <label for="id_name">Contact No:</label>
+
+                    </div>
+                    <div>
+                        <input type="text" name="phoneNo0" maxlength="50" required="" id="id_name">
+
+                    </div>
+                    <div>
+                        <label for="id_email">Email:</label>
+
+                    </div>
+                    <div>
+                        <input type="email" name="email0" maxlength="254" required="" id="id_email">
+
+                    </div>
+                    </p>
+                </div>
             </div>
-            <div id="a">
-                <h1>Candidate 1</h1>
-                <p>
-                    <label for="id_name">Name:</label>
-                    <input type="text" name="name0" maxlength="50" required="" id="id_name">
+            <div>
+                <div id="main">
 
-
-                </p>
-                <p>
-                    <label for="id_name">Contact No:</label>
-                    <input type="text" name="phoneNo0" maxlength="50" required="" id="id_name">
-
-
-                </p>
-                <p>
-                    <label for="id_email">Email:</label>
-                    <input type="email" name="email0" maxlength="254" required="" id="id_email">
-                </p>
+                </div>
+                <div style="align-items: center; margin-top: 60px;">
+                    <button id="button1"
+                        style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Add</button>
+                    <button
+                        style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Register</button>
+                </div>
             </div>
         </div>
-        <div id="main">
-
-        </div>    
-        <button id="button1">Add</button>
-        <button class="button" type="submit"><span style="color:red"><b>Register</b></span></button>
     </form>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{% static 'form/button.js' %}"></script>
-    <script src = "{% static 'form/dynamic_dropdown_form.js' %}"></script>
+    <script>
 
+        let city = document.getElementById("id_city")
+        let competition = document.getElementById("id_competition")
+        console.log(city.value)
+        competition.addEventListener('change', (e) => {
+            const competition_id = e.target.value
+            const city_value = city.value
+            fetch("{% url 'load_city' %}", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: JSON.stringify({ "competition_id": competition_id, "current_city": city_value })
+            })
+                .then(data => {
+                    return data.text()
+                })
+                .then(data => {
+                    console.log(data)
+                    document.getElementById("id_city").innerHTML = data
+                })
+
+        })
+
+
+        city.addEventListener("change", (e) => {
+            const city_id = e.target.value
+            const competition_value = competition.value
+            console.log(city_id)
+            fetch("{% url 'load_competitions' %}", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: JSON.stringify({ "city_id": city_id, "current_competition": competition_value })
+            })
+                .then(data => {
+                    return data.text()
+                })
+                .then(data => {
+                    console.log(data)
+                    console.log(city.value)
+                    document.getElementById("id_competition").innerHTML = data
+                })
+        })
+    </script>
 </body>
 
 </html>
