@@ -7,5 +7,6 @@ urlpatterns = [
     # path('<int:pk>/', views.person_update_view, name='person_change'),
     
     
-    # path('ajax/load-competitions/', views.load_competitions, name='ajax_load_competitions'), # AJAX
+    path('load-competitions/', views.load_competitions, name='load_competitions'),
+    path('load-cities/', views.load_city, name='load_city'), # AJAX
 ]
