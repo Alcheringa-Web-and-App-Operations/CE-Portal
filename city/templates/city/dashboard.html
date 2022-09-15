@@ -1,68 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     {% load static %}
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'city/Styles/dashboard.css' %}" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <title>City Elimination | Alcheringa</title>
-  </head>
+</head>
 
-  <body>
-    <!--**************************Nav Bar ***********************************-->
-    <div class="flex-container-1">
-      <div class="flex-item-1" id="flex-item-11">
+<body>
+
+<!--**************************Nav Bar ***********************************-->
+<div class="flex-container-1">
+    <div class="flex-item-1" id="flex-item-11">
         <img src="{%static 'city\images\image43.png' %}" alt="logo" />
-      </div>
-
-      <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
-
-      <div class="flex-item-1" id="flex-item-13">
-        <a href="#"> About Us</a>
-      </div>
-
-      <div class="flex-item-1" id="flex-item-14">
-        <a href="#"> Contact</a>
-      </div>
-
-      <div class="flex-item-1" id="flex-item-15">
-        <a href="#"> Schedule</a>
-      </div>
-
-      <div class="flex-item-1" id="flex-item-16">
-        <a href="#"> Register</a>
-      </div>
     </div>
 
-    <!--************************** City ***********************************-->
-    <div
-      class="city-container"
-      style="
-        background-image: linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0)
-          ),
-          url('{{ city.cityImage.url }}');
-        background-size: contain;
-      "
-    >
-      <div class="city-link">
-        Not your city?
-        <a href="{% url 'landing-page' %}">Click here.</a>
-      </div>
+    <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+    <div class="flex-item-1" id="flex-item-13">
+      <a href="#"> About Us</a>
     </div>
 
-    <!-- ******************** Competitions ************** -->
+    <div class="flex-item-1" id="flex-item-14">
+      <a href="#"> Contact</a>
+    </div>
+
+    <div class="flex-item-1" id="flex-item-15">
+      <a href="#"> Schedule</a>
+    </div>
+
+    <div class="flex-item-1" id="flex-item-16">
+      <a href="#"> Register</a>
+    </div>
+  </div>
+
+
+<!--************************** City ***********************************-->
+    <div class="city-container" style="
+    background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0)
+      ),
+      url('{{ city.cityImage.url }}');
+    background-size: contain;
+  ">
+        <div class="city-link">
+            Not your city? <a href="{% url 'landing-page' %}" >Click here.</a>
+        </div>
+    </div>
+
+<!-- ******************** Competitions ************** -->
     <div class="dmsans comp-main">
-      <div style="padding-top: 3%">
-        <h1 id="competition" class="coolvetica">Competitions</h1>
-        {% for i,comp in range %} {% if i|divisibleby:"2" %}
+        <div style="padding-top: 3%;">
+            <h1 id="competition" class="coolvetica">Competitions</h1>
+            {% for i,comp in range %} {% if i|divisibleby:"2" %}
         <div class="row">
           <div id="dancetext">
             <h1 class="coolvetica">{{comp.competitionName}}</h1>
@@ -115,182 +111,201 @@
           </div>
         </div>
         {% endif %} {% endfor %}
-      </div>
-      <div style="height: 20px"></div>
+        </div>
+        <div style="height: 20px">
+
+        </div>
     </div>
+
 
     <!--------------------  Schedule  ------------------------>
 
+
     <div>
-      <div class="table">
-        <table style="border: 5px solid #f2e9e9; border-spacing: 0px">
-          <!-- <caption>Life Expectancy By Current Age</caption> -->
-          <tr style="margin: 0px; padding: 0px; border-spacing: 0px">
-            <th colspan="8" class="Schedule">Schedule</th>
+        <div class="table">
+            <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
+                <!-- <caption>Life Expectancy By Current Age</caption> -->
+                <tr style="margin: 0px; padding:0px; border-spacing :0px;">
+                    <th colspan="8" class="Schedule">Schedule</th>
 
-            <td rowspan="1100" class="verticalrow">Don't miss it!</td>
-          </tr>
-          <tr style="border: 5px solid #f2e9e9; border-spacing: 0px">
-            <th
-              colspan="2"
-              class="dates"
-              style="
-                border-bottom: 5px solid #f2e9e9;
-                border-right: 5px solid #f2e9e9;
-              "
-            >
-              14/9/22
-            </th>
-            <th
-              colspan="2"
-              class="dates"
-              style="
-                border-bottom: 5px solid #f2e9e9;
-                border-right: 5px solid #f2e9e9;
-              "
-            >
-              15/9/22
-            </th>
-            <th
-              colspan="2"
-              class="dates"
-              style="
-                border-bottom: 5px solid #f2e9e9;
-                border-right: 5px solid #f2e9e9;
-              "
-            >
-              16/9/22
-            </th>
-            <th
-              colspan="2"
-              class="dates"
-              style="
-                border-bottom: 5px solid #f2e9e9;
-                border-right: 5px solid #f2e9e9;
-              "
-            >
-              17/9/22
-            </th>
-          </tr>
-          <tr>
-            <td class="event">Electric Heels</td>
-            <td class="eventtime">10:00 AM</td>
-            <td class="event">Voice of Alcheringa</td>
-            <td class="eventtime">10:00 AM</td>
-            <td class="event">Haute Couture</td>
-            <td class="eventtime">10:00 AM</td>
-            <td class="event">Step Up</td>
-            <td class="eventtime">10:00 AM</td>
-          </tr>
-          <tr>
-            <td class="event">So You Think You Can Dance</td>
-            <td class="eventtime">11:00 AM</td>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-            <td class="event">Raga High</td>
-            <td class="eventtime">11:00 AM</td>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-          </tr>
+                <td rowspan="1100" class="verticalrow">Don't miss it!</td>
+            </tr>
+                <tr style="border: 5px solid #F2E9E9;border-spacing: 0px;">
+                    <th colspan="2" class="dates" style="border-bottom: 5px solid #F2E9E9;border-right: 5px solid #F2E9E9;" >14/9/22</th>
+                    <th colspan="2" class="dates" style="border-bottom: 5px solid #F2E9E9;border-right: 5px solid #F2E9E9;">15/9/22</th>
+                    <th colspan="2" class="dates" style="border-bottom: 5px solid #F2E9E9;border-right: 5px solid #F2E9E9;">16/9/22</th>
+                    <th colspan="2" class="dates" style="border-bottom: 5px solid #F2E9E9;border-right: 5px solid #F2E9E9;">17/9/22</th>
+                </tr>
+                <tr >
+               
+                
+                    <td class="event" >Electric Heels</td>
+                    <td class="eventtime">10:00 AM</td>
+                    <td class="event">Voice of Alcheringa</td>
+                    <td class="eventtime">10:00 AM</td>
+                    <td class="event">Haute Couture</td>
+                    <td class="eventtime">10:00 AM</td>
+                    <td class="event">Step Up</td>
+                    <td class="eventtime">10:00 AM</td>
 
-          <tr>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-            <td class="event">Rock-o-Phonenix</td>
-            <td class="eventtime">12:00 AM</td>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-          </tr>
-          <tr>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-            <td class="event"></td>
-            <td class="eventtime"></td>
-          </tr>
-        </table>
-      </div>
+                </tr>
+                <tr >
+                    <td class="event">So You Think You Can Dance</td>
+                    <td class="eventtime">11:00 AM</td>
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                    <td class="event">Raga High</td>
+                    <td class="eventtime">11:00 AM</td>
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                </tr>
+             
+                <tr >
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                    <td class="event">Rock-o-Phonenix</td>
+                    <td class="eventtime">12:00 AM</td>
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                </tr>
+                <tr >
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                    <td class="event"></td>
+                    <td class="eventtime"></td>
+                </tr>
+            </table>
+        </div>
 
-      <!--------------------  About Alcheringa  ------------------------>
+        
+    <!--------------------  About Alcheringa  ------------------------>
 
-      <div class="container">
+    <div class="container">
         <div class="c1">
-          <div class="Heading">
-            About<br />
-            Alcheringa
-          </div>
+            <div class="Heading">
+                About<br>
+                Alcheringa
+            </div>
+        
+            <div class="text">
+                Alcheringa is the annual cultural festival of the Indian Institute of Technology (IIT), Guwahati. Started in 1996 by a group of students, Alcheringa, IIT Guwahati has become one of Asia’s most significant college-level cultural fests. Spread over three days and four nights, Alcheringa attracts people from all over the world with its spectacular events and competitions.
 
-          <div class="text">
-            Alcheringa is the annual cultural festival of the Indian Institute
-            of Technology (IIT), Guwahati. Started in 1996 by a group of
-            students, Alcheringa, IIT Guwahati has become one of Asia’s most
-            significant college-level cultural fests. Spread over three days and
-            four nights, Alcheringa attracts people from all over the world with
-            its spectacular events and competitions.
-          </div>
+            </div>
         </div>
         <div class="c2">
-          <div class="text">
-            Alcheringa is the annual cultural festival of the Indian Institute
-            of Technology (IIT), Guwahati. Started in 1996 by a group of
-            students, Alcheringa, IIT Guwahati has become one of Asia’s most
-            significant college-level cultural fests. Spread over three days and
-            four nights, Alcheringa attracts people from all over the world with
-            its spectacular events and competitions.
-          </div>
-          <div class="Heading">Highway to<br />Alcher</div>
+            <div class="text"> 
+                Alcheringa is the annual cultural festival of the Indian Institute of Technology (IIT), Guwahati. Started in 1996 by a group of students, Alcheringa, IIT Guwahati has become one of Asia’s most significant college-level cultural fests. Spread over three days and four nights, Alcheringa attracts people from all over the world with its spectacular events and competitions.
+            </div>
+            <div class="Heading">
+                Highway to<br>Alcher
+            </div>
         </div>
-      </div>
+    </div>
 
-      <!--------------------  Sponsors  ------------------------>
+        
+    <!--------------------  Sponsors  ------------------------>
 
-      <div class="sponsers">
-        <br />
-        <div class="heading">Sponsors</div>
+    <div class="sponsers">
+        <br>
+        <div class="heading">
 
-        <div class="marquee-body" style="z-index: 100">
-          <div class="marquee">
-            <ul class="marquee-content">
-              <li>
-                <img
-                  src="{%static 'city\images\image 47.png' %}"
-                  alt="pr-sample23"
-                  style="width: 350px; height: 200px"
-                />
-              </li>
-              <li>
-                <img
-                  src="{%static 'city\images\image 50.png' %}"
-                  alt="pr-sample23"
-                  style="width: 350px; height: 200px"
-                />
-              </li>
-              <li>
-                <img
-                  src="{%static 'city\images\image 51.png' %}"
-                  alt="pr-sample23"
-                  style="width: 350px; height: 200px"
-                />
-              </li>
-            </ul>
-          </div>
+            Sponsors
         </div>
-        <br /><br /><br />
-      </div>
+
+        <div class="marquee-body" style="z-index: 100;">
+            <div class="marquee">
+                <ul class="marquee-content">
+                    <li><img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
+                    <li><img src="{%static 'city\images\sponser3.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
+                    <li><img src="{%static 'city\images\sponser2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
+                    <li><img src="{%static 'city\images\art1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
+                    <li><img src="{%static 'city\images\art2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
+                    <li><img src="{%static 'city\images\palette.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
+                    <li><img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
+                </ul>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
     </div>
     <!---------------------- Footer------------------------->
-  </body>
+  <div class="container0">
+    <div class="container1">
+        <img src="{%static 'city\images\Mask group.png' %}">
 
-  <script
-    src="https://kit.fontawesome.com/9f36b35b03.js"
-    crossorigin="anonymous"
-  >
+    </div>
+        <div class="container2">
+            <div class="alcher">
+            <h1 id="highway">Highway</h1>
+            <h1>to</h1>
+            <h1 id="alcher">Alcher</h1>
+        
+        </div>
+            <div class="contactinfo">
+                <h1 id="contact">Contact Us</h1>
+                <div class="names">
+                    <div class="Siddhant">
+                    <h2 id="sid">Siddhant Singh</h2>
+                    <h3 id="pr1">PR Head</h3>
+                    <p>+91-9310859978</p>
+                </div>
+                <div class="akshara">
+                    <h2 id="akshara">Danda Akshara</h2>
+                    <h3 id="pr2">PR Head</h3>
+                    <p>+91-9908991939</p>
+                </div>
+                <div class="Quasim">
+                <h2 id="quasim">Quasim</h2>
+                <h3 id="pr3">PR Head</h3>
+                    <p>+91-9310859978</p>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="container3">
+            <div class="video">
+            <h1 id="discover">Discover Alcheringa</h1>
+            <iframe src="https://youtu.be/byhtsRBr2VY">
+                </iframe>
+            </div>
+                <div class="follow">
+    <h1>Follow us</h1>
+    <div class="icons">
+        <a href="https://www.instagram.com/alcheringaiitg/"
+          ><img src="{%static 'city\images\instagram (4).png' %}"
+        /></a>
 
+        <a
+          href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"
+          ><img src="{%static 'city\images\linkedin (2).png' %}"
+        /></a>
+        <a href="https://www.facebook.com/alcheringaiitg"
+          ><img src="{%static 'city\images\facebook.png' %}"
+        /></a>
+        <a href="https://twitter.com/alcheringaiitg"
+          ><img src="{%static 'city\images\twit.png' %}"
+        /></a>
+        <a href="https://www.youtube.com/c/AlcheringaIITG"
+          ><img src="{%static 'city\images\youtube.png' %}"
+        /></a>
+      </div>
+            </div>
+            </div>
+
+        </div>
+    </body>
+
+</body>
+
+<!-- <script src="https://kit.fontawesome.com/9f36b35b03.js" crossorigin="anonymous">
+        
 
     const root = document.documentElement;
     const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue("--marquee-elements-displayed");
@@ -301,32 +316,6 @@
     for (let i = 0; i < marqueeElementsDisplayed; i++) {
         marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
     }
-  </script>
-</html>
+</script> -->
 
-<!-- <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard page</title>
-    <style>
-      img {
-        height: 200px;
-      }
-    </style>
-  </head>
-  <body>
-    this is the Dashboard page
-    <h1>{{city.cityName}}</h1>
-    <img src="{{ city.cityImage.url }}" />
-    {% for comp in competitions%}
-    <li>
-      <h2>{{comp.competitionName}}</h2>
-      <p>{{comp.competitionDescription}}</p>
-      <img src="{{ comp.competitionImage1.url }}" />
-      <img src="{{ comp.competitionImage2.url }}" />
-    </li>
-    {% endfor %}
-  </body>
-</html> -->
+</html>

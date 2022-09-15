@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: Coolvetica;
-  src: url(fonts/coolvetica\ rg.otf);
+  src: url("../fonts/coolvetica rg.otf");
 }
 
 * {
@@ -55,10 +55,10 @@
   color: rgba(28, 3, 15, 1);
 }
 
-@font-face {
+/* @font-face {
   font-family: Coolvetica;
   src: url(coolvetica_rg.otf);
-}
+} */
 
 #flex-item-11 {
   margin: 10px 5px 10px 20px;
@@ -352,7 +352,6 @@
 
   color: #2c3d73;
 }
-
 .swiper-pagination .swiper-pagination-bullet {
   opacity: 1;
   border: #f2e9e9 solid 25px;
@@ -373,13 +372,13 @@
 :root {
   --marquee-width: 90vw;
   --marquee-height: 30vh;
-  /* --marquee-elements: 7; */
-  /* defined with JavaScript */
+  --marquee-elements: 5;
+
   --marquee-elements-displayed: 4;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
-  --marquee-animation-duration: calc(var(--marquee-elements) * 3s);
+  --marquee-animation-duration: calc(var(--marquee-elements) * 4s);
 }
 
 .marquee {
@@ -416,9 +415,9 @@
   animation: scrolling var(--marquee-animation-duration) linear infinite;
 }
 
-/* .marquee-content:hover {
-animation-play-state: paused;
-} */
+.marquee-content:hover {
+  animation-play-state: paused;
+}
 @keyframes scrolling {
   0% {
     transform: translateX(0);
@@ -643,21 +642,23 @@ animation-play-state: paused;
   padding-left: 40px;
   border-right: 4px solid #f29e6d;
   padding-right: 30px;
+  padding-top: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
 }
 .alcher {
   color: #f29e6d;
   font-family: Bohemian Soul;
   font-size: 30px;
 }
-#alcher {
-  padding-bottom: 50px;
-}
-
 .contactinfo {
-  margin-top: 450px;
+  margin-top: 200px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
 }
 #contact {
   color: #f29e6d;
+  padding-bottom: 20px;
 }
 .names {
   display: flex;
@@ -665,16 +666,38 @@ animation-play-state: paused;
 .Siddhant {
   padding-right: 17px;
 }
+#sid {
+  padding-bottom: 10px;
+}
+#pr1 {
+  padding-bottom: 10px;
+}
+
 .akshara {
   padding-right: 17px;
 }
+#akshara {
+  padding-bottom: 10px;
+}
+#pr2 {
+  padding-bottom: 10px;
+}
+#quasim {
+  padding-bottom: 10px;
+}
+#pr3 {
+  padding-bottom: 10px;
+}
+
 .container3 {
   color: #f29e6d;
   padding-left: 100px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
 }
 
 .video {
-  margin-bottom: 300px;
+  margin-bottom: 150px;
 }
 
 #discover {
@@ -682,7 +705,7 @@ animation-play-state: paused;
   padding-bottom: 50px;
   font-size: 40px;
 }
-.icons: hover {
+.icons:hover {
   color: white;
 }
 #insta {
