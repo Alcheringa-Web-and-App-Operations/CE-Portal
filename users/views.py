@@ -3,19 +3,26 @@ from django.shortcuts import render
 # Create your views here.
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .forms import EntryForm, PersonCreationForm
+from .forms import EntryForm, EntryForm_teams, PersonCreationForm
 from .models import Competition, Person,City, Team
 import json
 from django.views.decorators.csrf import csrf_exempt
 
 
 def register_single(request):
+    data = request.POST
+
     form = PersonCreationForm()
+    # single = Person(name = data.get('name'))
+    # competitions =Person.competition
     if request.method == 'POST':
         form = PersonCreationForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('/')
+
+    # for comp in competitions:               
+    #     single.competition.add(comp)
     return render(request, 'users/register_single.html', {'form': form})
 
 
@@ -53,9 +60,12 @@ def load_city(request):
     # return JsonResponse(list(cities.values('id', 'name')), safe=False)
 
 def teamForm(request):
-    if request.method == 'POST':
-        form = EntryForm(request.POST)
+   
 
+
+
+    if request.method == 'POST':
+        form = EntryForm_teams(request.POST)
         data = request.POST
         team = Team(name = data.get('name'))
         team.save()
@@ -73,6 +83,7 @@ def teamForm(request):
                 else:
                     applicant.save()
                 team.members.add(Person.objects.all().last().id)
+
         # print(data)
         return redirect('/')
     else:

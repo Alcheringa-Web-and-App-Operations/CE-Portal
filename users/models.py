@@ -28,7 +28,7 @@ class Person(models.Model):
     solo = models.BooleanField(default=1)
     
     city = models.ForeignKey(City, on_delete=models.SET_NULL, blank=True, null=True,default=None)
-    competition= models.ForeignKey(Competition, on_delete=models.SET_NULL, blank=True, null=True,default=None)
+    competition= models.ManyToManyField(Competition, blank=True,default=None)
    
     def __str__(self):
         return self.name
@@ -37,6 +37,8 @@ class Person(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=100)
     members = models.ManyToManyField(Person)
+    competition= models.ForeignKey(Competition,on_delete=models.SET_NULL,blank=True, null=True,default='')
+
 
     def __str__(self):
         return self.name
