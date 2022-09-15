@@ -60,13 +60,13 @@ def load_city(request):
     # return JsonResponse(list(cities.values('id', 'name')), safe=False)
 
 def teamForm(request):
-   
+    data = request.POST
+
 
 
 
     if request.method == 'POST':
         form = EntryForm_teams(request.POST)
-        data = request.POST
         team = Team(name = data.get('name'))
         team.save()
         team = Team.objects.all().last()
@@ -83,9 +83,11 @@ def teamForm(request):
                 else:
                     applicant.save()
                 team.members.add(Person.objects.all().last().id)
+            if form.is_valid():
+                form.save()
+                return redirect('/')
 
         # print(data)
-        return redirect('/')
     else:
-        form = EntryForm()
+        form = EntryForm_teams()
         return render(request, 'team/team.html',{'form': form})

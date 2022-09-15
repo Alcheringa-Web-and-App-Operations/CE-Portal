@@ -18,4 +18,4 @@ class EntryForm_teams(forms.ModelForm):
   
     class Meta:
         model = Team
-        fields = '__all__'
+        fields = ['name','members','competition','city']

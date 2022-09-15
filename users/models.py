@@ -38,6 +38,7 @@ class Team(models.Model):
     name = models.CharField(max_length=100)
     members = models.ManyToManyField(Person)
     competition= models.ForeignKey(Competition,on_delete=models.SET_NULL,blank=True, null=True,default='')
+    city = models.ForeignKey(City, on_delete=models.SET_NULL, blank=True, null=True,default=None)
 
 
     def __str__(self):
