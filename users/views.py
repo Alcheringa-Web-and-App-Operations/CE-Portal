@@ -67,25 +67,32 @@ def teamForm(request):
 
     if request.method == 'POST':
         form = EntryForm_teams(request.POST)
-        team = Team(name = data.get('name'))
-        team.save()
-        team = Team.objects.all().last()
+        
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = data.get('competition')).first()
+        team = Team(name = data.get('name'),competition=competition,city=city)
+        team.save()
+        team = Team.objects.all().last()
         for i in range( int(data.get('number'))):
             if data.get('name' + str(i)) == "":
                 continue
             else:
-                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)), contactno = data.get('phoneNo' + str(i)), city = city, competition = competition, solo = 0)
+                
+                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,contactno = data.get('phoneNo' + str(i)), solo = 0)
                 querySet = Person.objects.filter(email = data.get('email' + str(i)))
                 if querySet:
                     querySet.solo = 0
                 else:
                     applicant.save()
                 team.members.add(Person.objects.all().last().id)
-            if form.is_valid():
-                form.save()
-                return redirect('/')
+        return redirect('/')    
+    # person=get_object_or_404(Person)
+    # if post.favourites.filter(id=request.user.id).exists():
+    #     print()
+    # else:
+    #     post.favourites.add(request.user)
+    # return HttpResponseRedirect(request.META['HTTP_REFERER'])
+         
 
         # print(data)
     else:
