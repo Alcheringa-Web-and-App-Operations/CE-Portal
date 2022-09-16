@@ -6,10 +6,16 @@ class City(models.Model):
     cityName = models.CharField(max_length=100)
     cityImage = models.ImageField(default='dcity.jpg',upload_to='city_pics')
     cityCompetitions = models.ManyToManyField('Competition')
+    position=models.OneToOneField("Position",on_delete=models.CASCADE,default="")
 
     def __str__(self):
         return self.cityName
 
+
+class Position(models.Model):
+    cityName=models.TextField()
+    top=models.CharField(max_length=100)
+    left=models.CharField(max_length=100)
     
 
 class Competition(models.Model):
