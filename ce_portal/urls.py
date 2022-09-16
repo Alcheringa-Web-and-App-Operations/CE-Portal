@@ -22,7 +22,7 @@ from django.conf.urls.static import serve
 
 urlpatterns = [
     path('', include('city.urls')),
-    path('admin/', admin.site.urls),
+    path('admin65G9fKjL/', admin.site.urls),
     path('users/',include('users.urls') ),
 ]
 

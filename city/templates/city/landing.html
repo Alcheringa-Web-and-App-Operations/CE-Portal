@@ -18,7 +18,15 @@
         <img src="{%static 'city\images\india.svg' %}"  alt="">
         <!-- <button style="position:relative;left:-300px;top:-100px;">Hello</button> -->
         
-        <div style="font-size:180%;margin-left:26%;margin-top:-20%;position:absolute;" id="delhimarker">
+        {% for city in cities %}
+          <div style="font-size:180%;margin-left:{{ city.position.logoLeft }};margin-top:{{ city.position.logoTop }};position:absolute;" id="{{ city.cityName }}marker">
+            <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:{{ city.position.textTop }};display: none;" id="{{ city.cityName }}text">{{ city.cityName }}</p></a>
+            <a href="{% url 'dashboard-template' city.id %}"><i class="fa fa-map-marker"  id="{{ city.cityName }}" style="position:absolute;" onmouseover="enlargeIcon('{{ city.cityName }}'),showName('{{ city.cityName }}text')" onmouseout="resizeElement('{{ city.cityName }}'),vanishName('{{ city.cityName }}text')"></i></a>
+          </div>
+        {% endfor %}
+
+
+        <!-- <div style="font-size:180%;margin-left:26%;margin-top:-20%;position:absolute;" id="delhimarker">
           <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:130px;display: none;" id="delhitext">Delhi</p></a>
           <a href="{% url 'dashboard-template' 1 %}"><i class="fa fa-map-marker"  id="delhi" style="position:absolute;" onmouseover="enlargeIcon('delhi'),showName('delhitext')" onmouseout="resizeElement('delhi'),vanishName('delhitext')"></i></a>
         </div>
@@ -33,7 +41,7 @@
         <div style="font-size:180%;margin-left:33%;margin-top:2%;position:absolute;" id="kolmarker">
           <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:270px;display: none;" id="koltext">Kolkata</p></a>
           <a href="{% url 'dashboard-template' 4 %}"><i class="fa fa-map-marker" id="kol" style="position:absolute;" onmouseover="enlargeIcon('kol'),showName('koltext')" onmouseout="resizeElement('kol'),vanishName('koltext')"></i></a>
-        </div>
+        </div> -->
         
        
         <div>
