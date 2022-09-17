@@ -2,24 +2,41 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect, get_object_or_404
-
+from django.contrib import messages
 from .forms import EntryForm, PersonCreationForm, EntryFormTeams
 from .models import Competition, Person,City, Team
 import json
 from django.views.decorators.csrf import csrf_exempt
 
 
+# print(email_lsist)
 def register_single(request):
     data = request.POST
 
     form = PersonCreationForm()
-    # single = Person(name = data.get('name'))
+    single = Person(pk = request.user.pk,name = data.get('name'))
     # competitions =Person.competition
     if request.method == 'POST':
         form = PersonCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/')
+            email_list = Person.objects.values_list('email',flat=True)
+            email = request.POST['email']
+            competition1 = request.POST['competition']
+            competition = Competition.objects.get(id=competition1)
+            # print(competition)
+            # print(email)
+            if (email in email_list):
+                curr_user = Person.objects.filter(email=email).first()
+                curr_user_comp = curr_user.competition.all()
+                if (competition in curr_user_comp):
+                    print("already registered, dont register again")
+                    messages.error(request,f'Already registered for {competition}.')
+                else:
+                    print("merge it")
+                    curr_user.competition.add(competition)
+            else:
+                form.save()
+                return redirect('/')
 
     # for comp in competitions:               
     #     single.competition.add(comp)
