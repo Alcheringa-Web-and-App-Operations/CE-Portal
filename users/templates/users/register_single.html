@@ -8,7 +8,11 @@
     <title>Dependent Dropdown in Django</title>
 </head>
 <body>
-
+{% for message in messages %}
+<div>
+    {{ message }}
+</div>
+{% endfor %}
 
 <form method="post" id="personForm">
     {% csrf_token %}
