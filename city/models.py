@@ -1,12 +1,26 @@
 from django.db import models
+<<<<<<< HEAD
+=======
+from django.conf import settings
+>>>>>>> master
 
 # Create your models here.
 
 class City(models.Model):
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     cityName = models.CharField(max_length=100)
     cityImage = models.ImageField(default='dcity.jpg',upload_to='city_pics')
     cityCompetitions = models.ManyToManyField('Competition')
     position=models.OneToOneField("Position",on_delete=models.CASCADE, null=True, blank = True)
+<<<<<<< HEAD
+=======
+    competitionDate=models.DateField(null=True)
+    cityComp=models.ManyToManyField('CityComp',blank=True)
+   
+>>>>>>> master
 
     def __str__(self):
         return self.cityName
@@ -22,11 +36,24 @@ class Position(models.Model):
         return self.cityName
     
 
+<<<<<<< HEAD
+=======
+class CityComp(models.Model):
+   competitionId=models.ForeignKey(City, on_delete=models.CASCADE,null=True)
+   CompetitionName = models.CharField(max_length=100,null=True)
+   competitionDate=models.TimeField(null=True)
+
+
+>>>>>>> master
 class Competition(models.Model):
     competitionName = models.CharField(max_length=100)
     competitionDescription = models.TextField()
     competitionImage1 = models.ImageField(default='dcomp1.jpg',upload_to='competition_pics')
     competitionImage2 = models.ImageField(default='dcomp2.jpg',upload_to='competition_pics')
+<<<<<<< HEAD
 
+=======
+   
+>>>>>>> master
     def __str__(self):
         return self.competitionName

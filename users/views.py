@@ -2,23 +2,35 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.shortcuts import render, redirect, get_object_or_404
+<<<<<<< HEAD
 from django.contrib import messages
+=======
+
+>>>>>>> master
 from .forms import EntryForm, PersonCreationForm, EntryFormTeams
 from .models import Competition, Person,City, Team
 import json
 from django.views.decorators.csrf import csrf_exempt
 
 
+<<<<<<< HEAD
 # print(email_lsist)
+=======
+>>>>>>> master
 def register_single(request):
     data = request.POST
 
     form = PersonCreationForm()
+<<<<<<< HEAD
     single = Person(pk = request.user.pk,name = data.get('name'))
+=======
+    # single = Person(name = data.get('name'))
+>>>>>>> master
     # competitions =Person.competition
     if request.method == 'POST':
         form = PersonCreationForm(request.POST)
         if form.is_valid():
+<<<<<<< HEAD
             email_list = Person.objects.values_list('email',flat=True)
             email = request.POST['email']
             competition1 = request.POST['competition']
@@ -37,6 +49,10 @@ def register_single(request):
             else:
                 form.save()
                 return redirect('/')
+=======
+            form.save()
+            return redirect('/')
+>>>>>>> master
 
     # for comp in competitions:               
     #     single.competition.add(comp)

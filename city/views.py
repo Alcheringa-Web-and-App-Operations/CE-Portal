@@ -10,10 +10,20 @@ def landing(request) :
 
 def dashboard(request,pk) :
     city = City.objects.get(pk=pk)
+<<<<<<< HEAD
+=======
+    
+>>>>>>> master
     data = {
         'city' : city,
         'competitions': city.cityCompetitions.all(),
         'range' : enumerate(city.cityCompetitions.all()),
+<<<<<<< HEAD
+=======
+        'compe':city.cityComp.all()
+      
+
+>>>>>>> master
     }
     return render(request, 'city/dashboard.html',data)
 
