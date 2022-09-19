@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link rel="stylesheet" href="{% static 'city/Styles/landingpage.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="LandingPage">
+    <div class="city margin1000">
+      <div class="india">
+        <img src="{%static 'city\images\india.svg' %}"  alt="">
+        <!-- <button style="position:relative;left:-300px;top:-100px;">Hello</button> -->
+        
+        {% for city in cities %}
+          <div style="font-size:180%;margin-left:{{ city.position.logoLeft }};margin-top:{{ city.position.logoTop }};position:absolute;" id="{{ city.cityName }}marker">
+            <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:{{ city.position.textTop }};display: none;" id="{{ city.cityName }}text">{{ city.cityName }}</p></a>
+            <a href="{% url 'dashboard-template' city.id %}"><i class="fa fa-map-marker"  id="{{ city.cityName }}" style="position:absolute;" onmouseover="enlargeIcon('{{ city.cityName }}'),showName('{{ city.cityName }}text')" onmouseout="resizeElement('{{ city.cityName }}'),vanishName('{{ city.cityName }}text')"></i></a>
+          </div>
+        {% endfor %}
+
+
+        <!-- <div style="font-size:180%;margin-left:26%;margin-top:-20%;position:absolute;" id="delhimarker">
+          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:130px;display: none;" id="delhitext">Delhi</p></a>
+          <a href="{% url 'dashboard-template' 1 %}"><i class="fa fa-map-marker"  id="delhi" style="position:absolute;" onmouseover="enlargeIcon('delhi'),showName('delhitext')" onmouseout="resizeElement('delhi'),vanishName('delhitext')"></i></a>
+        </div>
+        <div style="font-size:180%;margin-left:8%;margin-top:-10%;position:absolute;" id="goamarker">
+          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:200px;display: none;" id="goatext">Goa</p></a>
+          <a href="{% url 'dashboard-template' 2 %}"><i class="fa fa-map-marker"  id="goa" style="position:absolute;" onmouseover="enlargeIcon('goa'),showName('goatext')" onmouseout="resizeElement('goa'),vanishName('goatext')"></i></a>
+        </div>
+        <div style="font-size:180%;margin-left:11%;margin-top:-14%;position:absolute;" id="mumbaimarker">
+          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:160px;display: none;" id="mumbaitext">Mumbai</p></a>
+          <a href="{% url 'dashboard-template' 3 %}"><i class="fa fa-map-marker"  id="mumbai" style="position:absolute;"  onmouseover="enlargeIcon('mumbai'),showName('mumbaitext')" onmouseout="resizeElement('mumbai'),vanishName('mumbaitext')"></i></a>
+        </div>
+        <div style="font-size:180%;margin-left:33%;margin-top:2%;position:absolute;" id="kolmarker">
+          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:270px;display: none;" id="koltext">Kolkata</p></a>
+          <a href="{% url 'dashboard-template' 4 %}"><i class="fa fa-map-marker" id="kol" style="position:absolute;" onmouseover="enlargeIcon('kol'),showName('koltext')" onmouseout="resizeElement('kol'),vanishName('koltext')"></i></a>
+        </div> -->
+        
+       
+        <div>
+          
+        </div>
+      </div>
+
+      <div class="way">
+
+        <div style="font-size:90px;">Highway <br> To <br> Alcher
+           <br>
+          <select class="country-state" name="country-state" id="countryselect" >
+              <option value=""  disabled selected hidden>Choose your city</option>
+              {% for city in cities %}
+              <option value="{{ city.id }}">{{ city.cityName }}</option>
+              {% endfor %}
+
+              <!-- <option value="AN">Andaman and Nicobar Islands</option>
+              <option value="AP">Andhra Pradesh</option>
+              <option value="AR">Arunachal Pradesh</option>
+              <option value="AS">Assam</option>
+              <option value="BR">Bihar</option>
+              <option value="CH">Chandigarh</option>
+              <option value="CT">Chhattisgarh</option>
+              <option value="DN">Dadra and Nagar Haveli</option>
+              <option value="DD">Daman and Diu</option>
+              <option value="1" >Delhi</option> -->
+              <!-- <option value="4" >Kolkata</option>
+              <option value="3" >Mumbai</option>
+              <option value="2">Goa</option>
+              <option value="GJ">Gujarat</option>
+              <option value="HR">Haryana</option>
+              <option value="HP">Himachal Pradesh</option>
+              <option value="JK">Jammu and Kashmir</option>
+              <option value="JH">Jharkhand</option>
+              <option value="KA">Karnataka</option>
+              <option value="KL">Kerala</option>
+              <option value="LA">Ladakh</option>
+              <option value="LD">Lakshadweep</option>
+              <option value="MP">Madhya Pradesh</option>
+              <option value="MH">Maharashtra</option>
+              <option value="MN">Manipur</option>
+              <option value="ML">Meghalaya</option>
+              <option value="MZ">Mizoram</option>
+              <option value="NL">Nagaland</option>
+              <option value="OR">Odisha</option>
+              <option value="PY">Puducherry</option>
+              <option value="PB">Punjab</option>
+              <option value="RJ">Rajasthan</option>
+              <option value="SK">Sikkim</option>
+              <option value="TN">Tamil Nadu</option>
+              <option value="TG">Telangana</option>
+              <option value="TR">Tripura</option>
+              <option value="UP">Uttar Pradesh</option>
+              <option value="UT">Uttarakhand</option>
+              <option value="WB">West Bengal</option> -->
+            </select>
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+  <!-- <div style="color: black;">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, voluptate eligendi? A quis voluptatum illo aliquid, magnam in sed alias, impedit cumque veniam quidem, deserunt pariatur ullam sequi. Blanditiis, ad.
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim quam saepe vero illum mollitia sunt esse ullam, corrupti rem autem maiores voluptates iure asperiores? Voluptatum optio vero doloribus ullam velit!
+    </div> -->
+</body>
+
+<script>
+function enlargeIcon(id)
+{
+    document.getElementById(id).style.transitionDuration = "0.5s";
+    document.getElementById(id).style.fontSize="120%";
+    document.getElementById(id).style.transform="translate(0,-15px)";
+    // document.getElementById("delhimarker").style.top="-150px";
+    
+    // document.getElementById("delhitext").style.display="block";
+  
+}
+function fixPosition(id)
+{
+  document.getElementById(id).style.top="-150px";
+}
+function showName(id)
+{
+  document.getElementById(id).style.display="block";
+  document.getElementById(id).style.transform="translate(0, -65px)";
+}
+function resizeElement(id)
+{
+  document.getElementById(id).style.fontSize="100%";
+  document.getElementById(id).style.transform="translate(0,0)";
+  
+}
+function vanishName(id)
+{
+  document.getElementById(id).style.display="none";
+}
+
+function redirect(goto){
+    if (goto != '') {
+        window.location = goto;
+    }
+}
+
+var selectEl = document.getElementById('countryselect');
+
+selectEl.onchange = function(){
+  var goto = "/dashboard/"+this.value
+  redirect(goto)
+}
+
+
+</script>
+
+</html>
