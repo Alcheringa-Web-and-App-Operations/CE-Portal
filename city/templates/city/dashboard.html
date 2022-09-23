@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
     <link rel="stylesheet" href="{% static 'city/Styles/dashboard.css' %}" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
     <title>City Elimination | Alcheringa</title>
@@ -15,25 +17,47 @@
 
 <!--**************************Nav Bar ***********************************-->
 <div class="flex-container-1">
+    <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
+      <a href="#"> Register</a>
+    </div>
+
+    <div
+      class="flex-item-1 toggle-btn"
+      id="flex-item-17"
+      onclick="myFunction()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div
+      class="flex-item-1 cross-btn"
+      id="flex-item-19"
+      onclick="myFunction()"
+    >
+      <span>╳</span>
+    </div>
+
     <div class="flex-item-1" id="flex-item-11">
         <img src="{%static 'city\images\image43.png' %}" alt="logo" />
     </div>
 
     <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
 
-    <div class="flex-item-1" id="flex-item-13">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
       <a href="#"> About Us</a>
     </div>
 
-    <div class="flex-item-1" id="flex-item-14">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
       <a href="#"> Contact</a>
     </div>
 
-    <div class="flex-item-1" id="flex-item-15">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
       <a href="#"> Schedule</a>
     </div>
 
-    <div class="flex-item-1" id="flex-item-16">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
       <a href="#"> Register</a>
     </div>
   </div>
@@ -234,8 +258,202 @@
         <br><br><br>
     </div>
     </div>
+    <!---------------------  Contact  ---------------------->
+    <div class="contact-box">
+        <h1 class="heading">Contact</h1>
+            <div class="contact-flex">
+
+            <!-- Head 1 -->
+            <div class="contact-card">
+                <figure class="snip1527 team-img">
+                    <div class="snip1527image">
+                        <img src="images/singing1.jpg" alt="pr-sample23" />
+                    </div>
+                    <figcaption>
+                        <div class="name">
+                            <h3>Ayush Singh</h3>
+                        </div>
+                        <div class="position">
+                            <h3>Web and App Design Head</h3>
+                        </div>
+                        <h5 class="contact">
+                            9432352622
+                            <br />
+                            ayush.singh@iitg.ac.in
+                        </h5>
+                    </figcaption>
+                    <div class="sm-icons">
+                    <ul>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/insta.png' %}" alt="">
+                        </a>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/twitter.png' %}" alt="">
+                        </a>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/linkedin (2).png' %}" alt="">
+                        </a>
+                    </ul>
+                    </div>
+                </figure>
+            </div>
+            <!-- END Head 1 -->
+
+            <!-- Head 2 -->
+            <div class="contact-card">
+                <figure class="snip1527 team-img">
+                    <div class="snip1527image">
+                        <img src="images/singing1.jpg" alt="pr-sample23" />
+                    </div>
+                    <figcaption>
+                        <div class="name">
+                            <h3>Ayush Singh</h3>
+                        </div>
+                        <div class="position">
+                            <h3>Web and App Design Head</h3>
+                        </div>
+                        <h5 class="contact">
+                            9432352622
+                            <br />
+                            ayush.singh@iitg.ac.in
+                        </h5>
+                    </figcaption>
+                    <div class="sm-icons">
+                    <ul>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/insta.png' %}" alt="">
+                        </a>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/twitter.png' %}" alt="">
+                        </a>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/linkedin (2).png' %}" alt="">
+                        </a>
+                    </ul>
+                    </div>
+                </figure>
+            </div>
+            <!-- END Head 2 -->
+
+            <!-- Head 3 -->
+            <div class="contact-card">
+                <figure class="snip1527 team-img">
+                    <div class="snip1527image">
+                        <img src="images/singing1.jpg" alt="pr-sample23" />
+                    </div>
+                    <figcaption>
+                        <div class="name">
+                            <h3>Ayush Singh</h3>
+                        </div>
+                        <div class="position">
+                            <h3>Web and App Design Head</h3>
+                        </div>
+                        <h5 class="contact">
+                            9432352622
+                            <br />
+                            ayush.singh@iitg.ac.in
+                        </h5>
+                    </figcaption>
+                    <div class="sm-icons">
+                    <ul>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/insta.png' %}" alt="">
+                        </a>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/twitter.png' %}" alt="">
+                        </a>
+                        <a href="#" target="__blank">
+                            <img src="{%static 'city/images/linkedin (2).png' %}" alt="">
+                        </a>
+                    </ul>
+                    </div>
+                </figure>
+            </div>
+            <!-- END Head 3 -->
+
+        </div>
+    </div>
+
     <!---------------------- Footer------------------------->
-  <div class="container0">
+    
+    <div class="footer_container">
+            <div style="display: inline;">
+                <img class="logo_footer" src="{%static 'city\images\Mask group.png' %}">
+            </div>
+            
+            <div class="left_container_footer">
+                <div class="heading_footer">
+                    Highway<br>to<br>Alcher
+                </div>
+                <div class="contact_us_footer">
+                    Contact Us
+                    <div class="contact_info_footer">
+                        <div>
+                            Siddhant Singh
+                            <br><br>
+                            PR Head
+                            <br>
+                            +91-9310859978
+                        </div>
+                        <div>
+                            Danda Akshara
+                            <br><br>
+                            PR Head
+                            <br>
+                            +91-9908991939
+                        </div>
+                        <div>
+                            Quasim
+                            <br><br>
+                            PR Head
+                            <br>
+                            +91-9310859978
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right_container_footer">
+                <div class="discover_footer">
+                    <div class="right_heading_footer">
+                        Discover Alcheringa
+                    </div>
+                    <iframe src="https://www.youtube.com/watch?v=b1Xq6ofywkk">
+                    </iframe>
+                </div>
+            
+                <div class="socials_footer">
+                    <div class="follow_us_heading_footer">
+                        Follow Us
+                    </div>
+                    <div class="icon_grid_footer">
+                        <a href="https://www.instagram.com/alcheringaiitg/">
+                            <img src="{%static 'city\images\instagram (4).png' %}"/>
+                        </a>
+                        <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/">
+                            <img src="{%static 'city\images\linkedin (2).png' %}"/>
+                        </a>
+                        <a href="https://www.facebook.com/alcheringaiitg">
+                            <img src="{%static 'city\images\facebook.png' %}"/>
+                        </a>
+                        <a href="https://twitter.com/alcheringaiitg">
+                            <img src="{%static 'city\images\twit.png' %}"/>
+                        </a>
+                        <a href="https://www.youtube.com/c/AlcheringaIITG">
+                            <img src="{%static 'city\images\youtube.png' %}"/>
+                        </a>
+                    </div>
+                </div>
+        </div>
+            <hr style="background-color: rgba(242, 158, 109, 1); height: 4px; width: 100% ; border: none; position: relative; bottom: 675px;" >
+
+    </div>
+    
+    
+    
+    
+    
+    
+<!--   <div class="container0">
     <div class="container1">
         <img src="{%static 'city\images\Mask group.png' %}">
 
@@ -277,26 +495,21 @@
             </div>
                 <div class="follow">
     <h1>Follow us</h1>
-    <div class="icons">
-        <a href="https://www.instagram.com/alcheringaiitg/"
-          ><img src="{%static 'city\images\instagram (4).png' %}"
-        /></a>
+                <div class="icons">
+                    <a href="https://www.instagram.com/alcheringaiitg/"><img src="images/instagram (4).png"></a>
 
-        <a
-          href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"
-          ><img src="{%static 'city\images\linkedin (2).png' %}"
-        /></a>
-        <a href="https://www.facebook.com/alcheringaiitg"
-          ><img src="{%static 'city\images\facebook.png' %}"
-        /></a>
-        <a href="https://twitter.com/alcheringaiitg"
-          ><img src="{%static 'city\images\twit.png' %}"
-        /></a>
-        <a href="https://www.youtube.com/c/AlcheringaIITG"
-          ><img src="{%static 'city\images\youtube.png' %}"
-        /></a>
-      </div>
-            </div>
+
+                    <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"><img src="images/linkedin (2).png"></a>
+                    <a href="https://www.facebook.com/alcheringaiitg"><img src="images/facebook.png"></a>
+                    <a href="https://twitter.com/alcheringaiitg"><img src="images/twit.png"></a>
+                    <a href="https://www.youtube.com/c/AlcheringaIITG"><img src="images/youtube.png"></a>
+                
+                </div>
+            </div> -->
+    
+    
+    
+    
             </div>
 
         </div>
@@ -317,5 +530,22 @@
         marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
     }
 </script> -->
+
+<script type="text/javascript">
+    function myFunction() {
+      var element1 = document.getElementById("flex-item-13");
+      element1.classList.toggle("show");
+      var element2 = document.getElementById("flex-item-14");
+      element2.classList.toggle("show");
+      var element3 = document.getElementById("flex-item-15");
+      element3.classList.toggle("show");
+      // var element4= document.getElementById("flex-item-16");
+      // element4.classList.toggle("show");
+      var element4 = document.getElementById("flex-item-17");
+      element4.classList.toggle("alternate1");
+      var element5 = document.getElementById("flex-item-19");
+      element5.classList.toggle("alternate2");
+    }
+  </script>
 
 </html>
