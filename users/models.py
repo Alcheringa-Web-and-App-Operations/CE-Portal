@@ -14,7 +14,7 @@ class Person(models.Model):
     competition= models.ManyToManyField(Competition, blank=True,default=None)
    
     def __str__(self):
-        return self.name
+        return f"{self.name} - {self.contactno} - {self.email}"
 
 
 class Team(models.Model):
