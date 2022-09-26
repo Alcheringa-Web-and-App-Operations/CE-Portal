@@ -7,7 +7,6 @@ class City(models.Model):
     cityImage = models.ImageField(default='dcity.jpg',upload_to='city_pics')
     cityCompetitions = models.ManyToManyField('Competition')
     position=models.OneToOneField("Position",on_delete=models.CASCADE, null=True, blank = True)
-
     def __str__(self):
         return self.cityName
 
@@ -27,6 +26,7 @@ class Competition(models.Model):
     competitionDescription = models.TextField()
     competitionImage1 = models.ImageField(default='dcomp1.jpg',upload_to='competition_pics')
     competitionImage2 = models.ImageField(default='dcomp2.jpg',upload_to='competition_pics')
+    background_img=models.ImageField(default='dcity.jpg',upload_to='competition_background_images')
 
     def __str__(self):
-        return self.competitionName
+        return self.competitionName 

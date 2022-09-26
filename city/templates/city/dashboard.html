@@ -84,14 +84,9 @@
             <h1 id="competition" class="coolvetica">Competitions</h1>
             {% for i,comp in range %} {% if i|divisibleby:"2" %}
         <div class="row">
-          <div id="dancetext">
+          <div id="lefttext" style="background-image:url('{{ comp.background_img.url }}')">
             <h1 class="coolvetica">{{comp.competitionName}}</h1>
-            <p class="comp-desc">
-              A brief description and details and dummy text dummy text dummy
-              text dummy text dummy text.A brief description and details and
-              dummy text dummy text dummy text dummy text dummy text.
-            </p>
-            <div class="date coolvetica">Sunday, 14th August 2022</div>
+            <p class="comp-desc">{{comp.competitionDescription}}</p>
             <div style="margin-top: 6%; margin-bottom: 6%">
               <span style="border-style: none solid none none; font-size: 17px"
                 >Guidelines &nbsp;
@@ -117,14 +112,9 @@
             />
             <img src="{{comp.competitionImage2.url}}" class="img2" />
           </div>
-          <div id="singingtext">
+          <div id="righttext" style="background-image:url('{{ comp.background_img.url }}')">
             <h1 class="coolvetica">{{comp.competitionName}}</h1>
-            <p class="comp-desc">
-              A brief description and details and dummy text dummy text dummy
-              text dummy text dummy text.A brief description and details and
-              dummy text dummy text dummy text dummy text dummy text.
-            </p>
-            <div class="date coolvetica">Sunday, 14th August 2022</div>
+            <p class="comp-desc">{{comp.competitionDescription}}</p>
             <div style="margin-top: 6%; margin-bottom: 6%">
               <span style="border-style: none solid none none; font-size: 17px"
                 >Guidelines &nbsp;
