@@ -2,11 +2,11 @@ const add=document.querySelector("#button1");
 const form= document.querySelector("#main");
 const count= document.querySelector("#num");
 
-var i=1
+var i=2
 add.addEventListener('click',target=>{
     target.preventDefault()
     form.insertAdjacentHTML('beforeend',`<div style="font-size:25px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;" id = "${i}">
-    <h3 id="h${i}">Candidate ${i+1}<button onclick= remove(${i})>Remove</button></h3>
+    <h3 id="h${i}">Candidate ${i}<button onclick= remove(${i})>Remove</button></h3>
     <p>
     <div>
         <label for="id_name">Name:</label>
@@ -44,11 +44,15 @@ function remove(div){
     del(div)
     for(let j=div+1;j<i;j++){
         document.getElementById(j).setAttribute("id",j-1)
-        document.getElementById("h"+j).innerHTML=`Candidate ${j} <button onclick= remove(${j-1})>Remove</button>`;
+        document.getElementById("h"+j).innerHTML=`Candidate ${j-1} <button onclick= remove(${j-1})>Remove</button>`;
         document.getElementById("h"+j).setAttribute("id",j-1)
+        document.getElementById("name"+j).setAttribute("name",`name${j-1}`)
+        document.getElementById("phoneNo"+j).setAttribute("name",`phoneNo${j-1}`)
+        document.getElementById("email"+j).setAttribute("name",`email${j-1}`)
         document.getElementById("name"+j).setAttribute("id",j-1)
         document.getElementById("phoneNo"+j).setAttribute("id",j-1)
         document.getElementById("email"+j).setAttribute("id",j-1)
+
     }
     i--
     count.value = i
