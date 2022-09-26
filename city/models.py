@@ -1,12 +1,18 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 
 class City(models.Model):
+    
     cityName = models.CharField(max_length=100)
     cityImage = models.ImageField(default='dcity.jpg',upload_to='city_pics')
     cityCompetitions = models.ManyToManyField('Competition')
     position=models.OneToOneField("Position",on_delete=models.CASCADE, null=True, blank = True)
+    competitionDate=models.DateField(null=True)
+    cityComp=models.ManyToManyField('CityComp',blank=True)
+   
+
     def __str__(self):
         return self.cityName
 
@@ -20,6 +26,12 @@ class Position(models.Model):
     def __str__(self):
         return self.cityName
     
+
+class CityComp(models.Model):
+   competitionId=models.ForeignKey(City, on_delete=models.CASCADE,null=True)
+   CompetitionName = models.CharField(max_length=100,null=True)
+   competitionDate=models.TimeField(null=True)
+
 
 class Competition(models.Model):
     competitionName = models.CharField(max_length=100)
