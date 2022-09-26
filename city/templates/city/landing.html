@@ -8,10 +8,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Landing Page</title>
   <link rel="stylesheet" href="{% static 'city/Styles/landingpage.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+  <!-- ***************************NAVBAR*************************** -->
+  <nav >
+    <div class="flex-container-1" style="color: white;">
+    <div class="flex-item-1 disapp_in_compview" id="flex-item-18" >
+      <a href="#"> Register</a>
+    </div>
+
+    <div
+      class="flex-item-1 toggle-btn"
+      id="flex-item-17"
+      onclick="myFunction()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div
+      class="flex-item-1 cross-btn"
+      id="flex-item-19"
+      onclick="myFunction()"
+    >
+      <span>╳</span>
+    </div>
+
+    <div class="flex-item-1" id="flex-item-11">
+        <img src="{%static 'city\images\image44.png' %}" alt="logo" />
+    </div>
+
+    <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-13" style="color:white;">
+      <a href="#"> About Us</a>
+    </div>
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+      <a href="#"> Contact</a>
+    </div>
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+      <a href="#"> Schedule</a>
+    </div>
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+      <a href="#"> Register</a>
+    </div>
+  </div>
+</nav>
   <div class="LandingPage">
     <div class="city margin1000">
       <div class="india">
@@ -20,7 +70,7 @@
         
         {% for city in cities %}
           <div style="font-size:180%;margin-left:{{ city.position.logoLeft }};margin-top:{{ city.position.logoTop }};position:absolute;" id="{{ city.cityName }}marker">
-            <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:{{ city.position.textTop }};display: none;" id="{{ city.cityName }}text">{{ city.cityName }}</p></a>
+            <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:{{ city.position.textTop }};display:none;" id="{{ city.cityName }}text">{{ city.cityName }}</p></a>
             <a href="{% url 'dashboard-template' city.id %}"><i class="fa fa-map-marker"  id="{{ city.cityName }}" style="position:absolute;" onmouseover="enlargeIcon('{{ city.cityName }}'),showName('{{ city.cityName }}text')" onmouseout="resizeElement('{{ city.cityName }}'),vanishName('{{ city.cityName }}text')"></i></a>
           </div>
         {% endfor %}
@@ -157,6 +207,21 @@ selectEl.onchange = function(){
   redirect(goto)
 }
 
+
+  function myFunction() {
+    var element1 = document.getElementById("flex-item-13");
+    element1.classList.toggle("show");
+    var element2 = document.getElementById("flex-item-14");
+    element2.classList.toggle("show");
+    var element3 = document.getElementById("flex-item-15");
+    element3.classList.toggle("show");
+    // var element4= document.getElementById("flex-item-16");
+    // element4.classList.toggle("show");
+    var element4 = document.getElementById("flex-item-17");
+    element4.classList.toggle("alternate1");
+    var element5 = document.getElementById("flex-item-19");
+    element5.classList.toggle("alternate2");
+  }
 
 </script>
 
