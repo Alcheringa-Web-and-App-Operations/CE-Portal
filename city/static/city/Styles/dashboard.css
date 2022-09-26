@@ -310,14 +310,6 @@
     margin-bottom: 10%;
 }
 
-#dancetext {
-    font-size: x-large;
-    background-image: url('images/curved.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    padding-left: 15%;
-    margin-right: 7%;
-}
 
 .img2 {
     width: 36vw;
@@ -359,9 +351,18 @@
     border: none;
 }
 
-#singingtext {
+#lefttext {
     font-size: x-large;
-    background-image: url('../images/mic.png');
+    /* background-image: url('images/curved.png'); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 15%;
+    margin-right: 7%;
+}
+
+#righttext {
+    font-size: x-large;
+    /* background-image: url('../images/mic.png'); */
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
@@ -1134,3 +1135,4 @@ transform: scale(1.1);
 .team-img {
 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+ 

@@ -14,6 +14,8 @@ def dashboard(request,pk) :
         'city' : city,
         'competitions': city.cityCompetitions.all(),
         'range' : enumerate(city.cityCompetitions.all()),
+        'compe':city.cityComp.all()
+      
     }
     return render(request, 'city/dashboard.html',data)
 
