@@ -691,13 +691,12 @@ animation-play-state: paused;
 }
 
 /************** About Alcheringa *****************/
-
 .container{
     width: 100%;
     min-height: 600px;
     padding: 0;
     margin: 0;
-    background-image: url("images/Frame\ 445.png");
+    background-image: url('../images/Frame 445.png');
     background-size: cover;
     display: flex;
     flex-direction: row;;
@@ -747,6 +746,51 @@ animation-play-state: paused;
     font-family: 'DM Sans', sans-serif;
     color: #000000;
 }
+
+.mob {
+    display: none;
+}
+
+@media (max-width: 700px){
+    .container{
+            display: flex;
+            flex-direction: column;;
+            align-items: center;
+            justify-content: center;
+    }
+
+    .c1{
+        width:50%;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-left:0px;
+        text-align: center;
+        padding: 100px;
+    }
+    .c2{
+        margin-left:0px; 
+        margin-right:0px;
+        padding-bottom: 110px;
+    }
+
+    .mob {
+        display: block;
+    }
+
+    .lap {
+        display: none;
+    }
+
+    .Heading{
+        text-align: center;
+        font-size: 36px;
+        padding: 20px;
+    }
+}
+
 /*******************Footer**********************/
 
 .footer_container {
