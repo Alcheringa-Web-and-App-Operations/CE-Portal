@@ -9,5 +9,5 @@ urlpatterns = [
     
     
     path('load-competitions/', views.load_competitions, name='load_competitions'),
-    path('load-cities/', views.load_city, name='load_city'), # AJAX
+    # path('load-cities/', views.load_city, name='load_city'), # AJAX
 ]

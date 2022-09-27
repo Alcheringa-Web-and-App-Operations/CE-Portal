@@ -8,25 +8,718 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dependent Dropdown in Django</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+/>  
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@font-face {
+    font-family: Coolvetica;
+    src: url(fonts/coolvetica\ rg.otf);
+}
 
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/************** Nav Bar ************************/
+
+.flex-container-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+    background-color: rgba(242, 158, 109, 1);
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  #flex-item-13 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-14 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-15 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-16 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-18 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  .flex-item-1 a:link {
+    color: rgba(28, 3, 15, 1);
+  }
+  
+  .flex-item-1 a:visited {
+    color: rgba(28, 3, 15, 1);
+  }
+  
+  @font-face {
+    font-family: Coolvetica;
+    src: url(coolvetica_rg.otf);
+  }
+  
+  #flex-item-11 {
+    margin: 10px 5px 10px 20px;
+    /* position: relative; */
+  }
+  
+  #flex-item-12 {
+    font-size: 35px;
+    color: rgba(0, 0, 0, 1);
+    font: Coolvetica;
+    font-weight: 400;
+    width: 200px;
+    margin: 0px auto 0px 5px;
+    font-family: Coolvetica;
+  }
+  
+  #flex-item-13 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+  
+  #flex-item-14 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+  
+  #flex-item-15 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+  
+  #flex-item-16 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 20px 0px 10px;
+  }
+  
+  #flex-item-18 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 20px 0px 10px;
+    border-style: groove;
+    border-color: #031059;
+    border-width: 2px;
+  }
+  
+  .toggle-btn {
+    width: 35px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    display: none;
+  }
+  
+  .toggle-btn span {
+    /* display: inline-block; */
+    width: 100%;
+    height: 3.5px;
+    background-color: #031059;
+    float: left;
+    margin-bottom: 8px;
+  }
+  
+  .cross-btn {
+    font-size: 30px;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    display: none;
+  }
+  
+  .disapp_in_compview {
+    position: absolute;
+    right: 70px;
+    top: 17px;
+    float: left;
+  }
+  .member{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    justify-content: space-between;
+  }
+  @media (max-width:490px) {
+    .member{
+        width: 80%;
+    }
+  }
+  
+  @media (min-width: 775px) {
+    .disapp_in_compview {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 775px) and (min-width: 460px) {
+    .toggle-btn {
+      display: inline;
+    }
+    .disapp_in_mobview {
+      display: none;
+    }
+  
+    #flex-item-16 {
+      margin-left: auto;
+    }
+  
+    .toggle-btn {
+      margin: 10px 10px 0px 0px;
+    }
+  
+    div.show {
+      display: block;
+      width: 100%;
+      padding: 2px 2px 2px 2px;
+      margin: 2px 2px 2px 2px;
+      display: flex;
+      justify-content: end;
+    }
+  
+    div.alternate1 {
+      display: none;
+    }
+    div.alternate2 {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 460px) {
+    #flex-item-12 {
+      display: none;
+    }
+    .disapp_in_mobview {
+      display: none;
+    }
+    .toggle-btn {
+      display: block;
+    }
+  
+    #flex-item-11 {
+      margin: 10px auto 10px 20px;
+    }
+    .toggle-btn {
+      margin: 10px 10px 0px 0px;
+    }
+    div.show {
+      display: block;
+      width: 100%;
+      /* padding: 2px 2px 2px 2px ; */
+      margin: 2px 2px 5px 2px;
+      display: flex;
+      justify-content: end;
+    }
+    div.alternate1 {
+      display: none;
+    }
+    div.alternate2 {
+      display: block;
+    }
+  }
+
+
+/****************** Registration image ************************/
+
+#background-image div {
+    display: inline-block;
+}
+
+#background-image {
+    background-color: #031059;
+    background-image: url({% static "images/background.png" %});
+    height: 40vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#individual {
+    background-color: rgba(0, 0, 0, 0.35);
+    margin-left: 27%;
+    margin-right: 6.5%;
+}
+
+#team {
+    background-color: #F29E6D;
+    
+}
+
+.box {
+    border: 4px solid #FFFFFF;
+    height: 42px;
+    width: 20%;
+    margin-top: 5%;
+    text-align: center;
+    color: white;
+}
+
+.text {
+    font-size: 1.2vw;
+    margin-top: 2%;
+}
+
+.indiv:hover {
+    color: indigo;
+}
+
+
+/****************** Registration FORM ************************/
+
+.reg-form-all {
+    width: 99vw;
+    font-family: 'DM Sans', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sections {
+    width: 40%;
+    max-width: 400px;
+}
+
+
+/* check boxes-- start */
+
+.container {
+    width: 100%;
+    font-size: 13px;
+}
+
+ul.ks-cboxtags {
+    list-style: none;
+    padding-top:3px;
+}
+
+ul.ks-cboxtags li {
+    display: inline;
+}
+
+ul.ks-cboxtags li label {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid #002F43;
+    color: #002F43;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 10px 15px 11px 15px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::after {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0px 0px 0px 7px;
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
+    content: "\f00c";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+    border: 2px solid #002F43;
+    background-color: #F29E6D;
+    color: #002F43;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+    display: absolute;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+    border: 2px solid #002F43;
+}
+
+
+/* check boxes-- END */
+
+
+/* red-star-- START */
+
+.red-star {
+    color: red;
+}
+
+
+/* red-star-- END */
+
+.input-text-field {
+    height: 40px;
+    margin-top: 9px;
+    width: 100%;
+    padding: 5px;
+    border-color: black;
+    border-width: 2px;
+    font-size: 16px;
+}
+.input-text-field-1 select{
+    height: 40px;
+    margin-top: 9px;
+    width: 100%;
+    padding: 5px;
+    border-color: black;
+    border-width: 2px;
+    font-size: 16px;
+}
+
+.drop-down {
+    color: #989898;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.head-style {
+    font-size: 16px;
+}
+
+.row-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page-heading {
+    margin: 20px 15% 5px 15%;
+}
+
+.register-button {
+    margin: auto;
+    padding: 4px 50px;
+    background: #F24405;
+    border-radius: 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 46px;
+    color: #FFFFFF;
+    transition: box-shadow 0.6s;
+}
+
+.register-button:hover,
+.register-button:focus,
+ul.ks-cboxtags li label:hover,
+ul.ks-cboxtags li label:focus {
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+@media only screen and (orientation: portrait) {
+    .row-view {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sections {
+        width: 80%;
+        max-width: 100000000px;
+    }
+    .page-heading {
+        margin: auto;
+        margin-top: 40px;
+        margin-left: 10%;
+        text-align: left;
+    }
+    .input-text-field {
+        min-width: none;
+        width: 100%;
+    }
+}
+
+.add-member-button {
+    margin-top: 9px;
+    padding: 10px 15px;
+    border-color: black;
+    border-width: 1px;
+    transition: box-shadow 0.3s;
+}
+
+.add-member-button:hover {
+    box-shadow: 0 3px 8px 0 rgba(86, 86, 86, 0.75);
+}
+
+
+/******************  FOOTER  ************************/
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 40px 0vw 40px 9vw;
+    background-color: rgba(3, 16, 89, 1);
+    color: white;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: fit-content;
+}
+
+#email {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-top: 4px;
+}
+
+#social-media {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 12px;
+}
+
+#insta {
+    padding-right: 35px;
+}
+
+#fb {
+    padding-left: 2px;
+    padding-right: 35px;
+}
+
+#twitter {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#phone {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+#phone-no {
+    padding-left: 6px;
+}
+
+#alcher-link {
+    padding-left: 0px;
+}
+
+#website {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    align-items: left;
+}
+
+#phone-icon {
+    padding-right: 5px;
+}
+
+#phone-icon:hover {
+    width: 120%;
+}
+
+#mail {
+    padding-right: 15px;
+}
+
+#email-us {
+    text-align: left;
+    padding-bottom: 3px;
+}
+
+#mail-address {
+    display: flex;
+    flex-direction: row;
+    padding-top: 4px;
+}
+
+#email-input {
+    height: 22px;
+    background-color: rgba(3, 16, 89, 1);
+    border: 1px solid white;
+    height: 30px;
+    color: white;
+}
+
+#send-button {
+    height: 30px;
+    background-color: white;
+    color: rgba(3, 16, 89, 1);
+    transition-duration: 5ms;
+}
+
+#send-button:hover {
+    background-color: rgba(3, 16, 89, 1);
+    ;
+    color: white;
+    border-color: white;
+}
+
+a {
+    color: white;
+}
+
+
+/****************** END OF FOOTER  ************************/
+</style>
 <body>
-
-
-    <form method="post" id="personForm">
-        {% csrf_token %}
-        <div id="hidden">
-            <input type="hidden" name="number" value=1 id="num">
+    <!---------------Nav Bar ----------------->
+    <div class="flex-container-1">
+        <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
+          <a href="#"> Register</a>
         </div>
-        <div style="padding-right:300px;">
+    
+        <div
+          class="flex-item-1 toggle-btn"
+          id="flex-item-17"
+          onclick="myFunction()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    
+        <div
+          class="flex-item-1 cross-btn"
+          id="flex-item-19"
+          onclick="myFunction()"
+        >
+          <span>╳</span>
+        </div>
+    
+        <div class="flex-item-1" id="flex-item-11">
+          <img src="{% static "images/imagelogo.png" %}" alt="logo" />
+        </div>
+    
+        <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+    
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+          <a href="#"> About Us</a>
+        </div>
+    
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+          <a href="#"> Contact</a>
+        </div>
+    
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+          <a href="#"> Schedule</a>
+        </div>
+    
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+          <a href="#"> Register</a>
+        </div>
+      </div>
+    <!---- Registration image ---->
+    <div id="background-image">
+        <div id="register-image">
+            <img src="{% static "images/Registration.png" %}" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
+        </div>
+        <a href="">
+            <div id="individual" class="box">
+                <div class="text  indiv"><b>Individual</b></div>
+            </div>
+        </a>
+        <a href="">
+            <div id="team" class="box">
+                <div class="text"><b>Team</b></div>
+            </div>
+        </a>
+    </div>
+    <!--Registration image over-->
+    <br><br>
+    <div class="reg-form-all">
+        <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
+        <div class="page-heading">
+            <h1 class="text-4xl " style="font-weight: 700;">Registration for Team</h1>
+            <br>
+            <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
+        </div>
+    </div>
+    <!-- Backend Code -->
+    <!--<div style="padding-right:300px;">
             <div>
-                <div style="text-align:left;margin-left: 40px;margin-top: 30px;">
-                    <bold style="font-size:25px;">Team Registeration </bold>
-                </div>
-                <div style="text-align:left;margin-left: 40px;margin-top: 60px;margin-bottom: 50px;opacity: 0.5;">
-                    *Fields are required to be filled
-                </div>
-
                 <div
                     style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;">
                     <div>
@@ -132,47 +825,214 @@
                         style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Register</button>
                 </div>
             </div>
+        </div> -->
+        <!-- Backend Code Ends -->
+    <form method="post" id="personForm">
+        {% csrf_token %}
+        <div id="hidden">
+            <input type="hidden" name="number" value=1 id="num">
         </div>
-    </form>
+        <div class="form">
+            <div class="row-view">
+                <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
+                    <br>
+                    <div class="input-text-field-1">
+                        {{ form.city }}
+                    </div>
+                </div>
+                <div class="sections m-5">
+                    <div id="check-container">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row-view">
+                <div class="sections m-5">
+                    <div>
+                        <span class="head-style">Team Name<span class="red-star"> *</span></span>
+                        <br>
+                        <!-- <input type="text" id="team-name" class="input-text-field " required> -->
+                        <input type="text" name="name" maxlength="50" class="input-text-field " required id="id_name">
+                    </div>
+                </div>
+                <div class="sections m-5"></div>
+            </div>
+            <div class="row-view">
+                <div class="sections mx-5 mt-5">
+                    <div style="font-size: 120%;font-weight: bold;">Head's data:</div>
+                </div>
+                <div class="sections mx-5 mt-5"></div>
+            </div>
+            <div class="row-view">
+                <div class="sections m-5">
+                    <div>
+                        <span class="head-style">Name<span class="red-star"> *</span></span>
+                        <br>
+                        <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
+                        <input type="text" name="name0" maxlength="50" class="input-text-field " required id="id_name">
+                    </div>
+                    <br><br><br>
+                    <div>
+                        <span class="head-style">Contact Number<span class="red-star"> *</span></span>
+                        <br>
+                        <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
+                        <input type="text" name="phoneNo0" class="input-text-field " maxlength="50" required id="id_name">
+                    </div>
+                </div>
+                <div class="sections m-5">
+                    <div>
+                        <span class="head-style">Gender<span class="red-star"> *</span></span>
+                        <br>
+                        <select class="input-text-field " id="gender_m_0">
+                            <option class="drop-down">Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <br><br><br>
+                    <div>
+                        <span class="head-style">E-mail<span class="red-star"> *</span></span>
+                        <br>
+                        <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+                        <input type="email" name="email0" class="input-text-field " maxlength="254" required id="id_email">
+                    </div>
+                </div>
+        
+        
+            </div>
+            <div class="row-view">
+                <div class="sections mx-5 mt-5">
+                    <div style="font-size: 120%;font-weight: bold;">Member's data:</div>
+                </div>
+                <div class="sections mx-5 mt-5"></div>
+            </div>
+            <div id="main">
+                <div class="row-view">
+                    <div class="sections mx-5 mt-5">
+                        <div style="font-size: 120%;">Member 1:</div>
+                    </div>
+                    <div class="sections">
+                    </div>
+                </div>
+                <div class="row-view">
+                    <div class="sections m-5">
+                        <div>
+                            <span class="head-style">Name<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+                            <input type="text" name="name1" class="input-text-field " maxlength="50" required id="id_name">
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">Contact Number<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="number" id="cont_num_m_1" class="input-text-field " required> -->
+                            <input type="text" name="phoneNo1" class="input-text-field " maxlength="50" required id="id_name">
+                        </div>
+                    </div>
+                    <div class="sections m-5">
+                        <div>
+                            <span class="head-style">Gender<span class="red-star"> *</span></span>
+                            <br>
+                            <select class="input-text-field " id="gender_m_1">
+                                <option class="drop-down">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">E-mail<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="email" id="email_m_1" class="input-text-field " required> -->
+                            <input type="email" name="email1" class="input-text-field " maxlength="254" required id="id_email">
+                        </div>
+                    </div>
+        
+        
+                </div>
+            </div>
+            <div class="row-view">
+                <div class="sections mx-5 mt-5">
+                    <button class="add-member-button" id="button1">
+                        <i class="fa-solid fa-plus"></i> <i class="fa-solid fa-user"
+                            style="margin-left: -5px;margin-right: 10px;"></i>Add member</button>
+                </div>
+                <div class="sections mx-5 mt-5"></div>
+            </div>
+            <br>
+            <div class="row-view">
+                <button class=" register-button">Register</button>
+            </div>
+        </div>
+</form>
+</div>
+<div style="height: 120px;"></div>
+
+
+<!---------------Registeration form ENDS ----------------->
+
+<!--FOOTER-->
+    <div id="footer">
+
+        <div id="contact">
+            <div id="phone">
+                <div id="phone-icon">
+                    <img src="{% static "images\phone.png" %}" width="15" height="15">
+                </div>
+                <div id="phone-no">19-0000-0000</div>
+            </div>
+            <div id="website">
+                <div id="mail">
+                    <img src="{% static "images\mail.png" %}" height="15">
+                </div>
+                <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
+            </div>
+
+        </div>
+
+        <div id="social-media">
+            <div>
+                <p>Social Media</p>
+            </div>
+            <div id="logos">
+                <div id="insta">
+                    <a href="https://www.alcheringa.in/"><img src="{% static "images\insta.png" %}"></a>
+                </div>
+                <div id="fb">
+                    <a href="https://www.alcheringa.in/"><img src="{% static "images\fb.png" %}"></a>
+                </div>
+                <div id="twitter">
+                    <a href="https://www.alcheringa.in/"><img src="{% static "images\twitter.png" %}"></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="email">
+            <div id="email-us">E-mail Us</div>
+            <div id="mail-address">
+                <div><input type="text" id="email-input"></div>
+                <div><button id="send-button">SEND</button></div>
+            </div>
+        </div>
+
+    </div>
+
     <script src="{% static 'form/button.js' %}"></script>
     <script>
-
         let city = document.getElementById("id_city")
-        let competition = document.getElementById("id_competition")
-        console.log(city.value)
-        competition.addEventListener('change', (e) => {
-            const competition_id = e.target.value
-            const city_value = city.value
-            fetch("{% url 'load_city' %}", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    "X-Requested-With": "XMLHttpRequest"
-                },
-                body: JSON.stringify({ "competition_id": competition_id, "current_city": city_value })
-            })
-                .then(data => {
-                    return data.text()
-                })
-                .then(data => {
-                    console.log(data)
-                    document.getElementById("id_city").innerHTML = data
-                })
-
-        })
-
-
         city.addEventListener("change", (e) => {
             const city_id = e.target.value
-            const competition_value = competition.value
-            console.log(city_id)
+
             fetch("{% url 'load_competitions' %}", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
                     "X-Requested-With": "XMLHttpRequest"
                 },
-                body: JSON.stringify({ "city_id": city_id, "current_competition": competition_value })
+                body: JSON.stringify({ "city_id": city_id})
             })
                 .then(data => {
                     return data.text()
@@ -180,9 +1040,15 @@
                 .then(data => {
                     console.log(data)
                     console.log(city.value)
-                    document.getElementById("id_competition").innerHTML = data
+                    document.getElementById("check-container").innerHTML = data
                 })
         })
+        function onlyOne(checkbox) {
+            var checkboxes = document.getElementsByName('checkbox')
+            checkboxes.forEach((item) => {
+                if (item !== checkbox) item.checked = false
+            })
+        }
     </script>
 </body>
 

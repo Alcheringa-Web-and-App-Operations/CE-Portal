@@ -55,34 +55,38 @@ def register_single(request):
 @csrf_exempt
 def load_competitions(request):
     data=json.loads(request.body)
-    competitions=City.objects.filter(id=data['city_id']).first().cityCompetitions.all()
-    currentCompetition=""
-    if data['current_competition']!="":
-        currentCompetition=Competition.objects.filter(id=data['current_competition']).first()
-    print(type(currentCompetition))
-    return render(request,'users/city_dropdown_list_options.html',{"competitions":competitions,"competition_value":data['current_competition'],"currentCompetition":currentCompetition})
-
-@csrf_exempt
-def load_city(request):
-    data=json.loads(request.body)
-    cities=City.objects.filter(cityCompetitions__id=data['competition_id'])
-    if data['current_city']!="":
-        current_city=City.objects.filter(id=data['current_city']).first()
+    if data['city_id'] !="":
+        competitions=City.objects.filter(id=data['city_id']).first().cityCompetitions.all()
+        return render(request,'users/city_dropdown_list_options.html',{"competitions":competitions})
     else:
-        current_city=""
+        return render(request,'users/city_dropdown_list_options.html')
+        
+    # currentCompetition=""
+    # if data['current_competition']!="":
+        # currentCompetition=Competition.objects.filter(id=data['current_competition']).first()
+    # print(type(currentCompetition))
+    # return render(request,'users/city_dropdown_list_options.html',{"competitions":competitions,"competition_value":data['current_competition'],"currentCompetition":currentCompetition})
     
-    
-    print(cities)
-    return render(request,'users/comp_dropdown.html',{"cities":cities,"city_value":data['current_city'],"currentCity":current_city})
+
+# @csrf_exempt
+# def load_city(request):
+#     data=json.loads(request.body)
+#     cities=City.objects.filter(cityCompetitions__id=data['competition_id'])
+#     if data['current_city']!="":
+#         current_city=City.objects.filter(id=data['current_city']).first()
+#     else:
+#         current_city=""
+#     print(cities)
+#     return render(request,'users/comp_dropdown.html',{"cities":cities,"city_value":data['current_city'],"currentCity":current_city})
     # return JsonResponse(list(cities.values('id', 'name')), safe=False)
 
 def teamForm(request):
     data = request.POST
     if request.method == 'POST':
+        print("working")
         form = EntryFormTeams(request.POST)
-        
         city = City.objects.filter(id = data.get('city')).first()
-        competition = Competition.objects.filter(id = data.get('competition')).first()
+        competition = Competition.objects.filter(id = request.POST['checkbox']).first()
         team = Team(name = data.get('name'),competition=competition,city=city)
         team.save()
         team = Team.objects.all().last()

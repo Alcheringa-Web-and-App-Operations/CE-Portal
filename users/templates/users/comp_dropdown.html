@@ -1,5 +1,5 @@
-{% if currentCity == "" %}
-    <option value="" >---------</option>
+{% if currentCity != "" %}
+    
     {% for city in cities %}
         <option value="{{ city.pk }}" >{{ city.cityName }}</option>
     {% endfor %}
