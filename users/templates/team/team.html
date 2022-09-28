@@ -13,10 +13,11 @@
 />  
 </head>
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
 @font-face {
     font-family: Coolvetica;
-    src: url(fonts/coolvetica\ rg.otf);
+    src: url("{%static "fonts/coolvetica rg.otf"%}");
 }
 
 body {
@@ -642,10 +643,9 @@ a {
 }
 
 
-/****************** END OF FOOTER  ************************/
 </style>
 <body>
-    <!---------------Nav Bar ----------------->
+    {% comment %} <!---------------Nav Bar -----------------> {% endcomment %}
     <div class="flex-container-1">
         <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
           <a href="#"> Register</a>
@@ -675,20 +675,20 @@ a {
     
         <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
     
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
           <a href="#"> About Us</a>
-        </div>
+        </div> {% endcomment %}
     
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
           <a href="#"> Contact</a>
-        </div>
+        </div> {% endcomment %}
     
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
           <a href="#"> Schedule</a>
-        </div>
+        </div> {% endcomment %}
     
         <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-          <a href="#"> Register</a>
+          <a href="{% url "landing-page"%}"> Home</a>
         </div>
       </div>
     <!---- Registration image ---->
@@ -696,7 +696,7 @@ a {
         <div id="register-image">
             <img src="{% static "images/Registration.png" %}" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
         </div>
-        <a href="">
+        <a href="{% url "register_single"%}">
             <div id="individual" class="box">
                 <div class="text  indiv"><b>Individual</b></div>
             </div>
