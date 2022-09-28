@@ -87,13 +87,10 @@
           <div id="lefttext" style="background-image:url('{{ comp.background_img.url }}')">
             <h1 class="coolvetica">{{comp.competitionName}}</h1>
             <p class="comp-desc">{{comp.competitionDescription}}</p>
-            <div style="margin-top: 6%; margin-bottom: 6%">
-              <span style="border-style: none solid none none; font-size: 17px"
-                >Guidelines &nbsp;
-              </span>
-              <span style="font-size: 17px">&nbsp; more info</span>
+            <div class="btncontainer">
+                <button type="button" class="btn"><a href="{% url 'register_single' %}" style="text-decoration: none;color:white;"> Register</a></button>
+                <button type="button" class="guidelinebtn"><a href="#" style="text-decoration: none;color: black;"> Guideline </a></button>
             </div>
-            <button type="button" class="btn">Register</button>
           </div>
           <div style="padding-right: 12%">
             <img
@@ -115,13 +112,10 @@
           <div id="righttext" style="background-image:url('{{ comp.background_img.url }}')">
             <h1 class="coolvetica">{{comp.competitionName}}</h1>
             <p class="comp-desc">{{comp.competitionDescription}}</p>
-            <div style="margin-top: 6%; margin-bottom: 6%">
-              <span style="border-style: none solid none none; font-size: 17px"
-                >Guidelines &nbsp;
-              </span>
-              <span style="font-size: 17px">&nbsp; more info</span>
+            <div class="btncontainer">
+                <button type="button" class="btn"><a href="{% url 'register_single' %}" style="text-decoration: none;color:white;"> Register</a></button>
+                <button type="button" class="guidelinebtn"><a href="#" style="text-decoration: none;color: black;"> Guideline </a></button>
             </div>
-            <button type="button" class="btn">Register</button>
           </div>
         </div>
         {% endif %} {% endfor %}
