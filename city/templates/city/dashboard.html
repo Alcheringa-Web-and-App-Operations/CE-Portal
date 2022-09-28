@@ -1,70 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> -->
+
+    <!-- <link
+      rel="stylesheet"
+      media="screen and (min-width: 800px)"
+      href="{% static 'city/Styles/comp_wide.css.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 800px)"
+      href="{% static 'city/Styles/comp_small.css.css' %}"
+    /> -->
     <link rel="stylesheet" href="{% static 'city/Styles/dashboard.css' %}" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap"
+      rel="stylesheet"
+    />
     <title>City Elimination | Alcheringa</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!--**************************Nav Bar ***********************************-->
+    <div class="flex-container-1">
+      <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
+        <a href="#"> Register</a>
+      </div>
 
-<!--**************************Nav Bar ***********************************-->
-<div class="flex-container-1">
-    <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-      <a href="#"> Register</a>
-    </div>
+      <div
+        class="flex-item-1 toggle-btn"
+        id="flex-item-17"
+        onclick="myFunction()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-    <div
-      class="flex-item-1 toggle-btn"
-      id="flex-item-17"
-      onclick="myFunction()"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+      <div
+        class="flex-item-1 cross-btn"
+        id="flex-item-19"
+        onclick="myFunction()"
+      >
+        <span>╳</span>
+      </div>
 
-    <div
-      class="flex-item-1 cross-btn"
-      id="flex-item-19"
-      onclick="myFunction()"
-    >
-      <span>╳</span>
-    </div>
-
-    <div class="flex-item-1" id="flex-item-11">
+      <div class="flex-item-1" id="flex-item-11">
         <img src="{%static 'city\images\image43.png' %}" alt="logo" />
+      </div>
+
+      <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+      <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+        <a href="#"> About Us</a>
+      </div>
+
+      <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+        <a href="#"> Contact</a>
+      </div>
+
+      <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+        <a href="#"> Schedule</a>
+      </div>
+
+      <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+        <a href="#"> Register</a>
+      </div>
     </div>
 
-    <div class="flex-item-1" id="flex-item-12"><a href="https://alcheringa.in/" style="text-decoration:none" target="_blank">Alcheringa</a></div>
-
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-      <a href="#competition"> Competitions</a>
-    </div>
-
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-      <a href="#schedule"> Schedule</a>
-    </div>
-
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-      <a href="#aboutus"> About Us</a>
-    </div>
-
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-      <a href="{% url 'register_single' %}"> Register</a>
-    </div>
-  </div>
-
-
-<!--************************** City ***********************************-->
-    <div class="city-container" style="
+    <!--************************** City ***********************************-->
+    <div
+      class="city-container"
+      style="
     background-image: linear-gradient(
         to top,
         rgba(0, 0, 0, 0.4),
@@ -72,25 +85,32 @@
       ),
       url('{{ city.cityImage.url }}');
     background-size: contain;
-  ">
-        <div class="city-link">
-            Not your city? <a href="{% url 'landing-page' %}" >Click here.</a>
-        </div>
+  "
+    >
+      <div class="city-link">
+        Not your city? <a href="{% url 'landing-page' %}">Click here.</a>
+      </div>
     </div>
 
-<!-- ******************** Competitions ************** -->
-    <div class="dmsans comp-main">
-        <div style="padding-top: 3%;">
-            <h1 id="competition" class="coolvetica">Competitions</h1>
-            {% for i,comp in range %} {% if i|divisibleby:"2" %}
+    <!-- ******************** Competitions ************** -->
+    <div class="dmsans comp-main" id="wideview">
+      <div style="padding-top: 3%">
+        <h1 id="competition" class="coolvetica">Competitions</h1>
+        {% for i,comp in range %} {% if i|divisibleby:"2" %}
         <div class="row">
-          <div id="lefttext" style="background-image:url('{{ comp.background_img.url }}')">
+          <div
+            id="lefttext"
+            style="background-image:url('{{ comp.background_img.url }}')"
+          >
             <h1 class="coolvetica">{{comp.competitionName}}</h1>
             <p class="comp-desc">{{comp.competitionDescription}}</p>
-            <div class="btncontainer">
-                <button type="button" class="btn"><a href="{% url 'register_single' %}" style="text-decoration: none;color:white;"> Register</a></button>
-                <button type="button" class="guidelinebtn"><a href="#" style="text-decoration: none;color: black;"> Guideline </a></button>
+            <div style="margin-top: 6%; margin-bottom: 6%">
+              <span style="border-style: none solid none none; font-size: 17px"
+                >Guidelines &nbsp;
+              </span>
+              <span style="font-size: 17px">&nbsp; more info</span>
             </div>
+            <button type="button" class="btn">Register</button>
           </div>
           <div style="padding-right: 12%">
             <img
@@ -109,160 +129,391 @@
             />
             <img src="{{comp.competitionImage2.url}}" class="img2" />
           </div>
-          <div id="righttext" style="background-image:url('{{ comp.background_img.url }}')">
+          <div
+            id="righttext"
+            style="background-image:url('{{ comp.background_img.url }}')"
+          >
             <h1 class="coolvetica">{{comp.competitionName}}</h1>
             <p class="comp-desc">{{comp.competitionDescription}}</p>
-            <div class="btncontainer">
-                <button type="button" class="btn"><a href="{% url 'register_single' %}" style="text-decoration: none;color:white;"> Register</a></button>
-                <button type="button" class="guidelinebtn"><a href="#" style="text-decoration: none;color: black;"> Guideline </a></button>
+            <div style="margin-top: 6%; margin-bottom: 6%">
+              <span style="border-style: none solid none none; font-size: 17px"
+                >Guidelines &nbsp;
+              </span>
+              <span style="font-size: 17px">&nbsp; more info</span>
             </div>
+            <button type="button" class="btn">Register</button>
           </div>
         </div>
         {% endif %} {% endfor %}
-        </div>
-        <div style="height: 20px">
-
-        </div>
+      </div>
+      <div style="height: 20px"></div>
     </div>
-
 
     <!--------------------  Schedule  ------------------------>
 
+    <div>
+      <div class="table">
+        <table style="border: 5px solid #f2e9e9; border-spacing: 0px">
+          <!-- <caption>Life Expectancy By Current Age</caption> -->
+          <tr style="margin: 0px; padding: 0px; border-spacing: 0px">
+            <th colspan="8" class="Schedule">Schedule</th>
 
-    <div id="schedule">
-        <div class="table">
-            <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
-                <!-- <caption>Life Expectancy By Current Age</caption> -->
-                <tr style="margin: 0px; padding:0px; border-spacing :0px;">
-                    <th colspan="8" class="Schedule">Schedule</th>
+            <td rowspan="1100" class="verticalrow">Don't miss it!</td>
+          </tr>
+          <tr style="border: 5px solid #f2e9e9; border-spacing: 0px">
+            <th
+              colspan="8"
+              class="dates"
+              style="
+                border-bottom: 5px solid #f2e9e9;
+                border-right: 5px solid #f2e9e9;
+              "
+            >
+              {{city.competitionDate}}
+            </th>
+          </tr>
+          <tr>
+            <td class="event">{{compe.0.CompetitionName}}</td>
+            <td class="eventtime">{{compe.0.competitionDate}}</td>
+            <td class="event">{{compe.4.CompetitionName}}</td>
+            <td class="eventtime">{{compe.4.competitionDate}}</td>
+            <td class="event">{{compe.8.CompetitionName}}</td>
+            <td class="eventtime">{{compe.8.competitionDate}}</td>
+            <td class="event">{{compe.12.CompetitionName}}</td>
+            <td class="eventtime">{{compe.12.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.1.CompetitionName}}</td>
+            <td class="eventtime">{{compe.1.competitionDate}}</td>
+            <td class="event">{{compe.5.CompetitionName}}</td>
+            <td class="eventtime">{{compe.5.competitionDate}}</td>
+            <td class="event">{{compe.9.CompetitionName}}</td>
+            <td class="eventtime">{{compe.9.competitionDate}}</td>
+            <td class="event">{{compe.13.CompetitionName}}</td>
+            <td class="eventtime">{{compe.13.competitionDate}}</td>
+          </tr>
 
-                <td rowspan="1100" class="verticalrow">Don't miss it!</td>
-            </tr>
-            <tr style="border: 5px solid #F2E9E9;border-spacing: 0px;">
-                <th colspan="8" class="dates" style="border-bottom: 5px solid #F2E9E9;border-right: 5px solid #F2E9E9;" >{{city.competitionDate}}</th>
+          <tr>
+            <td class="event">{{compe.2.CompetitionName}}</td>
+            <td class="eventtime">{{compe.2.competitionDate}}</td>
+            <td class="event">{{compe.6.CompetitionName}}</td>
+            <td class="eventtime">{{compe.6.competitionDate}}</td>
+            <td class="event">{{compe.10.CompetitionName}}</td>
+            <td class="eventtime">{{compe.10.competitionDate}}</td>
+            <td class="event">{{compe.14.CompetitionName}}</td>
+            <td class="eventtime">{{compe.14.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.3.CompetitionName}}</td>
+            <td class="eventtime">{{compe.3.competitionDate}}</td>
+            <td class="event">{{compe.7.CompetitionName}}</td>
+            <td class="eventtime">{{compe.7.competitionDate}}</td>
+            <td class="event">{{compe.11.CompetitionName}}</td>
+            <td class="eventtime">{{compe.11.competitionDate}}</td>
+            <td class="event">{{compe.15.CompetitionName}}</td>
+            <td class="eventtime">{{compe.15.competitionDate}}</td>
+          </tr>
+        </table>
+      </div>
 
-            </tr>
-            <tr >
-               
-                
-                <td class="event" >{{compe.0.CompetitionName}}</td>
-                <td class="eventtime">{{compe.0.competitionDate}}</td>
-                <td class="event">{{compe.4.CompetitionName}}</td>
-                <td class="eventtime">{{compe.4.competitionDate}}</td>
-                <td class="event">{{compe.8.CompetitionName}}</td>
-                <td class="eventtime">{{compe.8.competitionDate}}</td>
-                <td class="event">{{compe.12.CompetitionName}}</td>
-                <td class="eventtime">{{compe.12.competitionDate}}</td>
+      <!--------------------  About Alcheringa  ------------------------>
 
-            </tr>
-            <tr >
-              <td class="event" >{{compe.1.CompetitionName}}</td>
-              <td class="eventtime">{{compe.1.competitionDate}}</td>
-              <td class="event">{{compe.5.CompetitionName}}</td>
-              <td class="eventtime">{{compe.5.competitionDate}}</td>
-              <td class="event">{{compe.9.CompetitionName}}</td>
-              <td class="eventtime">{{compe.9.competitionDate}}</td>
-              <td class="event">{{compe.13.CompetitionName}}</td>
-              <td class="eventtime">{{compe.13.competitionDate}}</td>
-            </tr>
-         
-            <tr >
-                <td class="event" >{{compe.2.CompetitionName}}</td>
-                <td class="eventtime">{{compe.2.competitionDate}}</td>
-                <td class="event">{{compe.6.CompetitionName}}</td>
-                <td class="eventtime">{{compe.6.competitionDate}}</td>
-                <td class="event">{{compe.10.CompetitionName}}</td>
-                <td class="eventtime">{{compe.10.competitionDate}}</td>
-                <td class="event">{{compe.14.CompetitionName}}</td>
-                <td class="eventtime">{{compe.14.competitionDate}}</td>
-            </tr>
-            <tr >
-              <td class="event" >{{compe.3.CompetitionName}}</td>
-              <td class="eventtime">{{compe.3.competitionDate}}</td>
-              <td class="event">{{compe.7.CompetitionName}}</td>
-              <td class="eventtime">{{compe.7.competitionDate}}</td>
-              <td class="event">{{compe.11.CompetitionName}}</td>
-              <td class="eventtime">{{compe.11.competitionDate}}</td>
-              <td class="event">{{compe.15.CompetitionName}}</td>
-              <td class="eventtime">{{compe.15.competitionDate}}</td>
-            </tr>
-            </table>
-        </div>
-
-        
-    <!--------------------  About Alcheringa  ------------------------>
-
-    <div id = "aboutus" class="container">
+      <div class="container">
         <div class="c1 lap">
-            <div class="Heading">
-                About<br>
-                Alcheringa
-            </div>
-        
-            <div class="text">
-                Alcheringa is the annual cultural festival of the Indian Institute of Technology (IIT), Guwahati. Started in 1996 by a group of students, Alcheringa, IIT Guwahati has become one of Asia's most significant college-level cultural fests. Spread over three days and four nights, Alcheringa attracts people from all over the world with its spectacular events and competitions.
-            </div>
+          <div class="Heading">
+            About<br />
+            Alcheringa
+          </div>
+
+          <div class="text">
+            Alcheringa is the annual cultural festival of the Indian Institute
+            of Technology (IIT), Guwahati. Started in 1996 by a group of
+            students, Alcheringa, IIT Guwahati has become one of Asia's most
+            significant college-level cultural fests. Spread over three days and
+            four nights, Alcheringa attracts people from all over the world with
+            its spectacular events and competitions.
+          </div>
         </div>
 
         <div class="c1 mob">
-            <div class="Heading">
-                About Alcheringa
-            </div>
-        
-            <div class="text">
-                Alcheringa is the annual cultural festival of the Indian Institute of Technology (IIT), Guwahati. Started in 1996 by a group of students, Alcheringa, IIT Guwahati has become one of Asia's most significant college-level cultural fests. Spread over three days and four nights, Alcheringa attracts people from all over the world with its spectacular events and competitions.
-            </div>
+          <div class="Heading">About Alcheringa</div>
+
+          <div class="text">
+            Alcheringa is the annual cultural festival of the Indian Institute
+            of Technology (IIT), Guwahati. Started in 1996 by a group of
+            students, Alcheringa, IIT Guwahati has become one of Asia's most
+            significant college-level cultural fests. Spread over three days and
+            four nights, Alcheringa attracts people from all over the world with
+            its spectacular events and competitions.
+          </div>
         </div>
-        
+
         <div class="c2 mob">
-            <div class="Heading">
-                Highway to Alcher
-            </div>
-        
-            <div class="text">
-                Alcheringa is the annual cultural festival of the Indian Institute of Technology (IIT), Guwahati. Started in 1996 by a group of students, Alcheringa, IIT Guwahati has become one of Asia's most significant college-level cultural fests. Spread over three days and four nights, Alcheringa attracts people from all over the world with its spectacular events and competitions.
-            </div>
+          <div class="Heading">Highway to Alcher</div>
+
+          <div class="text">
+            Alcheringa is the annual cultural festival of the Indian Institute
+            of Technology (IIT), Guwahati. Started in 1996 by a group of
+            students, Alcheringa, IIT Guwahati has become one of Asia's most
+            significant college-level cultural fests. Spread over three days and
+            four nights, Alcheringa attracts people from all over the world with
+            its spectacular events and competitions.
+          </div>
         </div>
         <div class="c2 lap">
-            <div class="text"> 
-                Alcheringa is the annual cultural festival of the Indian Institute of Technology (IIT), Guwahati. Started in 1996 by a group of students, Alcheringa, IIT Guwahati has become one of Asia's most significant college-level cultural fests. Spread over three days and four nights, Alcheringa attracts people from all over the world with its spectacular events and competitions.
-            </div>
-            <div class="Heading">
-                Highway to<br>Alcher
-            </div>
+          <div class="text">
+            Alcheringa is the annual cultural festival of the Indian Institute
+            of Technology (IIT), Guwahati. Started in 1996 by a group of
+            students, Alcheringa, IIT Guwahati has become one of Asia's most
+            significant college-level cultural fests. Spread over three days and
+            four nights, Alcheringa attracts people from all over the world with
+            its spectacular events and competitions.
+          </div>
+          <div class="Heading">Highway to<br />Alcher</div>
         </div>
-    </div>
+      </div>
 
-        
-    <!--------------------  Sponsors  ------------------------>
+      <!--------------------  Sponsors  ------------------------>
 
-    <div class="sponsers">
-        <br>
-        <div class="heading">
+      <div class="sponsers">
+        <br />
+        <div class="heading">Sponsors</div>
 
-            Sponsors
+        <div class="marquee-body" style="z-index: 100">
+          <div class="marquee">
+            <ul class="marquee-content">
+              <li>
+                <img
+                  src="{%static 'city\images\sponser1.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\sponser3.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\sponser2.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\art1.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\art2.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\palette.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+              <li>
+                <img
+                  src="{%static 'city\images\sponser1.png' %}"
+                  alt="pr-sample23"
+                  style="width: 350px; height: 200px"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <div class="marquee-body" style="z-index: 100;">
-            <div class="marquee">
-                <ul class="marquee-content">
-                    <li><img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
-                    <li><img src="{%static 'city\images\sponser3.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
-                    <li><img src="{%static 'city\images\sponser2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
-                    <li><img src="{%static 'city\images\art1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
-                    <li><img src="{%static 'city\images\art2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
-                    <li><img src="{%static 'city\images\palette.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
-                    <li><img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px;" /></li>
-                </ul>
-            </div>
-        </div>
-        <br><br><br>
-    </div>
+        <br /><br /><br />
+      </div>
     </div>
 
     <!---------------------- Footer------------------------->
-    
-    <div class="footer_container">
+
+    <div class="container0">
+      <div class="container1">
+        <img src="{%static 'city\images\Mask group.png' %}" />
+      </div>
+
+      <!-- -->
+      <div class="container2">
+        <div class="alcher">
+          <div><h1 class="footer_text" id="highway">Highway</h1></div>
+          <div><h1 class="footer_text">to</h1></div>
+          <div><h1 class="footer_text" id="alcher">Alcher</h1></div>
+        </div>
+        <div class="contactinfo">
+          <h1 id="contact">Contact Us</h1>
+          <div class="names">
+            <div class="Siddhant">
+              <h2 id="sid">Siddhant Singh</h2>
+              <h3 id="pr1">PR Head</h3>
+              <p>+91-9310859978</p>
+            </div>
+            <div class="akshara">
+              <h2 id="akshara">Danda Akshara</h2>
+              <h3 id="pr2">PR Head</h3>
+              <p>+91-9908991939</p>
+            </div>
+            <div class="Quasim">
+              <h2 id="quasim">Quasim</h2>
+              <h3 id="pr3">PR Head</h3>
+              <p>+91-9310859978</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="video">
+          <div><h1 id="discover">Discover Alcheringa</h1></div>
+          <div class="class-iframe">
+            <iframe
+              class="size-iframe"
+              src="https://youtu.be/byhtsRBr2VY"
+            ></iframe>
+          </div>
+        </div>
+        <div class="follow">
+          <div><h1 id="follow-us">Follow us :</h1></div>
+          <div class="icons">
+            <div>
+              <a href="https://www.instagram.com/alcheringaiitg/"
+                ><img src="{%static 'city\images\instagram (4).png' %}"
+              /></a>
+            </div>
+            <div>
+              <a
+                href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"
+                ><img src="{%static 'city\images\linkedin (2).png' %}"
+              /></a>
+            </div>
+            <div>
+              <a href="https://www.facebook.com/alcheringaiitg"
+                ><img src="{%static 'city\images\facebook.png' %}"
+              /></a>
+            </div>
+            <div>
+              <a href="https://twitter.com/alcheringaiitg"
+                ><img src="{%static 'city\images\twit.png' %}"
+              /></a>
+            </div>
+            <div>
+              <a href="https://www.youtube.com/c/AlcheringaIITG"
+                ><img src="{%static 'city\images\youtube.png' %}"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    function myFunction() {
+      var element1 = document.getElementById("flex-item-13");
+      element1.classList.toggle("show");
+      var element2 = document.getElementById("flex-item-14");
+      element2.classList.toggle("show");
+      var element3 = document.getElementById("flex-item-15");
+      element3.classList.toggle("show");
+      // var element4= document.getElementById("flex-item-16");
+      // element4.classList.toggle("show");
+      var element4 = document.getElementById("flex-item-17");
+      element4.classList.toggle("alternate1");
+      var element5 = document.getElementById("flex-item-19");
+      element5.classList.toggle("alternate2");
+    }
+  </script>
+</html>
+
+<!-- <div class="container0">
+      <div class="container1">
+        <img src="{%static 'city\images\Mask group.png' %}" />
+      </div>
+      <div class="container2">
+        <div class="alcher">
+          <div><h1 class="footer_text" id="highway">Highway</h1></div>
+          <div><h1 class="footer_text">to</h1></div>
+          <div><h1 class="footer_text" id="alcher">Alcher</h1></div>
+        </div>
+        <div class="contactinfo">
+          <h1 id="contact">Contact Us</h1>
+          <div class="names">
+            <div class="Siddhant">
+              <h2 id="sid">Siddhant Singh</h2>
+              <h3 id="pr1">PR Head</h3>
+              <p>+91-9310859978</p>
+            </div>
+            <div class="akshara">
+              <h2 id="akshara">Danda Akshara</h2>
+              <h3 id="pr2">PR Head</h3>
+              <p>+91-9908991939</p>
+            </div>
+            <div class="Quasim">
+              <h2 id="quasim">Quasim</h2>
+              <h3 id="pr3">PR Head</h3>
+              <p>+91-9310859978</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="video">
+          <div><h1 id="discover">Discover Alcheringa</h1></div>
+          <div class="class-iframe">
+            <iframe
+              class="size-iframe"
+              src="https://youtu.be/byhtsRBr2VY"
+            ></iframe>
+          </div>
+        </div>
+        <div class="follow">
+          <div><h1 id="follow-us">Follow us :</h1></div>
+          <div class="icons">
+            <div>
+              <a href="https://www.instagram.com/alcheringaiitg/"
+                ><img src="{%static 'city\images\instagram (4).png' %}"
+              /></a>
+            </div>
+            <div>
+              <a
+                href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"
+                ><img src="{%static 'city\images\linkedin (2).png' %}"
+              /></a>
+            </div>
+            <div>
+              <a href="https://www.facebook.com/alcheringaiitg"
+                ><img src="{%static 'city\images\facebook.png' %}"
+              /></a>
+            </div>
+            <div>
+              <a href="https://twitter.com/alcheringaiitg"
+                ><img src="{%static 'city\images\twitter.png' %}"
+              /></a>
+            </div>
+            <div>
+              <a href="https://www.youtube.com/c/AlcheringaIITG"
+                ><img src="{%static 'city\images\youtube.png' %}g"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+<!-- <div class="footer_container">
             <div style="display: inline;">
                 <img class="logo_footer" src="{%static 'city\images\Mask group.png' %}">
             </div>
@@ -332,13 +583,8 @@
         </div>
             <hr style="background-color: rgba(242, 158, 109, 1); height: 4px; width: 100% ; border: none; position: relative; bottom: 675px;" >
 
-    </div>
-    
-    
-    
-    
-    
-    
+    </div> -->
+
 <!--   <div class="container0">
     <div class="container1">
         <img src="{%static 'city\images\Mask group.png' %}">
@@ -392,16 +638,11 @@
                 
                 </div>
             </div> -->
-    
-    
-    
-    
-            </div>
+
+<!-- </div>
 
         </div>
-    </body>
-
-</body>
+    </body> -->
 
 <!-- <script src="https://kit.fontawesome.com/9f36b35b03.js" crossorigin="anonymous">
         
@@ -415,23 +656,4 @@
     for (let i = 0; i < marqueeElementsDisplayed; i++) {
         marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
     }
-</script> -->
-
-<script type="text/javascript">
-    function myFunction() {
-      var element1 = document.getElementById("flex-item-13");
-      element1.classList.toggle("show");
-      var element2 = document.getElementById("flex-item-14");
-      element2.classList.toggle("show");
-      var element3 = document.getElementById("flex-item-15");
-      element3.classList.toggle("show");
-      // var element4= document.getElementById("flex-item-16");
-      // element4.classList.toggle("show");
-      var element4 = document.getElementById("flex-item-17");
-      element4.classList.toggle("alternate1");
-      var element5 = document.getElementById("flex-item-19");
-      element5.classList.toggle("alternate2");
-    }
-  </script>
-
-</html>
+    </script> -->
