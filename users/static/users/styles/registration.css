@@ -1,0 +1,618 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+@font-face {
+    font-family: Coolvetica;
+    src: url(fonts/coolvetica\ rg.otf);
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+
+/************** Nav Bar ************************/
+
+.flex-container-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+    background-color: rgba(242, 158, 109, 1);
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+  
+  #flex-item-13 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-14 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-15 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-16 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  #flex-item-18 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+  
+  .flex-item-1 a:link {
+    color: rgba(28, 3, 15, 1);
+  }
+  
+  .flex-item-1 a:visited {
+    color: rgba(28, 3, 15, 1);
+  }
+  
+  @font-face {
+    font-family: Coolvetica;
+    src: url(coolvetica_rg.otf);
+  }
+  
+  #flex-item-11 {
+    margin: 10px 5px 10px 20px;
+    /* position: relative; */
+  }
+  
+  #flex-item-12 {
+    font-size: 35px;
+    color: rgba(0, 0, 0, 1);
+    font: Coolvetica;
+    font-weight: 400;
+    width: 200px;
+    margin: 0px auto 0px 5px;
+    font-family: Coolvetica;
+  }
+  
+  #flex-item-13 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+  
+  #flex-item-14 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+  
+  #flex-item-15 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+  
+  #flex-item-16 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 20px 0px 10px;
+  }
+  
+  #flex-item-18 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 20px 0px 10px;
+    border-style: groove;
+    border-color: #031059;
+    border-width: 2px;
+  }
+  
+  .toggle-btn {
+    width: 35px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    display: none;
+  }
+  
+  .toggle-btn span {
+    /* display: inline-block; */
+    width: 100%;
+    height: 3.5px;
+    background-color: #031059;
+    float: left;
+    margin-bottom: 8px;
+  }
+  
+  .cross-btn {
+    font-size: 30px;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    display: none;
+  }
+  
+  .disapp_in_compview {
+    position: absolute;
+    right: 70px;
+    top: 17px;
+    float: left;
+  }
+  
+  @media (min-width: 775px) {
+    .disapp_in_compview {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 775px) and (min-width: 460px) {
+    .toggle-btn {
+      display: inline;
+    }
+    .disapp_in_mobview {
+      display: none;
+    }
+  
+    #flex-item-16 {
+      margin-left: auto;
+    }
+  
+    .toggle-btn {
+      margin: 10px 10px 0px 0px;
+    }
+  
+    div.show {
+      display: block;
+      width: 100%;
+      padding: 2px 2px 2px 2px;
+      margin: 2px 2px 2px 2px;
+      display: flex;
+      justify-content: end;
+    }
+  
+    div.alternate1 {
+      display: none;
+    }
+    div.alternate2 {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 460px) {
+    #flex-item-12 {
+      display: none;
+    }
+    .disapp_in_mobview {
+      display: none;
+    }
+    .toggle-btn {
+      display: block;
+    }
+  
+    #flex-item-11 {
+      margin: 10px auto 10px 20px;
+    }
+    .toggle-btn {
+      margin: 10px 10px 0px 0px;
+    }
+    div.show {
+      display: block;
+      width: 100%;
+      /* padding: 2px 2px 2px 2px ; */
+      margin: 2px 2px 5px 2px;
+      display: flex;
+      justify-content: end;
+    }
+    div.alternate1 {
+      display: none;
+    }
+    div.alternate2 {
+      display: block;
+    }
+  }
+
+
+/****************** Registration image ************************/
+
+#background-image div {
+    display: inline-block;
+}
+
+#background-image {
+    background-color: #031059;
+    background-image: url(images/background.png);
+    height: 40vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#individual {
+    background-color: #F29E6D;
+    margin-left: 27%;
+    margin-right: 6.5%;
+}
+
+#team {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+
+.box {
+    border: 4px solid #FFFFFF;
+    height: 5%;
+    width: 20%;
+    margin-top: 5%;
+    text-align: center;
+    color: white;
+}
+
+.text {
+    font-size: 1.2vw;
+    margin-top: 2%;
+}
+
+.indiv:hover {
+    color: indigo;
+}
+
+
+/****************** Registration FORM ************************/
+
+.reg-form-all {
+    width: 99vw;
+    font-family: 'DM Sans', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sections {
+    width: 40%;
+    max-width: 400px;
+}
+
+
+/* check boxes-- start */
+
+.container {
+    width: 100%;
+    font-size: 13px;
+}
+
+ul.ks-cboxtags {
+    list-style: none;
+    padding: 20px;
+}
+
+ul.ks-cboxtags li {
+    display: inline;
+}
+
+ul.ks-cboxtags li label {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid #002F43;
+    color: #002F43;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 10px 15px 11px 15px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::after {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0px 0px 0px 7px;
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
+    content: "\f00c";
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+    border: 2px solid #002F43;
+    background-color: #F29E6D;
+    color: #002F43;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+    display: absolute;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+    border: 2px solid #002F43;
+}
+
+
+/* check boxes-- END */
+
+
+/* red-star-- START */
+
+.red-star {
+    color: red;
+}
+
+
+/* red-star-- END */
+
+.input-text-field {
+    height: 40px;
+    margin-top: 9px;
+    width: 100%;
+    padding: 5px;
+    border-color: black;
+    border-width: 2px;
+    font-size: 16px;
+}
+
+.input-text-field-1 input,select{
+    height: 40px;
+    margin-top: 9px;
+    width: 100%;
+    padding: 5px;
+    border-color: black;
+    border-width: 2px;
+    font-size: 16px;
+}
+
+.drop-down {
+    color: #989898;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.head-style {
+    font-size: 16px;
+}
+
+.row-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.page-heading {
+    margin: 20px 15% 5px 15%;
+}
+
+.register-button {
+    margin: auto;
+    padding: 4px 50px;
+    background: #F24405;
+    border-radius: 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 46px;
+    color: #FFFFFF;
+    transition: box-shadow 0.6s;
+}
+
+.register-button:hover,
+.register-button:focus,
+ul.ks-cboxtags li label:hover,
+ul.ks-cboxtags li label:focus {
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+}
+
+@media only screen and (orientation: portrait) {
+    .row-view {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sections {
+        width: 80%;
+        max-width: 100000000px;
+    }
+    .page-heading {
+        margin: auto;
+        margin-top: 40px;
+        margin-left: 10%;
+        text-align: left;
+    }
+    .input-text-field {
+        min-width: none;
+        width: 100%;
+    }
+}
+
+.add-member-button {
+    margin-top: 9px;
+    padding: 10px 15px;
+    border-color: black;
+    border-width: 1px;
+    transition: box-shadow 0.3s;
+}
+
+.add-member-button:hover {
+    box-shadow: 0 3px 8px 0 rgba(86, 86, 86, 0.75);
+}
+
+
+/******************  FOOTER  ************************/
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 40px 0vw 40px 9vw;
+    background-color: rgba(3, 16, 89, 1);
+    color: white;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: fit-content;
+}
+
+#email {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding-top: 4px;
+}
+
+#social-media {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#logos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 12px;
+}
+
+#insta {
+    padding-right: 35px;
+}
+
+#fb {
+    padding-left: 2px;
+    padding-right: 35px;
+}
+
+#twitter {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+#phone {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+
+#phone-no {
+    padding-left: 6px;
+}
+
+#alcher-link {
+    padding-left: 0px;
+}
+
+#website {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    align-items: left;
+}
+
+#phone-icon {
+    padding-right: 5px;
+}
+
+#phone-icon:hover {
+    width: 120%;
+}
+
+#mail {
+    padding-right: 15px;
+}
+
+#email-us {
+    text-align: left;
+    padding-bottom: 3px;
+}
+
+#mail-address {
+    display: flex;
+    flex-direction: row;
+    padding-top: 4px;
+}
+
+#email-input {
+    height: 22px;
+    background-color: rgba(3, 16, 89, 1);
+    border: 1px solid white;
+    height: 30px;
+    color: white;
+}
+
+#send-button {
+    height: 30px;
+    background-color: white;
+    color: rgba(3, 16, 89, 1);
+    transition-duration: 5ms;
+}
+
+#send-button:hover {
+    background-color: rgba(3, 16, 89, 1);
+    ;
+    color: white;
+    border-color: white;
+}
+
+a {
+    color: white;
+}
+
+
+/****************** END OF FOOTER  ************************/

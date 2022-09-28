@@ -7,6 +7,7 @@
 
 * {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 /************** Nav Bar ************************/
@@ -26,40 +27,40 @@
     color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
-    border-style: groove;
-    border-color: #031059;
+    border: 0.5px solid #031059;
+    padding: 6px 16px 6px 16px;
   }
   
   #flex-item-14 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
-    border-style: groove;
-    border-color: #031059;
+    border: 0.5px solid #031059;
+    padding: 6px 16px 6px 16px;
   }
   
   #flex-item-15 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
-    border-style: groove;
-    border-color: #031059;
+    border: 0.5px solid #031059;
+    padding: 6px 16px 6px 16px;
   }
   
   #flex-item-16 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
-    border-style: groove;
-    border-color: #031059;
+    border: 0.5px solid #031059;
+    padding: 6px 16px 6px 16px;
   }
   
   #flex-item-18 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
-    border-style: groove;
-    border-color: #031059;
+    border: 0.5px solid #031059;
+    padding: 6px 16px 6px 16px;
   }
   
   .flex-item-1 a:link {
@@ -70,10 +71,6 @@
     color: rgba(28, 3, 15, 1);
   }
   
-  @font-face {
-    font-family: Coolvetica;
-    src: url(coolvetica_rg.otf);
-  }
   
   #flex-item-11 {
     margin: 10px 5px 10px 20px;
