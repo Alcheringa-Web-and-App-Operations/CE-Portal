@@ -689,6 +689,10 @@
 }
 
 /************** About Alcheringa *****************/
+@font-face {
+    font-family: Coolvetica;
+    src: url('../fonts/coolvetica_compressed_hv.otf');
+}
 .container{
     width: 100%;
     min-height: 600px;
@@ -726,10 +730,9 @@
 
 .Heading{
     text-align: center;
-    font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
-    
+    font-family: Coolvetica;
     font-size: 60px;
     color: #2C3D73;
     padding: 75px 0 75px 0;
@@ -786,8 +789,10 @@
         text-align: center;
         font-size: 36px;
         padding: 20px;
+        font-family: Coolvetica;
     }
 }
+
 
 /*******************Footer**********************/
 

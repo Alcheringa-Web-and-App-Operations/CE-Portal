@@ -35,6 +35,8 @@ html {
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
     border-style: groove;
+    padding: 6px 12px 6px;
+    border-width: 0.5px;
     border-color: #031059;
   }
 
@@ -58,6 +60,8 @@ html {
     color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
+    padding: 6px 12px 6px;
+    border-width: 0.5px;
     border-style: groove;
     border-color: #031059;
   }
@@ -80,7 +84,7 @@ html {
 
   @font-face {
     font-family: Coolvetica;
-    src: url(coolvetica_rg.otf);
+    src: url(../fonts/coolvetica_rg.otf);
   }
 
   #flex-item-11 {
@@ -467,7 +471,7 @@ line-height: 43px;
 }
 
 .text{
-    font-family: 'DM Sans';
+    
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
