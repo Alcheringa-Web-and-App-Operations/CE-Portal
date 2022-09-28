@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: Coolvetica;
-  src: url("../fonts/coolvetica rg.otf");
+  src: url("{%static 'fonts/coolvetica rg.otf' %}");
 }
 
 * {
@@ -10,6 +10,7 @@
 }
 
 /************** Nav Bar ************************/
+
 .flex-container-1 {
   display: flex;
   flex-direction: row;
@@ -245,37 +246,6 @@
   div.alternate2 {
     display: block;
   }
-}
-
-/***************  City  *****************/
-.city-container {
-  background-image: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0)
-    ),
-    url("images/city_background.svg");
-  background-size: contain;
-  width: 100%;
-  height: calc(0.556 * 100vw);
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-}
-.city-link {
-  font-family: Coolvetica;
-  align-self: flex-end;
-  color: white;
-  font-weight: 500;
-  font-size: 3vw;
-  margin-bottom: 1vw;
-}
-
-.city-link a {
-  color: #f29e6d;
-  text-decoration: none;
 }
 
 /***************  Competitions  *****************/

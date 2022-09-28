@@ -16,7 +16,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
         @font-face {
             font-family: Coolvetica;
-            src: url("{%static "fonts/coolvetica rg.otf"%}");
+            src: url("{%static 'fonts/coolvetica rg.otf' %}");
         }
         
         body {
@@ -646,44 +646,52 @@
 
 
 <body>
-    <!---------------Nav Bar ----------------->
+    {% comment %} <!---------------Nav Bar -----------------> {% endcomment %}
     <div class="flex-container-1">
         <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-            <a href="#"> Register</a>
+          <a href="#"> Register</a>
         </div>
-
-        <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
-            <span></span>
-            <span></span>
-            <span></span>
+    
+        <div
+          class="flex-item-1 toggle-btn"
+          id="flex-item-17"
+          onclick="myFunction()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-
-        <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
-            <span>╳</span>
+    
+        <div
+          class="flex-item-1 cross-btn"
+          id="flex-item-19"
+          onclick="myFunction()"
+        >
+          <span>╳</span>
         </div>
-
+    
         <div class="flex-item-1" id="flex-item-11">
-            <img src="images/image 43.png" alt="logo" />
+          <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
         </div>
-
+    
         <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
-
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-            <a href="#"> About Us</a>
-        </div>
-
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-            <a href="#"> Contact</a>
-        </div>
-
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-            <a href="#"> Schedule</a>
-        </div>
-
+    
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+          <a href="#"> About Us</a>
+        </div> {% endcomment %}
+    
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+          <a href="#"> Contact</a>
+        </div> {% endcomment %}
+    
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+          <a href="#"> Schedule</a>
+        </div> {% endcomment %}
+    
         <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-            <a href="#"> Register</a>
+          <a href="{% url 'landing-page' %}"> Home</a>
         </div>
-    </div>
+      </div>
     <!---- Registration image ---->
     <div id="background-image">
         <div id="register-image">
@@ -818,53 +826,51 @@
     <div style="height: 120px;"></div>
     <!---------------Registeration form ENDS ----------------->
 
-    <!--FOOTER-->
+   <!--FOOTER-->
+   <div id="footer">
 
-    <div id="footer">
-
-        <div id="contact">
-            <div id="phone">
-                <div id="phone-icon">
-                    <img src="images\phone.png" width="15" height="15">
-                </div>
-                <div id="phone-no">19-0000-0000</div>
+    <div id="contact">
+        <div id="phone">
+            <div id="phone-icon">
+                <img src="{% static "images\phone.png" %}" width="15" height="15">
             </div>
-            <div id="website">
-                <div id="mail">
-                    <img src="images\mail.png" height="15">
-                </div>
-                <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
-            </div>
-
+            <div id="phone-no">19-0000-0000</div>
         </div>
-
-        <div id="social-media">
-            <div>
-                <p>Social Media</p>
+        <div id="website">
+            <div id="mail">
+                <img src="{% static "images\mail.png" %}" height="15">
             </div>
-            <div id="logos">
-                <div id="insta">
-                    <a href="https://www.alcheringa.in/"><img src="images\insta.png"></a>
-                </div>
-                <div id="fb">
-                    <a href="https://www.alcheringa.in/"><img src="images\fb.png"></a>
-                </div>
-                <div id="twitter">
-                    <a href="https://www.alcheringa.in/"><img src="images\twitter.png"></a>
-                </div>
-            </div>
-        </div>
-
-        <div id="email">
-            <div id="email-us">E-mail Us</div>
-            <div id="mail-address">
-                <div><input type="text" id="email-input"></div>
-                <div><button id="send-button">SEND</button></div>
-            </div>
+            <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
         </div>
 
     </div>
-    <!--END OF FOOTER-->
+
+    <div id="social-media">
+        <div>
+            <p>Social Media</p>
+        </div>
+        <div id="logos">
+            <div id="insta">
+                <a href="https://www.alcheringa.in/"><img src="{% static "images\insta.png" %}"></a>
+            </div>
+            <div id="fb">
+                <a href="https://www.alcheringa.in/"><img src="{% static "images\fb.png" %}"></a>
+            </div>
+            <div id="twitter">
+                <a href="https://www.alcheringa.in/"><img src="{% static "images\twitter.png" %}"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="email">
+        <div id="email-us">E-mail Us</div>
+        <div id="mail-address">
+            <div><input type="text" id="email-input"></div>
+            <div><button id="send-button">SEND</button></div>
+        </div>
+    </div>
+
+</div>
 </body>
 <script type="text/javascript">
     function myFunction() {

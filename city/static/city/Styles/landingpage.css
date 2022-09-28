@@ -677,7 +677,7 @@ line-height: 43px;
     padding-left: 40px;
     border-right: 4px solid #f29e6d;
     padding-right: 30px;
-    padding-top: 20px;
+    padding-top: 0px;
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -691,54 +691,34 @@ line-height: 43px;
   .alcher {
     color: #f29e6d;
     font-family: Bohemian Soul;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: auto;
   }
   .contactinfo {
     margin-top: auto;
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
-    padding-top: 80px;
+    padding-top: 0px;
   }
   #contact {
     color: #f29e6d;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
   }
   .names {
     display: flex;
   }
   .Siddhant {
     padding-right: 17px;
-    padding-bottom: 10px;
-  }
-  #sid {
-    padding-bottom: 10px;
-  }
-  #pr1 {
-    padding-bottom: 10px;
   }
   
   .akshara {
     padding-right: 17px;
-    padding-bottom: 10px;
-  }
-  #akshara {
-    padding-bottom: 10px;
-  }
-  #pr2 {
-    padding-bottom: 10px;
   }
   
   .quasim {
     padding-bottom: 10px;
   }
   
-  #quasim {
-    padding-bottom: 10px;
-  }
-  #pr3 {
-    padding-bottom: 10px;
-  }
   
   .video {
     /* margin-bottom: 150px; */
@@ -935,6 +915,8 @@ line-height: 43px;
       text-align: center;
     }
   }
+
+  
   
 
 
