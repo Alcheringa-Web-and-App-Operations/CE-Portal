@@ -204,6 +204,7 @@
         </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     });
 </script> -->
 <script>
@@ -235,6 +236,8 @@
     
 </script>
 =======
+=======
+>>>>>>> 8617cb49c882337ed13d15c8c9b45e719613a281
         <div id="social-media">
             <div>
                 <p>Social Media</p>
@@ -251,6 +254,7 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
 
         <div id="email">
             <div id="email-us">E-mail Us</div>
@@ -283,6 +287,39 @@
         city.addEventListener("change", (e) => {
             const city_id = e.target.value
 
+=======
+
+        <div id="email">
+            <div id="email-us">E-mail Us</div>
+            <div id="mail-address">
+                <div><input type="text" id="email-input"></div>
+                <div><button id="send-button">SEND</button></div>
+            </div>
+        </div>
+
+    </div>
+    <!--END OF FOOTER-->
+</body>
+<script type="text/javascript">
+    function myFunction() {
+        var element1 = document.getElementById("flex-item-13");
+        element1.classList.toggle("show");
+        var element2 = document.getElementById("flex-item-14");
+        element2.classList.toggle("show");
+        var element3 = document.getElementById("flex-item-15");
+        element3.classList.toggle("show");
+        // var element4= document.getElementById("flex-item-16");
+        // element4.classList.toggle("show");
+        var element4 = document.getElementById("flex-item-17");
+        element4.classList.toggle("alternate1");
+        var element5 = document.getElementById("flex-item-19");
+        element5.classList.toggle("alternate2");
+    }
+    let city = document.getElementById("id_city")
+        city.addEventListener("change", (e) => {
+            const city_id = e.target.value
+
+>>>>>>> 8617cb49c882337ed13d15c8c9b45e719613a281
             fetch("{% url 'load_competitions' %}", {
                 method: "POST",
                 headers: {
