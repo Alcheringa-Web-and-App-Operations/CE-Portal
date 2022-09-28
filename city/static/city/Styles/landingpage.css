@@ -4,6 +4,78 @@
     width: 100vw; */
     margin: 0px;
 }
+
+
+ul.ks-cboxtags {
+    list-style: none;
+    padding-top:3px;
+}
+
+ul.ks-cboxtags li {
+    display: inline;
+}
+
+ul.ks-cboxtags li label {
+    display: inline-block;
+    color: #F29E6D;
+    border: 2px solid  #F29E6D;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+    padding: 10px 15px 11px 15px;
+    cursor: pointer;
+}
+
+ul.ks-cboxtags li label::after {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0px 0px 0px 7px;
+    transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
+    content: "\f00c";
+    transition: transform .3s ease-in-out;
+    display: none;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+    border: 2px solid #002F43;
+    background-color: #F29E6D;
+    color: #002F43;
+    transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+    display: absolute;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+    border: 2px solid #F29E6D;
+}
+
+
 body{
     padding: 0px;
     margin: 0px;
@@ -419,8 +491,7 @@ line-height: 43px;
 
  }
  /************** About Alcheringa *****************/
-
-.container{
+ .container{
     width: 100%;
     min-height: 600px;
     padding: 0;
@@ -474,6 +545,87 @@ line-height: 43px;
     text-align: center;
     font-family: 'DM Sans', sans-serif;
     color: #000000;
+}
+
+.mob {
+    display: none;
+}
+
+@media (max-width: 700px){
+    .container{
+            display: flex;
+            flex-direction: column;;
+            align-items: center;
+            justify-content: center;
+    }
+
+    .c1{
+        width:50%;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin-left:0px;
+        text-align: center;
+        padding: 100px;
+    }
+    .c2{
+        margin-left:0px; 
+        margin-right:0px;
+        padding-bottom: 110px;
+    }
+
+    .mob {
+        display: block;
+    }
+
+    .lap {
+        display: none;
+    }
+
+    .Heading{
+        text-align: center;
+        font-size: 36px;
+        padding: 20px;
+    }
+    .m1{
+        text-align: left;
+        font-size: 100px;
+        padding: 20px;
+        padding-left: 80px;
+        padding-bottom: 0px;
+    }
+    .m2{
+        padding-top: 0px;
+        padding-left: 80px;
+        padding-right: 100px;
+        text-align: left;
+        font-size: 20px;
+    }
+    .m3{
+        padding-top: 80px;
+        font-size: 24px;
+        padding-left: 40px;
+    }
+    .m4{
+        display: inline-block;
+        font-size: 32px;
+        border-width: 1px;
+        border-color: #F29E6D;
+    }
+    .m5{
+        position: relative;
+        float: right;
+        padding: 20px;
+        border-radius: 100%;
+        background-color: #F29E6D;
+        margin: 35px;
+        font-size: 40px;
+    }
+    a{
+        text-decoration: none;
+    }
 }
 /*******************Footer**********************/
 
