@@ -43,22 +43,22 @@
         <img src="{%static 'city\images\image43.png' %}" alt="logo" />
     </div>
 
-    <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+    <div class="flex-item-1" id="flex-item-12"><a href="https://alcheringa.in/" style="text-decoration:none" target="_blank">Alcheringa</a></div>
 
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-      <a href="#"> About Us</a>
+      <a href="#competition"> Competitions</a>
     </div>
 
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-      <a href="#"> Contact</a>
+      <a href="#schedule"> Schedule</a>
     </div>
 
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-      <a href="#"> Schedule</a>
+      <a href="#aboutus"> About Us</a>
     </div>
 
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-      <a href="#"> Register</a>
+      <a href="{% url 'register_single' %}"> Register</a>
     </div>
   </div>
 
@@ -135,7 +135,7 @@
     <!--------------------  Schedule  ------------------------>
 
 
-    <div>
+    <div id="schedule">
         <div class="table">
             <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
                 <!-- <caption>Life Expectancy By Current Age</caption> -->
@@ -198,7 +198,7 @@
         
     <!--------------------  About Alcheringa  ------------------------>
 
-    <div class="container">
+    <div id = "aboutus" class="container">
         <div class="c1 lap">
             <div class="Heading">
                 About<br>
