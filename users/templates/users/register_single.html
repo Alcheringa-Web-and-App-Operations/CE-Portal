@@ -1,196 +1,272 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+{% load static %}
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dependent Dropdown in Django</title>
+    <link rel="stylesheet" href="{% static 'users/styles/registration.css' %}">
 </head>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 <body>
-{% for message in messages %}
-<div>
-    {{ message }}
-</div>
-{% endfor %}
-
-<form method="post" id="personForm">
-    {% csrf_token %}
-   
-    <div style="padding-right:300px;" >
-        <div style="text-align:left;margin-left: 40px;margin-top: 30px;">
-           <bold style="font-size:25px;">Register </bold>
+    <!---------------Nav Bar ----------------->
+    <div class="flex-container-1">
+        <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
+            <a href="#"> Register</a>
         </div>
-        <div style="text-align:left;margin-left: 40px;margin-top: 120px;margin-bottom: 100px;opacity: 0.5;">
-            *Fields are required to be filled 
+
+        <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-           
-        <div style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;" >
-            <div>
-            *Name
-            </div>
-           <div >
-           
-            {{ form.name }}
-           </div>
+
+        <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
+            <span>╳</span>
         </div>
-        <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
-            
-            
-            <div>
-             *Field
-            </div>
-            
-        
-             <div >
-            {{ form.field }}
-             </div>
 
-         </div>  
-         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
-            
-            
-            <div>
-             *Contact No
-            </div>
-            
-        
-             <div >
-            {{ form.contactno }}
-             </div>
+        <div class="flex-item-1" id="flex-item-11">
+            <img src="images/image 43.png" alt="logo" />
+        </div>
 
-         </div> 
-         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
-            
-            
-            <div>
-             *Email
-            </div>
-            
-        
-             <div >
-             {{ form.email }}
-             </div>
+        <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
 
-         </div>  
-         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
-            
-            
-            <div>
-             *City
-            </div>
-            
-        
-             <div >
-             {{ form.city }}
-             </div>
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+            <a href="#"> About Us</a>
+        </div>
 
-         </div> 
-         <div style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
-            
-            
-            <div>
-             *competitions
-            </div>
-            
-        
-             <div >
-             {{ form.competition }}
-             </div>
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+            <a href="#"> Contact</a>
+        </div>
 
-         </div>    
-               
-                 <div style="margin-left: 600px;margin-top: 60px;">
-                    <button style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Register</button>
-                 </div>  
-               
-        
-        
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+            <a href="#"> Schedule</a>
+        </div>
+
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+            <a href="#"> Register</a>
+        </div>
+    </div>
+    <!---- Registration image ---->
+    <div id="background-image">
+        <div id="register-image">
+            <img src="images/Registration.png" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
+        </div>
+        <a href="">
+            <div id="individual" class="box">
+                <div class="text indiv"><b>Individual</b></div>
+            </div>
+        </a>
+        <a href="">
+            <div id="team" class="box">
+                <div class="text"><b>Team</b></div>
+            </div>
+        </a>
+    </div>
+    <!--Registration image over-->
+
+    <!---------------Registeration form  STARTS ----------------->
+    <br><br>
+    <form method="POST" id="personForm">
+        {% csrf_token %}
+        <div class="reg-form-all">
+            <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
+            <div class="page-heading">
+                <h1 class="text-4xl " style="font-weight: 700;">Registration for Individual</h1>
+                <br>
+                <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
+            </div>
+            <div class="form">
+                <div class="row-view">
+                    <!-- <div class="sections m-5">
+
+                <div>
+                    <span class="head-style">Select Events<span class="red-star"> *</span></span>
+                    <div class="container">
+                    <ul class="ks-cboxtags">
+                            <li><input type="checkbox" id="checkboxOne" value="Electric Heels"><label for="checkboxOne">Electric Heels</label></li>
+                            <li><input type="checkbox" id="checkboxTwo" value="so you think you can dance" checked><label for="checkboxTwo">so you think you can dance</label></li>
+                            <li><input type="checkbox" id="checkboxThree" value="step up" checked><label for="checkboxThree">step up</label></li>
+                            <li><input type="checkbox" id="checkboxFour" value="haute conture"><label for="checkboxFour">haute conture</label></li>
+                            <li><input type="checkbox" id="checkboxFive" value="voice of alcheringa"><label for="checkboxFive">voice of alcheringa</label></li>
+                            <li><input type="checkbox" id="checkboxSix" value="Raga High" checked><label for="checkboxSix">Raga High</label></li>
+                            <li><input type="checkbox" id="checkboxSeven" value="Rock-o-Pheonix"><label for="checkboxSeven">Rock-o-Pheonix</label></li>
+                        </ul>
+                    {{ form.competition }}
+                    </div>
+                </div>
+
+
+            </div> -->
+
+                    <div class="sections m-5"><span class="head-style">Choose your city<span class="red-star">
+                                *</span></span>
+                        <br>
+                        <!-- <div class="input-text-field-1"> -->
+                        {{ form.city }}
+                        <!-- </div> -->
+                    </div>
+                    <div class="sections m-5">
+                        <div id="check-container">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row-view">
+                    <div class="sections m-5">
+                        <div>
+                            <span class="head-style">Name<span class="red-star"> *</span></span>
+                            <br>
+                            <div class="input-text-field-1">{{ form.name }}</div>
+                            <!-- <input type="text" id="name" class="input-text-field " required> -->
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">Contact Number<span class="red-star"> *</span></span>
+                            <br>
+                            <div class="input-text-field-1">{{ form.contactno }}</div>
+                            <!-- <input type="number" id="cont_num" class="input-text-field " required> -->
+                        </div>
+                    </div>
+                    <div class="sections m-5">
+                        <div>
+                            <span class="head-style">Gender<span class="red-star"> *</span></span>
+                            <br>
+                            <select class="input-text-field" id="gender">
+                                <option class="drop-down">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">E-mail<span class="red-star"> *</span></span>
+                            <br>
+                            <div class="input-text-field-1">{{ form.email }}</div>
+                            <!-- <input type="email" id="email" class="input-text-field " required> -->
+                        </div>
+                    </div>
+                    <div class="sections m-5">
+                        <div>
+                            <span class="head-style">College Name<span class="red-star"> *</span></span>
+                            <br>
+                            <div class="input-text-field-1">{{ form.college_name }}</div>
+                            <!-- <input type="text" id="name" class="input-text-field " required> -->
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">Degree<span class="red-star"> *</span></span>
+                            <br>
+                            <select class="input-text-field" id="gender">
+                                <option class="drop-down">Degree</option>
+                                <option class="btech">B.Tech</option>
+                                <option value="mtech">M.Tech</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!-- <div class="row-view">
+                    <input type="submit" value="Register">
+                    <button>REgister</button>
+                </div> -->
+                <div class="row-view">
+                    <button class=" register-button">Register</button>
+                </div>
             </div>
         </div>
-      
-    <!-- <input  style="margin-left: 600px;margin-top: 60px;" type="submit" value="Submit">
-    <button style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Register</button> -->
-</form>
+    </form>
+    <div style="height: 120px;"></div>
+    <!---------------Registeration form ENDS ----------------->
 
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-    $("#id_city").change(function () {
-        const url = $("#personForm").attr("data-competitions-url");  // get the url of the `load_cities` view
-        const cityId = $(this).val();  // get the selected country ID from the HTML input
+    <!--FOOTER-->
 
-        $.ajax({                       // initialize an AJAX request
-            url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
-            data: {
-                'city_id': cityId       // add the country id to the GET parameters
-            },
-            success: function (data) {   // `data` is the return of the `load_cities` view function
-                $("#id_competition").html(data);  // replace the contents of the city input with the data that came from the server
-                /*
+    <div id="footer">
 
-                let html_data = '<option value="">---------</option>';
-                data.forEach(function (city) {
-                      html_data += `<option value="${city.id}">${city.name}</option>`
-                });
-                console.log(html_data);
-                $("#id_city").html(html_data);
+        <div id="contact">
+            <div id="phone">
+                <div id="phone-icon">
+                    <img src="images\phone.png" width="15" height="15">
+                </div>
+                <div id="phone-no">19-0000-0000</div>
+            </div>
+            <div id="website">
+                <div id="mail">
+                    <img src="images\mail.png" height="15">
+                </div>
+                <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
+            </div>
 
-                */
-            }
-        });
+        </div>
 
-    });
-</script> -->
-<script>
-    let city=document.getElementById("id_city")
-    let competition=document.getElementById("id_competition")
-    console.log(city.value)
-        competition.addEventListener('change',(e)=>{
-        const competition_id=e.target.value
-        const city_value=city.value
-        fetch("{% url 'load_city' %}",{
-        method:"POST",
-        headers: {
-            'Content-Type': 'application/json',
-            "X-Requested-With": "XMLHttpRequest"
-          },
-        body:JSON.stringify({"competition_id":competition_id,"current_city":city_value})
-        })
-        .then(data=>{
-        return data.text()
-        })
-        .then(data=>{
-        console.log(data)
-        document.getElementById("id_city").innerHTML=data
-        })
-    
-    })
-    
-    
-    city.addEventListener("change",(e)=>{
-        const city_id=e.target.value
-        const competition_value=competition.value
-        console.log(city_id)
-        fetch("{% url 'load_competitions' %}",{
-        method:"POST",
-        headers: {
-            'Content-Type': 'application/json',
-            "X-Requested-With": "XMLHttpRequest"
-          },
-        body:JSON.stringify({"city_id":city_id,"current_competition":competition_value})
-    })
-    .then(data=>{
-        return data.text()
-    })
-    .then(data=>{
-        console.log(data)
-        console.log(city.value)
-        document.getElementById("id_competition").innerHTML=data
-    })
-    })
-    
-    
-</script>
+        <div id="social-media">
+            <div>
+                <p>Social Media</p>
+            </div>
+            <div id="logos">
+                <div id="insta">
+                    <a href="https://www.alcheringa.in/"><img src="images\insta.png"></a>
+                </div>
+                <div id="fb">
+                    <a href="https://www.alcheringa.in/"><img src="images\fb.png"></a>
+                </div>
+                <div id="twitter">
+                    <a href="https://www.alcheringa.in/"><img src="images\twitter.png"></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="email">
+            <div id="email-us">E-mail Us</div>
+            <div id="mail-address">
+                <div><input type="text" id="email-input"></div>
+                <div><button id="send-button">SEND</button></div>
+            </div>
+        </div>
+
+    </div>
+    <!--END OF FOOTER-->
 </body>
-</html>
+<script type="text/javascript">
+    function myFunction() {
+        var element1 = document.getElementById("flex-item-13");
+        element1.classList.toggle("show");
+        var element2 = document.getElementById("flex-item-14");
+        element2.classList.toggle("show");
+        var element3 = document.getElementById("flex-item-15");
+        element3.classList.toggle("show");
+        // var element4= document.getElementById("flex-item-16");
+        // element4.classList.toggle("show");
+        var element4 = document.getElementById("flex-item-17");
+        element4.classList.toggle("alternate1");
+        var element5 = document.getElementById("flex-item-19");
+        element5.classList.toggle("alternate2");
+    }
+    let city = document.getElementById("id_city")
+        city.addEventListener("change", (e) => {
+            const city_id = e.target.value
 
+            fetch("{% url 'load_competitions' %}", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    "X-Requested-With": "XMLHttpRequest"
+                },
+                body: JSON.stringify({ "city_id": city_id})
+            })
+                .then(data => {
+                    return data.text()
+                })
+                .then(data => {
+                    console.log(data)
+                    console.log(city.value)
+                    document.getElementById("check-container").innerHTML = data
+                })
+        })
+</script>
+
+</html>
