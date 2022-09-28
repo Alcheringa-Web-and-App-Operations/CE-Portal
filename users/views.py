@@ -83,7 +83,6 @@ def load_competitions(request):
 def teamForm(request):
     data = request.POST
     if request.method == 'POST':
-        print("working")
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
@@ -102,6 +101,7 @@ def teamForm(request):
                 else:
                     applicant.save()
                 team.members.add(Person.objects.all().last().id)
+                # print(team.objects.all().last())
         return redirect('/')    
         # person=get_object_or_404(Person)
         # if post.favourites.filter(id=request.user.id).exists():
