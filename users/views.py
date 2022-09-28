@@ -12,21 +12,31 @@ from django.views.decorators.csrf import csrf_exempt
 # print(email_lsist)
 def register_single(request):
     data = request.POST
-
+    print(data)
     form = PersonCreationForm()
     single = Person(pk = request.user.pk,name = data.get('name'))
     # competitions =Person.competition
     if request.method == 'POST':
-        form = PersonCreationForm(request.POST)
+        print("here")
+        form = PersonCreationForm(data)
+        print(form)
+        print(form.is_valid())
         if form.is_valid():
+            print("1234")
             email_list = Person.objects.values_list('email',flat=True)
             email = request.POST['email']
-            competition1 = request.POST['competition']
-            competition = Competition.objects.get(id=competition1)
-            # print(competition)
+            # competition1 = Competition.objects.filter(id = request.POST['checkbox']).all()
+            competition1 = request.POST.getlist('checkbox')
+            print(competition1)
+            competition = Competition.objects.filter(id__in=competition1).all()
+            curr_user = Person.objects.filter(email=email).first()
+            print(curr_user)
+            for competition2 in competition:
+                curr_user.competition.add(competition2)
+                print(competition2)
+            print(competition)
             # print(email)
             if (email in email_list):
-                curr_user = Person.objects.filter(email=email).first()
                 curr_user_comp = curr_user.competition.all()
                 if (competition in curr_user_comp):
                     print("already registered, dont register again")
@@ -35,6 +45,7 @@ def register_single(request):
                     print("merge it")
                     curr_user.competition.add(competition)
             else:
+                print("fgdgf")
                 form.save()
                 return redirect('/')
 
@@ -68,22 +79,21 @@ def load_competitions(request):
     # return render(request,'users/city_dropdown_list_options.html',{"competitions":competitions,"competition_value":data['current_competition'],"currentCompetition":currentCompetition})
     
 
-# @csrf_exempt
-# def load_city(request):
-#     data=json.loads(request.body)
-#     cities=City.objects.filter(cityCompetitions__id=data['competition_id'])
-#     if data['current_city']!="":
-#         current_city=City.objects.filter(id=data['current_city']).first()
-#     else:
-#         current_city=""
-#     print(cities)
-#     return render(request,'users/comp_dropdown.html',{"cities":cities,"city_value":data['current_city'],"currentCity":current_city})
-    # return JsonResponse(list(cities.values('id', 'name')), safe=False)
+@csrf_exempt
+def load_city(request):
+    data=json.loads(request.body)
+    cities=City.objects.filter(cityCompetitions__id=data['competition_id'])
+    if data['current_city']!="":
+        current_city=City.objects.filter(id=data['current_city']).first()
+    else:
+        current_city=""
+    print(cities)
+    return render(request,'users/comp_dropdown.html',{"cities":cities,"city_value":data['current_city'],"currentCity":current_city})
+    return JsonResponse(list(cities.values('id', 'name')), safe=False)
 
 def teamForm(request):
     data = request.POST
     if request.method == 'POST':
-        print("working")
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
