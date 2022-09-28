@@ -607,25 +607,38 @@ line-height: 43px;
         text-align: left;
         font-size: 20px;
     }
+    .m2{
+        padding-top: 0px;
+        padding-left: 80px;
+        padding-right: 100px;
+        text-align: left;
+        font-size: 20px;
+    }
     .m3{
         padding-top: 80px;
         font-size: 24px;
-        padding-left: 40px;
+        padding-left: 80px;
     }
     .m4{
         display: inline-block;
         font-size: 32px;
         border-width: 1px;
         border-color: #F29E6D;
+        padding-left: 40px;
+
     }
     .m5{
+        display: block;
         position: relative;
         float: right;
-        padding: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 12px;
+        padding-right: 12px;
         border-radius: 100%;
         background-color: #F29E6D;
         margin: 35px;
-        font-size: 40px;
+        font-size: 32px;
     }
     a{
         text-decoration: none;
