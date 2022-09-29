@@ -14,36 +14,26 @@ def register_single(request):
     data = request.POST
     form = PersonCreationForm()
     single = Person(pk = request.user.pk,name = data.get('name'))
-    # competitions =Person.competition
     if request.method == 'POST':
         form = PersonCreationForm(data)
-        print(form)
-        print(form.is_valid())
         if form.is_valid():
             email_list = Person.objects.values_list('email',flat=True)
             email = request.POST['email']
-            # competition1 = Competition.objects.filter(id = request.POST['checkbox']).all()
             competition1 = request.POST.getlist('checkbox')
-            print(competition1)
             competition = Competition.objects.filter(id__in=competition1).all()
             if Person.objects.filter(email=email):
                 curr_user = Person.objects.filter(email=email).first()
-                print(curr_user)
                 for competition2 in competition:
                     curr_user.competition.add(competition2)
-                    print(competition2)
-                print(competition)
-                # print(email)
                 if (email in email_list):
                     curr_user_comp = curr_user.competition.all()
-                    if (competition in curr_user_comp):
-                        print("already registered, dont register again")
-                        messages.error(request,f'Already registered for {competition}.')
+                    if (competition2 in curr_user_comp):
+                        # print("already registered, dont register again")
+                        messages.error(request,f'Already registered for these competitions.')
                     else:
-                        print("merge it")
-                        curr_user.competition.add(competition)
+                        # print("merge it")
+                        curr_user.competition.add(competition2)
             else:
-                print("fgdgf")
                 form.save()
                 curr_user = Person.objects.filter(email=email).first()
                 curr_user.gender = request.POST['gender']
