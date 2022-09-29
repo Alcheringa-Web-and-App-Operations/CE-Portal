@@ -248,6 +248,21 @@
   }
 }
 
+/***************  City  *****************/
+.city-link{
+  font-family: Coolvetica;
+  align-self: flex-end;
+  color: white;
+  font-weight: 500;
+  font-size: 3vw;
+  margin-bottom: 1vw;
+}
+
+.city-link a {
+ color: #F29E6D;
+ text-decoration: none;
+}
+
 /***************  Competitions  *****************/
 
 .comp-main {
