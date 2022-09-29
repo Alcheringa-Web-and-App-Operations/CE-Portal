@@ -12,9 +12,9 @@ class Person(models.Model):
     
     city = models.ForeignKey(City, on_delete=models.SET_NULL, blank=True, null=True,default=None)
     competition= models.ManyToManyField(Competition, blank=True,default=None)
-    college_name=models.CharField(max_length=30, blank=True,null=True,default='iitg')
-    degree=models.CharField(max_length=5, blank=True,null=True,default='btech')
-    gender=models.CharField(max_length=10, blank=True,null=True,default='male')
+    college_name=models.CharField(max_length=30, blank=True,null=True,default='')
+    degree=models.CharField(max_length=5, blank=True,null=True,default='B. Tech')
+    gender=models.CharField(max_length=10, blank=True,null=True,default='Male')
     yearofgraduation=models.IntegerField(blank=True, null=True)
    
     def __str__(self):

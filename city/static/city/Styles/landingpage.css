@@ -131,7 +131,7 @@ html {
 
   #flex-item-16 a:hover {
     color: white;
-    background-color: rgba(242, 68, 5, 1);
+    background:  transparent;
     transition: 0.4s;
     padding: 6px 12px 6px;
     border-width: 0.5px;
@@ -206,11 +206,12 @@ html {
   }
 
   #flex-item-16 a {
+    background-color: rgba(242, 68, 5, 1);
+    padding: 4px 16px 4px 16px;
     text-decoration: none;
     font-family: Coolvetica;
     font-size: 21px;
     font-weight: 400;
-    padding: 5px;
     border-radius: 30px;
     margin: 0px 20px 0px 10px;
   }

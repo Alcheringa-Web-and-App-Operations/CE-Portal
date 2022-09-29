@@ -17,7 +17,7 @@
   <nav>
     <div class="flex-container-1" style="color: white;">
       <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-        <a href="#"> Register</a>
+        <a href="{% url 'register_single' %}"> Register</a>
       </div>
 
       <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
@@ -30,11 +30,12 @@
         <span>╳</span>
       </div>
 
-      <div class="flex-item-1" id="flex-item-11">
+      <a href="https://alcheringa.in" style="text-decoration:none" target="_blank"><div class="flex-item-1" id="flex-item-11">
         <img src="{%static 'city\images\image 44.png' %}" alt="logo" />
       </div>
-
-      <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+    </a>
+    
+      <div class="flex-item-1" id="flex-item-12"><a href="https://alcheringa.in" style="text-decoration:none" target="_blank">Alcheringa</a></div>
 
       <div class="flex-item-1 disapp_in_mobview" id="flex-item-13" style="color:white;">
         <a href="#aboutus" style="padding: 4px 18px 4px 18px"> About Us</a>
