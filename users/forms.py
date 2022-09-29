@@ -6,7 +6,7 @@ from .models import Person, Competition,City, Team
 class PersonCreationForm(forms.ModelForm):
     class Meta:
         model = Person
-        fields = '__all__'
+        fields = ['name', 'contactno', 'email', 'college_name','competition','city']
 
 class EntryForm(forms.ModelForm):
   
