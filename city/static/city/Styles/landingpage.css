@@ -169,16 +169,16 @@ html {
   #flex-item-12 {
     font-size: 35px;
     color: white;
-    font: Coolvetica;
+    font: "DM Sans", sans-serif;
     font-weight: 400;
     width: 200px;
     margin: 0px auto 0px 5px;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
   }
 
   #flex-item-13 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
@@ -188,7 +188,7 @@ html {
 
   #flex-item-14 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
@@ -198,7 +198,7 @@ html {
 
   #flex-item-15 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
@@ -210,7 +210,7 @@ html {
     background-color: rgba(242, 68, 5, 1);
     padding: 4px 16px 4px 16px;
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     border-radius: 30px;
@@ -220,7 +220,7 @@ html {
   #flex-item-18 a {
     color: #FFFFFF;
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 20px;
     font-weight: 400;
     padding: 5px;
@@ -659,7 +659,7 @@ line-height: 43px;
 .dates {
   background-color: black;
   color: white;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   font-size: 48px;
   line-height: 60px;
@@ -700,7 +700,7 @@ line-height: 43px;
   background-color: #f4d6d6;
   color: black;
   text-align: start;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   font-size: 65px;
   width: 80vw;
@@ -714,7 +714,7 @@ line-height: 43px;
   background-image: url("../images/geet.svg");
   font-size: 30px;
   color: #ffffff;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   display: flex;
   align-items: center;
@@ -733,7 +733,7 @@ line-height: 43px;
   padding: 50px 0 50px 0;
   font-size: 65px;
 
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   text-align: center;
 
@@ -865,7 +865,7 @@ line-height: 43px;
   .dates {
     background-color: black;
     color: white;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-weight: 200;
     font-size: 30px;
     line-height: 60px;
@@ -893,7 +893,7 @@ line-height: 43px;
   .dates {
     background-color: black;
     color: white;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-weight: 200;
     font-size: 35px;
     line-height: 60px;
@@ -1637,7 +1637,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   .dates {
     background-color: black;
     color: white;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-weight: 200;
     font-size: 30px;
     line-height: 60px;
@@ -1668,7 +1668,7 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     .dates {
         background-color: black;
         color: white;
-        font-family: Coolvetica;
+        font-family: "DM Sans", sans-serif;
      font-weight: 200;
         font-size: 35px;
         line-height: 60px;

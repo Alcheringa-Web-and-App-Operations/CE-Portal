@@ -543,125 +543,325 @@
 
     /******************  FOOTER  ************************/
 
-    #footer {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 40px 0vw 40px 9vw;
-        background-color: rgba(3, 16, 89, 1);
-        color: white;
-    }
+    .container0 {
+  background-color: #2c3d73;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: white;
+  /* justify-content: center; */
+  /* width: 100%; */
+  /* height:100vh; */
+}
+.container1 {
+  border-right: 4px solid #f29e6d;
+  /* border-bottom: 4px solid   #F29E6D; */
+  background-color: #2c3d73;
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+.container1 img {
+  padding-left: 50px;
+  padding-right: 50%;
+  padding-top: 25px;
+  margin-bottom: auto;
+}
+.container2 {
+  padding-left: 40px;
+  border-right: 4px solid #f29e6d;
+  padding-right: 30px;
+  padding-top: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2c3d73;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  flex-grow: 1;
+}
+.footer_text{
+  margin:0;
+}
+.alcher {
+  color: #f29e6d;
+  font-family: Bohemian Soul;
+  font-size: 80px;
+  font-weight: bold;
+  margin-bottom: auto;
+}
+.alcher h1 {
+    padding: 0;
+}
+.contactinfo {
+  margin-top: auto;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  padding-top: 40px;
+}
+#contact {
+  color: #f29e6d;
+  padding-bottom: 20px;
+  font-size: 45px;
+}
+.names {
+  display: flex;
+  font-weight: bolder;
+}
+.names h2,h3,p{
+  margin: 0;
+}
+.Siddhant {
+  padding-right: 17px;
+  padding-bottom: 10px;
+}
+#sid, #akshara,#quasim{
+  padding-bottom: 10px;
+  font-size: 24px;
+  margin: 0;
+}
+#pr1,#pr2,#pr3 {
+  padding-bottom: 10px;
+  font-size: 18.72px;
+  margin: 0;
+}
 
-    #contact {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        width: fit-content;
-    }
+.Akshara {
+  padding-right: 17px;
+  padding-bottom: 10px;
+}
 
-    #email {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        padding-top: 4px;
-    }
+.Quasim {
+  padding-bottom: 10px;
+}
 
-    #social-media {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-    }
+.video {
+  /* margin-bottom: 150px; */
+  /* padding: 0px 0px 40px 0px; */
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  /* border-bottom:4px solid   #F29E6D ; */
+}
 
-    #logos {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-top: 12px;
-    }
+/* .size-iframe{
+      height: 140%;
+      width: 85%;
+  } */
 
-    #insta {
-        padding-right: 35px;
-    }
+.follow {
+  margin-top: auto;
+  /* border-top: 4px solid   #F29E6D;; */
+}
 
-    #fb {
-        padding-left: 2px;
-        padding-right: 35px;
-    }
+.icons {
+  display: flex;
+  flex-direction: row;
+  width: 77%;
+  justify-content: space-between;
+}
 
-    #twitter {
-        padding-left: 2px;
-        padding-right: 2px;
-    }
+#insta {
+  padding-right: 14px;
+}
+#link {
+  padding-right: 14px;
+}
+#facebook {
+  padding-right: 14px;
+}
+#twitter {
+  padding-right: 14px;
+}
+#youtube {
+  padding-right: 14px;
+}
 
-    #phone {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
+@media (min-width: 1230px) {
+  .size-iframe {
+    height: 140%;
+    width: 85%;
+  }
+  .container3 {
+    color: #f29e6d;
+    padding-left: 20px;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    background-color: #2c3d73;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    flex-grow: 1;
+  }
+  #discover {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+  }
+}
 
-    #phone-no {
-        padding-left: 6px;
-    }
+@media (max-width: 1230px) and (min-width: 1040px) {
+  .container1 {
+    display: none;
+  }
 
-    #alcher-link {
-        padding-left: 0px;
-    }
+  .alcher {
+    text-align: center;
+  }
+  .contactinfo {
+    text-align: center;
+  }
+  .video {
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 40px;
+  }
 
-    #website {
-        display: flex;
-        flex-direction: row;
-        padding-top: 10px;
-        align-items: center;
-    }
+  .class-iframe {
+    align-self: center;
+    margin-bottom: 30px;
+  }
 
-    #phone-icon {
-        padding-right: 5px;
-    }
+  #follow-us {
+    padding-bottom: 20px;
+  }
+  /* .follow{
+          justify-content: center;
+          align-self: center;
+      } */
+  .icons {
+    justify-content: space-evenly;
+    width: 100%; 
+  }
+  .container3 {
+    color: #f29e6d;
+    /* padding-left: 20px; */
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    background-color: #2c3d73;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    flex-grow: 1;
+  }
+  #discover {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
+}
 
-    #phone-icon:hover {
-        width: 120%;
-    }
+.icons img {
+  filter: invert(100%);
+}
+@media (max-width: 1040px) {
+  .container1 {
+    display: none;
+  }
 
-    #mail {
-        padding-right: 15px;
-    }
+  .alcher {
+    text-align: center;
+  }
 
-    #email-us {
-        text-align: left;
-        padding-bottom: 3px;
-    }
+  .contactinfo {
+    text-align: center;
+  }
 
-    #mail-address {
-        display: flex;
-        flex-direction: row;
-        padding-top: 4px;
-    }
+  .names {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
 
-    #email-input {
-        height: 22px;
-        background-color: rgba(3, 16, 89, 1);
-        border: 1px solid white;
-        height: 30px;
-        color: white;
-    }
+  .video {
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 40px;
+  }
 
-    #send-button {
-        height: 30px;
-        background-color: white;
-        color: rgba(3, 16, 89, 1);
-        transition-duration: 5ms;
-    }
+  .class-iframe {
+    align-self: center;
+  }
 
-    #send-button:hover {
-        background-color: rgba(3, 16, 89, 1);
-        ;
-        color: white;
-        border-color: white;
-    }
+  #follow-us {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  /* .follow{
+              justify-content: center;
+              align-self: center;
+          } */
+  .icons {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .container3 {
+    color: #f29e6d;
+    /* padding-left: 20px; */
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    background-color: #2c3d73;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    flex-grow: 1;
+  }
+  #discover {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
+}
 
-    a {
-        color: white;
-    }
+@media (max-width: 500px) {
+  .container0 {
+    font-size: 85%;
+  }
+  .alcher {
+    font-size: 25px;
+  }
+
+  #discover {
+    font-size: 40px;
+  }
+  #contact {
+    font-size: 40px;
+  }
+  #follow-us {
+    /* padding-left: 29.29%; */
+    font-size: 2em;
+  }
+  .media {
+    height: 50px;
+  }
+}
 </style>
 
 
@@ -834,50 +1034,93 @@
     <!---------------Registeration form ENDS ----------------->
 
     <!--FOOTER-->
-    <div id="footer">
 
-        <div id="contact">
-            <div id="phone">
-                <div id="phone-icon">
-                    <img src="{% static " images\phone.png" %}" width="15" height="15">
-                </div>
-                <div id="phone-no">19-0000-0000</div>
-            </div>
-            <div id="website">
-                <div id="mail">
-                    <img src="{% static " images\mail.png" %}" height="15">
-                </div>
-                <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
-            </div>
-
+    <div class="container0">
+        <div class="container1">
+          <img src="{%static 'city\images\Mask group.png' %}" />
         </div>
-
-        <div id="social-media">
+    
+        <!-- -->
+        <div class="container2">
+          <div class="alcher">
             <div>
-                <p>Social Media</p>
+              <h1 class="footer_text" id="highway">Highway</h1>
             </div>
-            <div id="logos">
-                <div id="insta">
-                    <a href="https://www.alcheringa.in/"><img src="{% static " images\insta.png" %}"></a>
-                </div>
-                <div id="fb">
-                    <a href="https://www.alcheringa.in/"><img src="{% static " images\fb.png" %}"></a>
-                </div>
-                <div id="twitter">
-                    <a href="https://www.alcheringa.in/"><img src="{% static " images\twitter.png" %}"></a>
-                </div>
+            <div>
+              <h1 class="footer_text">to</h1>
             </div>
+            <div>
+              <h1 class="footer_text" id="alcher">Alcher</h1>
+            </div>
+          </div>
+          <div class="contactinfo">
+            <h1 id="contact" style="margin:0;">Contact Us</h1>
+            <div class="names">
+              <div class="Siddhant">
+                <h2 id="sid">Siddhant Singh</h2>
+                <h3 id="pr1">PR Head</h3>
+                <p>+91-9310859978</p>
+              </div>
+              <div class="Akshara">
+                <h2 id="akshara">Danda Akshara</h2>
+                <h3 id="pr2">PR Head</h3>
+                <p>+91-9908991939</p>
+              </div>
+              <div class="Quasim">
+                <h2 id="quasim">Quasim</h2>
+                <h3 id="pr3">PR Head</h3>
+                <p>+91-9310859978</p>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div id="email">
-            <div id="email-us">E-mail Us</div>
-            <div id="mail-address">
-                <div><input type="text" id="email-input"></div>
-                <div><button id="send-button">SEND</button></div>
+    
+        <div class="container3">
+          <div class="video">
+            <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
+              <h1 id="discover" style="margin-bottom:0;">Discover Alcheringa</h1>
+              <div class="class-iframe">
+                <iframe
+                  class="size-iframe"
+                  src="https://youtu.be/byhtsRBr2VY"
+                ></iframe>
+              </div>
             </div>
+            <div class="follow">
+              <div><h1 id="follow-us" style="margin-bottom:0;font-size: 2em;">Follow us </h1></div>
+              <div class="icons">
+                <div>
+                  <a href="https://www.instagram.com/alcheringaiitg/"
+                    ><img src="{%static 'city\images\instagram (4).png' %}" width="50px"
+                  /></a>
+                </div>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"
+                    ><img src="{%static 'city\images\linkedin (2).png' %}" width="50px"
+                  /></a>
+                </div>
+                <div>
+                  <a href="https://www.facebook.com/alcheringaiitg"
+                    ><img src="{%static 'city\images\facebook.png' %}" width="50px"
+                  /></a>
+                </div>
+                <div>
+                  <a href="https://twitter.com/alcheringaiitg"
+                    ><img src="{%static 'city\images\twit.png' %}" width="50px"
+                  /></a>
+                </div>
+                <div>
+                  <a href="https://www.youtube.com/c/AlcheringaIITG"
+                    ><img src="{%static 'city\images\youtube.png' %}" width="50px"
+                  /></a>
+                </div>
+    
+              </div>
+            </div>
+          </div>
         </div>
-
-    </div>
+      </div>
 </body>
 <script type="text/javascript">
     function myFunction() {
