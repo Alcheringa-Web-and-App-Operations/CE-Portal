@@ -11,704 +11,711 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <style>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
 
-        @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
-        @font-face {
-            font-family: Coolvetica;
-            src: url("{%static 'fonts/coolvetica rg.otf' %}");
-        }
-        
-        body {
-            padding: 0px;
-            margin: 0px;
-        }
-        
-        
-        /************** Nav Bar ************************/
-        
-        .flex-container-1 {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-          
-            background-color: rgba(242, 158, 109, 1);
-            align-items: center;
-            width: 100%;
-            gap: 10px;
-          }
-          
-          #flex-item-13 a:hover {
-            color: white;
-            background-color: rgba(242, 68, 5, 1);
-            transition: 0.4s;
-            border-style: groove;
-            border-color: #031059;
-          }
-          
-          #flex-item-14 a:hover {
-            color: white;
-            background-color: rgba(242, 68, 5, 1);
-            transition: 0.4s;
-            border-style: groove;
-            border-color: #031059;
-          }
-          
-          #flex-item-15 a:hover {
-            color: white;
-            background-color: rgba(242, 68, 5, 1);
-            transition: 0.4s;
-            border-style: groove;
-            border-color: #031059;
-          }
-          
-          #flex-item-16 a:hover {
-            color: white;
-            background-color: rgba(242, 68, 5, 1);
-            transition: 0.4s;
-            border-style: groove;
-            border-color: #031059;
-          }
-          
-          #flex-item-18 a:hover {
-            color: white;
-            background-color: rgba(242, 68, 5, 1);
-            transition: 0.4s;
-            border-style: groove;
-            border-color: #031059;
-          }
-          
-          .flex-item-1 a:link {
-            color: rgba(28, 3, 15, 1);
-          }
-          
-          .flex-item-1 a:visited {
-            color: rgba(28, 3, 15, 1);
-          }
-          
-          @font-face {
-            font-family: Coolvetica;
-            src: url(coolvetica_rg.otf);
-          }
-          
-          #flex-item-11 {
-            margin: 10px 5px 10px 20px;
-            /* position: relative; */
-          }
-          
-          #flex-item-12 {
-            font-size: 35px;
-            color: rgba(0, 0, 0, 1);
-            font: Coolvetica;
-            font-weight: 400;
-            width: 200px;
-            margin: 0px auto 0px 5px;
-            font-family: Coolvetica;
-          }
-          
-          #flex-item-13 a {
-            text-decoration: none;
-            font-family: Coolvetica;
-            font-size: 21px;
-            font-weight: 400;
-            padding: 5px;
-            border-radius: 30px;
-            margin: 0px 10px 0px 10px;
-          }
-          
-          #flex-item-14 a {
-            text-decoration: none;
-            font-family: Coolvetica;
-            font-size: 21px;
-            font-weight: 400;
-            padding: 5px;
-            border-radius: 30px;
-            margin: 0px 10px 0px 10px;
-          }
-          
-          #flex-item-15 a {
-            text-decoration: none;
-            font-family: Coolvetica;
-            font-size: 21px;
-            font-weight: 400;
-            padding: 5px;
-            border-radius: 30px;
-            margin: 0px 10px 0px 10px;
-          }
-          
-          #flex-item-16 a {
-            text-decoration: none;
-            font-family: Coolvetica;
-            font-size: 21px;
-            font-weight: 400;
-            padding: 5px;
-            border-radius: 30px;
-            margin: 0px 20px 0px 10px;
-          }
-          
-          #flex-item-18 a {
-            text-decoration: none;
-            font-family: Coolvetica;
-            font-size: 20px;
-            font-weight: 400;
-            padding: 5px;
-            border-radius: 30px;
-            margin: 0px 20px 0px 10px;
-            border-style: groove;
-            border-color: #031059;
-            border-width: 2px;
-          }
-          
-          .toggle-btn {
-            width: 35px;
-            position: absolute;
-            right: 10px;
-            top: 6px;
-            display: none;
-          }
-          
-          .toggle-btn span {
-            /* display: inline-block; */
-            width: 100%;
-            height: 3.5px;
-            background-color: #031059;
-            float: left;
-            margin-bottom: 8px;
-          }
-          
-          .cross-btn {
-            font-size: 30px;
-            position: absolute;
-            right: 25px;
-            top: 5px;
-            display: none;
-          }
-          
-          .disapp_in_compview {
-            position: absolute;
-            right: 70px;
-            top: 17px;
-            float: left;
-          }
-          .member{
-            display: flex;
-            align-items: center;
+    @font-face {
+        font-family: Coolvetica;
+        src: url("{%static 'fonts/coolvetica rg.otf' %}");
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+    }
+
+
+    /************** Nav Bar ************************/
+
+    .flex-container-1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        background-color: rgba(242, 158, 109, 1);
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #flex-item-13 a:hover {
+        color: white;
+        background-color: rgba(242, 68, 5, 1);
+        transition: 0.4s;
+        border-style: groove;
+        border-color: #031059;
+    }
+
+    #flex-item-14 a:hover {
+        color: white;
+        background-color: rgba(242, 68, 5, 1);
+        transition: 0.4s;
+        border-style: groove;
+        border-color: #031059;
+    }
+
+    #flex-item-15 a:hover {
+        color: white;
+        background-color: rgba(242, 68, 5, 1);
+        transition: 0.4s;
+        border-style: groove;
+        border-color: #031059;
+    }
+
+    #flex-item-16 a:hover {
+        color: white;
+        background-color: rgba(242, 68, 5, 1);
+        transition: 0.4s;
+        border-style: groove;
+        border-color: #031059;
+    }
+
+    #flex-item-18 a:hover {
+        color: white;
+        background-color: rgba(242, 68, 5, 1);
+        transition: 0.4s;
+        border-style: groove;
+        border-color: #031059;
+    }
+
+    .flex-item-1 a:link {
+        color: rgba(28, 3, 15, 1);
+    }
+
+    .flex-item-1 a:visited {
+        color: rgba(28, 3, 15, 1);
+    }
+
+    @font-face {
+        font-family: Coolvetica;
+        src: url(coolvetica_rg.otf);
+    }
+
+    #flex-item-11 {
+        margin: 10px 5px 10px 20px;
+        /* position: relative; */
+    }
+
+    #flex-item-12 {
+        font-size: 35px;
+        color: rgba(0, 0, 0, 1);
+        font: Coolvetica;
+        font-weight: 400;
+        width: 200px;
+        margin: 0px auto 0px 5px;
+        font-family: Coolvetica;
+    }
+
+    #flex-item-13 a {
+        text-decoration: none;
+        font-family: Coolvetica;
+        font-size: 21px;
+        font-weight: 400;
+        padding: 5px;
+        border-radius: 30px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    #flex-item-14 a {
+        text-decoration: none;
+        font-family: Coolvetica;
+        font-size: 21px;
+        font-weight: 400;
+        padding: 5px;
+        border-radius: 30px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    #flex-item-15 a {
+        text-decoration: none;
+        font-family: Coolvetica;
+        font-size: 21px;
+        font-weight: 400;
+        padding: 5px;
+        border-radius: 30px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    #flex-item-16 a {
+        text-decoration: none;
+        font-family: Coolvetica;
+        font-size: 21px;
+        font-weight: 400;
+        padding: 5px;
+        border-radius: 30px;
+        margin: 0px 20px 0px 10px;
+    }
+
+    #flex-item-18 a {
+        text-decoration: none;
+        font-family: Coolvetica;
+        font-size: 20px;
+        font-weight: 400;
+        padding: 5px;
+        border-radius: 30px;
+        margin: 0px 20px 0px 10px;
+        border-style: groove;
+        border-color: #031059;
+        border-width: 2px;
+    }
+
+    .toggle-btn {
+        width: 35px;
+        position: absolute;
+        right: 10px;
+        top: 6px;
+        display: none;
+    }
+
+    .toggle-btn span {
+        /* display: inline-block; */
+        width: 100%;
+        height: 3.5px;
+        background-color: #031059;
+        float: left;
+        margin-bottom: 8px;
+    }
+
+    .cross-btn {
+        font-size: 30px;
+        position: absolute;
+        right: 25px;
+        top: 5px;
+        display: none;
+    }
+
+    .disapp_in_compview {
+        position: absolute;
+        right: 70px;
+        top: 17px;
+        float: left;
+    }
+
+    .member {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        max-width: 800px;
+        justify-content: space-between;
+    }
+
+    @media (max-width:490px) {
+        .member {
             width: 80%;
-            max-width: 800px;
-            justify-content: space-between;
-          }
-          @media (max-width:490px) {
-            .member{
-                width: 80%;
-            }
-          }
-          
-          @media (min-width: 775px) {
-            .disapp_in_compview {
-              display: none;
-            }
-          }
-          
-          @media (max-width: 775px) and (min-width: 460px) {
-            .toggle-btn {
-              display: inline;
-            }
-            .disapp_in_mobview {
-              display: none;
-            }
-          
-            #flex-item-16 {
-              margin-left: auto;
-            }
-          
-            .toggle-btn {
-              margin: 10px 10px 0px 0px;
-            }
-          
-            div.show {
-              display: block;
-              width: 100%;
-              padding: 2px 2px 2px 2px;
-              margin: 2px 2px 2px 2px;
-              display: flex;
-              justify-content: end;
-            }
-          
-            div.alternate1 {
-              display: none;
-            }
-            div.alternate2 {
-              display: block;
-            }
-          }
-          
-          @media (max-width: 460px) {
-            #flex-item-12 {
-              display: none;
-            }
-            .disapp_in_mobview {
-              display: none;
-            }
-            .toggle-btn {
-              display: block;
-            }
-          
-            #flex-item-11 {
-              margin: 10px auto 10px 20px;
-            }
-            .toggle-btn {
-              margin: 10px 10px 0px 0px;
-            }
-            div.show {
-              display: block;
-              width: 100%;
-              /* padding: 2px 2px 2px 2px ; */
-              margin: 2px 2px 5px 2px;
-              display: flex;
-              justify-content: end;
-            }
-            div.alternate1 {
-              display: none;
-            }
-            div.alternate2 {
-              display: block;
-            }
-          }
-          .alert {
-            color: rgb(132 32 41);
-            background-color: rgb(248 215 218);
-            border-color: rgb(245 194 199);
-            padding: 16px;
-            border: 3px;
-          }
-        
-        
-        /****************** Registration image ************************/
-        
-        #background-image div {
-            display: inline-block;
         }
-        
-        #background-image {
-            background-color: #031059;
-            background-image: url("{% static 'images/background.png' %}");
-            height: 40vw;
-            background-repeat: no-repeat;
-            background-size: cover;
+    }
+
+    @media (min-width: 775px) {
+        .disapp_in_compview {
+            display: none;
         }
-        
-        #individual {
-            background-color: rgba(0, 0, 0, 0.35);
-            margin-left: 27%;
-            margin-right: 6.5%;
-        }
-        
-        #team {
-            background-color: #F29E6D;
-            
-        }
-        
-        .box {
-            border: 4px solid #FFFFFF;
-            height: 42px;
-            width: 20%;
-            margin-top: 5%;
-            text-align: center;
-            color: white;
-        }
-        
-        .text {
-            font-size: 1.2vw;
-            margin-top: 2%;
-        }
-        
-        .indiv:hover {
-            color: indigo;
-        }
-        
-        
-        /****************** Registration FORM ************************/
-        
-        .reg-form-all {
-            width: 99vw;
-            font-family: 'DM Sans', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .sections {
-            width: 40%;
-            max-width: 400px;
-        }
-        
-        
-        /* check boxes-- start */
-        
-        .container {
-            width: 100%;
-            font-size: 13px;
-        }
-        
-        ul.ks-cboxtags {
-            list-style: none;
-            padding-top:3px;
-        }
-        
-        ul.ks-cboxtags li {
+    }
+
+    @media (max-width: 775px) and (min-width: 460px) {
+        .toggle-btn {
             display: inline;
         }
-        
-        ul.ks-cboxtags li label {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, .9);
-            border: 2px solid #002F43;
-            color: #002F43;
-            border-radius: 25px;
-            white-space: nowrap;
-            margin: 3px 0px;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-tap-highlight-color: transparent;
-            transition: all .2s;
+
+        .disapp_in_mobview {
+            display: none;
         }
-        
-        ul.ks-cboxtags li label {
-            padding: 10px 15px 11px 15px;
-            cursor: pointer;
+
+        #flex-item-16 {
+            margin-left: auto;
         }
-        
-        ul.ks-cboxtags li label::after {
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font-family: "Font Awesome 5 Free";
-            font-weight: bold;
-            font-size: 12px;
-            padding: 0px 0px 0px 7px;
-            transition: transform .3s ease-in-out;
+
+        .toggle-btn {
+            margin: 10px 10px 0px 0px;
         }
-        
-        ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
-            content: "\f00c";
-            transition: transform .3s ease-in-out;
-        }
-        
-        ul.ks-cboxtags li input[type="checkbox"]:checked+label {
-            border: 2px solid #002F43;
-            background-color: #F29E6D;
-            color: #002F43;
-            transition: all .2s;
-        }
-        
-        ul.ks-cboxtags li input[type="checkbox"] {
-            display: absolute;
-        }
-        
-        ul.ks-cboxtags li input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-        }
-        
-        ul.ks-cboxtags li input[type="checkbox"]:focus+label {
-            border: 2px solid #002F43;
-        }
-        
-        
-        /* check boxes-- END */
-        
-        
-        /* red-star-- START */
-        
-        .red-star {
-            color: red;
-        }
-        
-        
-        /* red-star-- END */
-        
-        .input-text-field {
-            height: 40px;
-            margin-top: 9px;
+
+        div.show {
+            display: block;
             width: 100%;
-            padding: 5px;
-            border-color: black;
-            border-width: 2px;
-            font-size: 16px;
+            padding: 2px 2px 2px 2px;
+            margin: 2px 2px 2px 2px;
+            display: flex;
+            justify-content: end;
         }
-        .input-text-field-1 select{
-            height: 40px;
-            margin-top: 9px;
+
+        div.alternate1 {
+            display: none;
+        }
+
+        div.alternate2 {
+            display: block;
+        }
+    }
+
+    @media (max-width: 460px) {
+        #flex-item-12 {
+            display: none;
+        }
+
+        .disapp_in_mobview {
+            display: none;
+        }
+
+        .toggle-btn {
+            display: block;
+        }
+
+        #flex-item-11 {
+            margin: 10px auto 10px 20px;
+        }
+
+        .toggle-btn {
+            margin: 10px 10px 0px 0px;
+        }
+
+        div.show {
+            display: block;
             width: 100%;
-            padding: 5px;
-            border-color: black;
-            border-width: 2px;
-            font-size: 16px;
+            /* padding: 2px 2px 2px 2px ; */
+            margin: 2px 2px 5px 2px;
+            display: flex;
+            justify-content: end;
         }
-        
-        .drop-down {
-            color: #989898;
+
+        div.alternate1 {
+            display: none;
         }
-        
-        .dropdown-content a:hover {
-            background-color: #ddd;
+
+        div.alternate2 {
+            display: block;
         }
-        
-        .head-style {
-            font-size: 16px;
-        }
-        
+    }
+
+    .alert {
+        color: rgb(132 32 41);
+        background-color: rgb(248 215 218);
+        border-color: rgb(245 194 199);
+        padding: 16px;
+        border: 3px;
+    }
+
+
+    /****************** Registration image ************************/
+
+    #background-image div {
+        display: inline-block;
+    }
+
+    #background-image {
+        background-color: #031059;
+        background-image: url("{% static 'images/background.png' %}");
+        height: 40vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #individual {
+        background-color: rgba(0, 0, 0, 0.35);
+        margin-left: 27%;
+        margin-right: 6.5%;
+    }
+
+    #team {
+        background-color: #F29E6D;
+
+    }
+
+    .box {
+        border: 4px solid #FFFFFF;
+        height: 42px;
+        width: 20%;
+        margin-top: 5%;
+        text-align: center;
+        color: white;
+    }
+
+    .text {
+        font-size: 1.2vw;
+        margin-top: 2%;
+    }
+
+    .indiv:hover {
+        color: indigo;
+    }
+
+
+    /****************** Registration FORM ************************/
+
+    .reg-form-all {
+        width: 99vw;
+        font-family: 'DM Sans', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .sections {
+        width: 40%;
+        max-width: 400px;
+    }
+
+
+    /* check boxes-- start */
+
+    .container {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    ul.ks-cboxtags {
+        list-style: none;
+        padding-top: 3px;
+    }
+
+    ul.ks-cboxtags li {
+        display: inline;
+    }
+
+    ul.ks-cboxtags li label {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, .9);
+        border: 2px solid #002F43;
+        color: #002F43;
+        border-radius: 25px;
+        white-space: nowrap;
+        margin: 3px 0px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: all .2s;
+    }
+
+    ul.ks-cboxtags li label {
+        padding: 10px 15px 11px 15px;
+        cursor: pointer;
+    }
+
+    ul.ks-cboxtags li label::after {
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Font Awesome 5 Free";
+        font-weight: bold;
+        font-size: 12px;
+        padding: 0px 0px 0px 7px;
+        transition: transform .3s ease-in-out;
+    }
+
+    ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
+        content: "\f00c";
+        transition: transform .3s ease-in-out;
+    }
+
+    ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+        border: 2px solid #002F43;
+        background-color: #F29E6D;
+        color: #002F43;
+        transition: all .2s;
+    }
+
+    ul.ks-cboxtags li input[type="checkbox"] {
+        display: absolute;
+    }
+
+    ul.ks-cboxtags li input[type="checkbox"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+        border: 2px solid #002F43;
+    }
+
+
+    /* check boxes-- END */
+
+
+    /* red-star-- START */
+
+    .red-star {
+        color: red;
+    }
+
+
+    /* red-star-- END */
+
+    .input-text-field {
+        height: 40px;
+        margin-top: 9px;
+        width: 100%;
+        padding: 5px;
+        border-color: black;
+        border-width: 2px;
+        font-size: 16px;
+    }
+
+    .input-text-field-1 select {
+        height: 40px;
+        margin-top: 9px;
+        width: 100%;
+        padding: 5px;
+        border-color: black;
+        border-width: 2px;
+        font-size: 16px;
+    }
+
+    .drop-down {
+        color: #989898;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    .head-style {
+        font-size: 16px;
+    }
+
+    .row-view {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .page-heading {
+        margin: 20px 15% 5px 15%;
+    }
+
+    .register-button {
+        margin: auto;
+        padding: 4px 50px;
+        background: #F24405;
+        border-radius: 32px;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 46px;
+        color: #FFFFFF;
+        transition: box-shadow 0.6s;
+    }
+
+    .register-button:hover,
+    .register-button:focus,
+    ul.ks-cboxtags li label:hover,
+    ul.ks-cboxtags li label:focus {
+        box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+    }
+
+    @media only screen and (orientation: portrait) {
         .row-view {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
         }
-        
+
+        .sections {
+            width: 80%;
+            max-width: 100000000px;
+        }
+
         .page-heading {
-            margin: 20px 15% 5px 15%;
-        }
-        
-        .register-button {
             margin: auto;
-            padding: 4px 50px;
-            background: #F24405;
-            border-radius: 32px;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 20px;
-            line-height: 46px;
-            color: #FFFFFF;
-            transition: box-shadow 0.6s;
-        }
-        
-        .register-button:hover,
-        .register-button:focus,
-        ul.ks-cboxtags li label:hover,
-        ul.ks-cboxtags li label:focus {
-            box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-        }
-        
-        @media only screen and (orientation: portrait) {
-            .row-view {
-                flex-direction: column;
-                justify-content: space-around;
-                align-items: center;
-            }
-            .sections {
-                width: 80%;
-                max-width: 100000000px;
-            }
-            .page-heading {
-                margin: auto;
-                margin-top: 40px;
-                margin-left: 10%;
-                text-align: left;
-            }
-            .input-text-field {
-                min-width: none;
-                width: 100%;
-            }
-        }
-        
-        .add-member-button {
-            margin-top: 9px;
-            padding: 10px 15px;
-            border-color: black;
-            border-width: 1px;
-            transition: box-shadow 0.3s;
-        }
-        
-        .add-member-button:hover {
-            box-shadow: 0 3px 8px 0 rgba(86, 86, 86, 0.75);
-        }
-        
-        
-        /******************  FOOTER  ************************/
-        
-        #footer {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            padding: 40px 0vw 40px 9vw;
-            background-color: rgba(3, 16, 89, 1);
-            color: white;
-        }
-        
-        #contact {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            width: fit-content;
-        }
-        
-        #email {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            padding-top: 4px;
-        }
-        
-        #social-media {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-        
-        #logos {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding-top: 12px;
-        }
-        
-        #insta {
-            padding-right: 35px;
-        }
-        
-        #fb {
-            padding-left: 2px;
-            padding-right: 35px;
-        }
-        
-        #twitter {
-            padding-left: 2px;
-            padding-right: 2px;
-        }
-        
-        #phone {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
-        
-        #phone-no {
-            padding-left: 6px;
-        }
-        
-        #alcher-link {
-            padding-left: 0px;
-        }
-        
-        #website {
-            display: flex;
-            flex-direction: row;
-            padding-top: 10px;
-            align-items: center;
-        }
-        
-        #phone-icon {
-            padding-right: 5px;
-        }
-        
-        #phone-icon:hover {
-            width: 120%;
-        }
-        
-        #mail {
-            padding-right: 15px;
-        }
-        
-        #email-us {
+            margin-top: 40px;
+            margin-left: 10%;
             text-align: left;
-            padding-bottom: 3px;
         }
-        
-        #mail-address {
-            display: flex;
-            flex-direction: row;
-            padding-top: 4px;
+
+        .input-text-field {
+            min-width: none;
+            width: 100%;
         }
-        
-        #email-input {
-            height: 22px;
-            background-color: rgba(3, 16, 89, 1);
-            border: 1px solid white;
-            height: 30px;
-            color: white;
-        }
-        
-        #send-button {
-            height: 30px;
-            background-color: white;
-            color: rgba(3, 16, 89, 1);
-            transition-duration: 5ms;
-        }
-        
-        #send-button:hover {
-            background-color: rgba(3, 16, 89, 1);
-            ;
-            color: white;
-            border-color: white;
-        }
-        
-        a {
-            color: white;
-        }
-        
-        
-        </style>
+    }
+
+    .add-member-button {
+        margin-top: 9px;
+        padding: 10px 15px;
+        border-color: black;
+        border-width: 1px;
+        transition: box-shadow 0.3s;
+    }
+
+    .add-member-button:hover {
+        box-shadow: 0 3px 8px 0 rgba(86, 86, 86, 0.75);
+    }
+
+
+    /******************  FOOTER  ************************/
+
+    #footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 40px 0vw 40px 9vw;
+        background-color: rgba(3, 16, 89, 1);
+        color: white;
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: fit-content;
+    }
+
+    #email {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-top: 4px;
+    }
+
+    #social-media {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    #logos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: 12px;
+    }
+
+    #insta {
+        padding-right: 35px;
+    }
+
+    #fb {
+        padding-left: 2px;
+        padding-right: 35px;
+    }
+
+    #twitter {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    #phone {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #phone-no {
+        padding-left: 6px;
+    }
+
+    #alcher-link {
+        padding-left: 0px;
+    }
+
+    #website {
+        display: flex;
+        flex-direction: row;
+        padding-top: 10px;
+        align-items: center;
+    }
+
+    #phone-icon {
+        padding-right: 5px;
+    }
+
+    #phone-icon:hover {
+        width: 120%;
+    }
+
+    #mail {
+        padding-right: 15px;
+    }
+
+    #email-us {
+        text-align: left;
+        padding-bottom: 3px;
+    }
+
+    #mail-address {
+        display: flex;
+        flex-direction: row;
+        padding-top: 4px;
+    }
+
+    #email-input {
+        height: 22px;
+        background-color: rgba(3, 16, 89, 1);
+        border: 1px solid white;
+        height: 30px;
+        color: white;
+    }
+
+    #send-button {
+        height: 30px;
+        background-color: white;
+        color: rgba(3, 16, 89, 1);
+        transition-duration: 5ms;
+    }
+
+    #send-button:hover {
+        background-color: rgba(3, 16, 89, 1);
+        ;
+        color: white;
+        border-color: white;
+    }
+
+    a {
+        color: white;
+    }
+</style>
 
 
 <body>
-    {% comment %} <!---------------Nav Bar -----------------> {% endcomment %}
+    {% comment %}
+    <!---------------Nav Bar -----------------> {% endcomment %}
     <div class="flex-container-1">
         <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-          <a href="#"> Register</a>
+            <a href="#"> Register</a>
         </div>
-    
-        <div
-          class="flex-item-1 toggle-btn"
-          id="flex-item-17"
-          onclick="myFunction()"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-    
-        <div
-          class="flex-item-1 cross-btn"
-          id="flex-item-19"
-          onclick="myFunction()"
-        >
-          <span>╳</span>
-        </div>
-    
-        <div class="flex-item-1" id="flex-item-11">
-          <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
-        </div>
-    
-        <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
-    
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-          <a href="#"> About Us</a>
-        </div> {% endcomment %}
-    
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-          <a href="#"> Contact</a>
-        </div> {% endcomment %}
-    
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-          <a href="#"> Schedule</a>
-        </div> {% endcomment %}
-    
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-          <a href="{% url 'landing-page' %}"> Home</a>
-        </div>
-      </div>
 
-      {% for message in messages %}
-      <div class="alert"> 
+        <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
+            <span>╳</span>
+        </div>
+
+        <div class="flex-item-1" id="flex-item-11">
+            <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
+        </div>
+
+        <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+            <a href="#"> About Us</a>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+            <a href="#"> Contact</a>
+        </div> {% endcomment %}
+
+        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+            <a href="#"> Schedule</a>
+        </div> {% endcomment %}
+
+        <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+            <a href="{% url 'landing-page' %}"> Home</a>
+        </div>
+    </div>
+
+    {% for message in messages %}
+    <div class="alert">
         {{ message }}
-      </div>
-      {% endfor %}
+    </div>
+    {% endfor %}
     <!---- Registration image ---->
     <div id="background-image">
         <div id="register-image">
-            <img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
+            <img src="{% static 'images/Registration.png' %}" alt="" width="70%"
+                style="margin-top: 8% ; margin-left: 20%;">
         </div>
         <a href="{% url 'register_single' %}">
             <div id="individual" class="box" style="background-color: #F29E6D;">
@@ -736,33 +743,11 @@
             </div>
             <div class="form">
                 <div class="row-view">
-                    <!-- <div class="sections m-5">
-
-                <div>
-                    <span class="head-style">Select Events<span class="red-star"> *</span></span>
-                    <div class="container">
-                    <ul class="ks-cboxtags">
-                            <li><input type="checkbox" id="checkboxOne" value="Electric Heels"><label for="checkboxOne">Electric Heels</label></li>
-                            <li><input type="checkbox" id="checkboxTwo" value="so you think you can dance" checked><label for="checkboxTwo">so you think you can dance</label></li>
-                            <li><input type="checkbox" id="checkboxThree" value="step up" checked><label for="checkboxThree">step up</label></li>
-                            <li><input type="checkbox" id="checkboxFour" value="haute conture"><label for="checkboxFour">haute conture</label></li>
-                            <li><input type="checkbox" id="checkboxFive" value="voice of alcheringa"><label for="checkboxFive">voice of alcheringa</label></li>
-                            <li><input type="checkbox" id="checkboxSix" value="Raga High" checked><label for="checkboxSix">Raga High</label></li>
-                            <li><input type="checkbox" id="checkboxSeven" value="Rock-o-Pheonix"><label for="checkboxSeven">Rock-o-Pheonix</label></li>
-                        </ul>
-                    {{ form.competition }}
-                    </div>
-                </div>
-
-
-            </div> -->
-
-                    <div class="sections m-5"><span class="head-style">Choose your city<span class="red-star">
-                                *</span></span>
+                    <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
                         <br>
-                        <!-- <div class="input-text-field-1"> -->
-                        {{ form.city }}
-                        <!-- </div> -->
+                        <div class="input-text-field-1">
+                            {{ form.city }}
+                        </div>
                     </div>
                     <div class="sections m-5">
                         <div id="check-container">
@@ -775,22 +760,41 @@
                         <div>
                             <span class="head-style">Name<span class="red-star"> *</span></span>
                             <br>
+                            <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
                             <div class="input-text-field-1">{{ form.name }}</div>
-                            <!-- <input type="text" id="name" class="input-text-field " required> -->
                         </div>
                         <br><br><br>
                         <div>
                             <span class="head-style">Contact Number<span class="red-star"> *</span></span>
                             <br>
+                            <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
                             <div class="input-text-field-1">{{ form.contactno }}</div>
-                            <!-- <input type="number" id="cont_num" class="input-text-field " required> -->
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">Degree<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+                            <select class="input-text-field" name="degree" id="degree" required> 
+                                <option class="drop-down">Degree</option>
+                                <option value="btech">B.Tech</option>
+                                <option value="mtech">M.Tech</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+                            <div class="input-text-field-1">{{ form.yearofgraduation }}</div>
                         </div>
                     </div>
                     <div class="sections m-5">
                         <div>
                             <span class="head-style">Gender<span class="red-star"> *</span></span>
                             <br>
-                            <select class="input-text-field" id="gender" name="gender">
+                            <select class="input-text-field " name="gender" id="gender_m_0" required>
                                 <option class="drop-down">Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
@@ -801,29 +805,19 @@
                         <div>
                             <span class="head-style">E-mail<span class="red-star"> *</span></span>
                             <br>
+                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
                             <div class="input-text-field-1">{{ form.email }}</div>
-                            <!-- <input type="email" id="email" class="input-text-field " required> -->
-                        </div>
-                    </div>
-                    <div class="sections m-5">
-                        <div>
-                            <span class="head-style">College Name<span class="red-star"> *</span></span>
-                            <br>
-                            <div class="input-text-field-1">{{ form.college_name }}</div>
-                            <!-- <input type="text" id="name" class="input-text-field " required> -->
                         </div>
                         <br><br><br>
                         <div>
-                            <span class="head-style">Degree<span class="red-star"> *</span></span>
+                            <span class="head-style">College Name<span class="red-star"> *</span></span>
                             <br>
-                            <select class="input-text-field" id="degree" name = "degree">
-                                <option class="drop-down">Degree</option>
-                                <option class="btech">B.Tech</option>
-                                <option value="mtech">M.Tech</option>
-                                <option value="other">Other</option>
-                            </select>
+                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+                            <div class="input-text-field-1">{{ form.college_name }}</div>
                         </div>
                     </div>
+            
+            
                 </div>
                 <br>
                 <!-- <div class="row-view">
@@ -839,51 +833,51 @@
     <div style="height: 120px;"></div>
     <!---------------Registeration form ENDS ----------------->
 
-   <!--FOOTER-->
-   <div id="footer">
+    <!--FOOTER-->
+    <div id="footer">
 
-    <div id="contact">
-        <div id="phone">
-            <div id="phone-icon">
-                <img src="{% static "images\phone.png" %}" width="15" height="15">
+        <div id="contact">
+            <div id="phone">
+                <div id="phone-icon">
+                    <img src="{% static " images\phone.png" %}" width="15" height="15">
+                </div>
+                <div id="phone-no">19-0000-0000</div>
             </div>
-            <div id="phone-no">19-0000-0000</div>
+            <div id="website">
+                <div id="mail">
+                    <img src="{% static " images\mail.png" %}" height="15">
+                </div>
+                <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
+            </div>
+
         </div>
-        <div id="website">
-            <div id="mail">
-                <img src="{% static "images\mail.png" %}" height="15">
+
+        <div id="social-media">
+            <div>
+                <p>Social Media</p>
             </div>
-            <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
+            <div id="logos">
+                <div id="insta">
+                    <a href="https://www.alcheringa.in/"><img src="{% static " images\insta.png" %}"></a>
+                </div>
+                <div id="fb">
+                    <a href="https://www.alcheringa.in/"><img src="{% static " images\fb.png" %}"></a>
+                </div>
+                <div id="twitter">
+                    <a href="https://www.alcheringa.in/"><img src="{% static " images\twitter.png" %}"></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="email">
+            <div id="email-us">E-mail Us</div>
+            <div id="mail-address">
+                <div><input type="text" id="email-input"></div>
+                <div><button id="send-button">SEND</button></div>
+            </div>
         </div>
 
     </div>
-
-    <div id="social-media">
-        <div>
-            <p>Social Media</p>
-        </div>
-        <div id="logos">
-            <div id="insta">
-                <a href="https://www.alcheringa.in/"><img src="{% static "images\insta.png" %}"></a>
-            </div>
-            <div id="fb">
-                <a href="https://www.alcheringa.in/"><img src="{% static "images\fb.png" %}"></a>
-            </div>
-            <div id="twitter">
-                <a href="https://www.alcheringa.in/"><img src="{% static "images\twitter.png" %}"></a>
-            </div>
-        </div>
-    </div>
-
-    <div id="email">
-        <div id="email-us">E-mail Us</div>
-        <div id="mail-address">
-            <div><input type="text" id="email-input"></div>
-            <div><button id="send-button">SEND</button></div>
-        </div>
-    </div>
-
-</div>
 </body>
 <script type="text/javascript">
     function myFunction() {
@@ -901,36 +895,36 @@
         element5.classList.toggle("alternate2");
     }
     let city = document.getElementById("id_city")
-        city.addEventListener("change", (e) => {
-            const city_id = e.target.value
+    city.addEventListener("change", (e) => {
+        const city_id = e.target.value
 
-            fetch("{% url 'load_competitions' %}", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    "X-Requested-With": "XMLHttpRequest"
-                },
-                body: JSON.stringify({ "city_id": city_id})
-            })
-                .then(data => {
-                    return data.text()
-                })
-                .then(data => {
-                    console.log(data)
-                    console.log(city.value)
-                    document.getElementById("check-container").innerHTML = data
-                })
+        fetch("{% url 'load_competitions' %}", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            body: JSON.stringify({ "city_id": city_id })
         })
-
-        function selectComp(e) {
-            console.log(e);
-            var checkboxes = document.getElementsByName('checkbox');
-            checkboxes.forEach((item) => {
-                if (item !== checkbox) {
-                    console.log(item.value, item.checked)
-                }
+            .then(data => {
+                return data.text()
             })
-        }
+            .then(data => {
+                console.log(data)
+                console.log(city.value)
+                document.getElementById("check-container").innerHTML = data
+            })
+    })
+
+    function selectComp(e) {
+        console.log(e);
+        var checkboxes = document.getElementsByName('checkbox');
+        checkboxes.forEach((item) => {
+            if (item !== checkbox) {
+                console.log(item.value, item.checked)
+            }
+        })
+    }
 </script>
 
 </html>
