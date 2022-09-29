@@ -878,12 +878,24 @@ a {
                         <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
                         <input type="text" name="phoneNo0" class="input-text-field " maxlength="50" required id="id_name">
                     </div>
+                    <br><br><br>
+                    <div>
+                        <span class="head-style">Degree<span class="red-star"> *</span></span>
+                        <br>
+                        <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+                        <select class="input-text-field" name="degree0" id="degree" required> 
+                            <option class="drop-down">Degree</option>
+                            <option value="btech">B.Tech</option>
+                            <option value="mtech">M.Tech</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="sections m-5">
                     <div>
                         <span class="head-style">Gender<span class="red-star"> *</span></span>
                         <br>
-                        <select class="input-text-field " id="gender_m_0">
+                        <select class="input-text-field " name="gender0" id="gender_m_0" required>
                             <option class="drop-down">Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -897,20 +909,24 @@ a {
                         <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
                         <input type="email" name="email0" class="input-text-field " maxlength="254" required id="id_email">
                     </div>
+                    <br><br><br>
+                    <div>
+                        <span class="head-style">College Name<span class="red-star"> *</span></span>
+                        <br>
+                        <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+                        <input type="text" name="collegename0" class="input-text-field " maxlength="254" required id="id_collegename">
+                    </div>
                 </div>
         
         
             </div>
             <div class="row-view">
-                <div class="sections mx-5 mt-5">
-                    <div style="font-size: 120%;font-weight: bold;">Member's data:</div>
-                </div>
                 <div class="sections mx-5 mt-5"></div>
             </div>
             <div id="main">
                 <div class="row-view">
                     <div class="sections mx-5 mt-5">
-                        <div style="font-size: 120%;">Member 1:</div>
+                        <div style="font-size: 120%;font-weight: bold;">Member 1:</div>
                     </div>
                     <div class="sections">
                     </div>
@@ -930,12 +946,25 @@ a {
                             <!-- <input type="number" id="cont_num_m_1" class="input-text-field " required> -->
                             <input type="text" name="phoneNo1" class="input-text-field " maxlength="50" required id="id_name">
                         </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">Degree<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+                            <select class="input-text-field" name="degree1" required>
+                                <option class="drop-down">Degree</option>
+                                <option value="btech">B.Tech</option>
+                                <option value="mtech">M.Tech</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="checkbox" style="margin-top: 12px" name="samedegree1" onchange="samefunc(1)"><label for="same" style="margin-left:5px">Same as Head</label>
+                        </div>
                     </div>
                     <div class="sections m-5">
                         <div>
                             <span class="head-style">Gender<span class="red-star"> *</span></span>
                             <br>
-                            <select class="input-text-field " id="gender_m_1">
+                            <select class="input-text-field " name="gender1" id="gender_m_1" required>
                                 <option class="drop-down">Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
@@ -948,6 +977,14 @@ a {
                             <br>
                             <!-- <input type="email" id="email_m_1" class="input-text-field " required> -->
                             <input type="email" name="email1" class="input-text-field " maxlength="254" required id="id_email">
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">College Name<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+                            <input type="text" name="collegename1" class="input-text-field " value="" maxlength="254" required id="id_collegename">
+                            <input type="checkbox" style="margin-top: 12px" name="samecollege1" onchange="samefunc(1)"><label for="same" style="margin-left:5px">Same as Head</label>
                         </div>
                     </div>
         
@@ -1049,6 +1086,27 @@ a {
                 if (item !== checkbox) item.checked = false
             })
         }
+        
+        function samefunc(e){
+            const samecollege=document.getElementsByName("samecollege"+e)[0]
+                if(samecollege.value=='on'){
+                    const headcollege=document.getElementsByName("collegename0")[0].value
+                    document.getElementsByName("collegename"+e)[0].value=headcollege
+                }
+            const samedegree=document.getElementsByName("samedegree"+e)[0]
+                if(samedegree.value=='on'){
+                    const headdegree=document.getElementsByName("degree0")[0].value
+                    document.getElementsByName("degree"+e)[0].value=headdegree
+                    
+                } 
+              
+        }
+            
+        
+        
+        
+        
+
     </script>
 </body>
 

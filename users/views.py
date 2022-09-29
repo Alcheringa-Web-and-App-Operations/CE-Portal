@@ -94,6 +94,7 @@ def load_city(request):
 def teamForm(request):
     data = request.POST
     if request.method == 'POST':
+        print(request.POST)
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
@@ -105,7 +106,7 @@ def teamForm(request):
                 continue
             else:
                 
-                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,contactno = data.get('phoneNo' + str(i)), solo = 0)
+                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)), solo = 0)
                 querySet = Person.objects.filter(email = data.get('email' + str(i)))
                 if querySet:
                     querySet.solo = 0

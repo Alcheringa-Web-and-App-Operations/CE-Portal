@@ -30,12 +30,26 @@ add.addEventListener('click',target=>{
             <br>
             <input type="number" name="phoneNo${i}" id="phoneNo${i}" class="input-text-field " required>
         </div>
+        <br><br><br>
+        <div>
+            <span class="head-style">Degree<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+            <select class="input-text-field" name="degree${i}" required>
+                <option class="drop-down">Degree</option>
+                <option value="btech">B.Tech</option>
+                <option value="mtech">M.Tech</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="checkbox" style="margin-top: 12px" name="samedegree${i}" onchange="samefunc(${i})"><label for="same" style="margin-left:5px">Same as Head</label>
+
+        </div>
     </div>
     <div class="sections m-5">
         <div>
             <span class="head-style">Gender<span class="red-star"> *</span></span>
             <br>
-            <select class="input-text-field " id="gender_m_1">
+            <select class="input-text-field " name="gender${i}"id="gender_m_1" required>
             <option class="drop-down">Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -47,6 +61,15 @@ add.addEventListener('click',target=>{
             <span class="head-style">E-mail<span class="red-star"> *</span></span>
             <br>
             <input type="email" name="email${i}" id="email${i}" class="input-text-field " required>
+        </div>
+        <br><br><br>
+        <div>
+            <span class="head-style">College Name<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+            <input type="text" name="collegename${i}" class="input-text-field " maxlength="254" required id="id_collegename">
+            <input type="checkbox" style="margin-top: 12px" name="samecollege${i}" onchange="samefunc(${i})"><label for="same" style="margin-left:5px">Same as Head</label>
+
         </div>
     </div>
 
