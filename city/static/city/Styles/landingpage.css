@@ -157,7 +157,8 @@ html {
 
   @font-face {
     font-family: Coolvetica;
-    src: url(../fonts/coolvetica_rg.otf);
+    src: url("{% static 'city/fonts/coolvetica_rg.otf' %}");
+    /* src: url(../fonts/coolvetica_rg.otf); */
   }
 
   #flex-item-11 {
@@ -1128,11 +1129,12 @@ line-height: 43px;
           align-self: center;
       } */
   .icons {
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 100%; 
   }
   .container3 {
     color: #f29e6d;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -1198,11 +1200,12 @@ line-height: 43px;
               align-self: center;
           } */
   .icons {
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 100%;
   }
   .container3 {
     color: #f29e6d;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -1237,7 +1240,7 @@ line-height: 43px;
     font-size: 40px;
   }
   #follow-us {
-    padding-left: 29.29%;
+    /* padding-left: 29.29%; */
     font-size: 40px;
   }
   .media {

@@ -20,7 +20,7 @@
   <!---------------Nav Bar ----------------->
   <div class="flex-container-1">
     <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-      <a href="#"> Register</a>
+      <a href="{% url 'register_single' %}"> Register</a>
     </div>
 
     <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
@@ -30,7 +30,7 @@
     </div>
 
     <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
-      <span>╳</span>
+      <span>x</span>
     </div>
 
     <div class="flex-item-1" id="flex-item-11">
@@ -95,26 +95,26 @@
           <p class="comp-desc">{{comp.competitionDescription}}</p>
           <div style="display:flex">
             <a href = "{% url 'register_single' %}" style="text-decoration:none"><button type="button" class="btn register-btn">Register</button></a>
-            <button type="button" class="btn rule-btn">Rule Booklet</button>
+            <a href = "https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf" style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule Booklet</button></a>
           </div>
         </div>
         <div style="padding-right: 12%">
           <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: 20vw; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 37vw; height: 20vw;" />
         </div>
       </div>
       {% else %}
       <div class="row">
-        <div style="padding-left: 10%; margin-right: 2%">
+        <div style="padding-left: 10%; margin-right: 2%;z-index: 1000;">
           <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: 20vw; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 37vw; height: 20vw;" />
         </div>
-        <div id="righttext" style="background-image:url('{{ comp.background_img.url }}')">
+        <div id="righttext" style="background-image:url('{{ comp.background_img.url }}'); z-index: 1;">
           <h1 class="coolvetica">{{comp.competitionName}}</h1>
           <p class="comp-desc">{{comp.competitionDescription}}</p>
           <div style="display:flex">
             <a href = "{% url 'register_single' %}" style="text-decoration:none"><button type="button" class="btn register-btn">Register</button></a>
-            <button type="button" class="btn rule-btn">Rule Booklet</button>
+            <a href = "https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf" style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule Booklet</button></a>
           </div>
         </div>
       </div>
@@ -407,9 +407,7 @@
           </div>
         </div>
         <div class="follow">
-          <div>
-            <h1 id="follow-us">Follow us :</h1>
-          </div>
+          <div><h1 id="follow-us">Follow us </h1></div>
           <div class="icons">
             <div>
               <a href="https://www.instagram.com/alcheringaiitg/"><img src="{%static 'city\images\instagram (4).png' %}"
