@@ -567,7 +567,7 @@ line-height: 43px;
     }
 
     .c1{
-        width:50%;
+        width:80%;
         height:100%;
         display: flex;
         flex-direction: column;
@@ -578,6 +578,8 @@ line-height: 43px;
         padding: 100px;
     }
     .c2{
+      width:80%;
+
         margin-left:0px; 
         margin-right:0px;
         padding-bottom: 110px;
