@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: Coolvetica;
-  src: url("{%static 'fonts/coolvetica rg.otf' %}");
+  src: url("{%static 'city/fonts/coolvetica_rg.otf' %}");
 }
 
 * {
@@ -16,6 +16,8 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: "DM Sans", sans-serif;
+  font-weight:900;
 
   background-color: rgba(242, 158, 109, 1);
   align-items: center;
@@ -73,7 +75,7 @@
 
 @font-face {
   font-family: Coolvetica;
-  src: url(coolvetica_rg.otf);
+  src: url("{%static 'city/fonts/coolvetica_rg.otf' %}");
 }
 
 #flex-item-11 {
@@ -84,16 +86,16 @@
 #flex-item-12 {
   font-size: 35px;
   color: rgba(0, 0, 0, 1);
-  font: Coolvetica;
+  font: "DM Sans", sans-serif;
   font-weight: 400;
   width: 200px;
   margin: 0px auto 0px 5px;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
 }
 
 #flex-item-13 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
@@ -103,7 +105,7 @@
 
 #flex-item-14 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
@@ -113,7 +115,7 @@
 
 #flex-item-15 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
@@ -123,7 +125,7 @@
 
 #flex-item-16 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
@@ -133,7 +135,7 @@
 
 #flex-item-18 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-size: 20px;
   font-weight: 400;
   padding: 5px;
@@ -250,7 +252,7 @@
 
 /***************  City  *****************/
 .city-link{
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   align-self: flex-end;
   color: white;
   font-weight: 500;
@@ -386,7 +388,7 @@
 .dates {
   background-color: black;
   color: white;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   font-size: 48px;
   line-height: 60px;
@@ -427,7 +429,7 @@
   background-color: #f4d6d6;
   color: black;
   text-align: start;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   font-size: 65px;
   width: 80vw;
@@ -441,7 +443,7 @@
   background-image: url("../images/geet.svg");
   font-size: 30px;
   color: #ffffff;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   display: flex;
   align-items: center;
@@ -460,7 +462,7 @@
   padding: 50px 0 50px 0;
   font-size: 65px;
 
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   text-align: center;
 
@@ -592,7 +594,7 @@
   .dates {
     background-color: black;
     color: white;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-weight: 200;
     font-size: 30px;
     line-height: 60px;
@@ -620,7 +622,7 @@
   .dates {
     background-color: black;
     color: white;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-weight: 200;
     font-size: 35px;
     line-height: 60px;
@@ -950,11 +952,12 @@
           align-self: center;
       } */
   .icons {
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 100%; 
   }
   .container3 {
     color: #f29e6d;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -1021,10 +1024,11 @@
           } */
   .icons {
     justify-content: space-around;
+    width: 100%; 
   }
   .container3 {
     color: #f29e6d;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -1059,7 +1063,7 @@
     font-size: 40px;
   }
   #follow-us {
-    padding-left: 29.29%;
+    /* padding-left: 29.29%; */
     font-size: 40px;
   }
   .media {
@@ -1171,7 +1175,7 @@ iframe {
 
 .follow_us_heading_footer{
     color: rgba(242, 158, 109, 1);
-    font-family: 'Coolvetica', sans-serif;
+    font-family: '"DM Sans", sans-serif', sans-serif;
     font-size: 34px;
     letter-spacing: 2px;
     margin-left: 30px;
