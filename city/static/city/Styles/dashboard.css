@@ -250,7 +250,7 @@
 
 /***************  Competitions  *****************/
 
-.comp-main {
+/* .comp-main {
   background-color: #f2e9e9;
 }
 
@@ -356,7 +356,7 @@
   box-sizing: border-box;
   margin-top: -10%;
   margin-left: -20%;
-}
+} */
 
 /***************  Schedule & Sponsors  *****************/
 
@@ -792,6 +792,7 @@
 #contact {
   color: #f29e6d;
   padding-bottom: 20px;
+  font-size: 50px;
 }
 .names {
   display: flex;
@@ -1025,6 +1026,28 @@
   }
 }
 
+@media (max-width: 500px) {
+  .container0 {
+    font-size: 85%;
+  }
+  .alcher {
+    font-size: 25px;
+  }
+
+  #discover {
+    font-size: 40px;
+  }
+  #contact {
+    font-size: 40px;
+  }
+  #follow-us {
+    padding-left: 29.29%;
+    font-size: 40px;
+  }
+  .media {
+    height: 50px;
+  }
+}
 /* 
 
 
