@@ -938,6 +938,7 @@
 
   .class-iframe {
     align-self: center;
+    margin-bottom: 30px;
   }
 
   #follow-us {
@@ -972,6 +973,9 @@
   }
 }
 
+.icons img {
+  filter: invert(100%);
+}
 @media (max-width: 1040px) {
   .container1 {
     display: none;
