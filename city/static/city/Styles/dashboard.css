@@ -799,8 +799,8 @@
   margin-bottom: auto;
 }
 .contactinfo {
-  margin-top: auto;
   font-family: "DM Sans", sans-serif;
+  margin-top: auto;
   font-weight: 400;
   padding-top: 80px;
 }
@@ -811,6 +811,7 @@
 }
 .names {
   display: flex;
+  font-family: "DM Sans", sans-serif;
 }
 .Siddhant {
   padding-right: 17px;
@@ -848,7 +849,7 @@
 .video {
   /* margin-bottom: 150px; */
   /* padding: 0px 0px 40px 0px; */
-  margin-bottom: auto;
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   /* border-bottom:4px solid   #F29E6D ; */

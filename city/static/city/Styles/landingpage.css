@@ -964,6 +964,9 @@ line-height: 43px;
   /* margin-right: auto; */
   flex-grow: 1;
 }
+.footer_text{
+  margin:0;
+}
 .alcher {
   color: #f29e6d;
   font-family: Bohemian Soul;
@@ -984,6 +987,9 @@ line-height: 43px;
 .names {
   display: flex;
 }
+.names h2,h3,p{
+  margin: 0;
+}
 .Siddhant {
   padding-right: 17px;
   padding-bottom: 10px;
@@ -995,7 +1001,7 @@ line-height: 43px;
   padding-bottom: 10px;
 }
 
-.akshara {
+.Akshara {
   padding-right: 17px;
   padding-bottom: 10px;
 }
@@ -1006,7 +1012,7 @@ line-height: 43px;
   padding-bottom: 10px;
 }
 
-.quasim {
+.Quasim {
   padding-bottom: 10px;
 }
 
