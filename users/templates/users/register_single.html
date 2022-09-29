@@ -275,6 +275,13 @@
               display: block;
             }
           }
+          .alert {
+            color: rgb(132 32 41);
+            background-color: rgb(248 215 218);
+            border-color: rgb(245 194 199);
+            padding: 16px;
+            border: 3px;
+          }
         
         
         /****************** Registration image ************************/
@@ -692,6 +699,12 @@
           <a href="{% url 'landing-page' %}"> Home</a>
         </div>
       </div>
+
+      {% for message in messages %}
+      <div class="alert"> 
+        {{ message }}
+      </div>
+      {% endfor %}
     <!---- Registration image ---->
     <div id="background-image">
         <div id="register-image">
