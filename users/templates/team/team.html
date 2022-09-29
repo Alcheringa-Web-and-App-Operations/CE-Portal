@@ -890,6 +890,13 @@ a {
                             <option value="other">Other</option>
                         </select>
                     </div>
+                    <br><br><br>
+                    <div>
+                        <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+                        <br>
+                        <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+                        <input type="number" name="year0" class="input-text-field " maxlength="4" required id="id_year">
+                    </div>
                 </div>
                 <div class="sections m-5">
                     <div>
@@ -957,7 +964,16 @@ a {
                                 <option value="mtech">M.Tech</option>
                                 <option value="other">Other</option>
                             </select>
-                            <input type="checkbox" style="margin-top: 12px" name="samedegree1" onchange="samefunc(1)"><label for="same" style="margin-left:5px">Same as Head</label>
+                            <input type="checkbox" style="margin-top: 12px" name="samedegree1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
+                        </div>
+                        <br><br><br>
+                        <div>
+                            <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+                            <br>
+                            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+                            <input type="number" name="year1" class="input-text-field " maxlength="4" required id="id_year">
+                            <input type="checkbox" style="margin-top: 12px" name="sameyear1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
+                            
                         </div>
                     </div>
                     <div class="sections m-5">
@@ -984,7 +1000,7 @@ a {
                             <br>
                             <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
                             <input type="text" name="collegename1" class="input-text-field " value="" maxlength="254" required id="id_collegename">
-                            <input type="checkbox" style="margin-top: 12px" name="samecollege1" onchange="samefunc(1)"><label for="same" style="margin-left:5px">Same as Head</label>
+                            <input type="checkbox" style="margin-top: 12px" name="samecollege1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
                         </div>
                     </div>
         
@@ -1089,16 +1105,24 @@ a {
         
         function samefunc(e){
             const samecollege=document.getElementsByName("samecollege"+e)[0]
-                if(samecollege.value=='on'){
+            const samedegree=document.getElementsByName("samedegree"+e)[0]
+            const sameyear=document.getElementsByName("sameyear"+e)[0]
+            console.log(samecollege.checked)
+            console.log(samedegree)
+            console.log(sameyear)
+            
+                if(samecollege.checked){
                     const headcollege=document.getElementsByName("collegename0")[0].value
                     document.getElementsByName("collegename"+e)[0].value=headcollege
                 }
-            const samedegree=document.getElementsByName("samedegree"+e)[0]
-                if(samedegree.value=='on'){
+                if(samedegree.checked){
                     const headdegree=document.getElementsByName("degree0")[0].value
-                    document.getElementsByName("degree"+e)[0].value=headdegree
-                    
-                } 
+                    document.getElementsByName("degree"+e)[0].value=headdegree  
+                }
+                if(sameyear.checked){
+                    const headyear=document.getElementsByName("year0")[0].value
+                    document.getElementsByName("year"+e)[0].value=headyear 
+            } 
               
         }
             

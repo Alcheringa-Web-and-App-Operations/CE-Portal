@@ -110,7 +110,7 @@ def teamForm(request):
                 continue
             else:
                 
-                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)), solo = 0)
+                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)),yearofgraduation=data.get('year'+str(i)), solo = 0)
                 querySet = Person.objects.filter(email = data.get('email' + str(i)))
                 if querySet:
                     querySet.solo = 0
