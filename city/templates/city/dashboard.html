@@ -207,127 +207,58 @@
         </tr>
         <tr>
 
-          {%if compe.0.CompetitionName%}
-          <td class="event">{{compe.0.CompetitionName}}</td>
-          <td class="eventtime">{{compe.0.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.0.competitionDate}}</td>
-          {%endif%}
-          {%if compe.4.CompetitionName%}
-          <td class="event">{{compe.4.CompetitionName}}</td>
-          <td class="eventtime">{{compe.4.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.4.competitionDate}}</td>
-          {%endif%}
-          {%if compe.8.CompetitionName%}
-          <td class="event">{{compe.8.CompetitionName}}</td>
-          <td class="eventtime">{{compe.8.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.8.competitionDate}}</td>
-          {%endif%}
-          {%if compe.12.CompetitionName%}
-          <td class="event">{{compe.12.CompetitionName}}</td>
-          <td class="eventtime">{{compe.12.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.12.competitionDate}}</td>
-          {%endif%}
-        </tr>
-        <tr>
+          {% if compe %}
 
-          {%if compe.1.CompetitionName%}
-          <td class="event">{{compe.1.CompetitionName}}</td>
-          <td class="eventtime">{{compe.1.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.1.competitionDate}}</td>
-          {%endif%}
-          {%if compe.5.CompetitionName%}
-          <td class="event">{{compe.5.CompetitionName}}</td>
-          <td class="eventtime">{{compe.5.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.5.competitionDate}}</td>
-          {%endif%}
-          {%if compe.9.CompetitionName%}
-          <td class="event">{{compe.9.CompetitionName}}</td>
-          <td class="eventtime">{{compe.9.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.9.competitionDate}}</td>
-          {%endif%}
-          {%if compe.13.CompetitionName%}
-          <td class="event">{{compe.13.CompetitionName}}</td>
-          <td class="eventtime">{{compe.13.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.13.competitionDate}}</td>
-          {%endif%}
-        </tr>
+          <tr>
+            <td class="event">{{compe.0.CompetitionName}}</td>
+            <td class="eventtime">{{compe.0.competitionDate}}</td>
+            <td class="event">{{compe.4.CompetitionName}}</td>
+            <td class="eventtime">{{compe.4.competitionDate}}</td>
+            <td class="event">{{compe.8.CompetitionName}}</td>
+            <td class="eventtime">{{compe.8.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.1.CompetitionName}}</td>
+            <td class="eventtime">{{compe.1.competitionDate}}</td>
+            <td class="event">{{compe.5.CompetitionName}}</td>
+            <td class="eventtime">{{compe.5.competitionDate}}</td>
+            <td class="event">{{compe.9.CompetitionName}}</td>
+            <td class="eventtime">{{compe.9.competitionDate}}</td>
+          </tr>
 
-        <tr>
-          {%if compe.2.CompetitionName%}
-          <td class="event">{{compe.2.CompetitionName}}</td>
-          <td class="eventtime">{{compe.2.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.2.competitionDate}}</td>
-          {%endif%}
-          {%if compe.6.CompetitionName%}
-          <td class="event">{{compe.6.CompetitionName}}</td>
-          <td class="eventtime">{{compe.6.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.6.competitionDate}}</td>
-          {%endif%}
-          {%if compe.10.CompetitionName%}
-          <td class="event">{{compe.10.CompetitionName}}</td>
-          <td class="eventtime">{{compe.10.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.10.competitionDate}}</td>
-          {%endif%}
-          {%if compe.14.CompetitionName%}
-          <td class="event">{{compe.14.CompetitionName}}</td>
-          <td class="eventtime">{{compe.14.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.14.competitionDate}}</td>
-          {%endif%}
-        </tr>
-        <tr>
-          {%if compe.3.CompetitionName%}
-          <td class="event">{{compe.3.CompetitionName}}</td>
-          <td class="eventtime">{{compe.3.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.3.competitionDate}}</td>
-          {%endif%}
-          {%if compe.7.CompetitionName%}
-          <td class="event">{{compe.7.CompetitionName}}</td>
-          <td class="eventtime">{{compe.7.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.7.competitionDate}}</td>
-          {%endif%}
-          {%if compe.11.CompetitionName%}
-          <td class="event">{{compe.11.CompetitionName}}</td>
-          <td class="eventtime">{{compe.11.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.11.competitionDate}}</td>
-          {%endif%}
-          {%if compe.15.CompetitionName%}
-          <td class="event">{{compe.15.CompetitionName}}</td>
-          <td class="eventtime">{{compe.15.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.15.competitionDate}}</td>
-          {%endif%}
-        </tr>
+          <tr>
+            <td class="event">{{compe.2.CompetitionName}}</td>
+            <td class="eventtime">{{compe.2.competitionDate}}</td>
+            <td class="event">{{compe.6.CompetitionName}}</td>
+            <td class="eventtime">{{compe.6.competitionDate}}</td>
+            <td class="event">{{compe.10.CompetitionName}}</td>
+            <td class="eventtime">{{compe.10.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.3.CompetitionName}}</td>
+            <td class="eventtime">{{compe.3.competitionDate}}</td>
+            <td class="event">{{compe.7.CompetitionName}}</td>
+            <td class="eventtime">{{compe.7.competitionDate}}</td>
+            <td class="event">{{compe.11.CompetitionName}}</td>
+            <td class="eventtime">{{compe.11.competitionDate}}</td>
+          </tr>
+
+          {% else %}
+
+          <tr>
+            <td class="event">Coming Soon</td>
+          </tr>
+          <tr>
+          </tr>
+
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+
+          {% endif %}
+
+          
       </table>
     </div>
 
