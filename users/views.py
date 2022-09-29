@@ -12,41 +12,45 @@ from django.views.decorators.csrf import csrf_exempt
 # print(email_lsist)
 def register_single(request):
     data = request.POST
-    print(data)
     form = PersonCreationForm()
     single = Person(pk = request.user.pk,name = data.get('name'))
     # competitions =Person.competition
     if request.method == 'POST':
-        print("here")
         form = PersonCreationForm(data)
         print(form)
         print(form.is_valid())
         if form.is_valid():
-            print("1234")
             email_list = Person.objects.values_list('email',flat=True)
             email = request.POST['email']
             # competition1 = Competition.objects.filter(id = request.POST['checkbox']).all()
             competition1 = request.POST.getlist('checkbox')
             print(competition1)
             competition = Competition.objects.filter(id__in=competition1).all()
-            curr_user = Person.objects.filter(email=email).first()
-            print(curr_user)
-            for competition2 in competition:
-                curr_user.competition.add(competition2)
-                print(competition2)
-            print(competition)
-            # print(email)
-            if (email in email_list):
-                curr_user_comp = curr_user.competition.all()
-                if (competition in curr_user_comp):
-                    print("already registered, dont register again")
-                    messages.error(request,f'Already registered for {competition}.')
-                else:
-                    print("merge it")
-                    curr_user.competition.add(competition)
+            if Person.objects.filter(email=email):
+                curr_user = Person.objects.filter(email=email).first()
+                print(curr_user)
+                for competition2 in competition:
+                    curr_user.competition.add(competition2)
+                    print(competition2)
+                print(competition)
+                # print(email)
+                if (email in email_list):
+                    curr_user_comp = curr_user.competition.all()
+                    if (competition in curr_user_comp):
+                        print("already registered, dont register again")
+                        messages.error(request,f'Already registered for {competition}.')
+                    else:
+                        print("merge it")
+                        curr_user.competition.add(competition)
             else:
                 print("fgdgf")
                 form.save()
+                curr_user = Person.objects.filter(email=email).first()
+                curr_user.gender = request.POST['gender']
+                curr_user.degree = request.POST['degree']
+                for competition2 in competition:
+                    curr_user.competition.add(competition2)
+                curr_user.save()
                 return redirect('/')
 
     # for comp in competitions:               
@@ -94,6 +98,7 @@ def load_city(request):
 def teamForm(request):
     data = request.POST
     if request.method == 'POST':
+        print(request.POST)
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
@@ -105,7 +110,7 @@ def teamForm(request):
                 continue
             else:
                 
-                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,contactno = data.get('phoneNo' + str(i)), solo = 0)
+                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)), solo = 0)
                 querySet = Person.objects.filter(email = data.get('email' + str(i)))
                 if querySet:
                     querySet.solo = 0

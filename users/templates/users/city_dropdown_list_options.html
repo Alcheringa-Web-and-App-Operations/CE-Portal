@@ -3,7 +3,7 @@
 <div class="container">
     <ul class="ks-cboxtags" id="checkbox">
         {% for competition in competitions%}
-        <li><input type="checkbox" id="checkbox{{competition.pk}}" value="{{competition.pk}}" name="checkbox" onclick="onlyOne(this)"><label for="checkbox{{competition.pk}}">{{competition.competitionName}}</label></li>
+        <li><input type="checkbox" id="checkbox{{competition.pk}}" value="{{competition.pk}}" name="checkbox" onclick="selectComp({{competition.pk}})"><label for="checkbox{{competition.pk}}">{{competition.competitionName}}</label></li>
         {% endfor %}
     </ul>
 </div>

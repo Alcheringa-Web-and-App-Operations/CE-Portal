@@ -27,52 +27,50 @@
   </head>
 
   <body>
-    <!--**************************Nav Bar ***********************************-->
-    <div class="flex-container-1">
-      <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-        <a href="#"> Register</a>
-      </div>
-
-      <div
-        class="flex-item-1 toggle-btn"
-        id="flex-item-17"
-        onclick="myFunction()"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <div
-        class="flex-item-1 cross-btn"
-        id="flex-item-19"
-        onclick="myFunction()"
-      >
-        <span>╳</span>
-      </div>
-
-      <div class="flex-item-1" id="flex-item-11">
-        <img src="{%static 'city\images\image43.png' %}" alt="logo" />
-      </div>
-
-      <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
-
-      <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-        <a href="#"> About Us</a>
-      </div>
-
-      <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-        <a href="#"> Contact</a>
-      </div>
-
-      <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-        <a href="#"> Schedule</a>
-      </div>
-
-      <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-        <a href="#"> Register</a>
-      </div>
+    <!---------------Nav Bar -----------------> 
+  <div class="flex-container-1">
+    <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
+      <a href="#"> Register</a>
     </div>
+
+    <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
+      <span>╳</span>
+    </div>
+
+    <div class="flex-item-1" id="flex-item-11">
+      <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
+    </div>
+
+    <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+      <a href="{% url 'landing-page' %}"> Home</a>
+    </div>
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+      <a href="#competitions">Competitions</a>
+    </div> 
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+      <a href="#schedule">Schedule</a>
+    </div> 
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+      <a href="#aboutus">About Us</a>
+    </div> 
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+      <a href="#sponsors">Sponsors</a>
+    </div> 
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+      <a href="{% url 'register_single' %}"> Register</a>
+    </div>
+    
+  </div>
 
     <!--************************** City ***********************************-->
     <div
@@ -94,7 +92,7 @@
 
     <!-- ******************** Competitions ************** -->
     <div class="dmsans comp-main" id="wideview">
-      <div style="padding-top: 3%">
+      <div style="padding-top: 3%" id="competitions">
         <h1 id="competition" class="coolvetica">Competitions</h1>
         {% for i,comp in range %} {% if i|divisibleby:"2" %}
         <div class="row">
@@ -151,7 +149,7 @@
 
     <!--------------------  Schedule  ------------------------>
 
-    <div>
+    <div id = "schedule">
       <div class="table">
         <table style="border: 5px solid #f2e9e9; border-spacing: 0px">
           <!-- <caption>Life Expectancy By Current Age</caption> -->
@@ -218,7 +216,7 @@
 
       <!--------------------  About Alcheringa  ------------------------>
 
-      <div class="container">
+      <div class="container" id="aboutus">
         <div class="c1 lap">
           <div class="Heading">
             About<br />
@@ -275,7 +273,7 @@
 
       <!--------------------  Sponsors  ------------------------>
 
-      <div class="sponsers">
+      <div class="sponsers" id="sponsors">
         <br />
         <div class="heading">Sponsors</div>
 
