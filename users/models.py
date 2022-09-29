@@ -1,4 +1,5 @@
 
+from email.policy import default
 from django.db import models
 from city.models import City,Competition
 
@@ -14,6 +15,7 @@ class Person(models.Model):
     college_name=models.CharField(max_length=30, blank=True,null=True,default='iitg')
     degree=models.CharField(max_length=5, blank=True,null=True,default='btech')
     gender=models.CharField(max_length=10, blank=True,null=True,default='male')
+    yearofgraduation=models.IntegerField(blank=True, null=True)
    
     def __str__(self):
         return f"{self.name} - {self.contactno} - {self.email}"

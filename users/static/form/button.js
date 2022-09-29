@@ -41,8 +41,16 @@ add.addEventListener('click',target=>{
                 <option value="mtech">M.Tech</option>
                 <option value="other">Other</option>
             </select>
-            <input type="checkbox" style="margin-top: 12px" name="samedegree${i}" onchange="samefunc(${i})"><label for="same" style="margin-left:5px">Same as Head</label>
+            <input type="checkbox" style="margin-top: 12px" name="samedegree${i}" onchange="samefunc(${i})"><label style="margin-left:5px">Same as Head</label>
 
+        </div>
+        <br><br><br>
+        <div>
+            <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+            <input type="number" name="year${i}" class="input-text-field " maxlength="4" required id="id_year">
+            <input type="checkbox" style="margin-top: 12px" name="sameyear${i}" onchange="samefunc(${i})"><label style="margin-left:5px">Same as Head</label>
         </div>
     </div>
     <div class="sections m-5">
@@ -68,7 +76,7 @@ add.addEventListener('click',target=>{
             <br>
             <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
             <input type="text" name="collegename${i}" class="input-text-field " maxlength="254" required id="id_collegename">
-            <input type="checkbox" style="margin-top: 12px" name="samecollege${i}" onchange="samefunc(${i})"><label for="same" style="margin-left:5px">Same as Head</label>
+            <input type="checkbox" style="margin-top: 12px" name="samecollege${i}" onchange="samefunc(${i})"><label style="margin-left:5px">Same as Head</label>
 
         </div>
     </div>
