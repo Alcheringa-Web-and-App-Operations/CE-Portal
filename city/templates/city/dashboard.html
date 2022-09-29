@@ -20,7 +20,7 @@
   <!---------------Nav Bar ----------------->
   <div class="flex-container-1">
     <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-      <a href="#"> Register</a>
+      <a href="{% url 'register_single' %}"> Register</a>
     </div>
 
     <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
@@ -30,7 +30,7 @@
     </div>
 
     <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
-      <span>╳</span>
+      <span>x</span>
     </div>
 
     <div class="flex-item-1" id="flex-item-11">
@@ -95,26 +95,26 @@
           <p class="comp-desc">{{comp.competitionDescription}}</p>
           <div style="display:flex">
             <a href = "{% url 'register_single' %}" style="text-decoration:none"><button type="button" class="btn register-btn">Register</button></a>
-            <button type="button" class="btn rule-btn">Rule Booklet</button>
+            <a href = "https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf" style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule Booklet</button></a>
           </div>
         </div>
         <div style="padding-right: 12%">
           <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: 20vw; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 37vw; height: 20vw;" />
         </div>
       </div>
       {% else %}
       <div class="row">
-        <div style="padding-left: 10%; margin-right: 2%">
+        <div style="padding-left: 10%; margin-right: 2%;z-index: 1000;">
           <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: 20vw; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 37vw; height: 20vw;" />
         </div>
-        <div id="righttext" style="background-image:url('{{ comp.background_img.url }}')">
+        <div id="righttext" style="background-image:url('{{ comp.background_img.url }}'); z-index: 1;">
           <h1 class="coolvetica">{{comp.competitionName}}</h1>
           <p class="comp-desc">{{comp.competitionDescription}}</p>
           <div style="display:flex">
             <a href = "{% url 'register_single' %}" style="text-decoration:none"><button type="button" class="btn register-btn">Register</button></a>
-            <button type="button" class="btn rule-btn">Rule Booklet</button>
+            <a href = "https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf" style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule Booklet</button></a>
           </div>
         </div>
       </div>
@@ -207,127 +207,58 @@
         </tr>
         <tr>
 
-          {%if compe.0.CompetitionName%}
-          <td class="event">{{compe.0.CompetitionName}}</td>
-          <td class="eventtime">{{compe.0.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.0.competitionDate}}</td>
-          {%endif%}
-          {%if compe.4.CompetitionName%}
-          <td class="event">{{compe.4.CompetitionName}}</td>
-          <td class="eventtime">{{compe.4.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.4.competitionDate}}</td>
-          {%endif%}
-          {%if compe.8.CompetitionName%}
-          <td class="event">{{compe.8.CompetitionName}}</td>
-          <td class="eventtime">{{compe.8.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.8.competitionDate}}</td>
-          {%endif%}
-          {%if compe.12.CompetitionName%}
-          <td class="event">{{compe.12.CompetitionName}}</td>
-          <td class="eventtime">{{compe.12.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.12.competitionDate}}</td>
-          {%endif%}
-        </tr>
-        <tr>
+          {% if compe %}
 
-          {%if compe.1.CompetitionName%}
-          <td class="event">{{compe.1.CompetitionName}}</td>
-          <td class="eventtime">{{compe.1.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.1.competitionDate}}</td>
-          {%endif%}
-          {%if compe.5.CompetitionName%}
-          <td class="event">{{compe.5.CompetitionName}}</td>
-          <td class="eventtime">{{compe.5.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.5.competitionDate}}</td>
-          {%endif%}
-          {%if compe.9.CompetitionName%}
-          <td class="event">{{compe.9.CompetitionName}}</td>
-          <td class="eventtime">{{compe.9.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.9.competitionDate}}</td>
-          {%endif%}
-          {%if compe.13.CompetitionName%}
-          <td class="event">{{compe.13.CompetitionName}}</td>
-          <td class="eventtime">{{compe.13.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.13.competitionDate}}</td>
-          {%endif%}
-        </tr>
+          <tr>
+            <td class="event">{{compe.0.CompetitionName}}</td>
+            <td class="eventtime">{{compe.0.competitionDate}}</td>
+            <td class="event">{{compe.4.CompetitionName}}</td>
+            <td class="eventtime">{{compe.4.competitionDate}}</td>
+            <td class="event">{{compe.8.CompetitionName}}</td>
+            <td class="eventtime">{{compe.8.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.1.CompetitionName}}</td>
+            <td class="eventtime">{{compe.1.competitionDate}}</td>
+            <td class="event">{{compe.5.CompetitionName}}</td>
+            <td class="eventtime">{{compe.5.competitionDate}}</td>
+            <td class="event">{{compe.9.CompetitionName}}</td>
+            <td class="eventtime">{{compe.9.competitionDate}}</td>
+          </tr>
 
-        <tr>
-          {%if compe.2.CompetitionName%}
-          <td class="event">{{compe.2.CompetitionName}}</td>
-          <td class="eventtime">{{compe.2.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.2.competitionDate}}</td>
-          {%endif%}
-          {%if compe.6.CompetitionName%}
-          <td class="event">{{compe.6.CompetitionName}}</td>
-          <td class="eventtime">{{compe.6.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.6.competitionDate}}</td>
-          {%endif%}
-          {%if compe.10.CompetitionName%}
-          <td class="event">{{compe.10.CompetitionName}}</td>
-          <td class="eventtime">{{compe.10.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.10.competitionDate}}</td>
-          {%endif%}
-          {%if compe.14.CompetitionName%}
-          <td class="event">{{compe.14.CompetitionName}}</td>
-          <td class="eventtime">{{compe.14.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.14.competitionDate}}</td>
-          {%endif%}
-        </tr>
-        <tr>
-          {%if compe.3.CompetitionName%}
-          <td class="event">{{compe.3.CompetitionName}}</td>
-          <td class="eventtime">{{compe.3.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.3.competitionDate}}</td>
-          {%endif%}
-          {%if compe.7.CompetitionName%}
-          <td class="event">{{compe.7.CompetitionName}}</td>
-          <td class="eventtime">{{compe.7.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.7.competitionDate}}</td>
-          {%endif%}
-          {%if compe.11.CompetitionName%}
-          <td class="event">{{compe.11.CompetitionName}}</td>
-          <td class="eventtime">{{compe.11.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.11.competitionDate}}</td>
-          {%endif%}
-          {%if compe.15.CompetitionName%}
-          <td class="event">{{compe.15.CompetitionName}}</td>
-          <td class="eventtime">{{compe.15.competitionDate}}</td>
-          {%else%}
-          <td class="event">Coming Soon</td>
-          <td class="eventtime">{{compe.15.competitionDate}}</td>
-          {%endif%}
-        </tr>
+          <tr>
+            <td class="event">{{compe.2.CompetitionName}}</td>
+            <td class="eventtime">{{compe.2.competitionDate}}</td>
+            <td class="event">{{compe.6.CompetitionName}}</td>
+            <td class="eventtime">{{compe.6.competitionDate}}</td>
+            <td class="event">{{compe.10.CompetitionName}}</td>
+            <td class="eventtime">{{compe.10.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.3.CompetitionName}}</td>
+            <td class="eventtime">{{compe.3.competitionDate}}</td>
+            <td class="event">{{compe.7.CompetitionName}}</td>
+            <td class="eventtime">{{compe.7.competitionDate}}</td>
+            <td class="event">{{compe.11.CompetitionName}}</td>
+            <td class="eventtime">{{compe.11.competitionDate}}</td>
+          </tr>
+
+          {% else %}
+
+          <tr>
+            <td class="event">Coming Soon</td>
+          </tr>
+          <tr>
+          </tr>
+
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+
+          {% endif %}
+
+          
       </table>
     </div>
 

@@ -32,6 +32,9 @@ class CityComp(models.Model):
    CompetitionName = models.CharField(max_length=100,null=True)
    competitionDate=models.TimeField(null=True)
 
+   def __str__(self):
+        return f"{self.competitionId} - {self.CompetitionName}"
+
 
 class Competition(models.Model):
     competitionName = models.CharField(max_length=100)
