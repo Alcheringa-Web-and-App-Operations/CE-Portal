@@ -58,11 +58,23 @@ def register_single(request):
 #             return redirect('person_change')
 #     return render(request, 'users/home.html',{'form':form})
 @csrf_exempt
-def load_competitions(request):
+def load_competitions_single(request):
     data=json.loads(request.body)
     if data['city_id'] !="":
         competitions=City.objects.filter(id=data['city_id']).first().cityCompetitions.all()
-        return render(request,'users/city_dropdown_list_options.html',{"competitions":competitions})
+        competitions1 = competitions.filter(minimum_user=1).all()
+        return render(request,'users/city_dropdown_list_options.html',{"competitions":competitions1})
+    else:
+        return render(request,'users/city_dropdown_list_options.html')
+
+
+@csrf_exempt
+def load_competitions_team(request):
+    data=json.loads(request.body)
+    if data['city_id'] !="":
+        competitions=City.objects.filter(id=data['city_id']).first().cityCompetitions.all()
+        competitions1 = competitions.filter(minimum_user__gte=2)
+        return render(request,'users/city_dropdown_list_options.html',{"competitions":competitions1})
     else:
         return render(request,'users/city_dropdown_list_options.html')
         
@@ -89,9 +101,15 @@ def teamForm(request):
     data = request.POST
     if request.method == 'POST':
         print(request.POST)
+        print(request.POST['checkbox'])
+        competition1 = Competition.objects.filter(id = request.POST['checkbox']).first()
+        
+        allowed_user_in_that_competition = competition1.maximum_user
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
+        
+        print(allowed_user_in_that_competition)
         team = Team(name = data.get('name'),competition=competition,city=city)
         team.save()
         team = Team.objects.all().last()

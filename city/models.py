@@ -42,6 +42,9 @@ class Competition(models.Model):
     competitionImage1 = models.ImageField(default='dcomp1.jpg',upload_to='competition_pics')
     competitionImage2 = models.ImageField(default='dcomp2.jpg',upload_to='competition_pics')
     background_img=models.ImageField(default='dcity.jpg',upload_to='competition_background_images')
+    minimum_user=models.CharField(max_length=1,default='1')
+    maximum_user=models.CharField(max_length=2,default='10')
+
 
     def __str__(self):
         return self.competitionName 

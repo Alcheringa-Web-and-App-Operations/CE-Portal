@@ -1141,7 +1141,7 @@
     city.addEventListener("change", (e) => {
         const city_id = e.target.value
 
-        fetch("{% url 'load_competitions' %}", {
+        fetch("{% url 'load_competitions_single' %}", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

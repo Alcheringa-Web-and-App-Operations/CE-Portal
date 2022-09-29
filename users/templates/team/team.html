@@ -1316,11 +1316,12 @@ ul.ks-cboxtags li label:focus {
   </div>
     <script src="{% static 'form/button.js' %}"></script>
     <script>
+      let index = 0;
         let city = document.getElementById("id_city")
         city.addEventListener("change", (e) => {
             const city_id = e.target.value
 
-            fetch("{% url 'load_competitions' %}", {
+            fetch("{% url 'load_competitions_team' %}", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
@@ -1342,6 +1343,8 @@ ul.ks-cboxtags li label:focus {
             checkboxes.forEach((item) => {
                 if (item !== checkbox) item.checked = false
             })
+            index = checkbox.value;
+            // console.log({{competition.index.maximum_user}});
         }
         
         function samefunc(e){
@@ -1366,7 +1369,10 @@ ul.ks-cboxtags li label:focus {
             } 
               
         }
-            
+        // const count= document.querySelector("#num");
+        // if(count.value< {{max_participants}}){
+
+        // }
         
         
         
