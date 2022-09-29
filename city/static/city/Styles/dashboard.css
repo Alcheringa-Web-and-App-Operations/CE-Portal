@@ -29,7 +29,7 @@
 #flex-item-13 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -37,7 +37,7 @@
 #flex-item-14 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -45,7 +45,7 @@
 #flex-item-15 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -53,7 +53,7 @@
 #flex-item-16 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -61,7 +61,7 @@
 #flex-item-18 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -100,6 +100,8 @@
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;  
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
@@ -110,6 +112,8 @@
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;  
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
@@ -120,6 +124,8 @@
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
@@ -130,6 +136,8 @@
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-radius: 30px;
   margin: 0px 20px 0px 10px;
 }
@@ -140,6 +148,8 @@
   font-size: 20px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-radius: 30px;
   margin: 0px 20px 0px 10px;
   border-style: groove;
@@ -268,18 +278,18 @@
 
 /***************  Competitions  *****************/
 
-/* .comp-main {
-  background-color: #f2e9e9;
-}
-
-.dmsans {
+.comp-main {
   font-family: "DM Sans", sans-serif;
 }
-
 .coolvetica {
-  font-family: Coolvetica;
+  font-family: "DM Sans",sans-serif;
   font-weight: 200;
 }
+/*
+background-color: #f2e9e9;
+.dmsans {
+}
+
 
 #competition {
   text-align: center;
