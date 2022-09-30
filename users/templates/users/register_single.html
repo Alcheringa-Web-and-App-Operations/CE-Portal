@@ -512,7 +512,24 @@
 
     .sections {
       width: 80%;
-      max-width: 100000000px;
+      max-width: 100%;
+
+
+
+    }
+    .solo_competetion
+    {
+      font-size: 50px;
+    }
+
+    .page-heading
+    {
+      font-size: 150%;
+    }
+
+    .head-style
+    {
+      font-size: 180%;
     }
 
     .page-heading {
@@ -525,7 +542,15 @@
     .input-text-field {
       min-width: none;
       width: 100%;
+      height: 60px;
+
     }
+    /*.input-text-field-1 {
+      min-width: none;
+      width: 100%;
+      height: 60px;
+
+    }*/
   }
 
   .add-member-button {
@@ -1064,20 +1089,21 @@ font-size: 30px;
 
   <!---------------Registeration form  STARTS ----------------->
   <br><br>
+ 
   <form method="POST" id="personForm">
     {% csrf_token %}
-    <div class="reg-form-all">
+    <div class="reg-form-all" >
       <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
       <div class="page-heading">
-        <h1 class="text-4xl " style="font-weight: 700;">Solo Competition</h1>
+        <p class="solo_competetion" style="font-weight: 700;">Solo Competition</p>
         <br>
         <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
       </div>
-      <div class="form">
+      <div class="form" >
         <div class="row-view">
           <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
             <br>
-            <div class="input-text-field-1">
+            <div class="input-text-field" style="font-size:10px;">
               {{ form.city }}
             </div>
           </div>
@@ -1093,7 +1119,7 @@ font-size: 30px;
               <span class="head-style">Name<span class="red-star"> *</span></span>
               <br>
               <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
-              <div class="input-text-field-1">{{ form.name }}</div>
+              <div class="input-text-field">{{ form.name }}</div>
             </div>
             <br><br><br>
             <div>
@@ -1101,8 +1127,8 @@ font-size: 30px;
               <br>
               <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
               <div style="display:flex; width: 100%;">
-                <div class="input-text-field-1" style="width:50px; margin-right: 10px">{{ form.countrycode }}</div>
-                <div class="input-text-field-1" style="width: 100%;">{{ form.contactno }}</div>
+                <div class="input-text-field" style="width:50px; margin-right: 10px">{{ form.countrycode }}</div>
+                <div class="input-text-field" style="width: 100%;">{{ form.contactno }}</div>
               </div>
 
             </div>
@@ -1123,7 +1149,7 @@ font-size: 30px;
               <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
               <br>
               <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
-              <div class="input-text-field-1">{{ form.yearofgraduation }}</div>
+              <div class="input-text-field">{{ form.yearofgraduation }}</div>
             </div>
           </div>
           <div class="sections m-5">
@@ -1142,14 +1168,14 @@ font-size: 30px;
               <span class="head-style">E-mail<span class="red-star"> *</span></span>
               <br>
               <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-              <div class="input-text-field-1">{{ form.email }}</div>
+              <div class="input-text-field">{{ form.email }}</div>
             </div>
             <br><br><br>
             <div>
               <span class="head-style">College Name<span class="red-star"> *</span></span>
               <br>
               <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-              <div class="input-text-field-1">{{ form.college_name }}</div>
+              <div class="input-text-field">{{ form.college_name }}</div>
             </div>
           </div>
 
@@ -1166,6 +1192,7 @@ font-size: 30px;
       </div>
     </div>
   </form>
+
   <div style="height: 120px;"></div>
   <!---------------Registeration form ENDS ----------------->
 
