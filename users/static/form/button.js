@@ -4,26 +4,34 @@ const count= document.querySelector("#num");
 const alert_div= document.querySelector("#alert");
 const register_btn= document.querySelector("#register_btn");
 
-let max_participants=5;
-let min_participants=3;
+
+console.log(max_participants)
 var i=2
 
 var curr_members = 2;
 var req_members= min_participants - curr_members;
+register_btn.addEventListener("click",e=>{
+    var req_members= min_participants - curr_members;
 
-if(req_members>0){
-    alert_div.innerHTML=`Add atleast ${req_members} more members in your Team to register for this competition.`
-    register_btn.disabled=true
-    }
+    if(req_members>0){
+        alert_div.innerHTML=`Add atleast ${req_members} more members in your Team to register for this competition.`
+        register_btn.disabled=true
+        }
+})
+
 
 add.addEventListener('click',target=>{
+    console.log(max_participants)
+    console.log(min_participants)
     target.preventDefault()
     if(count.value>=max_participants){
         add.disabled=true
+        
         console.log(curr_members)
         alert_div.innerHTML=`Maximum number of members added for this competition.`
     }
     if(count.value<max_participants){
+        console.log('temp')
         form.insertAdjacentHTML('beforeend',`<div id="${i}"><div class="row-view" >
         <div id="h${i}" class="member">
             <div >

@@ -1330,7 +1330,6 @@
         </div>
       </div>
     </div>
-
     <div class="container3">
       <div class="video">
         <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
@@ -1370,7 +1369,7 @@
       </div>
     </div>
   </div>
-  <script src="{% static 'form/button.js' %}"></script>
+
   <script>
     let index = 0;
     let city = document.getElementById("id_city")
@@ -1389,12 +1388,29 @@
           return data.text()
         })
         .then(data => {
-          console.log(data)
-          console.log(city.value)
           document.getElementById("check-container").innerHTML = data
         })
     })
+    let compet=document.getElementById
+    let max_participants=0;
+    let min_participants=0;
     function onlyOne(checkbox) {
+      fetch("{% url 'load_minmax' %}", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        body: JSON.stringify({ "comp_id": checkbox.value })
+      })
+        .then(data=>{
+          return data.json()
+        })
+        .then(data=>{
+            max_participants=Number(data.maxuser)
+            min_participants=Number(data.minuser)
+
+        })
       var checkboxes = document.getElementsByName('checkbox')
       checkboxes.forEach((item) => {
         if (item !== checkbox) item.checked = false
@@ -1436,6 +1452,7 @@
 
 
   </script>
+  <script src="{% static 'form/button.js' %}"></script>
 </body>
 
 </html>

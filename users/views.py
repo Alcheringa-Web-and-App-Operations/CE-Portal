@@ -6,6 +6,7 @@ from django.contrib import messages
 from .forms import EntryForm, PersonCreationForm, EntryFormTeams
 from .models import Competition, Person,City, Team
 import json
+from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 
@@ -96,6 +97,12 @@ def load_city(request):
     print(cities)
     return render(request,'users/comp_dropdown.html',{"cities":cities,"city_value":data['current_city'],"currentCity":current_city})
     return JsonResponse(list(cities.values('id', 'name')), safe=False)
+
+@csrf_exempt
+def load_minmax(request):
+    data=json.loads(request.body)
+    comp=Competition.objects.filter(id=data['comp_id']).first()
+    return JsonResponse({"minuser":comp.minimum_user,"maxuser":comp.maximum_user})
 
 def teamForm(request):
     data = request.POST
