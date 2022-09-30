@@ -1059,7 +1059,7 @@ ul.ks-cboxtags li label:focus {
             </div>
             <div class="row-view">
                 <div class="sections mx-5 mt-5">
-                    <div style="font-size: 120%;font-weight: bold;">Head's data:</div>
+                    <div style="font-size: 120%;font-weight: bold;">Leader's data:</div>
                 </div>
                 <div class="sections mx-5 mt-5"></div>
             </div>
@@ -1076,7 +1076,11 @@ ul.ks-cboxtags li label:focus {
                         <span class="head-style">Contact Number<span class="red-star"> *</span></span>
                         <br>
                         <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
-                        <input type="text" name="phoneNo0" class="input-text-field " maxlength="50" required id="id_name">
+                        <div style="display:flex; width: 100%;">
+                          <input type="text" name="countryCode0" class="input-text-field " maxlength="5" required id="id_name_country" style="width: 40px; margin-right: 10px;">
+                          <input type="text" name="phoneNo0" class="input-text-field " maxlength="50" required id="id_name">
+                        </div>
+                        
                     </div>
                     <br><br><br>
                     <div>
@@ -1151,7 +1155,10 @@ ul.ks-cboxtags li label:focus {
                             <span class="head-style">Contact Number<span class="red-star"> *</span></span>
                             <br>
                             <!-- <input type="number" id="cont_num_m_1" class="input-text-field " required> -->
-                            <input type="text" name="phoneNo1" class="input-text-field " maxlength="50" required id="id_name">
+                            <div style="display:flex; width: 100%;">
+                              <input type="text" name="countryCode1" class="input-text-field " maxlength="5" required id="id_name_country" style="width: 40px; margin-right: 10px;">
+                              <input type="text" name="phoneNo1" class="input-text-field " maxlength="50" required id="id_name">
+                            </div>
                         </div>
                         <br><br><br>
                         <div>
@@ -1164,7 +1171,7 @@ ul.ks-cboxtags li label:focus {
                                 <option value="mtech">M.Tech</option>
                                 <option value="other">Other</option>
                             </select>
-                            <input type="checkbox" style="margin-top: 12px" name="samedegree1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
+                            <input type="checkbox" style="margin-top: 12px" name="samedegree1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Leader</label>
                         </div>
                         <br><br><br>
                         <div>
@@ -1172,7 +1179,7 @@ ul.ks-cboxtags li label:focus {
                             <br>
                             <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
                             <input type="number" name="year1" class="input-text-field " maxlength="4" required id="id_year">
-                            <input type="checkbox" style="margin-top: 12px" name="sameyear1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
+                            <input type="checkbox" style="margin-top: 12px" name="sameyear1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Leader</label>
                             
                         </div>
                     </div>
@@ -1200,7 +1207,7 @@ ul.ks-cboxtags li label:focus {
                             <br>
                             <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
                             <input type="text" name="collegename1" class="input-text-field " value="" maxlength="254" required id="id_collegename">
-                            <input type="checkbox" style="margin-top: 12px" name="samecollege1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
+                            <input type="checkbox" style="margin-top: 12px" name="samecollege1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Leader</label>
                         </div>
                     </div>
         

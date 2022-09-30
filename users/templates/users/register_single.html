@@ -968,7 +968,11 @@
                             <span class="head-style">Contact Number<span class="red-star"> *</span></span>
                             <br>
                             <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
-                            <div class="input-text-field-1">{{ form.contactno }}</div>
+                            <div style="display:flex; width: 100%;">
+                              <div class="input-text-field-1" style="width:50px; margin-right: 10px">{{ form.countrycode }}</div>
+                              <div class="input-text-field-1" style="width: 100%;">{{ form.contactno }}</div>
+                            </div>
+                            
                         </div>
                         <br><br><br>
                         <div>
