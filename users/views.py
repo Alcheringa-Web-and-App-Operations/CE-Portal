@@ -100,16 +100,15 @@ def load_city(request):
 def teamForm(request):
     data = request.POST
     if request.method == 'POST':
-        print(request.POST)
-        print(request.POST['checkbox'])
+        # print(request.POST)
+        # print(request.POST['checkbox'])
         competition1 = Competition.objects.filter(id = request.POST['checkbox']).first()
         
         allowed_user_in_that_competition = competition1.maximum_user
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
-        
-        print(allowed_user_in_that_competition)
+        # print(allowed_user_in_that_competition)
         team = Team(name = data.get('name'),competition=competition,city=city)
         team.save()
         team = Team.objects.all().last()

@@ -1214,10 +1214,13 @@ ul.ks-cboxtags li label:focus {
                             style="margin-left: -5px;margin-right: 10px;"></i>Add member</button>
                 </div>
                 <div class="sections mx-5 mt-5"></div>
-            </div>
+              </div>
+              <div class="row-view">
+                <div id="alert" style="margin-left:-20rem;margin-top:10px;"></div>
+              </div>
             <br>
             <div class="row-view">
-                <button class=" register-button">Register</button>
+                <button id="register_btn" class="register-button">Register</button>
             </div>
         </div>
 </form>
@@ -1343,8 +1346,6 @@ ul.ks-cboxtags li label:focus {
             checkboxes.forEach((item) => {
                 if (item !== checkbox) item.checked = false
             })
-            index = checkbox.value;
-            // console.log({{competition.index.maximum_user}});
         }
         
         function samefunc(e){
@@ -1369,10 +1370,13 @@ ul.ks-cboxtags li label:focus {
             } 
               
         }
-        // const count= document.querySelector("#num");
-        // if(count.value< {{max_participants}}){
-
+        // let max_participants=5
+        const count1= document.querySelector("#num");
+        // console.log(count1.value)
+        // if(count1.value < max_participants){
+        //   alert_div.innerHTML=`<p>hiii</p>`
         // }
+        
         
         
         
