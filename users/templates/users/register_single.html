@@ -3,1175 +3,1205 @@
 {% load static %}
 
 <head>
-    <link rel="stylesheet" href="{% static 'users/styles/registration.css' %}">
+  <link rel="stylesheet" href="{% static 'users/styles/registration.css' %}">
 </head>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
 
-    @font-face {
-        font-family: Coolvetica;
-        src: url("{%static 'fonts/coolvetica rg.otf' %}");
+  @font-face {
+    font-family: Coolvetica;
+    src: url("{%static 'fonts/coolvetica rg.otf' %}");
+  }
+
+  body {
+    padding: 0px;
+    margin: 0px;
+  }
+
+
+  /************** Nav Bar ************************/
+
+  .flex-container-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    background-color: rgba(242, 158, 109, 1);
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  #flex-item-13 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+
+  #flex-item-14 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+
+  #flex-item-15 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+
+  #flex-item-16 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+
+  #flex-item-18 a:hover {
+    color: white;
+    background-color: rgba(242, 68, 5, 1);
+    transition: 0.4s;
+    border-style: groove;
+    border-color: #031059;
+  }
+
+  .flex-item-1 a:link {
+    color: rgba(28, 3, 15, 1);
+  }
+
+  .flex-item-1 a:visited {
+    color: rgba(28, 3, 15, 1);
+  }
+
+  @font-face {
+    font-family: Coolvetica;
+    src: url(coolvetica_rg.otf);
+  }
+
+  #flex-item-11 {
+    margin: 10px 5px 10px 20px;
+    /* position: relative; */
+  }
+
+  #flex-item-12 {
+    font-size: 35px;
+    color: rgba(0, 0, 0, 1);
+    font: Coolvetica;
+    font-weight: 400;
+    width: 200px;
+    margin: 0px auto 0px 5px;
+    font-family: Coolvetica;
+  }
+
+  #flex-item-13 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  #flex-item-14 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  #flex-item-15 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 10px 0px 10px;
+  }
+
+  #flex-item-16 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 21px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 20px 0px 10px;
+  }
+
+  #flex-item-18 a {
+    text-decoration: none;
+    font-family: Coolvetica;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 5px;
+    border-radius: 30px;
+    margin: 0px 20px 0px 10px;
+    border-style: groove;
+    border-color: #031059;
+    border-width: 2px;
+  }
+
+  .toggle-btn {
+    width: 35px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    display: none;
+  }
+
+  .toggle-btn span {
+    /* display: inline-block; */
+    width: 100%;
+    height: 3.5px;
+    background-color: #031059;
+    float: left;
+    margin-bottom: 8px;
+  }
+
+  .cross-btn {
+    font-size: 30px;
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    display: none;
+  }
+
+  .disapp_in_compview {
+    position: absolute;
+    right: 70px;
+    top: 17px;
+    float: left;
+  }
+
+  .member {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    justify-content: space-between;
+  }
+
+  @media (max-width:490px) {
+    .member {
+      width: 80%;
+    }
+  }
+
+  @media (min-width: 775px) {
+    .disapp_in_compview {
+      display: none;
+    }
+  }
+
+  @media (max-width: 775px) and (min-width: 460px) {
+    .toggle-btn {
+      display: inline;
     }
 
-    body {
-        padding: 0px;
-        margin: 0px;
+    .disapp_in_mobview {
+      display: none;
     }
 
-
-    /************** Nav Bar ************************/
-
-    .flex-container-1 {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        background-color: rgba(242, 158, 109, 1);
-        align-items: center;
-        width: 100%;
-        gap: 10px;
-    }
-
-    #flex-item-13 a:hover {
-        color: white;
-        background-color: rgba(242, 68, 5, 1);
-        transition: 0.4s;
-        border-style: groove;
-        border-color: #031059;
-    }
-
-    #flex-item-14 a:hover {
-        color: white;
-        background-color: rgba(242, 68, 5, 1);
-        transition: 0.4s;
-        border-style: groove;
-        border-color: #031059;
-    }
-
-    #flex-item-15 a:hover {
-        color: white;
-        background-color: rgba(242, 68, 5, 1);
-        transition: 0.4s;
-        border-style: groove;
-        border-color: #031059;
-    }
-
-    #flex-item-16 a:hover {
-        color: white;
-        background-color: rgba(242, 68, 5, 1);
-        transition: 0.4s;
-        border-style: groove;
-        border-color: #031059;
-    }
-
-    #flex-item-18 a:hover {
-        color: white;
-        background-color: rgba(242, 68, 5, 1);
-        transition: 0.4s;
-        border-style: groove;
-        border-color: #031059;
-    }
-
-    .flex-item-1 a:link {
-        color: rgba(28, 3, 15, 1);
-    }
-
-    .flex-item-1 a:visited {
-        color: rgba(28, 3, 15, 1);
-    }
-
-    @font-face {
-        font-family: Coolvetica;
-        src: url(coolvetica_rg.otf);
-    }
-
-    #flex-item-11 {
-        margin: 10px 5px 10px 20px;
-        /* position: relative; */
-    }
-
-    #flex-item-12 {
-        font-size: 35px;
-        color: rgba(0, 0, 0, 1);
-        font: Coolvetica;
-        font-weight: 400;
-        width: 200px;
-        margin: 0px auto 0px 5px;
-        font-family: Coolvetica;
-    }
-
-    #flex-item-13 a {
-        text-decoration: none;
-        font-family: Coolvetica;
-        font-size: 21px;
-        font-weight: 400;
-        padding: 5px;
-        border-radius: 30px;
-        margin: 0px 10px 0px 10px;
-    }
-
-    #flex-item-14 a {
-        text-decoration: none;
-        font-family: Coolvetica;
-        font-size: 21px;
-        font-weight: 400;
-        padding: 5px;
-        border-radius: 30px;
-        margin: 0px 10px 0px 10px;
-    }
-
-    #flex-item-15 a {
-        text-decoration: none;
-        font-family: Coolvetica;
-        font-size: 21px;
-        font-weight: 400;
-        padding: 5px;
-        border-radius: 30px;
-        margin: 0px 10px 0px 10px;
-    }
-
-    #flex-item-16 a {
-        text-decoration: none;
-        font-family: Coolvetica;
-        font-size: 21px;
-        font-weight: 400;
-        padding: 5px;
-        border-radius: 30px;
-        margin: 0px 20px 0px 10px;
-    }
-
-    #flex-item-18 a {
-        text-decoration: none;
-        font-family: Coolvetica;
-        font-size: 20px;
-        font-weight: 400;
-        padding: 5px;
-        border-radius: 30px;
-        margin: 0px 20px 0px 10px;
-        border-style: groove;
-        border-color: #031059;
-        border-width: 2px;
+    #flex-item-16 {
+      margin-left: auto;
     }
 
     .toggle-btn {
-        width: 35px;
-        position: absolute;
-        right: 10px;
-        top: 6px;
-        display: none;
+      margin: 10px 10px 0px 0px;
     }
 
-    .toggle-btn span {
-        /* display: inline-block; */
-        width: 100%;
-        height: 3.5px;
-        background-color: #031059;
-        float: left;
-        margin-bottom: 8px;
+    div.show {
+      display: block;
+      width: 100%;
+      padding: 2px 2px 2px 2px;
+      margin: 2px 2px 2px 2px;
+      display: flex;
+      justify-content: end;
     }
 
-    .cross-btn {
-        font-size: 30px;
-        position: absolute;
-        right: 25px;
-        top: 5px;
-        display: none;
+    div.alternate1 {
+      display: none;
     }
 
-    .disapp_in_compview {
-        position: absolute;
-        right: 70px;
-        top: 17px;
-        float: left;
+    div.alternate2 {
+      display: block;
+    }
+  }
+
+  @media (max-width: 460px) {
+    #flex-item-12 {
+      display: none;
     }
 
-    .member {
-        display: flex;
-        align-items: center;
-        width: 80%;
-        max-width: 800px;
-        justify-content: space-between;
+    .disapp_in_mobview {
+      display: none;
     }
 
-    @media (max-width:490px) {
-        .member {
-            width: 80%;
-        }
+    .toggle-btn {
+      display: block;
     }
 
-    @media (min-width: 775px) {
-        .disapp_in_compview {
-            display: none;
-        }
+    #flex-item-11 {
+      margin: 10px auto 10px 20px;
     }
 
-    @media (max-width: 775px) and (min-width: 460px) {
-        .toggle-btn {
-            display: inline;
-        }
-
-        .disapp_in_mobview {
-            display: none;
-        }
-
-        #flex-item-16 {
-            margin-left: auto;
-        }
-
-        .toggle-btn {
-            margin: 10px 10px 0px 0px;
-        }
-
-        div.show {
-            display: block;
-            width: 100%;
-            padding: 2px 2px 2px 2px;
-            margin: 2px 2px 2px 2px;
-            display: flex;
-            justify-content: end;
-        }
-
-        div.alternate1 {
-            display: none;
-        }
-
-        div.alternate2 {
-            display: block;
-        }
+    .toggle-btn {
+      margin: 10px 10px 0px 0px;
     }
 
-    @media (max-width: 460px) {
-        #flex-item-12 {
-            display: none;
-        }
-
-        .disapp_in_mobview {
-            display: none;
-        }
-
-        .toggle-btn {
-            display: block;
-        }
-
-        #flex-item-11 {
-            margin: 10px auto 10px 20px;
-        }
-
-        .toggle-btn {
-            margin: 10px 10px 0px 0px;
-        }
-
-        div.show {
-            display: block;
-            width: 100%;
-            /* padding: 2px 2px 2px 2px ; */
-            margin: 2px 2px 5px 2px;
-            display: flex;
-            justify-content: end;
-        }
-
-        div.alternate1 {
-            display: none;
-        }
-
-        div.alternate2 {
-            display: block;
-        }
+    div.show {
+      display: block;
+      width: 100%;
+      /* padding: 2px 2px 2px 2px ; */
+      margin: 2px 2px 5px 2px;
+      display: flex;
+      justify-content: end;
     }
 
-    .alert {
-        color: rgb(132 32 41);
-        background-color: rgb(248 215 218);
-        border-color: rgb(245 194 199);
-        padding: 16px;
-        border: 3px;
+    div.alternate1 {
+      display: none;
     }
 
-
-    /****************** Registration image ************************/
-
-    #background-image div {
-        display: inline-block;
+    div.alternate2 {
+      display: block;
     }
+  }
 
-    #background-image {
-        background-color: #031059;
-        background-image: url("{% static 'images/background.png' %}");
-        height: 40vw;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    #individual {
-        background-color: rgba(0, 0, 0, 0.35);
-        margin-left: 27%;
-        margin-right: 6.5%;
-    }
-
-    #team {
-        background-color: #F29E6D;
-
-    }
-
-    .box {
-        border: 4px solid #FFFFFF;
-        height: 42px;
-        width: 20%;
-        margin-top: 5%;
-        text-align: center;
-        color: white;
-    }
-
-    .text {
-        font-size: 1.2vw;
-        margin-top: 2%;
-    }
-
-    .indiv:hover {
-        color: indigo;
-    }
+  .alert {
+    color: rgb(132 32 41);
+    background-color: rgb(248 215 218);
+    border-color: rgb(245 194 199);
+    padding: 16px;
+    border: 3px;
+  }
 
 
-    /****************** Registration FORM ************************/
+  /****************** Registration image ************************/
 
-    .reg-form-all {
-        width: 99vw;
-        font-family: 'DM Sans', Tahoma, Geneva, Verdana, sans-serif;
+  #background-image div {
+    display: inline-block;
+  }
+
+  #background-image {
+    background-color: #031059;
+    background-image: url("{% static 'images/background.png' %}");
+    height: 40vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  #individual {
+    background-color: rgba(0, 0, 0, 0.35);
+    margin-left: 27%;
+    margin-right: 6.5%;
+  }
+
+  #team {
+    background-color: #F29E6D;
+
+  }
+
+  .box {
+    border: 4px solid #FFFFFF;
+    height: 42px;
+    width: 20%;
+    margin-top: 5%;
+    text-align: center;
+    color: white;
+  }
+
+  .text {
+    font-size: 1.2vw;
+    margin-top: 2%;
+  }
+
+  .indiv:hover {
+    color: indigo;
+  }
+
+
+  /****************** Registration FORM ************************/
+
+  .reg-form-all {
+    width: 99vw;
+    font-family: 'DM Sans', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .sections {
+    width: 40%;
+    max-width: 400px;
+  }
+
+
+  /* check boxes-- start */
+
+  .container {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  ul.ks-cboxtags {
+    list-style: none;
+    padding-top: 3px;
+  }
+
+  ul.ks-cboxtags li {
+    display: inline;
+  }
+
+  ul.ks-cboxtags li label {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid #002F43;
+    color: #002F43;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+  }
+
+  ul.ks-cboxtags li label {
+    padding: 10px 15px 11px 15px;
+    cursor: pointer;
+  }
+
+  ul.ks-cboxtags li label::after {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: bold;
+    font-size: 12px;
+    padding: 0px 0px 0px 7px;
+    transition: transform .3s ease-in-out;
+  }
+
+  ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
+    content: "\f00c";
+    transition: transform .3s ease-in-out;
+  }
+
+  ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+    border: 2px solid #002F43;
+    background-color: #F29E6D;
+    color: #002F43;
+    transition: all .2s;
+  }
+
+  ul.ks-cboxtags li input[type="checkbox"] {
+    display: absolute;
+  }
+
+  ul.ks-cboxtags li input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+
+  ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+    border: 2px solid #002F43;
+  }
+
+
+  /* check boxes-- END */
+
+
+  /* red-star-- START */
+
+  .red-star {
+    color: red;
+  }
+
+
+  /* red-star-- END */
+
+  .input-text-field {
+    height: 40px;
+    margin-top: 9px;
+    width: 100%;
+    padding: 5px;
+    border-color: black;
+    border-width: 2px;
+    font-size: 16px;
+  }
+
+  .input-text-field-1 select {
+    height: 40px;
+    margin-top: 9px;
+    width: 100%;
+    padding: 5px;
+    border-color: black;
+    border-width: 2px;
+    font-size: 16px;
+  }
+
+  .drop-down {
+    color: #989898;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .head-style {
+    font-size: 16px;
+  }
+
+  .row-view {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .page-heading {
+    margin: 20px 15% 5px 15%;
+  }
+
+  .register-button {
+    margin: auto;
+    padding: 4px 50px;
+    background: #F24405;
+    border-radius: 32px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 46px;
+    color: #FFFFFF;
+    transition: box-shadow 0.6s;
+  }
+
+  .register-button:hover,
+  .register-button:focus,
+  ul.ks-cboxtags li label:hover,
+  ul.ks-cboxtags li label:focus {
+    box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
+  }
+
+  @media only screen and (orientation: portrait) {
+    .row-view {
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
     }
 
     .sections {
-        width: 40%;
-        max-width: 400px;
-    }
-
-
-    /* check boxes-- start */
-
-    .container {
-        width: 100%;
-        font-size: 13px;
-    }
-
-    ul.ks-cboxtags {
-        list-style: none;
-        padding-top: 3px;
-    }
-
-    ul.ks-cboxtags li {
-        display: inline;
-    }
-
-    ul.ks-cboxtags li label {
-        display: inline-block;
-        background-color: rgba(255, 255, 255, .9);
-        border: 2px solid #002F43;
-        color: #002F43;
-        border-radius: 25px;
-        white-space: nowrap;
-        margin: 3px 0px;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        transition: all .2s;
-    }
-
-    ul.ks-cboxtags li label {
-        padding: 10px 15px 11px 15px;
-        cursor: pointer;
-    }
-
-    ul.ks-cboxtags li label::after {
-        display: inline-block;
-        font-style: normal;
-        font-variant: normal;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
-        font-family: "Font Awesome 5 Free";
-        font-weight: bold;
-        font-size: 12px;
-        padding: 0px 0px 0px 7px;
-        transition: transform .3s ease-in-out;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
-        content: "\f00c";
-        transition: transform .3s ease-in-out;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"]:checked+label {
-        border: 2px solid #002F43;
-        background-color: #F29E6D;
-        color: #002F43;
-        transition: all .2s;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"] {
-        display: absolute;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"] {
-        position: absolute;
-        opacity: 0;
-    }
-
-    ul.ks-cboxtags li input[type="checkbox"]:focus+label {
-        border: 2px solid #002F43;
-    }
-
-
-    /* check boxes-- END */
-
-
-    /* red-star-- START */
-
-    .red-star {
-        color: red;
-    }
-
-
-    /* red-star-- END */
-
-    .input-text-field {
-        height: 40px;
-        margin-top: 9px;
-        width: 100%;
-        padding: 5px;
-        border-color: black;
-        border-width: 2px;
-        font-size: 16px;
-    }
-
-    .input-text-field-1 select {
-        height: 40px;
-        margin-top: 9px;
-        width: 100%;
-        padding: 5px;
-        border-color: black;
-        border-width: 2px;
-        font-size: 16px;
-    }
-
-    .drop-down {
-        color: #989898;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #ddd;
-    }
-
-    .head-style {
-        font-size: 16px;
-    }
-
-    .row-view {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
+      width: 80%;
+      max-width: 100000000px;
     }
 
     .page-heading {
-        margin: 20px 15% 5px 15%;
+      margin: auto;
+      margin-top: 40px;
+      margin-left: 10%;
+      text-align: left;
     }
 
-    .register-button {
-        margin: auto;
-        padding: 4px 50px;
-        background: #F24405;
-        border-radius: 32px;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 46px;
-        color: #FFFFFF;
-        transition: box-shadow 0.6s;
+    .input-text-field {
+      min-width: none;
+      width: 100%;
     }
-
-    .register-button:hover,
-    .register-button:focus,
-    ul.ks-cboxtags li label:hover,
-    ul.ks-cboxtags li label:focus {
-        box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-    }
-
-    @media only screen and (orientation: portrait) {
-        .row-view {
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .sections {
-            width: 80%;
-            max-width: 100000000px;
-        }
-
-        .page-heading {
-            margin: auto;
-            margin-top: 40px;
-            margin-left: 10%;
-            text-align: left;
-        }
-
-        .input-text-field {
-            min-width: none;
-            width: 100%;
-        }
-    }
-
-    .add-member-button {
-        margin-top: 9px;
-        padding: 10px 15px;
-        border-color: black;
-        border-width: 1px;
-        transition: box-shadow 0.3s;
-    }
-
-    .add-member-button:hover {
-        box-shadow: 0 3px 8px 0 rgba(86, 86, 86, 0.75);
-    }
-
-
-    /******************  FOOTER  ************************/
-
-    .container0 {
-  background-color: #2c3d73;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  color: white;
-  /* justify-content: center; */
-  /* width: 100%; */
-  /* height:100vh; */
-}
-.container1 {
-  border-right: 4px solid #f29e6d;
-  /* border-bottom: 4px solid   #F29E6D; */
-  background-color: #2c3d73;
-  /* margin-right: auto; */
-  /* margin-left: auto; */
-  display: flex;
-  flex-grow: 1;
-  justify-content: center;
-  align-items: center;
-}
-.container1 img {
-  padding-left: 50px;
-  padding-right: 50%;
-  padding-top: 25px;
-  margin-bottom: auto;
-}
-.container2 {
-  padding-left: 40px;
-  border-right: 4px solid #f29e6d;
-  padding-right: 30px;
-  padding-top: 20px;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 400;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: #2c3d73;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
-  flex-grow: 1;
-}
-.footer_text{
-  margin:0;
-}
-.alcher {
-  color: #f29e6d;
-  font-family: Bohemian Soul;
-  font-size: 80px;
-  font-weight: bold;
-  margin-bottom: auto;
-}
-.alcher h1 {
-    padding: 0;
-}
-.contactinfo {
-  margin-top: auto;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 400;
-  padding-top: 40px;
-}
-#contact {
-  color: #f29e6d;
-  padding-bottom: 20px;
-  font-size: 45px;
-}
-.names {
-  display: flex;
-  font-weight: bolder;
-}
-.names h2,h3,p{
-  margin: 0;
-}
-.Siddhant {
-  padding-right: 17px;
-  padding-bottom: 10px;
-}
-#sid, #akshara,#quasim{
-  padding-bottom: 10px;
-  font-size: 24px;
-  margin: 0;
-}
-#pr1,#pr2,#pr3 {
-  padding-bottom: 10px;
-  font-size: 18.72px;
-  margin: 0;
-}
-
-.Akshara {
-  padding-right: 17px;
-  padding-bottom: 10px;
-}
-
-.Quasim {
-  padding-bottom: 10px;
-}
-
-.video {
-  /* margin-bottom: 150px; */
-  /* padding: 0px 0px 40px 0px; */
-  margin-bottom: auto;
-  display: flex;
-  flex-direction: column;
-  /* border-bottom:4px solid   #F29E6D ; */
-}
-
-/* .size-iframe{
-      height: 140%;
-      width: 85%;
-  } */
-
-.follow {
-  margin-top: auto;
-  /* border-top: 4px solid   #F29E6D;; */
-}
-
-.icons {
-  display: flex;
-  flex-direction: row;
-  width: 77%;
-  justify-content: space-between;
-}
-
-#insta {
-  padding-right: 14px;
-}
-#link {
-  padding-right: 14px;
-}
-#facebook {
-  padding-right: 14px;
-}
-#twitter {
-  padding-right: 14px;
-}
-#youtube {
-  padding-right: 14px;
-}
-
-@media (min-width: 1230px) {
-  .size-iframe {
-    height: 140%;
-    width: 85%;
   }
-  .container3 {
-    color: #f29e6d;
-    padding-left: 20px;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    justify-content: center;
+
+  .add-member-button {
+    margin-top: 9px;
+    padding: 10px 15px;
+    border-color: black;
+    border-width: 1px;
+    transition: box-shadow 0.3s;
+  }
+
+  .add-member-button:hover {
+    box-shadow: 0 3px 8px 0 rgba(86, 86, 86, 0.75);
+  }
+
+
+  /******************  FOOTER  ************************/
+
+  .container0 {
     background-color: #2c3d73;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    color: white;
+    /* justify-content: center; */
+    /* width: 100%; */
+    /* height:100vh; */
   }
-  #discover {
-    margin-top: 30px;
-    padding-bottom: 30px;
-    font-size: 30px;
-  }
-}
 
-@media (max-width: 1230px) and (min-width: 1040px) {
   .container1 {
-    display: none;
+    border-right: 4px solid #f29e6d;
+    /* border-bottom: 4px solid   #F29E6D; */
+    background-color: #2c3d73;
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
   }
 
-  .alcher {
-    text-align: center;
-  }
-  .contactinfo {
-    text-align: center;
-  }
-  .video {
+  .container1 img {
+    padding-left: 50px;
+    padding-right: 50%;
+    padding-top: 25px;
     margin-bottom: auto;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    height: 100%;
-    justify-content: center;
-    align-self: center;
-    padding-bottom: 40px;
   }
 
-  .class-iframe {
-    align-self: center;
-    margin-bottom: 30px;
-  }
-
-  #follow-us {
-    padding-bottom: 20px;
-  }
-  /* .follow{
-          justify-content: center;
-          align-self: center;
-      } */
-  .icons {
-    justify-content: space-evenly;
-    width: 100%; 
-  }
-  .container3 {
-    color: #f29e6d;
-    /* padding-left: 20px; */
+  .container2 {
+    padding-left: 40px;
+    border-right: 4px solid #f29e6d;
+    padding-right: 30px;
+    padding-top: 20px;
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
     justify-content: center;
+    flex-direction: column;
     background-color: #2c3d73;
     /* margin-left: auto; */
     /* margin-right: auto; */
     flex-grow: 1;
   }
-  #discover {
-    margin-top: 30px;
-    padding-bottom: 30px;
-    font-size: 30px;
-    text-align: center;
-  }
-}
 
-.icons img {
-  filter: invert(100%);
-}
-@media (max-width: 1040px) {
-  .container1 {
-    display: none;
+  .footer_text {
+    margin: 0;
   }
 
   .alcher {
-    text-align: center;
+    color: #f29e6d;
+    font-family: Bohemian Soul;
+    font-size: 80px;
+    font-weight: bold;
+    margin-bottom: auto;
+  }
+
+  .alcher h1 {
+    padding: 0;
   }
 
   .contactinfo {
-    text-align: center;
+    margin-top: auto;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    padding-top: 40px;
+  }
+
+  #contact {
+    color: #f29e6d;
+    padding-bottom: 20px;
+    font-size: 45px;
   }
 
   .names {
     display: flex;
-    flex-grow: 1;
-    justify-content: center;
+    font-weight: bolder;
+  }
+
+  .names h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  .Siddhant {
+    padding-right: 17px;
+    padding-bottom: 10px;
+  }
+
+  #sid,
+  #akshara,
+  #quasim {
+    padding-bottom: 10px;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  #pr1,
+  #pr2,
+  #pr3 {
+    padding-bottom: 10px;
+    font-size: 18.72px;
+    margin: 0;
+  }
+
+  .Akshara {
+    padding-right: 17px;
+    padding-bottom: 10px;
+  }
+
+  .Quasim {
+    padding-bottom: 10px;
   }
 
   .video {
+    /* margin-bottom: 150px; */
+    /* padding: 0px 0px 40px 0px; */
     margin-bottom: auto;
     display: flex;
     flex-direction: column;
-    width: 80%;
-    height: 100%;
-    justify-content: center;
-    align-self: center;
-    padding-bottom: 40px;
+    /* border-bottom:4px solid   #F29E6D ; */
   }
 
-  .class-iframe {
-    align-self: center;
+  /* .size-iframe{
+      height: 140%;
+      width: 85%;
+  } */
+
+  .follow {
+    margin-top: auto;
+    /* border-top: 4px solid   #F29E6D;; */
   }
 
-  #follow-us {
-    padding-bottom: 20px;
-    text-align: center;
+  .icons {
+    display: flex;
+    flex-direction: row;
+    width: 77%;
+    justify-content: space-between;
   }
-  /* .follow{
+
+  #insta {
+    padding-right: 14px;
+  }
+
+  #link {
+    padding-right: 14px;
+  }
+
+  #facebook {
+    padding-right: 14px;
+  }
+
+  #twitter {
+    padding-right: 14px;
+  }
+
+  #youtube {
+    padding-right: 14px;
+  }
+
+  @media (min-width: 1230px) {
+    .size-iframe {
+      height: 140%;
+      width: 85%;
+    }
+
+    .container3 {
+      color: #f29e6d;
+      padding-left: 20px;
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+      justify-content: center;
+      background-color: #2c3d73;
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+      flex-grow: 1;
+    }
+
+    #discover {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 1230px) and (min-width: 1040px) {
+    .container1 {
+      display: none;
+    }
+
+    .alcher {
+      text-align: center;
+    }
+
+    .contactinfo {
+      text-align: center;
+    }
+
+    .video {
+      margin-bottom: auto;
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      height: 100%;
+      justify-content: center;
+      align-self: center;
+      padding-bottom: 40px;
+    }
+
+    .class-iframe {
+      align-self: center;
+      margin-bottom: 30px;
+    }
+
+    #follow-us {
+      padding-bottom: 20px;
+    }
+
+    /* .follow{
+          justify-content: center;
+          align-self: center;
+      } */
+    .icons {
+      justify-content: space-evenly;
+      width: 100%;
+    }
+
+    .container3 {
+      color: #f29e6d;
+      /* padding-left: 20px; */
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+      justify-content: center;
+      background-color: #2c3d73;
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+      flex-grow: 1;
+    }
+
+    #discover {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+
+  .icons img {
+    filter: invert(100%);
+  }
+
+  @media (max-width: 1040px) {
+    .container1 {
+      display: none;
+    }
+
+    .alcher {
+      text-align: center;
+    }
+
+    .contactinfo {
+      text-align: center;
+    }
+
+    .names {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .video {
+      margin-bottom: auto;
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      height: 100%;
+      justify-content: center;
+      align-self: center;
+      padding-bottom: 40px;
+    }
+
+    .class-iframe {
+      align-self: center;
+    }
+
+    #follow-us {
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    /* .follow{
               justify-content: center;
               align-self: center;
           } */
-  .icons {
-    justify-content: space-evenly;
-    width: 100%;
-  }
-  .container3 {
-    color: #f29e6d;
-    /* padding-left: 20px; */
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    background-color: #2c3d73;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    flex-grow: 1;
-  }
-  #discover {
-    margin-top: 30px;
-    padding-bottom: 30px;
-    font-size: 30px;
-    text-align: center;
-  }
-}
+    .icons {
+      justify-content: space-evenly;
+      width: 100%;
+    }
 
-@media (max-width: 500px) {
-  .container0 {
-    font-size: 85%;
-  }
-  .alcher {
-    font-size: 25px;
+    .container3 {
+      color: #f29e6d;
+      /* padding-left: 20px; */
+      font-family: "DM Sans", sans-serif;
+      font-weight: 400;
+      display: flex;
+      flex-direction: column;
+      /* flex-wrap: wrap; */
+      justify-content: center;
+      background-color: #2c3d73;
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+      flex-grow: 1;
+    }
+
+    #discover {
+      margin-top: 30px;
+      padding-bottom: 30px;
+      font-size: 30px;
+      text-align: center;
+    }
   }
 
-  #discover {
-    font-size: 40px;
+  @media (max-width: 500px) {
+    .container0 {
+      font-size: 85%;
+    }
+
+    .alcher {
+      font-size: 25px;
+    }
+
+    #discover {
+      font-size: 40px;
+    }
+
+    #contact {
+      font-size: 40px;
+    }
+
+    #follow-us {
+      /* padding-left: 29.29%; */
+      font-size: 2em;
+    }
+
+    .media {
+      height: 50px;
+    }
   }
-  #contact {
-    font-size: 40px;
-  }
-  #follow-us {
-    /* padding-left: 29.29%; */
-    font-size: 2em;
-  }
-  .media {
-    height: 50px;
-  }
-}
 </style>
 
 
 <body>
-    {% comment %}
-    <!---------------Nav Bar -----------------> {% endcomment %}
-    <div class="flex-container-1">
-        <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-            <a href="#"> Register</a>
-        </div>
-
-        <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
-            <span>╳</span>
-        </div>
-
-        <div class="flex-item-1" id="flex-item-11">
-            <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
-        </div>
-
-        <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
-
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-            <a href="#"> About Us</a>
-        </div> {% endcomment %}
-
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-            <a href="#"> Contact</a>
-        </div> {% endcomment %}
-
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-            <a href="#"> Schedule</a>
-        </div> {% endcomment %}
-
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-            <a href="{% url 'landing-page' %}"> Home</a>
-        </div>
+  {% comment %}
+  <!---------------Nav Bar -----------------> {% endcomment %}
+  <div class="flex-container-1">
+    <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
+      <a href="#"> Register</a>
     </div>
 
-    {% for message in messages %}
-    <div class="alert">
-        {{ message }}
+    <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    {% endfor %}
-    <!---- Registration image ---->
-    <div id="background-image">
-        <div id="register-image">
-            <img src="{% static 'images/Registration.png' %}" alt="" width="70%"
-                style="margin-top: 8% ; margin-left: 20%;">
-        </div>
-        <a href="{% url 'register_single' %}">
-            <div id="individual" class="box" style="background-color: #F29E6D;">
-                <div class="text  indiv"><b>Individual</b></div>
-            </div>
-        </a>
-        <a href="{% url 'register_team' %}">
-            <div id="team" class="box" style="background: transparent;">
-                <div class="text"><b>Team</b></div>
-            </div>
-        </a>
-    </div>
-    <!--Registration image over-->
 
-    <!---------------Registeration form  STARTS ----------------->
-    <br><br>
-    <form method="POST" id="personForm">
-        {% csrf_token %}
-        <div class="reg-form-all">
-            <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
-            <div class="page-heading">
-                <h1 class="text-4xl " style="font-weight: 700;">Registration for Individual</h1>
-                <br>
-                <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
+    <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
+      <span>╳</span>
+    </div>
+
+    <div class="flex-item-1" id="flex-item-11">
+      <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
+    </div>
+
+    <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+      <a href="#"> About Us</a>
+    </div> {% endcomment %}
+
+    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+      <a href="#"> Contact</a>
+    </div> {% endcomment %}
+
+    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+      <a href="#"> Schedule</a>
+    </div> {% endcomment %}
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+      <a href="{% url 'landing-page' %}"> Home</a>
+    </div>
+  </div>
+
+  {% for message in messages %}
+  <div class="alert">
+    {{ message }}
+  </div>
+  {% endfor %}
+  <!---- Registration image ---->
+  <div id="background-image">
+    <div id="register-image">
+      <img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
+    </div>
+    <a href="{% url 'register_single' %}">
+      <div id="individual" class="box" style="background-color: #F29E6D;">
+        <div class="text  indiv"><b>Individual</b></div>
+      </div>
+    </a>
+    <a href="{% url 'register_team' %}">
+      <div id="team" class="box" style="background: transparent;">
+        <div class="text"><b>Team</b></div>
+      </div>
+    </a>
+  </div>
+  <!--Registration image over-->
+
+  <!---------------Registeration form  STARTS ----------------->
+  <br><br>
+  <form method="POST" id="personForm">
+    {% csrf_token %}
+    <div class="reg-form-all">
+      <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
+      <div class="page-heading">
+        <h1 class="text-4xl " style="font-weight: 700;">Registration for Individual</h1>
+        <br>
+        <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
+      </div>
+      <div class="form">
+        <div class="row-view">
+          <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
+            <br>
+            <div class="input-text-field-1">
+              {{ form.city }}
             </div>
-            <div class="form">
-                <div class="row-view">
-                    <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
-                        <br>
-                        <div class="input-text-field-1">
-                            {{ form.city }}
-                        </div>
-                    </div>
-                    <div class="sections m-5">
-                        <div id="check-container">
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="row-view">
-                    <div class="sections m-5">
-                        <div>
-                            <span class="head-style">Name<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
-                            <div class="input-text-field-1">{{ form.name }}</div>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">Contact Number<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
-                            <div style="display:flex; width: 100%;">
-                              <div class="input-text-field-1" style="width:50px; margin-right: 10px">{{ form.countrycode }}</div>
-                              <div class="input-text-field-1" style="width: 100%;">{{ form.contactno }}</div>
-                            </div>
-                            
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">Degree<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                            <select class="input-text-field" name="degree" id="degree" required> 
-                                <option class="drop-down">Degree</option>
-                                <option value="btech">B.Tech</option>
-                                <option value="mtech">M.Tech</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
-                            <div class="input-text-field-1">{{ form.yearofgraduation }}</div>
-                        </div>
-                    </div>
-                    <div class="sections m-5">
-                        <div>
-                            <span class="head-style">Gender<span class="red-star"> *</span></span>
-                            <br>
-                            <select class="input-text-field " name="gender" id="gender_m_0" required>
-                                <option class="drop-down">Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">E-mail<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                            <div class="input-text-field-1">{{ form.email }}</div>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">College Name<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                            <div class="input-text-field-1">{{ form.college_name }}</div>
-                        </div>
-                    </div>
-            
-            
-                </div>
-                <br>
-                <!-- <div class="row-view">
+          </div>
+          <div class="sections m-5">
+            <div id="check-container">
+
+            </div>
+          </div>
+        </div>
+        <div class="row-view">
+          <div class="sections m-5">
+            <div>
+              <span class="head-style">Name<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
+              <div class="input-text-field-1">{{ form.name }}</div>
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">Contact Number<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
+              <div style="display:flex; width: 100%;">
+                <div class="input-text-field-1" style="width:50px; margin-right: 10px">{{ form.countrycode }}</div>
+                <div class="input-text-field-1" style="width: 100%;">{{ form.contactno }}</div>
+              </div>
+
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">Degree<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+              <select class="input-text-field" name="degree" id="degree" required>
+                <option class="drop-down">Degree</option>
+                <option value="btech">B.Tech</option>
+                <option value="mtech">M.Tech</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+              <div class="input-text-field-1">{{ form.yearofgraduation }}</div>
+            </div>
+          </div>
+          <div class="sections m-5">
+            <div>
+              <span class="head-style">Gender<span class="red-star"> *</span></span>
+              <br>
+              <select class="input-text-field " name="gender" id="gender_m_0" required>
+                <option class="drop-down">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">E-mail<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+              <div class="input-text-field-1">{{ form.email }}</div>
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">College Name<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+              <div class="input-text-field-1">{{ form.college_name }}</div>
+            </div>
+          </div>
+
+
+        </div>
+        <br>
+        <!-- <div class="row-view">
                     <input type="submit" value="Register">
                     <button>REgister</button>
                 </div> -->
-                <div class="row-view">
-                    <button class=" register-button">Register</button>
-                </div>
-            </div>
+        <div class="row-view">
+          <button class=" register-button">Register</button>
         </div>
-    </form>
-    <div style="height: 120px;"></div>
-    <!---------------Registeration form ENDS ----------------->
+      </div>
+    </div>
+  </form>
+  <div style="height: 120px;"></div>
+  <!---------------Registeration form ENDS ----------------->
 
-    <!--FOOTER-->
+  <!--FOOTER-->
 
-    <div class="container0">
-        <div class="container1">
-          <img src="{%static 'city\images\Mask group.png' %}" />
+  <div class="container0">
+    <div class="container1">
+      <img src="{%static 'city\images\Mask group.png' %}" />
+    </div>
+
+    <!-- -->
+    <div class="container2">
+      <div class="alcher">
+        <div>
+          <h1 class="footer_text" id="highway">Highway</h1>
         </div>
-    
-        <!-- -->
-        <div class="container2">
-          <div class="alcher">
-            <div>
-              <h1 class="footer_text" id="highway">Highway</h1>
-            </div>
-            <div>
-              <h1 class="footer_text">to</h1>
-            </div>
-            <div>
-              <h1 class="footer_text" id="alcher">Alcher</h1>
-            </div>
-          </div>
-          <div class="contactinfo">
-            <h1 id="contact" style="margin:0;">Contact Us</h1>
-            <div class="names">
-              <div class="Siddhant">
-                <h2 id="sid">Siddhant Singh</h2>
-                <h3 id="pr1">PR Head</h3>
-                <p>+91-9310859978</p>
-              </div>
-              <div class="Akshara">
-                <h2 id="akshara">Danda Akshara</h2>
-                <h3 id="pr2">PR Head</h3>
-                <p>+91-9908991939</p>
-              </div>
-              <div class="Quasim">
-                <h2 id="quasim">Quasim</h2>
-                <h3 id="pr3">Media and Outreach Head</h3>
-                <p>+91-7763959688</p>
-              </div>
-            </div>
-          </div>
+        <div>
+          <h1 class="footer_text">to</h1>
         </div>
-    
-        <div class="container3">
-          <div class="video">
-            <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
-              <h1 id="discover" style="margin-bottom:0;">Discover Alcheringa</h1>
-              <div class="class-iframe">
-                <iframe
-                  class="size-iframe"
-                  src="https://youtu.be/byhtsRBr2VY"
-                ></iframe>
-              </div>
-            </div>
-            <div class="follow">
-              <div><h1 id="follow-us" style="margin-bottom:0;font-size: 2em;">Follow us </h1></div>
-              <div class="icons">
-                <div>
-                  <a href="https://www.instagram.com/alcheringaiitg/"
-                    ><img src="{%static 'city\images\instagram (4).png' %}" width="50px"
-                  /></a>
-                </div>
-                <div>
-                  <a
-                    href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"
-                    ><img src="{%static 'city\images\linkedin (2).png' %}" width="50px"
-                  /></a>
-                </div>
-                <div>
-                  <a href="https://www.facebook.com/alcheringaiitg"
-                    ><img src="{%static 'city\images\facebook.png' %}" width="50px"
-                  /></a>
-                </div>
-                <div>
-                  <a href="https://twitter.com/alcheringaiitg"
-                    ><img src="{%static 'city\images\twit.png' %}" width="50px"
-                  /></a>
-                </div>
-                <div>
-                  <a href="https://www.youtube.com/c/AlcheringaIITG"
-                    ><img src="{%static 'city\images\youtube.png' %}" width="50px"
-                  /></a>
-                </div>
-    
-              </div>
-            </div>
+        <div>
+          <h1 class="footer_text" id="alcher">Alcher</h1>
+        </div>
+      </div>
+      <div class="contactinfo">
+        <h1 id="contact" style="margin:0;">Contact Us</h1>
+        <div class="names">
+          <div class="Siddhant">
+            <h2 id="sid">Siddhant Singh</h2>
+            <h3 id="pr1">PR Head</h3>
+            <p>+91-9310859978</p>
+          </div>
+          <div class="Akshara">
+            <h2 id="akshara">Danda Akshara</h2>
+            <h3 id="pr2">PR Head</h3>
+            <p>+91-9908991939</p>
+          </div>
+          <div class="Quasim">
+            <h2 id="quasim">Quasim Khan</h2>
+            <h3 id="pr3">Media and Outreach Head</h3>
+            <p>+91-7763959688</p>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="container3">
+      <div class="video">
+        <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
+          <h1 id="discover" style="margin-bottom:0;">Discover Alcheringa</h1>
+          <div class="class-iframe">
+            <iframe class="size-iframe" src="https://youtu.be/byhtsRBr2VY"></iframe>
+          </div>
+        </div>
+        <div class="follow">
+          <div>
+            <h1 id="follow-us" style="margin-bottom:0;font-size: 2em;">Follow us </h1>
+          </div>
+          <div class="icons">
+            <div style="margin-right: 6px;">
+              <a href="https://www.instagram.com/alcheringaiitg/"><img src="{%static 'city\images\instagram (4).png' %}"
+                  width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"><img
+                  src="{%static 'city\images\linkedin (2).png' %}" width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.facebook.com/alcheringaiitg"><img src="{%static 'city\images\facebook.png' %}"
+                  width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://twitter.com/alcheringaiitg"><img src="{%static 'city\images\twit.png' %}"
+                  width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.youtube.com/c/AlcheringaIITG"><img src="{%static 'city\images\youtube.png' %}"
+                  width="36px" /></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 <script type="text/javascript">
-    function myFunction() {
-        var element1 = document.getElementById("flex-item-13");
-        element1.classList.toggle("show");
-        var element2 = document.getElementById("flex-item-14");
-        element2.classList.toggle("show");
-        var element3 = document.getElementById("flex-item-15");
-        element3.classList.toggle("show");
-        // var element4= document.getElementById("flex-item-16");
-        // element4.classList.toggle("show");
-        var element4 = document.getElementById("flex-item-17");
-        element4.classList.toggle("alternate1");
-        var element5 = document.getElementById("flex-item-19");
-        element5.classList.toggle("alternate2");
-    }
-    let city = document.getElementById("id_city")
-    city.addEventListener("change", (e) => {
-        const city_id = e.target.value
+  function myFunction() {
+    var element1 = document.getElementById("flex-item-13");
+    element1.classList.toggle("show");
+    var element2 = document.getElementById("flex-item-14");
+    element2.classList.toggle("show");
+    var element3 = document.getElementById("flex-item-15");
+    element3.classList.toggle("show");
+    // var element4= document.getElementById("flex-item-16");
+    // element4.classList.toggle("show");
+    var element4 = document.getElementById("flex-item-17");
+    element4.classList.toggle("alternate1");
+    var element5 = document.getElementById("flex-item-19");
+    element5.classList.toggle("alternate2");
+  }
+  let city = document.getElementById("id_city")
+  city.addEventListener("change", (e) => {
+    const city_id = e.target.value
 
-        fetch("{% url 'load_competitions' %}", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                "X-Requested-With": "XMLHttpRequest"
-            },
-            body: JSON.stringify({ "city_id": city_id })
-        })
-            .then(data => {
-                return data.text()
-            })
-            .then(data => {
-                console.log(data)
-                console.log(city.value)
-                document.getElementById("check-container").innerHTML = data
-            })
+    fetch("{% url 'load_competitions_single' %}", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        "X-Requested-With": "XMLHttpRequest"
+      },
+      body: JSON.stringify({ "city_id": city_id })
     })
+      .then(data => {
+        return data.text()
+      })
+      .then(data => {
+        console.log(data)
+        console.log(city.value)
+        document.getElementById("check-container").innerHTML = data
+      })
+  })
 
-    function selectComp(e) {
-        console.log(e);
-        var checkboxes = document.getElementsByName('checkbox');
-        checkboxes.forEach((item) => {
-            if (item !== checkbox) {
-                console.log(item.value, item.checked)
-            }
-        })
-    }
+  function selectComp(e) {
+    console.log(e);
+    var checkboxes = document.getElementsByName('checkbox');
+    checkboxes.forEach((item) => {
+      if (item !== checkbox) {
+        console.log(item.value, item.checked)
+      }
+    })
+  }
 </script>
 
 </html>
