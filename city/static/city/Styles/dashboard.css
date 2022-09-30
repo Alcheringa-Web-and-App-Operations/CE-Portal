@@ -826,6 +826,7 @@ background-color: #f2e9e9;
 }
 .names {
   display: flex;
+  justify-content: space-between;
   font-family: "DM Sans", sans-serif;
 }
 .Siddhant {
