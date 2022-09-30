@@ -173,7 +173,7 @@ function remove(div){
     for (let j = div + 1; j < i; j++) {
 
         document.getElementById("h" + j).innerHTML = `<div>
-        <div style="font-size: 120%;" >Member ${j - 1}:</div>
+        <div style="font-size: 120%;font-weight: bold;" >Member ${j - 1}:</div>
     </div>
     <div>
         <button class="add-member-button" onclick= remove(${j - 1})>
