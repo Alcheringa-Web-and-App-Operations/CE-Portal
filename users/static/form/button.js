@@ -33,9 +33,9 @@ add.addEventListener('click',target=>{
     if(count.value<max_participants){
         console.log('temp')
         form.insertAdjacentHTML('beforeend',`<div id="${i}"><div class="row-view" >
-        <div id="h${i}" class="member">
+        <div id="h${i}" class="member" >
             <div >
-                <div style="font-size: 120%;" >Member ${i}:</div>
+                <div style="font-size: 120%;font-weight: bold;">Member ${i}:</div>
             </div>
             <div>
                 <button class="add-member-button" onclick= remove(${i})>
