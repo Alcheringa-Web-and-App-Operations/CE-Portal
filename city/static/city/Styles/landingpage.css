@@ -990,7 +990,9 @@ line-height: 43px;
 }
 .names {
   display: flex;
+  justify-content: space-between;
 }
+
 .names h2,h3,p{
   margin: 0;
 }
