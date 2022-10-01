@@ -1111,7 +1111,10 @@ font-size: 30px;
               <span class="head-style">Name<span class="red-star"> *</span></span>
               <br>
               <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
-              <div class="input-text-field">{{ form.name }}</div>
+              <div class="input-text-field">
+                {% comment %} {{ form.name }} {% endcomment %}
+                <input type="text" name="name" maxlength="124" required="" id="id_name" placeholder="Name">
+              </div>
             </div>
             <br><br><br>
             <div>
@@ -1119,8 +1122,14 @@ font-size: 30px;
               <br>
               <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
               <div style="display:flex; width: 100%;">
-                <div class="input-text-field" style="width:50px; margin-right: 10px">{{ form.countrycode }}</div>
-                <div class="input-text-field" style="width: 100%;">{{ form.contactno }}</div>
+                <div class="input-text-field" style="width:50px; margin-right: 10px">
+                  {% comment %} {{ form.countrycode }} {% endcomment %}
+                  <input type="text" name="countrycode" maxlength="4" required="" id="id_countrycode" placeholder="+12">
+                </div>
+                <div class="input-text-field" style="width: 100%;">
+                  {% comment %} {{ form.contactno }} {% endcomment %}
+                  <input type="text" name="contactno" maxlength="40" required="" id="id_contactno" placeholder="Contact Number(e.g. 123456789)">
+                </div>
               </div>
 
             </div>
@@ -1141,7 +1150,10 @@ font-size: 30px;
               <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
               <br>
               <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
-              <div class="input-text-field">{{ form.yearofgraduation }}</div>
+              <div class="input-text-field">
+                <input type="number" name="yearofgraduation" id="id_yearofgraduation" placeholder="Graduation Year">
+                {% comment %} {{ form.yearofgraduation }} {% endcomment %}
+              </div>
             </div>
           </div>
           <div class="sections m-5">
@@ -1159,15 +1171,20 @@ font-size: 30px;
             <div>
               <span class="head-style">E-mail<span class="red-star"> *</span></span>
               <br>
-              <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-              <div class="input-text-field">{{ form.email }}</div>
+              <div class="input-text-field">
+                <input type="email" name="email" maxlength="40" required="" id="id_email" placeholder="Email">
+                {% comment %} {{ form.email }} {% endcomment %}
+              </div>
             </div>
             <br><br><br>
             <div>
               <span class="head-style">College Name<span class="red-star"> *</span></span>
               <br>
               <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-              <div class="input-text-field">{{ form.college_name }}</div>
+              <div class="input-text-field">
+                <input type="text" name="college_name" maxlength="30" id="id_college_name" placeholder="College Name">
+                {% comment %} {{ form.college_name }} {% endcomment %}
+              </div>
             </div>
           </div>
 
