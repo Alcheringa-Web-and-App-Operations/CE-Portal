@@ -269,6 +269,19 @@ html {
     }
   }
 
+@media(min-width: 1320px)
+    {
+      .highwayToAlcher
+      {
+        margin-top: 20%;
+        font-size: 120%;
+      }
+      .country-state
+      {
+        width: 80%; 
+      }
+    }
+
   @media (max-width: 775px) and (min-width: 460px) {
     .toggle-btn {
       display: inline;
