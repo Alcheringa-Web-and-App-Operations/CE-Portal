@@ -97,9 +97,9 @@
 
       <div class="way">
 
-        <div style="font-size:90px;font-weight: bold;"><div class="highwayToAlcher" style="transform: scale(1.28)translate(-70px,0); line-height: 110px;">Highway <br> To <br> Alcher</div>
+        <div style="font-size:90px;font-weight: bold;"><div class="highwayToAlcher" style="transform: scale(1.28)translate(-70px,-20px); line-height: 110px;">Highway <br> To <br> Alcher</div>
           <br>
-          <select class="country-state" name="country-state" id="countryselect" style="transform: translate(0,-85px); font-size: 20px; height: 55px">
+          <select class="country-state" name="country-state" id="countryselect" style="transform: translate(0,-105px); font-size: 20px; height: 55px">
             <option value="" disabled selected hidden>Choose your city</option>
             {% for city in cities %}
             <option value="{{ city.id }}">{{ city.cityName }}</option>
