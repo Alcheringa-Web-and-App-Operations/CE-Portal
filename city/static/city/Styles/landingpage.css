@@ -274,11 +274,11 @@ html {
       .highwayToAlcher
       {
         margin-top: 20%;
-        font-size: 120%;
+        font-size: 130%;
       }
-      .country-state
+      #countryselect
       {
-        width: 80%; 
+        width: 70%;
       }
     }
 
