@@ -3,7 +3,11 @@
 {% load static %}
 
 <head>
-  <link rel="stylesheet" href="{% static 'users/styles/registration.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% comment %} <link rel="stylesheet" href="{% static 'users/styles/registration.css' %}"> {% endcomment %}
 </head>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -445,12 +449,15 @@
     height: 40px;
     margin-top: 9px;
     width: 100%;
-    padding: 5px;
     border-color: black;
     border-width: 2px;
     font-size: 16px;
   }
-
+  .input-text-field input{
+    width:100%;
+    height:100%;
+    padding: 5px;
+  }
   .input-text-field-1 select {
     height: 40px;
     margin-top: 9px;
@@ -527,10 +534,6 @@
       font-size: 150%;
     }
 
-    .head-style
-    {
-      font-size: 180%;
-    }
 
     .page-heading {
       margin: auto;
@@ -539,18 +542,7 @@
       text-align: left;
     }
 
-    .input-text-field {
-      min-width: none;
-      width: 100%;
-      height: 60px;
 
-    }
-    /*.input-text-field-1 {
-      min-width: none;
-      width: 100%;
-      height: 60px;
-
-    }*/
   }
 
   .add-member-button {
@@ -1095,7 +1087,7 @@ font-size: 30px;
     <div class="reg-form-all" >
       <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
       <div class="page-heading">
-        <p class="solo_competetion" style="font-weight: 700;">Solo Competition</p>
+        <p class="text-4xl" style="font-weight: 700;">Solo Competition</p>
         <br>
         <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
       </div>
@@ -1103,7 +1095,7 @@ font-size: 30px;
         <div class="row-view">
           <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
             <br>
-            <div class="input-text-field" style="font-size:10px;">
+            <div class="input-text-field-1" style="font-size:10px;">
               {{ form.city }}
             </div>
           </div>
