@@ -42,7 +42,7 @@ def register_single(request):
                 for competition2 in competition:
                     curr_user.competition.add(competition2)
                 curr_user.save()
-                return redirect('/')
+                return redirect('success')
 
     # for comp in competitions:               
     #     single.competition.add(comp)
@@ -104,6 +104,9 @@ def load_minmax(request):
     comp=Competition.objects.filter(id=data['comp_id']).first()
     return JsonResponse({"minuser":comp.minimum_user,"maxuser":comp.maximum_user})
 
+def success(request):
+    return render(request, 'users/success.html')
+
 def teamForm(request):
     data = request.POST
     if request.method == 'POST':
@@ -131,7 +134,7 @@ def teamForm(request):
                 else:
                     applicant.save()
                 team.members.add(Person.objects.all().last().id)
-        return redirect('/')    
+        return redirect('success')    
         # person=get_object_or_404(Person)
         # if post.favourites.filter(id=request.user.id).exists():
         #     print()

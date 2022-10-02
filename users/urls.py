@@ -6,6 +6,7 @@ urlpatterns = [
     path('register-single/', views.register_single, name='register_single'),
     # path('<int:pk>/', views.person_update_view, name='person_change'),
     path('register-team/', views.teamForm, name='register_team'),
+    path('success/', views.success, name='success'),
     
     
     path('load-competitions-single/', views.load_competitions_single, name='load_competitions_single'),
