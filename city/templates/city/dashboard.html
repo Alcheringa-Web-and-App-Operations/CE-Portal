@@ -39,7 +39,7 @@
 
     <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
 
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
       <a href="{% url 'landing-page' %}"> Home</a>
     </div>
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
@@ -71,8 +71,8 @@
       url('{{ city.cityImage.url }}');
     background-size: contain;
     width: 100%;
-    height: calc(0.556 * 100vw);
-    background-repeat: no-repeat;
+    height: calc(0.40 * 100vw);
+    background-size:cover;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -99,15 +99,15 @@
           </div>
         </div>
         <div style="padding-right: 12%">
-          <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: 20vw; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 37vw; height: 20vw;" />
+          <img src="{{comp.competitionImage1.url}}" style="width: 30vw;  margin-left: 2%" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 22vw; " />
         </div>
       </div>
       {% else %}
       <div class="row">
         <div style="padding-left: 10%; margin-right: 2%;z-index: 1000;">
-          <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: 20vw; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 37vw; height: 20vw;" />
+          <img src="{{comp.competitionImage1.url}}" style="width: 32vw; margin-left: 2%" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 26vw" />
         </div>
         <div id="righttext" style="background-image:url('{{ comp.background_img.url }}'); z-index: 1;">
           <h1 class="coolvetica">{{comp.competitionName}}</h1>
@@ -125,13 +125,6 @@
 
   <div id="mobileview" style="margin-top: 3%">
     <h1 id="competition">Competitions</h1>
-
-
-    <!-- Heading -->
-    <div id="firstpara">
-      A brief description and details and dummy text dummy text dummy text
-      dummy text dummy text.
-    </div>
     {% for comp in competitions %}
     <div id="card1" class="card">
       <div class="coontainer">

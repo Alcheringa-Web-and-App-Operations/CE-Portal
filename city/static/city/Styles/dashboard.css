@@ -17,7 +17,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-weight:900;
 
   background-color: rgba(242, 158, 109, 1);
@@ -87,16 +87,15 @@
 #flex-item-12 {
   font-size: 35px;
   color: rgba(0, 0, 0, 1);
-  font: "DM Sans", sans-serif;
+  font: "Franklin Gothic Medium", sans-serif;
   font-weight: 400;
   width: 200px;
   margin: 0px auto 0px 5px;
-  font-family: "DM Sans", sans-serif;
 }
 
 #flex-item-13 a {
   text-decoration: none;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
@@ -108,7 +107,7 @@
 
 #flex-item-14 a {
   text-decoration: none;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
@@ -120,7 +119,7 @@
 
 #flex-item-15 a {
   text-decoration: none;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
@@ -132,19 +131,21 @@
 
 #flex-item-16 a {
   text-decoration: none;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  background-color: #F24405;
+  color: white;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
-  padding-left: 7px;
-  padding-right: 7px;
+  padding: 8px 16px 8px 16px;
+  border: 2px solid black;
   border-radius: 30px;
   margin: 0px 20px 0px 10px;
 }
 
 #flex-item-18 a {
   text-decoration: none;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 20px;
   font-weight: 400;
   padding: 5px;
@@ -263,7 +264,7 @@
 
 /***************  City  *****************/
 .city-link{
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   align-self: flex-end;
   color: white;
   font-weight: 500;
@@ -282,8 +283,11 @@
   font-family: "DM Sans", sans-serif;
 }
 .coolvetica {
-  font-family: "DM Sans",sans-serif;
+  font-family: "Franklin Gothic Medium",sans-serif;
   font-weight: 200;
+}
+#competition {
+  font-family: "Franklin Gothic Medium",sans-serif;
 }
 /*
 background-color: #f2e9e9;
@@ -389,7 +393,7 @@ background-color: #f2e9e9;
 /***************  Schedule & Sponsors  *****************/
 
 .sponsers {
-  font-family: "Syne", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   /* overflow-x: hidden !important;
    height: 100vh; */
 
@@ -440,7 +444,7 @@ background-color: #f2e9e9;
   background-color: #f4d6d6;
   color: black;
   text-align: start;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-weight: 200;
   font-size: 65px;
   width: 80vw;
@@ -473,7 +477,7 @@ background-color: #f2e9e9;
   padding: 50px 0 50px 0;
   font-size: 65px;
 
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-weight: 200;
   text-align: center;
 
@@ -933,7 +937,7 @@ background-color: #f2e9e9;
   #discover {
     margin-top: 30px;
     padding-bottom: 30px;
-    font-size: 30px;
+    font-size: 35px;
   }
 }
 
