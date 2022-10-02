@@ -926,28 +926,16 @@
       <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
     </div>
 
-    <div class="flex-item-1" id="flex-item-12"><a href="{% url 'my_redirect'%}"  target="_blank"><b>Alcheringa</b></a></div>
+    <div class="flex-item-1" id="flex-item-12"><a href="{% url 'my_redirect'%}"  target="_blank">Alcheringa</a></div>
 
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-      <a href="#"> About Us</a>
-    </div>
-
-     <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-      <a href="#"> Contact</a>
-    </div>
-
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-      <a href="#"> Schedule</a>
-    </div> 
-
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-      <a href="{% url 'landing-page' %}" style="padding: 4px 18px 4px 18px"> Home</a>
+      <a href="{% url 'landing-page' %}" style="padding: 8px 18px 8px 18px"> Home</a>
     </div>
   </div>
   <!---- Registration image ---->
   <div id="background-image">
-    <div id="register-image">
-      <img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
+    <div id="register-image" style="width: 100vw;">
+      <center><img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8%;"></center>
     </div>
     <a href="{% url 'register_single' %}">
       <div id="individual" class="box">
@@ -970,116 +958,6 @@
       <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
     </div>
   </div>
-  <!-- Backend Code -->
-  <!--<div style="padding-right:300px;">
-            <div>
-                <div
-                    style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;">
-                    <div>
-                        <label for="id_name">Team Name:</label>
-                    </div>
-                    <div>
-                        <input type="text" name="name" maxlength="50" required id="id_name">
-                    </div>
-                </div>
-                <div
-                    style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
-
-
-                    <div>
-                        *City
-                    </div>
-
-
-                    <div>
-                        {{ form.city }}
-                    </div>
-
-                </div>
-                <div
-                    style="font-size:22px;margin-top:20px;margin-left:40px;display: grid;grid-template-columns:200px 200px;">
-
-
-                    <div>
-                        *competitions
-                    </div>
-
-
-                    <div>
-                        {{ form.competition }}
-                    </div>
-
-                </div>
-                        <div
-                        style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;">
-                        <h3>Team Leader</h3>
-                        <p>
-                        <div>
-                            <label for="id_name">Name:</label>
-                        </div>
-                        <div>
-                            <input type="text" name="name0" maxlength="50" required id="id_name">
-                        </div>
-                        <div>
-                            <label for="id_name">Contact No:</label>
-
-                        </div>
-                        <div>
-                            <input type="text" name="phoneNo0" maxlength="50" required id="id_name">
-
-                        </div>
-                        <div>
-                            <label for="id_email">Email:</label>
-
-                        </div>
-                        <div>
-                            <input type="email" name="email0" maxlength="254" required id="id_email">
-
-                        </div>
-                        </p>
-                </div>
-                <div
-                    style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;">
-                    <h3>Candidate 1</h3>
-                    <p>
-                    <div>
-                        <label for="id_name">Name:</label>
-                    </div>
-                    <div>
-                        <input type="text" name="name1" maxlength="50" required id="id_name">
-                    </div>
-                    <div>
-                        <label for="id_name">Contact No:</label>
-
-                    </div>
-                    <div>
-                        <input type="text" name="phoneNo1" maxlength="50" required id="id_name">
-
-                    </div>
-                    <div>
-                        <label for="id_email">Email:</label>
-
-                    </div>
-                    <div>
-                        <input type="email" name="email1" maxlength="254" required id="id_email">
-
-                    </div>
-                    </p>
-                </div>
-            </div>
-            <div>
-                <div id="main">
-
-                </div>
-                <div style="align-items: center; margin-top: 60px;">
-                    <button id="button1"
-                        style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Add</button>
-                    <button
-                        style="height: 50px;width:120px;border-radius: 25px;background-color: red;color: white;">Register</button>
-                </div>
-            </div>
-        </div> -->
-  <!-- Backend Code Ends -->
   <form method="post" id="personForm">
     {% csrf_token %}
     <div id="hidden">
@@ -1295,43 +1173,43 @@
   <div style="height: 120px;"></div>
 
 
-  <!---------------Registeration form ENDS ----------------->
+  <!---------------Registration form ENDS ----------------->
 
  <!--FOOTER-->
 
-  <div class="container0" style="  height: 100px;">
+  <div class="container0" style="height: 100px!important;">
     <div class="container1">
-      <img src="{%static 'city\images\Mask group.png' %}" />
+      <img src="{%static 'city\images\Mask group.png' %}" style="transform: scale(1.9)translate(35px, 15px);" />
     </div>
 
     <!-- -->
     <div class="container2">
-      <div class="alcher">
+      <div class="alcher" style="line-height: 83px ;">
         <div>
-          <h1 class="footer_text" id="highway" style="font-size:72px ; font-weight:600">Highway</h1>
+          <h1 class="footer_text" id="highway" style="font-size:76px ; font-weight:600">Highway</h1>
         </div>
         <div>
           <h1 class="footer_text" style="font-size:72px ; font-weight:600">to</h1>
         </div>
         <div>
-          <h1 class="footer_text"  style="font-size:72px ; font-weight:600" id="alcher">Alcher</h1>
+          <h1 class="footer_text"  style="font-size:72px ; font-weight:600;" id="alcher">Alcher</h1>
         </div>
       </div>
-      <div class="contactinfo">
+      <div class="contactinfo" style="line-height: 25px;">
         <h1 id="contact" style="margin:0;font-size: 30px; font-weight: 600;">Contact Us</h1>
-        <div class="names">
+        <div class="names" style="line-height: 16px;">
           <div class="Siddhant">
-            <h2 id="sid" style="font-weight: 600; font-size: 16px;">Siddhant Singh</h2>
+            <h2 id="sid" style="font-weight: 600; font-size: 18px;">Siddhant Singh</h2>
             <h3 id="pr1" style="font-weight: 600;">PR Head</h3>
             <p>+91-9310859978</p>
           </div>
           <div class="Akshara">
-            <h2 id="akshara" style="font-weight: 600; font-size: 16px;">Danda Akshara</h2>
+            <h2 id="akshara" style="font-weight: 600; font-size: 18px;">Danda Akshara</h2>
             <h3 id="pr2" style="font-weight: 600;">PR Head</h3>
             <p>+91-9908991939</p>
           </div>
           <div class="Quasim">
-            <h2 id="quasim" style="font-weight: 600; font-size: 16px;">Quasim Khan</h2>
+            <h2 id="quasim" style="font-weight: 600; font-size: 18px;">Quasim Khan</h2>
             <h3 id="pr3" style="font-weight: 600;">Media and Outreach Head</h3>
             <p>+91-7763959688</p>
           </div>

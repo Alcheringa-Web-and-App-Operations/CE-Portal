@@ -580,6 +580,15 @@ background-color: #f2e9e9;
   border-radius: 20px;
 }
 
+@media (min-width: 1040px) {
+  .text {
+    font-size: 28px;
+  }
+  .Heading {
+    font-size: 68px;
+  }
+}
+
 @media (max-width: 700px) {
   .marquee-content li img {
     width: 95%;
@@ -939,6 +948,17 @@ background-color: #f2e9e9;
     padding-bottom: 30px;
     font-size: 35px;
   }
+}
+
+.register-btn {
+  padding: 8px 20px 8px 20px;
+}
+
+.rule-btn {
+  padding: 6px 20px 6px 20px;
+  background: transparent;
+  border: 2px solid rgb(242,68,5);
+  color: rgb(242,68,5);
 }
 
 @media (max-width: 1230px) and (min-width: 1040px) {

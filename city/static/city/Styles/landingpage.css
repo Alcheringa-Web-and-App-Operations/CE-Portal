@@ -599,6 +599,15 @@ a {
   color: #000000;
 }
 
+@media (min-width: 1040px) {
+  .text {
+    font-size: 28px;
+  }
+  .Heading {
+    font-size: 68px;
+  }
+}
+
 .mob {
   display: none;
 }
