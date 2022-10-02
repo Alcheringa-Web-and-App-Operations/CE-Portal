@@ -104,11 +104,13 @@
 /* Bottom right text */
 .bottom-right {
   font-size: 3.2vw;
+  display: flex;
+  flex-direction: row;
   position: absolute;
   /* background-color: black; */
   color: #f29e6d;
   bottom: 10%;
-  right: 8%;
+  left: 5%;
 }
 
 .bottom-center {
@@ -129,12 +131,14 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20%;
+  padding: 12%;
   width: 18vw;
-  height: 5vw;
+  height: 10px;
   font-size: 3.4vw;
   border-radius: 30px;
   color: aliceblue;
+  margin-right: 10%;
+  text-decoration: none;
 }
 
 .onshow {
@@ -144,7 +148,7 @@
 }
 
 .onshowbtn {
-  width: 100%;
+  width: 300px;
   height: 10vw;
   font-size: 4vw;
   color: aliceblue;

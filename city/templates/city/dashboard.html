@@ -149,11 +149,10 @@
         <div class="top-right">
           <h2 style="background-color: black;"><i class="bi bi-info-circle" style="background-color:black;"></i></h2>
         </div>
-        <a href="{% url 'register_single' %}" style="text-decoration: none;">
-          <div class="bottom-right">
-            <button type="button" class="mv-btn">Register</button>
-          </div>
-        </a>
+        <div class="bottom-right">
+          <button type="button" class="mv-btn">Register</button>
+          <button type="button" class="mv-btn">Rule Booklet</button>
+        </div>
         <span class="bottom-center" style="">
           <span style="background-color: transparent; color: #F29E6D; font-family: 'Coolvetica';
                         font-weight: 900;
@@ -165,9 +164,16 @@
         <p style="margin-top: 12%; margin-bottom: 12%; background-color: white;">
           {{comp.competitionDescription}}
         </p>
-        <a href="{% url 'register_single' %}" style="text-decoration: none;"><button type="button" class="onshowbtn">
-            <div style="background-color: #F24405;">Register</div>
-          </button></a>
+        <div style="display: flex; justify-content: center;">
+          <a href="{% url 'register_single' %}" style="text-decoration: none; margin-right: 20px;"><button type="button"
+              class="onshowbtn">
+              Register
+            </button></a>
+          <a href="{% url 'register_single' %}" style="text-decoration: none;"><button type="button" class="onshowbtn">
+              Rule Booklet
+            </button></a>
+        </div>
+
       </div>
     </div>
     {% endfor %}
@@ -176,16 +182,16 @@
   <!--------------------  Schedule  ------------------------>
 
 
-    <div>
-      <div class="table" id="schedule1">
-        <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
-          <!-- <caption>Life Expectancy By Current Age</caption> -->
-          <tr style="margin: 0px; padding:0px; border-spacing :0px;">
-            <th colspan="8" class="Schedule">Schedule</th>
+  <div>
+    <div class="table" id="schedule1">
+      <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
+        <!-- <caption>Life Expectancy By Current Age</caption> -->
+        <tr style="margin: 0px; padding:0px; border-spacing :0px;">
+          <th colspan="8" class="Schedule">Schedule</th>
 
-            <td rowspan="1100" class="verticalrow">Don't miss it!</td>
-          </tr>
-          <tr style="border: 5px solid #f2e9e9; border-spacing: 0px">
+          <td rowspan="1100" class="verticalrow">Don't miss it!</td>
+        </tr>
+        <tr style="border: 5px solid #f2e9e9; border-spacing: 0px">
           <th colspan="8" class="dates" style="
                 border-bottom: 5px solid #f2e9e9;
                 border-right: 5px solid #f2e9e9;
@@ -193,7 +199,7 @@
             {{city.competitionDate}}
           </th>
         </tr>
-          {% if compe %}
+        {% if compe %}
 
         <tr>
           <td class="event">{{compe.0.CompetitionName}}</td>
@@ -243,248 +249,218 @@
         </tr>
 
         {% endif %}
-        </table>
-      </div>
-      <div class="sponser69" id="schedule2">
+      </table>
+    </div>
+    <div class="sponser69" id="schedule2">
 
-        <div class="heading69">
-          Schedule
-        </div>
-        <div class="main69">
-          <div class="black-boxes69">
-            <div class="dates69">
-              14/9/22
-            </div>
-            <div class="items100">
-              <div class="itema69">
-                <div>Electric Heels</div>
-                <div>10:00 AM</div>
-              </div>
-              <div class="itema69">
-                <div>So You Think You Can Dance</div>
-                <div>11:00 AM</div>
-              </div>
-            </div>
-          </div>
-          <div class="black-boxes69">
-            <div class="dates69">
-              15/9/22
-            </div>
-            <div class="items69">
-              <div class="itema69">
-                <div>Voice of Alcheringa</div>
-                <div>10:00 AM</div>
-              </div>
-              <div class="itema69">
-                <div></div>
-                <div></div>
-              </div>
-            </div>
-          </div>
-          <div class="black-boxes69">
-            <div class="dates69">
-              16/9/22
-            </div>
-            <div class="items100">
-              <div class="itema69">
-                <div>Rock-o-Phoenix</div>
-                <div>10:00 AM</div>
-              </div>
-              <div class="itema69">
-                <div>Raga High</div>
-                <div>11:00 AM</div>
-              </div>
-              <div class="itema69">
-                <div>Electric Heels</div>
-                <div>12:00 PM</div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="heading69">
+        Schedule
       </div>
 
+      {% if compe %}
+      <div class="heading69" style="margin-top: 5%;margin-bottom:5%;">
+        {{city.competitionDate}}
+      </div>
+      <div class="main69">
 
-      <!--------------------  About Alcheringa  ------------------------>
-
-      <div class="container" id="aboutus">
-        <div class="c1 lap">
-          <div class="Heading">
-            About<br />
-            Alcheringa
+        {% for schd in compe %}
+        <div class="black-boxes69">
+          <div class="dates69">
+            {{schd.CompetitionName}}
           </div>
-
-          <div class="text">
-            Alcheringa is the annual cultural festival of the Indian Institute
-            of Technology (IIT), Guwahati. Started in 1996 by a group of
-            students, Alcheringa, IIT Guwahati has become one of Asia's most
-            significant college-level cultural fests. Spread over three days and
-            four nights, Alcheringa attracts people from all over the world with
-            its spectacular events and competitions.
+          <div class="items100">
+            <div class="itema69">
+              <div>{{schd.competitionDate}}</div>
+            </div>
           </div>
         </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% else %}
 
-        <div class="c1 mob">
-          <div class="Heading">About Alcheringa</div>
+    <div>Coming Soon</div>
 
-          <div class="text">
-            Alcheringa is the annual cultural festival of the Indian Institute
-            of Technology (IIT), Guwahati. Started in 1996 by a group of
-            students, Alcheringa, IIT Guwahati has become one of Asia's most
-            significant college-level cultural fests. Spread over three days and
-            four nights, Alcheringa attracts people from all over the world with
-            its spectacular events and competitions.
-          </div>
-        </div>
+    {%endif%}
+  </div>
 
-        <div class="c2 mob">
-          <div class="Heading">Highway to Alcher</div>
 
-          <div class="text">
-            Alcheringa is the annual cultural festival of the Indian Institute
-            of Technology (IIT), Guwahati. Started in 1996 by a group of
-            students, Alcheringa, IIT Guwahati has become one of Asia's most
-            significant college-level cultural fests. Spread over three days and
-            four nights, Alcheringa attracts people from all over the world with
-            its spectacular events and competitions.
-          </div>
-        </div>
-        <div class="c2 lap">
-          <div class="text">
-            Alcheringa is the annual cultural festival of the Indian Institute
-            of Technology (IIT), Guwahati. Started in 1996 by a group of
-            students, Alcheringa, IIT Guwahati has become one of Asia's most
-            significant college-level cultural fests. Spread over three days and
-            four nights, Alcheringa attracts people from all over the world with
-            its spectacular events and competitions.
-          </div>
-          <div class="Heading">Highway to<br />Alcher</div>
-        </div>
+  <!--------------------  About Alcheringa  ------------------------>
+
+  <div class="container" id="aboutus">
+    <div class="c1 lap">
+      <div class="Heading">
+        About<br />
+        Alcheringa
       </div>
 
-      <!--------------------  Sponsors  ------------------------>
-
-      <div class="sponsers" id="sponsors">
-        <br />
-        <div class="heading">Sponsors</div>
-
-        <div class="marquee-body" style="z-index: 100">
-          <div class="marquee">
-            <ul class="marquee-content">
-              <li>
-                <img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23"
-                  style="width: 350px; height: 200px" />
-              </li>
-              <li>
-                <img src="{%static 'city\images\sponser3.png' %}" alt="pr-sample23"
-                  style="width: 350px; height: 200px" />
-              </li>
-              <li>
-                <img src="{%static 'city\images\sponser2.png' %}" alt="pr-sample23"
-                  style="width: 350px; height: 200px" />
-              </li>
-              <li>
-                <img src="{%static 'city\images\art1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-              </li>
-              <li>
-                <img src="{%static 'city\images\art2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-              </li>
-              <li>
-                <img src="{%static 'city\images\palette.png' %}" alt="pr-sample23"
-                  style="width: 350px; height: 200px" />
-              </li>
-              <li>
-                <img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23"
-                  style="width: 350px; height: 200px" />
-              </li>
-            </ul>
-          </div>
-        </div>
-        <br /><br /><br />
+      <div class="text">
+        Alcheringa is the annual cultural festival of the Indian Institute
+        of Technology (IIT), Guwahati. Started in 1996 by a group of
+        students, Alcheringa, IIT Guwahati has become one of Asia's most
+        significant college-level cultural fests. Spread over three days and
+        four nights, Alcheringa attracts people from all over the world with
+        its spectacular events and competitions.
       </div>
     </div>
 
-    <!--FOOTER-->
+    <div class="c1 mob">
+      <div class="Heading">About Alcheringa</div>
 
-    <div class="container0">
-      <div class="container1">
-        <img src="{%static 'city\images\Mask group.png' %}" />
+      <div class="text">
+        Alcheringa is the annual cultural festival of the Indian Institute
+        of Technology (IIT), Guwahati. Started in 1996 by a group of
+        students, Alcheringa, IIT Guwahati has become one of Asia's most
+        significant college-level cultural fests. Spread over three days and
+        four nights, Alcheringa attracts people from all over the world with
+        its spectacular events and competitions.
       </div>
+    </div>
 
-      <!-- -->
-      <div class="container2">
-        <div class="alcher">
-          <div>
-            <h1 class="footer_text" id="highway">Highway</h1>
-          </div>
-          <div>
-            <h1 class="footer_text">to</h1>
-          </div>
-          <div>
-            <h1 class="footer_text" id="alcher">Alcher</h1>
-          </div>
+    <div class="c2 mob">
+      <div class="Heading">Highway to Alcher</div>
+
+      <div class="text">
+        Alcheringa is the annual cultural festival of the Indian Institute
+        of Technology (IIT), Guwahati. Started in 1996 by a group of
+        students, Alcheringa, IIT Guwahati has become one of Asia's most
+        significant college-level cultural fests. Spread over three days and
+        four nights, Alcheringa attracts people from all over the world with
+        its spectacular events and competitions.
+      </div>
+    </div>
+    <div class="c2 lap">
+      <div class="text">
+        Alcheringa is the annual cultural festival of the Indian Institute
+        of Technology (IIT), Guwahati. Started in 1996 by a group of
+        students, Alcheringa, IIT Guwahati has become one of Asia's most
+        significant college-level cultural fests. Spread over three days and
+        four nights, Alcheringa attracts people from all over the world with
+        its spectacular events and competitions.
+      </div>
+      <div class="Heading">Highway to<br />Alcher</div>
+    </div>
+  </div>
+
+  <!--------------------  Sponsors  ------------------------>
+
+  <div class="sponsers" id="sponsors">
+    <br />
+    <div class="heading">Sponsors</div>
+
+    <div class="marquee-body" style="z-index: 100">
+      <div class="marquee">
+        <ul class="marquee-content">
+          <li>
+            <img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+          </li>
+          <li>
+            <img src="{%static 'city\images\sponser3.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+          </li>
+          <li>
+            <img src="{%static 'city\images\sponser2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+          </li>
+          <li>
+            <img src="{%static 'city\images\art1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+          </li>
+          <li>
+            <img src="{%static 'city\images\art2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+          </li>
+          <li>
+            <img src="{%static 'city\images\palette.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+          </li>
+          <li>
+            <img src="{%static 'city\images\sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+          </li>
+        </ul>
+      </div>
+    </div>
+    <br /><br /><br />
+  </div>
+  </div>
+
+  <!--FOOTER-->
+
+  <div class="container0">
+    <div class="container1">
+      <img src="{%static 'city\images\Mask group.png' %}" />
+    </div>
+
+    <!-- -->
+    <div class="container2">
+      <div class="alcher">
+        <div>
+          <h1 class="footer_text" id="highway">Highway</h1>
         </div>
-        <div class="contactinfo">
-          <h1 id="contact" style="margin:0;font-size: 30px;">Contact Us</h1>
-          <div class="names">
-            <div class="Siddhant">
-              <h2 id="sid">Siddhant Singh</h2>
-              <h3 id="pr1">PR Head</h3>
-              <p>+91-9310859978</p>
-            </div>
-            <div class="Akshara">
-              <h2 id="akshara">Danda Akshara</h2>
-              <h3 id="pr2">PR Head</h3>
-              <p>+91-9908991939</p>
-            </div>
-            <div class="Quasim">
-              <h2 id="quasim">Quasim Khan</h2>
-              <h3 id="pr3">Media and Outreach Head</h3>
-              <p>+91-7763959688</p>
-            </div>
-          </div>
+        <div>
+          <h1 class="footer_text">to</h1>
+        </div>
+        <div>
+          <h1 class="footer_text" id="alcher">Alcher</h1>
         </div>
       </div>
-
-      <div class="container3">
-        <div class="video">
-          <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
-            <h1 id="discover" style="margin-bottom:0; margin-left: 10px;">Discover Alcheringa</h1>
-            <div class="class-iframe">
-              <iframe class="size-iframe" src="https://youtu.be/byhtsRBr2VY" style="width: 100%;"></iframe>
-              <hr style="border: 3px solid #f29e6d; transform: translate(0, -12px);">
-            </div>
+      <div class="contactinfo">
+        <h1 id="contact" style="margin:0;font-size: 30px;">Contact Us</h1>
+        <div class="names">
+          <div class="Siddhant">
+            <h2 id="sid">Siddhant Singh</h2>
+            <h3 id="pr1">PR Head</h3>
+            <p>+91-9310859978</p>
           </div>
-          <div class="follow">
-            <div>
-              <h1 id="follow-us" style="margin-bottom:8px; margin-left: 10px;font-size: 2em;">Follow us </h1>
-            </div>
-            <div class="icons">
-              <div style="margin-right: 6px; margin-left: 10px;">
-                <a href="https://www.instagram.com/alcheringaiitg/" target="_blank"><img
-                    src="{%static 'city\images\instagram (4).png' %}" width="36px" /></a>
-              </div>
-              <div style="margin-right: 6px;">
-                <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/" target="_blank"><img
-                    src="{%static 'city\images\linkedin (2).png' %}" width="36px" /></a>
-              </div>
-              <div style="margin-right: 6px;">
-                <a href="https://www.facebook.com/alcheringaiitg" target="_blank"><img
-                    src="{%static 'city\images\facebook.png' %}" width="36px" /></a>
-              </div>
-              <div style="margin-right: 6px;">
-                <a href="https://twitter.com/alcheringaiitg" target="_blank"><img
-                    src="{%static 'city\images\twit.png' %}" width="36px" /></a>
-              </div>
-              <div style="margin-right: 6px;">
-                <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><img
-                    src="{%static 'city\images\youtube.png' %}" width="36px" /></a>
-              </div>
-
-            </div>
+          <div class="Akshara">
+            <h2 id="akshara">Danda Akshara</h2>
+            <h3 id="pr2">PR Head</h3>
+            <p>+91-9908991939</p>
+          </div>
+          <div class="Quasim">
+            <h2 id="quasim">Quasim Khan</h2>
+            <h3 id="pr3">Media and Outreach Head</h3>
+            <p>+91-7763959688</p>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="container3">
+      <div class="video">
+        <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
+          <h1 id="discover" style="margin-bottom:0; margin-left: 10px;">Discover Alcheringa</h1>
+          <div class="class-iframe">
+            <iframe class="size-iframe" src="https://youtu.be/byhtsRBr2VY" style="width: 100%;"></iframe>
+            <hr style="border: 3px solid #f29e6d; transform: translate(0, -12px);">
+          </div>
+        </div>
+        <div class="follow">
+          <div>
+            <h1 id="follow-us" style="margin-bottom:8px; margin-left: 10px;font-size: 2em;">Follow us </h1>
+          </div>
+          <div class="icons">
+            <div style="margin-right: 6px; margin-left: 10px;">
+              <a href="https://www.instagram.com/alcheringaiitg/" target="_blank"><img
+                  src="{%static 'city\images\instagram (4).png' %}" width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/" target="_blank"><img
+                  src="{%static 'city\images\linkedin (2).png' %}" width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.facebook.com/alcheringaiitg" target="_blank"><img
+                  src="{%static 'city\images\facebook.png' %}" width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://twitter.com/alcheringaiitg" target="_blank"><img src="{%static 'city\images\twit.png' %}"
+                  width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><img
+                  src="{%static 'city\images\youtube.png' %}" width="36px" /></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 
   </div>
