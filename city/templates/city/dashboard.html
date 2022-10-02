@@ -20,7 +20,7 @@
   <!---------------Nav Bar ----------------->
   <div class="flex-container-1">
     <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-      <a href="#"> Register</a>
+      <a href="{% url 'register_single' %}"> Register</a>
     </div>
 
     <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
@@ -30,7 +30,7 @@
     </div>
 
     <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
-      <span>╳</span>
+      <span>x</span>
     </div>
 
     <div class="flex-item-1" id="flex-item-11">
@@ -39,7 +39,7 @@
 
     <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
 
-    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
       <a href="{% url 'landing-page' %}"> Home</a>
     </div>
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
@@ -70,6 +70,14 @@
       ),
       url('{{ city.cityImage.url }}');
     background-size: contain;
+    width: 100%;
+    height: calc(0.40 * 100vw);
+    background-size:cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
   ">
     <div class="city-link">
       Not your city? <a href="{% url 'landing-page' %}">Click here.</a>
@@ -85,33 +93,29 @@
         <div id="lefttext" style="background-image:url('{{ comp.background_img.url }}')">
           <h1 class="coolvetica">{{comp.competitionName}}</h1>
           <p class="comp-desc">{{comp.competitionDescription}}</p>
-          <div style="margin-top: 6%; margin-bottom: 6%">
-            <span style="border-style: none solid none none; font-size: 17px">Guidelines &nbsp;
-            </span>
-            <span style="font-size: 17px">&nbsp; more info</span>
+          <div style="display:flex">
+            <a href = "{% url 'register_single' %}" style="text-decoration:none"><button type="button" class="btn register-btn">Register</button></a>
+            <a href = "https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf" style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule Booklet</button></a>
           </div>
-          <button type="button" class="btn">Register</button>
         </div>
         <div style="padding-right: 12%">
-          <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: auto; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" />
+          <img src="{{comp.competitionImage1.url}}" style="width: 30vw;  margin-left: 2%" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 22vw; " />
         </div>
       </div>
       {% else %}
       <div class="row">
-        <div style="padding-left: 10%; margin-right: 2%">
-          <img src="{{comp.competitionImage1.url}}" style="width: 40vw; height: auto; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" />
+        <div style="padding-left: 10%; margin-right: 2%;z-index: 1000;">
+          <img src="{{comp.competitionImage1.url}}" style="width: 32vw; margin-left: 2%" />
+          <img src="{{comp.competitionImage2.url}}" class="img2"  style="width: 26vw" />
         </div>
-        <div id="righttext" style="background-image:url('{{ comp.background_img.url }}')">
+        <div id="righttext" style="background-image:url('{{ comp.background_img.url }}'); z-index: 1;">
           <h1 class="coolvetica">{{comp.competitionName}}</h1>
           <p class="comp-desc">{{comp.competitionDescription}}</p>
-          <div style="margin-top: 6%; margin-bottom: 6%">
-            <span style="border-style: none solid none none; font-size: 17px">Guidelines &nbsp;
-            </span>
-            <span style="font-size: 17px">&nbsp; more info</span>
+          <div style="display:flex">
+            <a href = "{% url 'register_single' %}" style="text-decoration:none"><button type="button" class="btn register-btn">Register</button></a>
+            <a href = "https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf" style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule Booklet</button></a>
           </div>
-          <button type="button" class="btn">Register</button>
         </div>
       </div>
       {% endif %} {% endfor %}
@@ -121,61 +125,39 @@
 
   <div id="mobileview" style="margin-top: 3%">
     <h1 id="competition">Competitions</h1>
-
-
-    <!-- Heading -->
-    <div id="firstpara">
-      A brief description and details and dummy text dummy text dummy text
-      dummy text dummy text.
-    </div>
     {% for comp in competitions %}
     <div id="card1" class="card">
       <div class="coontainer">
         <img src="{{comp.competitionImage1.url}}" alt="Snow" id="cardimg1">
-        <div class="top-left">
-          <h2 style="background-color: black; color: #F29E6D; font-size: 180%; margin: 0%; padding: 10px;">{{comp.competitionName}}</h2>
-          <p style="background-color: black; color: #F29E6D; margin-bottom: 2%;">Competition</p>
+        <div class="top-left" style="background-color: transparent;">
+          <div style="background-color: rgb(22, 22, 22, 0.8); color: #F29E6D; font-size: 180%; margin: 0%; padding: 10px;border-radius: 5px;">
+            <p style="color: #F29E6D;">{{comp.competitionName}}</p>
+          </div>
         </div>
         <div class="top-left-onhover">
           <h2 style="background-color: black;"><i class="bi bi-x" style="background-color: black;"></i>
           </h2>
         </div>
-        <div class="bottom-left">21st Sept, 9:30AM</div>
         <div class="top-right">
           <h2 style="background-color: black;"><i class="bi bi-info-circle" style="background-color:black;"></i></h2>
         </div>
-        <div class="bottom-right">
+        <a href="{% url 'register_single' %}" style="text-decoration: none;"><div class="bottom-right">
           <button type="button" class="mv-btn">Register</button>
-        </div>
+        </div></a>
         <span class="bottom-center" style="">
           <span style="background-color: transparent; color: #F29E6D; font-family: 'Coolvetica';
                         font-weight: 900;
                         font-size: 8vw;">
             {{comp.competitionName}}</span>
-          <span style="background-color: transparent; color: #F29E6D; font-style: normal; font-family: 'DM Sans';                
-                        font-weight: 400;">Solo / Group</span>
         </span>
       </div>
       <div class="onshow">
-        <p>
-        <p style="background-color: white">
-          <b><i class="bi bi-calendar-check" style="background-color: white"></i></b>
-          &nbsp; 21st Sept, 9:30AM
-        </p>
-        </p>
-        <p style="background-color: white">
-
-        <p style="background-color: white">
-          <b><i class="bi bi-geo-alt" style="background-color: white"></i></b>
-          &nbsp; Swara House, Hauz Khas - 311046
-        </p>
-        </p>
         <p style="margin-top: 12%; margin-bottom: 12%; background-color: white;">
           {{comp.competitionDescription}}
         </p>
-        <button type="button" class="onshowbtn">
-          <div style="background-color: #F24405; font-family: Arial;">Register</div>
-        </button>
+        <a href="{% url 'register_single' %}" style="text-decoration: none;"><button type="button" class="onshowbtn">
+          <div style="background-color: #F24405;">Register</div>
+        </button></a>
       </div>
     </div>
     {% endfor %}
@@ -201,46 +183,59 @@
           </th>
         </tr>
         <tr>
-          <td class="event">{{compe.0.CompetitionName}}</td>
-          <td class="eventtime">{{compe.0.competitionDate}}</td>
-          <td class="event">{{compe.4.CompetitionName}}</td>
-          <td class="eventtime">{{compe.4.competitionDate}}</td>
-          <td class="event">{{compe.8.CompetitionName}}</td>
-          <td class="eventtime">{{compe.8.competitionDate}}</td>
-          <td class="event">{{compe.12.CompetitionName}}</td>
-          <td class="eventtime">{{compe.12.competitionDate}}</td>
-        </tr>
-        <tr>
-          <td class="event">{{compe.1.CompetitionName}}</td>
-          <td class="eventtime">{{compe.1.competitionDate}}</td>
-          <td class="event">{{compe.5.CompetitionName}}</td>
-          <td class="eventtime">{{compe.5.competitionDate}}</td>
-          <td class="event">{{compe.9.CompetitionName}}</td>
-          <td class="eventtime">{{compe.9.competitionDate}}</td>
-          <td class="event">{{compe.13.CompetitionName}}</td>
-          <td class="eventtime">{{compe.13.competitionDate}}</td>
-        </tr>
 
-        <tr>
-          <td class="event">{{compe.2.CompetitionName}}</td>
-          <td class="eventtime">{{compe.2.competitionDate}}</td>
-          <td class="event">{{compe.6.CompetitionName}}</td>
-          <td class="eventtime">{{compe.6.competitionDate}}</td>
-          <td class="event">{{compe.10.CompetitionName}}</td>
-          <td class="eventtime">{{compe.10.competitionDate}}</td>
-          <td class="event">{{compe.14.CompetitionName}}</td>
-          <td class="eventtime">{{compe.14.competitionDate}}</td>
-        </tr>
-        <tr>
-          <td class="event">{{compe.3.CompetitionName}}</td>
-          <td class="eventtime">{{compe.3.competitionDate}}</td>
-          <td class="event">{{compe.7.CompetitionName}}</td>
-          <td class="eventtime">{{compe.7.competitionDate}}</td>
-          <td class="event">{{compe.11.CompetitionName}}</td>
-          <td class="eventtime">{{compe.11.competitionDate}}</td>
-          <td class="event">{{compe.15.CompetitionName}}</td>
-          <td class="eventtime">{{compe.15.competitionDate}}</td>
-        </tr>
+          {% if compe %}
+
+          <tr>
+            <td class="event">{{compe.0.CompetitionName}}</td>
+            <td class="eventtime">{{compe.0.competitionDate}}</td>
+            <td class="event">{{compe.4.CompetitionName}}</td>
+            <td class="eventtime">{{compe.4.competitionDate}}</td>
+            <td class="event">{{compe.8.CompetitionName}}</td>
+            <td class="eventtime">{{compe.8.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.1.CompetitionName}}</td>
+            <td class="eventtime">{{compe.1.competitionDate}}</td>
+            <td class="event">{{compe.5.CompetitionName}}</td>
+            <td class="eventtime">{{compe.5.competitionDate}}</td>
+            <td class="event">{{compe.9.CompetitionName}}</td>
+            <td class="eventtime">{{compe.9.competitionDate}}</td>
+          </tr>
+
+          <tr>
+            <td class="event">{{compe.2.CompetitionName}}</td>
+            <td class="eventtime">{{compe.2.competitionDate}}</td>
+            <td class="event">{{compe.6.CompetitionName}}</td>
+            <td class="eventtime">{{compe.6.competitionDate}}</td>
+            <td class="event">{{compe.10.CompetitionName}}</td>
+            <td class="eventtime">{{compe.10.competitionDate}}</td>
+          </tr>
+          <tr>
+            <td class="event">{{compe.3.CompetitionName}}</td>
+            <td class="eventtime">{{compe.3.competitionDate}}</td>
+            <td class="event">{{compe.7.CompetitionName}}</td>
+            <td class="eventtime">{{compe.7.competitionDate}}</td>
+            <td class="event">{{compe.11.CompetitionName}}</td>
+            <td class="eventtime">{{compe.11.competitionDate}}</td>
+          </tr>
+
+          {% else %}
+
+          <tr>
+            <td class="event">Coming Soon</td>
+          </tr>
+          <tr>
+          </tr>
+
+          <tr>
+          </tr>
+          <tr>
+          </tr>
+
+          {% endif %}
+
+          
       </table>
     </div>
 
@@ -338,7 +333,7 @@
     </div>
   </div>
 
-  <!---------------------- Footer------------------------->
+  <!--FOOTER-->
 
   <div class="container0">
     <div class="container1">
@@ -359,22 +354,22 @@
         </div>
       </div>
       <div class="contactinfo">
-        <h1 id="contact">Contact Us</h1>
+        <h1 id="contact" style="margin:0;font-size: 30px;">Contact Us</h1>
         <div class="names">
           <div class="Siddhant">
             <h2 id="sid">Siddhant Singh</h2>
             <h3 id="pr1">PR Head</h3>
             <p>+91-9310859978</p>
           </div>
-          <div class="akshara">
+          <div class="Akshara">
             <h2 id="akshara">Danda Akshara</h2>
             <h3 id="pr2">PR Head</h3>
             <p>+91-9908991939</p>
           </div>
           <div class="Quasim">
-            <h2 id="quasim">Quasim</h2>
-            <h3 id="pr3">PR Head</h3>
-            <p>+91-9310859978</p>
+            <h2 id="quasim">Quasim Khan</h2>
+            <h3 id="pr3">Media and Outreach Head</h3>
+            <p>+91-7763959688</p>
           </div>
         </div>
       </div>
@@ -382,37 +377,37 @@
 
     <div class="container3">
       <div class="video">
-        <div>
-          <h1 id="discover">Discover Alcheringa</h1>
+        <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
+          <h1 id="discover" style="margin-bottom:0; margin-left: 10px;">Discover Alcheringa</h1>
+          <div class="class-iframe">
+            <iframe class="size-iframe" src="https://youtu.be/byhtsRBr2VY" style="width: 100%;"></iframe>
+            <hr style="border: 3px solid #f29e6d; transform: translate(0, -12px);" >
+          </div>
         </div>
         <div class="follow">
-          <div><h1 id="follow-us">Follow us :</h1></div>
+          <div>
+            <h1 id="follow-us" style="margin-bottom:8px; margin-left: 10px;font-size: 2em;">Follow us </h1>
+          </div>
           <div class="icons">
-            <div>
-              <a href="https://www.instagram.com/alcheringaiitg/"
-                ><img src="{%static 'city\images\instagram (4).png' %}" width="50px"
-              /></a>
+            <div style="margin-right: 6px; margin-left: 10px;">
+              <a href="https://www.instagram.com/alcheringaiitg/" target="_blank"><img src="{%static 'city\images\instagram (4).png' %}"
+                  width="36px" /></a>
             </div>
-            <div>
-              <a
-                href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"
-                ><img src="{%static 'city\images\linkedin (2).png' %}" width="50px"
-              /></a>
+            <div style="margin-right: 6px;">
+              <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/" target="_blank"><img
+                  src="{%static 'city\images\linkedin (2).png' %}" width="36px" /></a>
             </div>
-            <div>
-              <a href="https://www.facebook.com/alcheringaiitg"
-                ><img src="{%static 'city\images\facebook.png' %}" width="50px"
-              /></a>
+            <div style="margin-right: 6px;">
+              <a href="https://www.facebook.com/alcheringaiitg" target="_blank"><img src="{%static 'city\images\facebook.png' %}"
+                  width="36px" /></a>
             </div>
-            <div>
-              <a href="https://twitter.com/alcheringaiitg"
-                ><img src="{%static 'city\images\twit.png' %}" width="50px"
-              /></a>
+            <div style="margin-right: 6px;">
+              <a href="https://twitter.com/alcheringaiitg" target="_blank"><img src="{%static 'city\images\twit.png' %}"
+                  width="36px" /></a>
             </div>
-            <div>
-              <a href="https://www.youtube.com/c/AlcheringaIITG"
-                ><img src="{%static 'city\images\youtube.png' %}" width="50px"
-              /></a>
+            <div style="margin-right: 6px;">
+              <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><img src="{%static 'city\images\youtube.png' %}"
+                  width="36px" /></a>
             </div>
 
           </div>
@@ -420,6 +415,11 @@
       </div>
     </div>
   </div>
+   </div>
+
+  </div>
+
+</body>
 </body>
 
 <script type="text/javascript">

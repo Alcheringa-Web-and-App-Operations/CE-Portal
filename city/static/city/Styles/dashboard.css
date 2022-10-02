@@ -2,11 +2,12 @@
 
 @font-face {
   font-family: Coolvetica;
-  src: url("{%static 'fonts/coolvetica rg.otf' %}");
+  src: url("{%static 'city/fonts/coolvetica_rg.otf' %}");
 }
 
 * {
   margin: 0;
+  scroll-behavior: smooth!important;
 }
 
 /************** Nav Bar ************************/
@@ -16,17 +17,19 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  font-weight:900;
 
   background-color: rgba(242, 158, 109, 1);
   align-items: center;
   width: 100%;
-  gap: 10px;
+
 }
 
 #flex-item-13 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -34,7 +37,7 @@
 #flex-item-14 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -42,7 +45,7 @@
 #flex-item-15 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -50,7 +53,7 @@
 #flex-item-16 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -58,7 +61,7 @@
 #flex-item-18 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
-  transition: 0.4s;
+  /* transition: 0.4s; */
   border-style: groove;
   border-color: #031059;
 }
@@ -73,7 +76,7 @@
 
 @font-face {
   font-family: Coolvetica;
-  src: url(coolvetica_rg.otf);
+  src: url("{%static 'city/fonts/coolvetica_rg.otf' %}");
 }
 
 #flex-item-11 {
@@ -84,59 +87,70 @@
 #flex-item-12 {
   font-size: 35px;
   color: rgba(0, 0, 0, 1);
-  font: Coolvetica;
+  font: "Franklin Gothic Medium", sans-serif;
   font-weight: 400;
   width: 200px;
   margin: 0px auto 0px 5px;
-  font-family: Coolvetica;
 }
 
 #flex-item-13 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;  
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
 
 #flex-item-14 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;  
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
 
 #flex-item-15 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
 
 #flex-item-16 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  background-color: #F24405;
+  color: white;
   font-size: 21px;
   font-weight: 400;
   padding: 5px;
+  padding: 8px 16px 8px 16px;
+  border: 2px solid black;
   border-radius: 30px;
   margin: 0px 20px 0px 10px;
 }
 
 #flex-item-18 a {
   text-decoration: none;
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-size: 20px;
   font-weight: 400;
   padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
   border-radius: 30px;
   margin: 0px 20px 0px 10px;
   border-style: groove;
@@ -248,20 +262,38 @@
   }
 }
 
+/***************  City  *****************/
+.city-link{
+  font-family: "Franklin Gothic Medium", sans-serif;
+  align-self: flex-end;
+  color: white;
+  font-weight: 500;
+  font-size: 3vw;
+  margin-bottom: 1vw;
+}
+
+.city-link a {
+ color: #F29E6D;
+ text-decoration: none;
+}
+
 /***************  Competitions  *****************/
 
-/* .comp-main {
-  background-color: #f2e9e9;
-}
-
-.dmsans {
+.comp-main {
   font-family: "DM Sans", sans-serif;
 }
-
 .coolvetica {
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium",sans-serif;
   font-weight: 200;
 }
+#competition {
+  font-family: "Franklin Gothic Medium",sans-serif;
+}
+/*
+background-color: #f2e9e9;
+.dmsans {
+}
+
 
 #competition {
   text-align: center;
@@ -361,7 +393,7 @@
 /***************  Schedule & Sponsors  *****************/
 
 .sponsers {
-  font-family: "Syne", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   /* overflow-x: hidden !important;
    height: 100vh; */
 
@@ -371,7 +403,7 @@
 .dates {
   background-color: black;
   color: white;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   font-size: 48px;
   line-height: 60px;
@@ -412,7 +444,7 @@
   background-color: #f4d6d6;
   color: black;
   text-align: start;
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-weight: 200;
   font-size: 65px;
   width: 80vw;
@@ -426,7 +458,7 @@
   background-image: url("../images/geet.svg");
   font-size: 30px;
   color: #ffffff;
-  font-family: Coolvetica;
+  font-family: "DM Sans", sans-serif;
   font-weight: 200;
   display: flex;
   align-items: center;
@@ -445,7 +477,7 @@
   padding: 50px 0 50px 0;
   font-size: 65px;
 
-  font-family: Coolvetica;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-weight: 200;
   text-align: center;
 
@@ -577,7 +609,7 @@
   .dates {
     background-color: black;
     color: white;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-weight: 200;
     font-size: 30px;
     line-height: 60px;
@@ -605,7 +637,7 @@
   .dates {
     background-color: black;
     color: white;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-weight: 200;
     font-size: 35px;
     line-height: 60px;
@@ -639,7 +671,7 @@
   min-height: 600px;
   padding: 0;
   margin: 0;
-  background-image: url("../images/Frame 445.png");
+  background-image: url("../images/6356125.svg");
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -700,10 +732,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
   }
 
   .c1 {
-    width: 50%;
+    width: 85%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -714,6 +747,7 @@
     padding: 100px;
   }
   .c2 {
+    width: 85%;
     margin-left: 0px;
     margin-right: 0px;
     padding-bottom: 110px;
@@ -777,6 +811,9 @@
   /* margin-right: auto; */
   flex-grow: 1;
 }
+.footer_text{
+  margin:0;
+}
 .alcher {
   color: #f29e6d;
   font-family: Bohemian Soul;
@@ -788,6 +825,7 @@
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   padding-top: 80px;
+  font-size: 12px;
 }
 #contact {
   color: #f29e6d;
@@ -796,6 +834,11 @@
 }
 .names {
   display: flex;
+  justify-content: space-between;
+}
+
+.names h2,h3,p{
+  margin: 0;
 }
 .Siddhant {
   padding-right: 17px;
@@ -808,7 +851,7 @@
   padding-bottom: 10px;
 }
 
-.akshara {
+.Akshara {
   padding-right: 17px;
   padding-bottom: 10px;
 }
@@ -819,7 +862,7 @@
   padding-bottom: 10px;
 }
 
-.quasim {
+.Quasim {
   padding-bottom: 10px;
 }
 
@@ -880,7 +923,6 @@
   }
   .container3 {
     color: #f29e6d;
-    padding-left: 20px;
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -895,7 +937,7 @@
   #discover {
     margin-top: 30px;
     padding-bottom: 30px;
-    font-size: 30px;
+    font-size: 35px;
   }
 }
 
@@ -914,7 +956,7 @@
     margin-bottom: auto;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     height: 100%;
     justify-content: center;
     align-self: center;
@@ -923,6 +965,8 @@
 
   .class-iframe {
     align-self: center;
+    width: 100%;
+    margin-bottom: 30px;
   }
 
   #follow-us {
@@ -933,11 +977,12 @@
           align-self: center;
       } */
   .icons {
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 100%; 
   }
   .container3 {
     color: #f29e6d;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -957,6 +1002,9 @@
   }
 }
 
+.icons img {
+  filter: invert(100%);
+}
 @media (max-width: 1040px) {
   .container1 {
     display: none;
@@ -1000,11 +1048,12 @@
               align-self: center;
           } */
   .icons {
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 100%;
   }
   .container3 {
     color: #f29e6d;
-    padding-left: 20px;
+    /* padding-left: 20px; */
     font-family: "DM Sans", sans-serif;
     font-weight: 400;
     display: flex;
@@ -1039,138 +1088,18 @@
     font-size: 40px;
   }
   #follow-us {
-    padding-left: 29.29%;
+    /* padding-left: 29.29%; */
     font-size: 40px;
   }
   .media {
     height: 50px;
   }
 }
-/* 
+  
+  
 
 
 
-.footer_container {
-    background-color: rgba(44, 61, 115, 1);
-    max-height: 685px;
-}
-
-.logo_footer {
-    position: relative;
-    filter: invert(100%);
-    height: 25%;
-    width: 6%;
-    margin-top: 3%;
-    margin-left: 5%;
-
-}
-
-.left_container_footer{
-    position: relative;
-    top: -137px;
-    left: 170px;
-    border: 4px solid rgba(242, 158, 109, 1);
-    margin-left: 44px;
-    border-bottom: none;
-    border-top: none;
-    width: 42%;
-}
-.heading_footer{
-    margin-top: 32px;
-    margin-left: 30px;
-    color: rgba(242, 158, 109, 1);
-    font-family: 'Coolvetica', sans-serif;
-    font-size: 70px;
-    display: inline-block;
-    line-height: 100px;
-    letter-spacing: 2px;
-}
-
-.contact_us_footer {
-    margin-left: 30px;
-    color: rgba(242, 158, 109, 1);
-    font-family: 'Coolvetica', sans-serif;
-    font-size: 34px;
-    margin-top: 135px;
-    margin-bottom: 30px;
-    padding-bottom: 60px;
-    letter-spacing: 2px;
-}
-
-.contact_info_footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    letter-spacing: normal;
-}
-
-.contact_info_footer div {
-    flex: 1;
-    color: white;
-    margin-right: 10px;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    
-    margin-bottom: 7px;
-    margin-top: 10px;
-}
-
-.right_container_footer{
-    width: 42%;
-    position: relative;
-    left: 800px;
-    top: -770px;
-    border: 4px solid rgba(242, 158, 109, 1);
-    border: none;
-    
-}
-.discover_footer{
-    border: 4px solid rgba(242, 158, 109, 1);
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    padding-left: 60px;
-    padding-bottom: 40px;
-    padding-right: 10px;
-}
-.right_heading_footer{
-    position: absolute;
-    color: rgba(242, 158, 109, 1);
-    font-family: 'Coolvetica', sans-serif;
-    font-size: 50px;
-    letter-spacing: 2px;
-}
-
-iframe {
-    margin-top: 20px;
-    height: 200px;
-    width: 420px;
-
-}
-
-.follow_us_heading_footer{
-    color: rgba(242, 158, 109, 1);
-    font-family: 'Coolvetica', sans-serif;
-    font-size: 34px;
-    letter-spacing: 2px;
-    margin-left: 30px;
-    margin-top: 50px;
-}
-
-.icon_grid_footer{
-    width: 65%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    margin-left: 30px;
-    margin-top: 30px;
-    justify-content: space-between;
-}
-
-.icon_grid_footer img {
-    width: 50px;
-		filter: invert(100%);
-} */
 
 /* .container0{
     background-color: #2C3D73;
