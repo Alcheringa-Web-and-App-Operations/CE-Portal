@@ -26,50 +26,56 @@
 }
 
 #flex-item-13 a:hover {
-  color: white;
+  /* color: white;
   background-color: rgba(242, 68, 5, 1);
-  /* transition: 0.4s; */
+  transition: 0.4s;
   border-style: groove;
-  border-color: #031059;
+  border-color: #031059; */
+  text-decoration: underline;
 }
 
 #flex-item-14 a:hover {
-  color: white;
+  /* color: white;
   background-color: rgba(242, 68, 5, 1);
-  /* transition: 0.4s; */
+  transition: 0.4s;
   border-style: groove;
-  border-color: #031059;
+  border-color: #031059; */
+  text-decoration: underline;
 }
 
 #flex-item-15 a:hover {
-  color: white;
+  /* color: white;
   background-color: rgba(242, 68, 5, 1);
-  /* transition: 0.4s; */
+  transition: 0.4s;
   border-style: groove;
-  border-color: #031059;
+  border-color: #031059; */
+  text-decoration: underline;
 }
 #flex-item-99 a:hover {
-  color: white;
+  /* color: white;
   background-color: rgba(242, 68, 5, 1);
-  /* transition: 0.4s; */
+  transition: 0.4s;
   border-style: groove;
-  border-color: #031059;
+  border-color: #031059; */
+  text-decoration: underline;
 }
 
 #flex-item-16 a:hover {
-  color: white;
+  /* color: white;
   background-color: rgba(242, 68, 5, 1);
-  /* transition: 0.4s; */
+  transition: 0.4s;
   border-style: groove;
-  border-color: #031059;
+  border-color: #031059; */
+  text-decoration: underline;
 }
 
 #flex-item-18 a:hover {
-  color: white;
+  /* color: white;
   background-color: rgba(242, 68, 5, 1);
-  /* transition: 0.4s; */
+  transition: 0.4s;
   border-style: groove;
-  border-color: #031059;
+  border-color: #031059; */
+  text-decoration: underline;
 }
 
 .flex-item-1 a:link {
@@ -695,9 +701,9 @@ background-color: #f2e9e9;
 }
 
 .sponser69 {
-  background-image: url("images/geet.svg");
+  background-image: url("../images/geet.svg");
   width: 100vw;
-  height: 100vh;
+  height: auto;
   box-sizing: border-box;
   font-family: Coolvetica;
   display: flex;
@@ -709,15 +715,17 @@ background-color: #f2e9e9;
 .heading69 {
   background-color: #f2e9e9;
   width: 100vw;
-  height: 7vh;
-  color: black;
-  font-size: 32px;
+  height: 50px;
+  font-family: "Coolvetica";
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10%;
 
   box-sizing: border-box;
-  font-weight: normal;
 }
 .main69 {
   display: flex;
