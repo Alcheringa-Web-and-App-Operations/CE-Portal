@@ -18,7 +18,7 @@
 
   @font-face {
     font-family: Coolvetica;
-    src: url("{%static " fonts/coolvetica rg.otf"%}");
+    src: url("{%static 'fonts/coolvetica rg.otf'%}");
   }
 
   body {
@@ -89,10 +89,10 @@
     color: rgba(28, 3, 15, 1);
   }
 
-  @font-face {
-    font-family: "DM Sans", sans-serif;
-    src: url();
-  }
+  /* @font-face {
+    font-family: Coolvetica;
+    src: url("{%static ' fonts/coolvetica rg.otf'%}");
+  } */
 
   #flex-item-11 {
     margin: 10px 5px 10px 20px;
@@ -100,18 +100,25 @@
   }
 
   #flex-item-12 {
-    font-size: 35px;
+    /* font-size: 35px;
     color: rgba(0, 0, 0, 1);
-    font: "DM Sans", sans-serif;
+    font: Coolvetica;
     font-weight: 400;
     width: 200px;
     margin: 0px auto 0px 5px;
-    font-family: "DM Sans", sans-serif;
+    font-family: Coolvetica; */
+    font-size: 35px;
+    color: rgba(0, 0, 0, 1);
+    /* font: Coolvetica; */
+    font-weight: 400;
+    width: 200px;
+    margin: 0px auto 0px 5px;
+    font-family: Coolvetica;
   }
 
   #flex-item-13 a {
     text-decoration: none;
-    font-family: "DM Sans", sans-serif;
+    font-family: Coolvetica;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
@@ -121,7 +128,7 @@
 
   #flex-item-14 a {
     text-decoration: none;
-    font-family: "DM Sans", sans-serif;
+    font-family: Coolvetica;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
@@ -131,7 +138,7 @@
 
   #flex-item-15 a {
     text-decoration: none;
-    font-family: "DM Sans", sans-serif;
+    font-family: Coolvetica;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
@@ -141,7 +148,7 @@
 
   #flex-item-16 a {
     text-decoration: none;
-    font-family: "DM Sans", sans-serif;
+    font-family: Coolvetica;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
@@ -151,7 +158,7 @@
 
   #flex-item-18 a {
     text-decoration: none;
-    font-family: "DM Sans", sans-serif;
+    font-family: Coolvetica;
     font-size: 20px;
     font-weight: 400;
     padding: 5px;
@@ -921,17 +928,17 @@
 
     <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
 
-    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
       <a href="#"> About Us</a>
-    </div> {% endcomment %}
+    </div>
 
-    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+     <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
       <a href="#"> Contact</a>
-    </div> {% endcomment %}
+    </div>
 
-    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
       <a href="#"> Schedule</a>
-    </div> {% endcomment %}
+    </div> 
 
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
       <a href="{% url 'landing-page' %}" style="padding: 4px 18px 4px 18px"> Home</a>
@@ -1450,7 +1457,20 @@
         //   alert_div.innerHTML=`<p>hiii</p>`
         // }
 
-
+    function myFunction() {
+      var element1 = document.getElementById("flex-item-13");
+      element1.classList.toggle("show");
+      var element2 = document.getElementById("flex-item-14");
+      element2.classList.toggle("show");
+      var element3 = document.getElementById("flex-item-15");
+      element3.classList.toggle("show");
+      // var element4= document.getElementById("flex-item-16");
+      // element4.classList.toggle("show");
+      var element4 = document.getElementById("flex-item-17");
+      element4.classList.toggle("alternate1");
+      var element5 = document.getElementById("flex-item-19");
+      element5.classList.toggle("alternate2");
+    } 
 
 
 
