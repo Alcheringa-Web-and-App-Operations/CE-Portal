@@ -13,4 +13,5 @@ urlpatterns = [
     path('load-competitions-team/', views.load_competitions_team, name='load_competitions_team'),
     path('load-cities/', views.load_city, name='load_city'), # AJAX
     path('load_minmax/',views.load_minmax,name="load_minmax"),
+    path('my_redirect',views.my_redirect,name="my_redirect"),
 ]
