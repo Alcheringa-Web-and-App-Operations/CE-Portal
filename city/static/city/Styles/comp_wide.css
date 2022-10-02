@@ -63,8 +63,8 @@
   color: #ffffff;
   background: #f24405;
   border-radius: 28px;
-  height: 10%;
-  width: 36%;
+  padding: 8px;
+  margin-right: 4px;
   border: none;
 }
 
