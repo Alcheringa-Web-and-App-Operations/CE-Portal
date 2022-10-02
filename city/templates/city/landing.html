@@ -9,11 +9,10 @@
   <title>Landing Page</title>
   <link rel="stylesheet" href="{% static 'city/Styles/landingpage.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
-
 
   <!-- ***************************NAVBAR*************************** -->
   <nav>
@@ -54,7 +53,7 @@
   </nav>
   <div class="LandingPage">
     <div class="city margin1000 lap">
-      <div class="india">
+      <div class="india" data-aos="zoom-in">
         <img src="{%static 'city\images\india.svg' %}" alt="">
         <!-- <button style="position:relative;left:-300px;top:-100px;">Hello</button> -->
 
@@ -99,7 +98,7 @@
 
       <div class="way">
 
-        <div style="font-size:90px;font-weight: bold;">
+        <div style="font-size:90px;font-weight: bold;" data-aos="fade-up" data-aos-delay="700">
           <div class="highwayToAlcher" style="transform: scale(1.28)translate(-70px,-20px); line-height: 110px;">Highway
             <br> To <br> Alcher
           </div>
@@ -157,7 +156,7 @@
           Alcheringa
         </div>
 
-        <div class="text">
+        <div class="text" data-aos="flip-up">
           Alcheringa, popularly known as “Alcher” is the annual
           socio-cultural festival of Indian Institute of Technology (IIT)
           Guwahati.Started in 1996 by a group of students of IIT
@@ -172,7 +171,7 @@
       <div class="c1 mob">
         <div class="Heading">About Alcheringa</div>
 
-        <div class="text">
+        <div class="text" data-aos="flip-up">
           Alcheringa, popularly known as “Alcher” is the annual
           socio-cultural festival of Indian Institute of Technology (IIT)
           Guwahati.Started in 1996 by a group of students of IIT
@@ -187,7 +186,7 @@
       <div class="c2 mob">
         <div class="Heading">Highway to Alcher</div>
 
-        <div class="text">
+        <div class="text" data-aos="flip-up">
           Do you think you are the best in your city and want to
           compete with the best of the rest of the cities in the country?
           With the vision of giving everyone a platform to compete at a
@@ -197,7 +196,7 @@
         </div>
       </div>
       <div class="c2 lap">
-        <div class="text">
+        <div class="text" data-aos="flip-up">
           Do you think you are the best in your city and want to
           compete with the best of the rest of the cities in the country?
           With the vision of giving everyone a platform to compete at a
@@ -328,146 +327,33 @@
       </div>
     </div>
   </div>
-  <!-- <div class="footer_container">
-    <div style="display: inline;">
-      <img class="logo_footer" src="{%static 'city\images\Mask group.png' %}">
-    </div>
 
-    <div class="left_container_footer">
-      <div class="heading_footer">
-        Highway<br>to<br>Alcher
-      </div>
-      <div class="contact_us_footer">
-        Contact Us
-        <div class="contact_info_footer">
-          <div>
-            Siddhant Singh
-            <br><br>
-            PR Head
-            <br>
-            +91-9310859978
-          </div>
-          <div>
-            Danda Akshara
-            <br><br>
-            PR Head
-            <br>
-            +91-9908991939
-          </div>
-          <div>
-            Quasim
-            <br><br>
-            PR Head
-            <br>
-            +91-9310859978
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="right_container_footer">
-      <div class="discover_footer">
-        <div class="right_heading_footer">
-          Discover Alcheringa
-        </div>
-        <iframe src="https://www.youtube.com/watch?v=b1Xq6ofywkk">
-        </iframe>
-      </div>
-
-      <div class="socials_footer">
-        <div class="follow_us_heading_footer">
-          Follow Us
-        </div>
-        <div class="icon_grid_footer">
-          <a href="https://www.instagram.com/alcheringaiitg/">
-            <img src="{%static 'city\images\instagram (4).png' %}" />
-          </a>
-          <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/">
-            <img src="{%static 'city\images\linkedin (2).png' %}" />
-          </a>
-          <a href="https://www.facebook.com/alcheringaiitg">
-            <img src="{%static 'city\images\facebook.png' %}" />
-          </a>
-          <a href="https://twitter.com/alcheringaiitg">
-            <img src="{%static 'city\images\twit.png' %}" />
-          </a>
-          <a href="https://www.youtube.com/c/AlcheringaIITG">
-            <img src="{%static 'city\images\youtube.png' %}" />
-          </a>
-        </div>
-      </div>
-    </div>
-    <hr
-      style="background-color: rgba(242, 158, 109, 1); height: 4px; width: 100% ; border: none; position: relative; bottom: 675px;">
-
-  </div> -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      // Global settings:
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
 
 
+      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+      offset: 120, // offset (in px) from the original trigger point
+      delay: 80, // values from 0 to 3000, with step 50ms
+      duration: 900, // values from 0 to 3000, with step 50ms
+      easing: 'ease', // default easing for AOS animations
+      once: false, // whether animation should happen only once - while scrolling down
+      mirror: false, // whether elements should animate out while scrolling past them
+      anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
+    });
+  </script>
 
-
-
-  <!--   <div class="container0">
-<div class="container1">
-    <img src="{%static 'city\images\Mask group.png' %}">
-
-</div>
-    <div class="container2">
-        <div class="alcher">
-        <h1 id="highway">Highway</h1>
-        <h1>to</h1>
-        <h1 id="alcher">Alcher</h1>
-    
-    </div>
-        <div class="contactinfo">
-            <h1 id="contact">Contact Us</h1>
-            <div class="names">
-                <div class="Siddhant">
-                <h2 id="sid">Siddhant Singh</h2>
-                <h3 id="pr1">PR Head</h3>
-                <p>+91-9310859978</p>
-            </div>
-            <div class="akshara">
-                <h2 id="akshara">Danda Akshara</h2>
-                <h3 id="pr2">PR Head</h3>
-                <p>+91-9908991939</p>
-            </div>
-            <div class="Quasim">
-            <h2 id="quasim">Quasim</h2>
-            <h3 id="pr3">PR Head</h3>
-                <p>+91-9310859978</p>
-            
-            </div>
-        </div>
-    </div>
-</div>
-    <div class="container3">
-        <div class="video">
-        <h1 id="discover">Discover Alcheringa</h1>
-        <iframe src="https://youtu.be/byhtsRBr2VY">
-            </iframe>
-        </div>
-            <div class="follow">
-<h1>Follow us</h1>
-            <div class="icons">
-                <a href="https://www.instagram.com/alcheringaiitg/"><img src="images/instagram (4).png"></a>
-
-
-                <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/"><img src="images/linkedin (2).png"></a>
-                <a href="https://www.facebook.com/alcheringaiitg"><img src="images/facebook.png"></a>
-                <a href="https://twitter.com/alcheringaiitg"><img src="images/twit.png"></a>
-                <a href="https://www.youtube.com/c/AlcheringaIITG"><img src="images/youtube.png"></a>
-            
-            </div>
-        </div> -->
-
-
-
-
-  </div>
-
-  </div>
-
-</body>
 </body>
 <script type="text/javascript">
   function enlargeIcon(id) {
@@ -532,5 +418,7 @@
     element5.classList.toggle("alternate2");
   }
 </script>
+
+
 
 </html>
