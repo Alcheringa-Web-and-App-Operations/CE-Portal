@@ -147,3 +147,6 @@ def teamForm(request):
     else:
         form = EntryFormTeams()
         return render(request, 'team/team.html',{'form': form})
+
+def my_redirect(request):
+    return redirect("https://alcheringa.in")

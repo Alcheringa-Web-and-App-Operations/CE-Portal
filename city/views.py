@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import City , Competition
 
 
@@ -18,5 +18,8 @@ def dashboard(request,pk) :
       
     }
     return render(request, 'city/dashboard.html',data)
+
+def my_redirect(request):
+    return redirect("https://alcheringa.in")
 
 # Create your views here.
