@@ -7,7 +7,7 @@
 
 * {
   margin: 0;
-  scroll-behavior: smooth!important;
+  scroll-behavior: smooth !important;
 }
 
 /************** Nav Bar ************************/
@@ -18,12 +18,11 @@
   flex-wrap: wrap;
   justify-content: center;
   font-family: "Franklin Gothic Medium", sans-serif;
-  font-weight:900;
+  font-weight: 900;
 
   background-color: rgba(242, 158, 109, 1);
   align-items: center;
   width: 100%;
-
 }
 
 #flex-item-13 a:hover {
@@ -43,6 +42,13 @@
 }
 
 #flex-item-15 a:hover {
+  color: white;
+  background-color: rgba(242, 68, 5, 1);
+  /* transition: 0.4s; */
+  border-style: groove;
+  border-color: #031059;
+}
+#flex-item-99 a:hover {
   color: white;
   background-color: rgba(242, 68, 5, 1);
   /* transition: 0.4s; */
@@ -100,7 +106,7 @@
   font-weight: 400;
   padding: 5px;
   padding-left: 7px;
-  padding-right: 7px;  
+  padding-right: 7px;
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
@@ -112,7 +118,7 @@
   font-weight: 400;
   padding: 5px;
   padding-left: 7px;
-  padding-right: 7px;  
+  padding-right: 7px;
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
@@ -128,11 +134,22 @@
   border-radius: 30px;
   margin: 0px 10px 0px 10px;
 }
+#flex-item-99 a {
+  text-decoration: none;
+  font-family: "Franklin Gothic Medium", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 30px;
+  margin: 0px 10px 0px 10px;
+}
 
 #flex-item-16 a {
   text-decoration: none;
   font-family: "Franklin Gothic Medium", sans-serif;
-  background-color: #F24405;
+  background-color: #f24405;
   color: white;
   font-size: 21px;
   font-weight: 400;
@@ -263,7 +280,7 @@
 }
 
 /***************  City  *****************/
-.city-link{
+.city-link {
   font-family: "Franklin Gothic Medium", sans-serif;
   align-self: flex-end;
   color: white;
@@ -273,8 +290,8 @@
 }
 
 .city-link a {
- color: #F29E6D;
- text-decoration: none;
+  color: #f29e6d;
+  text-decoration: none;
 }
 
 /***************  Competitions  *****************/
@@ -283,11 +300,11 @@
   font-family: "DM Sans", sans-serif;
 }
 .coolvetica {
-  font-family: "Franklin Gothic Medium",sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-weight: 200;
 }
 #competition {
-  font-family: "Franklin Gothic Medium",sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
 }
 /*
 background-color: #f2e9e9;
@@ -397,7 +414,10 @@ background-color: #f2e9e9;
   /* overflow-x: hidden !important;
    height: 100vh; */
 
-  background-color: #f2e9e9;
+}
+
+.aboutus-sponsors {
+  background: url("../images/aboutussponsers.svg");
 }
 
 .dates {
@@ -674,13 +694,84 @@ background-color: #f2e9e9;
   }
 }
 
+.sponser69 {
+  background-image: url("images/geet.svg");
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: Coolvetica;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-bottom: 30px;
+}
+.heading69 {
+  background-color: #f2e9e9;
+  width: 100vw;
+  height: 7vh;
+  color: black;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  font-weight: normal;
+}
+.main69 {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  height: 85vh;
+  justify-content: space-evenly;
+}
+.black-boxes69 {
+  width: 75vw;
+  box-sizing: border-box;
+  height: 25vh;
+  background-color: black;
+  color: white;
+  padding: 5vw;
+
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+}
+.items69 {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: normal;
+}
+.dates69 {
+  font-size: 36px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.itema69 {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 825px) {
+  #schedule1 {
+    display: none;
+  }
+}
+@media (min-width: 826px) {
+  #schedule2 {
+    display: none;
+  }
+}
+
 /************** About Alcheringa *****************/
 .container {
   width: 100%;
   min-height: 600px;
   padding: 0;
   margin: 0;
-  background-image: url("../images/6356125.svg");
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -712,7 +803,7 @@ background-color: #f2e9e9;
 
 .Heading {
   text-align: center;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-style: normal;
   font-weight: bold;
 
@@ -741,7 +832,6 @@ background-color: #f2e9e9;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
   }
 
   .c1 {
@@ -820,8 +910,8 @@ background-color: #f2e9e9;
   /* margin-right: auto; */
   flex-grow: 1;
 }
-.footer_text{
-  margin:0;
+.footer_text {
+  margin: 0;
 }
 .alcher {
   color: #f29e6d;
@@ -846,7 +936,9 @@ background-color: #f2e9e9;
   justify-content: space-between;
 }
 
-.names h2,h3,p{
+.names h2,
+h3,
+p {
   margin: 0;
 }
 .Siddhant {
@@ -998,7 +1090,7 @@ background-color: #f2e9e9;
       } */
   .icons {
     justify-content: space-evenly;
-    width: 100%; 
+    width: 100%;
   }
   .container3 {
     color: #f29e6d;
@@ -1115,11 +1207,6 @@ background-color: #f2e9e9;
     height: 50px;
   }
 }
-  
-  
-
-
-
 
 /* .container0{
     background-color: #2C3D73;

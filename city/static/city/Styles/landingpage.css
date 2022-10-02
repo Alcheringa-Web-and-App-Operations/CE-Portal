@@ -547,7 +547,6 @@ a {
   min-height: 600px;
   padding: 0;
   margin: 0;
-  background-image: url('../images/6356125.svg');
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -578,9 +577,15 @@ a {
   padding: 19px;
 }
 
+.aboutus-sponsors {
+  background: url("../images/aboutussponsers.svg");
+}
+
+
+
 .Heading {
   text-align: center;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-style: normal;
   font-weight: bold;
 
@@ -597,15 +602,6 @@ a {
   text-align: center;
   font-family: 'DM Sans', sans-serif;
   color: #000000;
-}
-
-@media (min-width: 1040px) {
-  .text {
-    font-size: 28px;
-  }
-  .Heading {
-    font-size: 68px;
-  }
 }
 
 .mob {
@@ -719,7 +715,6 @@ a {
   /* overflow-x: hidden !important;
    height: 100vh; */
 
-  background-color: #f2e9e9;
 }
 
 .dates {
