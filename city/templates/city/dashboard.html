@@ -13,6 +13,7 @@
   <link rel="stylesheet" media="screen and (max-width: 800px)" href="{% static 'city/Styles/comp_small.css' %}" />
   <link rel="stylesheet" href="{% static 'city/Styles/dashboard.css' %}" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>City Elimination | Alcheringa</title>
 </head>
 
@@ -79,8 +80,8 @@
     align-items: center;
     justify-content: space-around;
 
-  ">
-    <div class="city-link">
+  " data-aos="zoom-in">
+    <div class="city-link" data-aos="zoom-in" data-aos-delay="200">
       Not your city? <a href="{% url 'landing-page' %}">Click here.</a>
     </div>
   </div>
@@ -88,13 +89,13 @@
   <!-- ******************** Competitions ************** -->
   <div class="dmsans comp-main" id="wideview">
     <div style="padding-top: 3%" id="competitions">
-      <h1 id="competition" class="coolvetica">Competitions</h1>
+      <h1 id="competition" class="coolvetica" data-aos="flip-up" data-aos-delay="300">Competitions</h1>
       {% for i,comp in range %} {% if i|divisibleby:"2" %}
       <div class="row">
         <div id="lefttext" style="background-image:url('{{ comp.background_img.url }}')">
-          <h1 class="coolvetica">{{comp.competitionName}}</h1>
-          <p class="comp-desc">{{comp.competitionDescription}}</p>
-          <div style="display:flex">
+          <h1 class="coolvetica" data-aos="fade-up">{{comp.competitionName}}</h1>
+          <p class="comp-desc" data-aos="fade-right"  data-aos-delay="300">{{comp.competitionDescription}}</p>
+          <div style="display:flex" data-aos="fade-up" data-aos-delay="300">
             <a href="{% url 'register_single' %}" style="text-decoration:none"><button type="button"
                 class="btn register-btn">Register</button></a>
             <a href="https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf"
@@ -103,20 +104,20 @@
           </div>
         </div>
         <div style="padding-right: 12%">
-          <img src="{{comp.competitionImage1.url}}" style="width: 30vw;  margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" style="width: 22vw; " />
+          <img src="{{comp.competitionImage1.url}}" style="width: 30vw;  margin-left: 2%" data-aos="fade-down" data-aos-delay="600" />
+          <img src="{{comp.competitionImage2.url}}" class="img2" style="width: 22vw; " data-aos="fade-up" data-aos-delay="500" />
         </div>
       </div>
       {% else %}
       <div class="row">
         <div style="padding-left: 10%; margin-right: 2%;z-index: 1000;">
-          <img src="{{comp.competitionImage1.url}}" style="width: 32vw; margin-left: 2%" />
-          <img src="{{comp.competitionImage2.url}}" class="img2" style="width: 26vw" />
+          <img src="{{comp.competitionImage1.url}}" style="width: 32vw; margin-left: 2%" data-aos="fade-down" data-aos-delay="600" />
+          <img src="{{comp.competitionImage2.url}}" class="img2" style="width: 26vw" data-aos="fade-up" data-aos-delay="500" />
         </div>
         <div id="righttext" style="background-image:url('{{ comp.background_img.url }}'); z-index: 1;">
-          <h1 class="coolvetica">{{comp.competitionName}}</h1>
-          <p class="comp-desc">{{comp.competitionDescription}}</p>
-          <div style="display:flex">
+          <h1 class="coolvetica" data-aos="fade-up">{{comp.competitionName}}</h1>
+          <p class="comp-desc" data-aos="fade-left" data-aos-delay="300">{{comp.competitionDescription}}</p>
+          <div style="display:flex" data-aos="fade-up" data-aos-delay="300">
             <a href="{% url 'register_single' %}" style="text-decoration:none"><button type="button"
                 class="btn register-btn">Register</button></a>
             <a href="https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf"
@@ -131,7 +132,7 @@
   </div>
 
   <div id="mobileview" style="margin-top: 3%">
-    <h1 id="competition">Competitions</h1>
+    <h1 id="competition" data-aos="zoom-in">Competitions</h1>
     {% for comp in competitions %}
     <div id="card1" class="card">
       <div class="coontainer">
@@ -184,7 +185,7 @@
 
 
   <div>
-    <div class="table" id="schedule1">
+    <div class="table" id="schedule1" data-aos="zoom-in">
       <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
         <!-- <caption>Life Expectancy By Current Age</caption> -->
         <tr style="margin: 0px; padding:0px; border-spacing :0px;">
@@ -315,12 +316,12 @@
     <div class="aboutus-sponsors">
       <div class="container" id="aboutus">
         <div class="c1 lap">
-          <div class="Heading">
+          <div class="Heading" data-aos="fade-right">
             About<br />
             Alcheringa
           </div>
 
-          <div class="text">
+          <div class="text" data-aos="flip-up" data-aos-delay="300">
             Alcheringa, popularly known as “Alcher” is the annual
             socio-cultural festival of Indian Institute of Technology (IIT)
             Guwahati.Started in 1996 by a group of students of IIT
@@ -333,9 +334,9 @@
         </div>
 
         <div class="c1 mob">
-          <div class="Heading">About Alcheringa</div>
+          <div class="Heading" data-aos="fade-right">About Alcheringa</div>
 
-          <div class="text">
+          <div class="text" data-aos="flip-up" data-aos-delay="300">
             Alcheringa, popularly known as “Alcher” is the annual
             socio-cultural festival of Indian Institute of Technology (IIT)
             Guwahati.Started in 1996 by a group of students of IIT
@@ -348,9 +349,9 @@
         </div>
 
         <div class="c2 mob">
-          <div class="Heading">Highway to Alcher</div>
+          <div class="Heading" data-aos="fade-left">Highway to Alcher</div>
 
-          <div class="text">
+          <div class="text" data-aos="flip-up" data-aos-delay="300">
             Do you think you are the best in your city and want to
             compete with the best of the rest of the cities in the country?
             With the vision of giving everyone a platform to compete at a
@@ -360,7 +361,7 @@
           </div>
         </div>
         <div class="c2 lap">
-          <div class="text">
+          <div class="text" data-aos="flip-up" data-aos-delay="300">
             Do you think you are the best in your city and want to
             compete with the best of the rest of the cities in the country?
             With the vision of giving everyone a platform to compete at a
@@ -368,7 +369,7 @@
             India to Alcheringa IIT Guwahati, we present to you the City
             Auditions known as "Highway to Alcher".
           </div>
-          <div class="Heading">Highway to<br />Alcher</div>
+          <div class="Heading" data-aos="fade-left">Highway to<br />Alcher</div>
         </div>
       </div>
 
@@ -376,9 +377,9 @@
 
       <div class="sponsers" id="sponsors">
         <br />
-        <div class="heading">Sponsors</div>
+        <div class="heading" data-aos="fade-up">Sponsors</div>
 
-        <div class="marquee-body" style="z-index: 100">
+        <div class="marquee-body" style="z-index: 100" data-aos="zoom-in">
           <div class="marquee">
             <ul class="marquee-content">
               <li>
@@ -497,11 +498,35 @@
       </div>
     </div>
   </div>
-  </div>
 
-  </div>
 
-</body>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      // Global settings:
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      initClassName: 'aos-init', // class applied after initialization
+      animatedClassName: 'aos-animate', // class applied on animation
+      useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+      disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+      debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+      throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+      // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+      offset: 120, // offset (in px) from the original trigger point
+      delay: 80, // values from 0 to 3000, with step 50ms
+      duration: 900, // values from 0 to 3000, with step 50ms
+      easing: 'ease', // default easing for AOS animations
+      once: false, // whether animation should happen only once - while scrolling down
+      mirror: false, // whether elements should animate out while scrolling past them
+      anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+    });
+  </script>
+
+
 </body>
 
 <script type="text/javascript">
