@@ -420,7 +420,10 @@ background-color: #f2e9e9;
   /* overflow-x: hidden !important;
    height: 100vh; */
 
-  background-color: #f2e9e9;
+}
+
+.aboutus-sponsors {
+  background: url("../images/aboutussponsers.svg");
 }
 
 .dates {
@@ -603,6 +606,15 @@ background-color: #f2e9e9;
   border-radius: 20px;
 }
 
+@media (min-width: 1040px) {
+  .text {
+    font-size: 28px;
+  }
+  .Heading {
+    font-size: 68px;
+  }
+}
+
 @media (max-width: 700px) {
   .marquee-content li img {
     width: 95%;
@@ -768,7 +780,6 @@ background-color: #f2e9e9;
   min-height: 600px;
   padding: 0;
   margin: 0;
-  background-image: url("../images/6356125.svg");
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -800,7 +811,7 @@ background-color: #f2e9e9;
 
 .Heading {
   text-align: center;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-style: normal;
   font-weight: bold;
 
@@ -1037,6 +1048,17 @@ p {
     padding-bottom: 30px;
     font-size: 35px;
   }
+}
+
+.register-btn {
+  padding: 8px 20px 8px 20px;
+}
+
+.rule-btn {
+  padding: 6px 20px 6px 20px;
+  background: transparent;
+  border: 2px solid rgb(242,68,5);
+  color: rgb(242,68,5);
 }
 
 @media (max-width: 1230px) and (min-width: 1040px) {

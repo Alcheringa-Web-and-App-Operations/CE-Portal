@@ -527,7 +527,6 @@ a {
   min-height: 600px;
   padding: 0;
   margin: 0;
-  background-image: url("../images/6356125.svg");
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -556,6 +555,12 @@ a {
   margin-right: 136px;
   padding: 19px;
 }
+
+.aboutus-sponsors {
+  background: url("../images/aboutussponsers.svg");
+}
+
+
 
 .Heading {
   text-align: center;
@@ -686,7 +691,6 @@ a {
   /* overflow-x: hidden !important;
    height: 100vh; */
 
-  background-color: #f2e9e9;
 }
 
 .dates {
