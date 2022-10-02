@@ -3,43 +3,44 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dependent Dropdown in Django</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"
-/>  
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dependent Dropdown in Django</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Syne&display=swap');
-@font-face {
+  @font-face {
     font-family: Coolvetica;
-    src: url("{%static "fonts/coolvetica rg.otf"%}");
-}
+    src: url("{%static " fonts/coolvetica rg.otf"%}");
+  }
 
-body {
+  body {
     padding: 0px;
     margin: 0px;
-}
+  }
 
 
-/************** Nav Bar ************************/
+  /************** Nav Bar ************************/
 
-.flex-container-1 {
+  .flex-container-1 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-  
+
     background-color: rgba(242, 158, 109, 1);
     align-items: center;
     width: 100%;
     gap: 10px;
   }
-  
+
   #flex-item-13 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
@@ -47,7 +48,7 @@ body {
     border-style: groove;
     border-color: #031059;
   }
-  
+
   #flex-item-14 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
@@ -55,7 +56,7 @@ body {
     border-style: groove;
     border-color: #031059;
   }
-  
+
   #flex-item-15 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
@@ -63,7 +64,7 @@ body {
     border-style: groove;
     border-color: #031059;
   }
-  
+
   #flex-item-16 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
@@ -71,7 +72,7 @@ body {
     border-style: groove;
     border-color: #031059;
   }
-  
+
   #flex-item-18 a:hover {
     color: white;
     background-color: rgba(242, 68, 5, 1);
@@ -79,78 +80,78 @@ body {
     border-style: groove;
     border-color: #031059;
   }
-  
+
   .flex-item-1 a:link {
     color: rgba(28, 3, 15, 1);
   }
-  
+
   .flex-item-1 a:visited {
     color: rgba(28, 3, 15, 1);
   }
-  
+
   @font-face {
-    font-family: Coolvetica;
-    src: url(coolvetica_rg.otf);
+    font-family: "DM Sans", sans-serif;
+    src: url();
   }
-  
+
   #flex-item-11 {
     margin: 10px 5px 10px 20px;
     /* position: relative; */
   }
-  
+
   #flex-item-12 {
     font-size: 35px;
     color: rgba(0, 0, 0, 1);
-    font: Coolvetica;
+    font: "DM Sans", sans-serif;
     font-weight: 400;
     width: 200px;
     margin: 0px auto 0px 5px;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
   }
-  
+
   #flex-item-13 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
     border-radius: 30px;
     margin: 0px 10px 0px 10px;
   }
-  
+
   #flex-item-14 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
     border-radius: 30px;
     margin: 0px 10px 0px 10px;
   }
-  
+
   #flex-item-15 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
     border-radius: 30px;
     margin: 0px 10px 0px 10px;
   }
-  
+
   #flex-item-16 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 21px;
     font-weight: 400;
     padding: 5px;
     border-radius: 30px;
     margin: 0px 20px 0px 10px;
   }
-  
+
   #flex-item-18 a {
     text-decoration: none;
-    font-family: Coolvetica;
+    font-family: "DM Sans", sans-serif;
     font-size: 20px;
     font-weight: 400;
     padding: 5px;
@@ -160,7 +161,7 @@ body {
     border-color: #031059;
     border-width: 2px;
   }
-  
+
   .toggle-btn {
     width: 35px;
     position: absolute;
@@ -168,7 +169,7 @@ body {
     top: 6px;
     display: none;
   }
-  
+
   .toggle-btn span {
     /* display: inline-block; */
     width: 100%;
@@ -177,7 +178,7 @@ body {
     float: left;
     margin-bottom: 8px;
   }
-  
+
   .cross-btn {
     font-size: 30px;
     position: absolute;
@@ -185,48 +186,51 @@ body {
     top: 5px;
     display: none;
   }
-  
+
   .disapp_in_compview {
     position: absolute;
     right: 70px;
     top: 17px;
     float: left;
   }
-  .member{
+
+  .member {
     display: flex;
     align-items: center;
     width: 80%;
     max-width: 800px;
     justify-content: space-between;
   }
+
   @media (max-width:490px) {
-    .member{
-        width: 80%;
+    .member {
+      width: 80%;
     }
   }
-  
+
   @media (min-width: 775px) {
     .disapp_in_compview {
       display: none;
     }
   }
-  
-  @media (max-width: 775px) and (min-width: 460px) {
+
+  @media (max-width: 775px) and (min-width: 410px) {
     .toggle-btn {
       display: inline;
     }
+
     .disapp_in_mobview {
       display: none;
     }
-  
+
     #flex-item-16 {
       margin-left: auto;
     }
-  
+
     .toggle-btn {
       margin: 10px 10px 0px 0px;
     }
-  
+
     div.show {
       display: block;
       width: 100%;
@@ -235,32 +239,63 @@ body {
       display: flex;
       justify-content: end;
     }
-  
+
     div.alternate1 {
       display: none;
     }
+
     div.alternate2 {
       display: block;
     }
+     #individual
+    {
+      width: 30%;
+      height: 20%;
+      position: relative;
+      left: -8%;
+      top: -20px;
+
+      
+    }
+    #individual b
+    {
+      font-size: 250%;
+    }
+    #team{
+      width: 30%;
+      height: 20%;
+      position: relative;
+      left: -12%;
+      top: -20px;
+
+    }
+    #team b
+    {
+      font-size: 250%;
+    }
   }
-  
+
   @media (max-width: 460px) {
     #flex-item-12 {
       display: none;
     }
+
     .disapp_in_mobview {
       display: none;
     }
+
     .toggle-btn {
       display: block;
     }
-  
+
     #flex-item-11 {
       margin: 10px auto 10px 20px;
     }
+
     .toggle-btn {
       margin: 10px 10px 0px 0px;
     }
+
     div.show {
       display: block;
       width: 100%;
@@ -269,89 +304,91 @@ body {
       display: flex;
       justify-content: end;
     }
+
     div.alternate1 {
       display: none;
     }
+
     div.alternate2 {
       display: block;
     }
   }
 
 
-/****************** Registration image ************************/
+  /****************** Registration image ************************/
 
-#background-image div {
+  #background-image div {
     display: inline-block;
-}
+  }
 
-#background-image {
+  #background-image {
     background-color: #031059;
     background-image: url("{% static 'images/background.png' %}");
     height: 40vw;
     background-repeat: no-repeat;
     background-size: cover;
-}
+  }
 
-#individual {
+  #individual {
     background-color: rgba(0, 0, 0, 0.35);
     margin-left: 27%;
     margin-right: 6.5%;
-}
+  }
 
-#team {
+  #team {
     background-color: #F29E6D;
-    
-}
 
-.box {
+  }
+
+  .box {
     border: 4px solid #FFFFFF;
     height: 42px;
     width: 20%;
     margin-top: 5%;
     text-align: center;
     color: white;
-}
+  }
 
-.text {
+  .text {
     font-size: 1.2vw;
     margin-top: 2%;
-}
+  }
 
-.indiv:hover {
+  .indiv:hover {
     color: indigo;
-}
+  }
 
 
-/****************** Registration FORM ************************/
+  /****************** Registration FORM ************************/
 
-.reg-form-all {
+  .reg-form-all {
     width: 99vw;
     font-family: 'DM Sans', Tahoma, Geneva, Verdana, sans-serif;
-}
+  }
 
-.sections {
+  .sections {
     width: 40%;
     max-width: 400px;
-}
+  }
 
 
-/* check boxes-- start */
+  /* check boxes-- start */
 
-.container {
+  .container {
     width: 100%;
     font-size: 13px;
-}
+  }
 
-ul.ks-cboxtags {
+  ul.ks-cboxtags {
     list-style: none;
-    padding-top:3px;
-}
+    padding-top: 3px;
+  }
 
-ul.ks-cboxtags li {
+  ul.ks-cboxtags li {
     display: inline;
-}
+  }
 
-ul.ks-cboxtags li label {
+  ul.ks-cboxtags li label {
     display: inline-block;
     background-color: rgba(255, 255, 255, .9);
     border: 2px solid #002F43;
@@ -366,14 +403,14 @@ ul.ks-cboxtags li label {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     transition: all .2s;
-}
+  }
 
-ul.ks-cboxtags li label {
+  ul.ks-cboxtags li label {
     padding: 10px 15px 11px 15px;
     cursor: pointer;
-}
+  }
 
-ul.ks-cboxtags li label::after {
+  ul.ks-cboxtags li label::after {
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -384,47 +421,47 @@ ul.ks-cboxtags li label::after {
     font-size: 12px;
     padding: 0px 0px 0px 7px;
     transition: transform .3s ease-in-out;
-}
+  }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
+  ul.ks-cboxtags li input[type="checkbox"]:checked+label::after {
     content: "\f00c";
     transition: transform .3s ease-in-out;
-}
+  }
 
-ul.ks-cboxtags li input[type="checkbox"]:checked+label {
+  ul.ks-cboxtags li input[type="checkbox"]:checked+label {
     border: 2px solid #002F43;
     background-color: #F29E6D;
     color: #002F43;
     transition: all .2s;
-}
+  }
 
-ul.ks-cboxtags li input[type="checkbox"] {
+  ul.ks-cboxtags li input[type="checkbox"] {
     display: absolute;
-}
+  }
 
-ul.ks-cboxtags li input[type="checkbox"] {
+  ul.ks-cboxtags li input[type="checkbox"] {
     position: absolute;
     opacity: 0;
-}
+  }
 
-ul.ks-cboxtags li input[type="checkbox"]:focus+label {
+  ul.ks-cboxtags li input[type="checkbox"]:focus+label {
     border: 2px solid #002F43;
-}
+  }
 
 
-/* check boxes-- END */
+  /* check boxes-- END */
 
 
-/* red-star-- START */
+  /* red-star-- START */
 
-.red-star {
+  .red-star {
     color: red;
-}
+  }
 
 
-/* red-star-- END */
+  /* red-star-- END */
 
-.input-text-field {
+  .input-text-field {
     height: 40px;
     margin-top: 9px;
     width: 100%;
@@ -432,8 +469,9 @@ ul.ks-cboxtags li input[type="checkbox"]:focus+label {
     border-color: black;
     border-width: 2px;
     font-size: 16px;
-}
-.input-text-field-1 select{
+  }
+
+  .input-text-field-1 select {
     height: 40px;
     margin-top: 9px;
     width: 100%;
@@ -441,31 +479,31 @@ ul.ks-cboxtags li input[type="checkbox"]:focus+label {
     border-color: black;
     border-width: 2px;
     font-size: 16px;
-}
+  }
 
-.drop-down {
+  .drop-down {
     color: #989898;
-}
+  }
 
-.dropdown-content a:hover {
+  .dropdown-content a:hover {
     background-color: #ddd;
-}
+  }
 
-.head-style {
+  .head-style {
     font-size: 16px;
-}
+  }
 
-.row-view {
+  .row-view {
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
+  }
 
-.page-heading {
+  .page-heading {
     margin: 20px 15% 5px 15%;
-}
+  }
 
-.register-button {
+  .register-button {
     margin: auto;
     padding: 4px 50px;
     background: #F24405;
@@ -476,249 +514,457 @@ ul.ks-cboxtags li input[type="checkbox"]:focus+label {
     line-height: 46px;
     color: #FFFFFF;
     transition: box-shadow 0.6s;
-}
+  }
 
-.register-button:hover,
-.register-button:focus,
-ul.ks-cboxtags li label:hover,
-ul.ks-cboxtags li label:focus {
+  .register-button:hover,
+  .register-button:focus,
+  ul.ks-cboxtags li label:hover,
+  ul.ks-cboxtags li label:focus {
     box-shadow: 0 4px 15px 0 rgba(229, 66, 10, 0.75);
-}
+  }
 
-@media only screen and (orientation: portrait) {
+  @media only screen and (orientation: portrait) {
     .row-view {
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
     }
-    .sections {
-        width: 80%;
-        max-width: 100000000px;
-    }
-    .page-heading {
-        margin: auto;
-        margin-top: 40px;
-        margin-left: 10%;
-        text-align: left;
-    }
-    .input-text-field {
-        min-width: none;
-        width: 100%;
-    }
-}
 
-.add-member-button {
+    .sections {
+      width: 80%;
+      max-width: 100000000px;
+    }
+
+    .page-heading {
+      margin: auto;
+      margin-top: 40px;
+      margin-left: 10%;
+      text-align: left;
+    }
+
+    .input-text-field {
+      min-width: none;
+      width: 100%;
+    }
+  }
+
+  .add-member-button {
     margin-top: 9px;
     padding: 10px 15px;
     border-color: black;
     border-width: 1px;
     transition: box-shadow 0.3s;
-}
+  }
 
-.add-member-button:hover {
+  .add-member-button:hover {
     box-shadow: 0 3px 8px 0 rgba(86, 86, 86, 0.75);
+  }
+
+
+    /*******************Footer**********************/
+.container0 {
+  background-color: #2c3d73;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: white;
+
+
+  /* justify-content: center; */
+  /* width: 100%; */
+  /* height:100vh; */
 }
-
-
-/******************  FOOTER  ************************/
-
-#footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 40px 0vw 40px 9vw;
-    background-color: rgba(3, 16, 89, 1);
-    color: white;
+.container1 {
+  border-right: 4px solid #f29e6d;
+  /* border-bottom: 4px solid   #F29E6D; */
+  background-color: #2c3d73;
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
 }
-
+.container1 img {
+  padding-left: 50px;
+  padding-right: 50%;
+  padding-top: 25px;
+  margin-bottom: auto;
+}
+.container2 {
+  padding-left: 40px;
+  border-right: 4px solid #f29e6d;
+  padding-right: 30px;
+  padding-top: 20px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #2c3d73;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  flex-grow: 1;
+}
+.footer_text{
+  margin:0;
+}
+.alcher {
+  color: #f29e6d;
+  font-family: Bohemian Soul;
+  font-size: 40px;
+  margin-bottom: auto;
+}
+.contactinfo {
+  margin-top: auto;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  padding-top: 80px;
+  font-size: 12px;
+}
 #contact {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    width: fit-content;
+  color: #f29e6d;
+  padding-bottom: 20px;
+  font-size: 50px;
+}
+.names {
+  display: flex;
+  justify-content: space-between;
 }
 
-#email {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding-top: 4px;
+.names h2,h3,p{
+  margin: 0;
+}
+.Siddhant {
+  padding-right: 17px;
+  padding-bottom: 10px;
+}
+#sid {
+  padding-bottom: 10px;
+}
+#pr1 {
+  padding-bottom: 10px;
 }
 
-#social-media {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+.Akshara {
+  padding-right: 17px;
+  padding-bottom: 10px;
+}
+#akshara {
+  padding-bottom: 10px;
+}
+#pr2 {
+  padding-bottom: 10px;
 }
 
-#logos {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-top: 12px;
+.Quasim {
+  padding-bottom: 10px;
+}
+
+#quasim {
+  padding-bottom: 10px;
+}
+#pr3 {
+  padding-bottom: 10px;
+}
+
+.video {
+  /* margin-bottom: 150px; */
+  /* padding: 0px 0px 40px 0px; */
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  /* border-bottom:4px solid   #F29E6D ; */
+}
+
+/* .size-iframe{
+      height: 140%;
+      width: 85%;
+  } */
+
+.follow {
+  margin-top: auto;
+  /* border-top: 4px solid   #F29E6D;; */
+  font-size: 17px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  width: 77%;
+  justify-content: space-between;
+
 }
 
 #insta {
-    padding-right: 35px;
+  padding-right: 14px;
 }
-
-#fb {
-    padding-left: 2px;
-    padding-right: 35px;
+#link {
+  padding-right: 14px;
 }
-
+#facebook {
+  padding-right: 14px;
+}
 #twitter {
-    padding-left: 2px;
-    padding-right: 2px;
+  padding-right: 14px;
+}
+#youtube {
+  padding-right: 14px;
 }
 
-#phone {
+@media (min-width: 1230px) {
+  .size-iframe {
+    height: 140%;
+    width: 85%;
+  }
+  .container3 {
+    color: #f29e6d;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
     display: flex;
-    flex-direction: row;
-    align-items: left;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    background-color: #2c3d73;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    flex-grow: 1;
+  }
+  #discover {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+  }
 }
 
-#phone-no {
-    padding-left: 6px;
-}
+@media (max-width: 1230px) and (min-width: 1040px) {
+  .container1 {
+    display: none;
+  }
 
-#alcher-link {
-    padding-left: 0px;
-}
-
-#website {
+  .alcher {
+    text-align: center;
+  }
+  .contactinfo {
+    text-align: center;
+  }
+  .video {
+    margin-bottom: auto;
     display: flex;
-    flex-direction: row;
-    padding-top: 10px;
-    align-items: left;
-}
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 40px;
+  }
 
-#phone-icon {
-    padding-right: 5px;
-}
+  .class-iframe {
+    align-self: center;
+    width: 100%;
+    margin-bottom: 30px;
+  }
 
-#phone-icon:hover {
-    width: 120%;
-}
-
-#mail {
-    padding-right: 15px;
-}
-
-#email-us {
-    text-align: left;
-    padding-bottom: 3px;
-}
-
-#mail-address {
+  #follow-us {
+    padding-bottom: 20px;
+  }
+  /* .follow{
+          justify-content: center;
+          align-self: center;
+      } */
+  .icons {
+    justify-content: space-evenly;
+    width: 100%; 
+  }
+  .container3 {
+    color: #f29e6d;
+    /* padding-left: 20px; */
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
     display: flex;
-    flex-direction: row;
-    padding-top: 4px;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    background-color: #2c3d73;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    flex-grow: 1;
+  }
+  #discover {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
 }
 
-#email-input {
-    height: 22px;
-    background-color: rgba(3, 16, 89, 1);
-    border: 1px solid white;
-    height: 30px;
-    color: white;
+.icons img {
+  filter: invert(100%);
+}
+@media (max-width: 1040px) {
+  .container1 {
+    display: none;
+  }
+
+  .alcher {
+    text-align: center;
+  }
+
+  .contactinfo {
+    text-align: center;
+  }
+
+  .names {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .video {
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+    justify-content: center;
+    align-self: center;
+    padding-bottom: 40px;
+  }
+
+  .class-iframe {
+    align-self: center;
+  }
+
+  #follow-us {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  /* .follow{
+              justify-content: center;
+              align-self: center;
+          } */
+  .icons {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  .container3 {
+    color: #f29e6d;
+    /* padding-left: 20px; */
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    background-color: #2c3d73;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    flex-grow: 1;
+  }
+  #discover {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+
+
 }
 
-#send-button {
-    height: 30px;
-    background-color: white;
-    color: rgba(3, 16, 89, 1);
-    transition-duration: 5ms;
+@media (max-width: 500px) {
+  .container0 {
+    font-size: 85%;
+  }
+  .alcher {
+    font-size: 25px;
+  }
+
+  #discover {
+    font-size: 40px;
+  }
+  #contact {
+    font-size: 40px;
+  }
+  #follow-us {
+    /* padding-left: 29.29%; */
+    font-size: 40px;
+  }
+  .media {
+    height: 50px;
+  }
 }
+  </style>
 
-#send-button:hover {
-    background-color: rgba(3, 16, 89, 1);
-    ;
-    color: white;
-    border-color: white;
-}
-
-a {
-    color: white;
-}
-
-
-</style>
 <body>
-    {% comment %} <!---------------Nav Bar -----------------> {% endcomment %}
-    <div class="flex-container-1">
-        <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
-          <a href="#"> Register</a>
-        </div>
-    
-        <div
-          class="flex-item-1 toggle-btn"
-          id="flex-item-17"
-          onclick="myFunction()"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-    
-        <div
-          class="flex-item-1 cross-btn"
-          id="flex-item-19"
-          onclick="myFunction()"
-        >
-          <span>╳</span>
-        </div>
-    
-        <div class="flex-item-1" id="flex-item-11">
-          <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
-        </div>
-    
-        <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
-    
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
-          <a href="#"> About Us</a>
-        </div> {% endcomment %}
-    
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
-          <a href="#"> Contact</a>
-        </div> {% endcomment %}
-    
-        {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
-          <a href="#"> Schedule</a>
-        </div> {% endcomment %}
-    
-        <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
-          <a href="{% url 'landing-page' %}" style="padding: 4px 18px 4px 18px"> Home</a>
-        </div>
+  {% comment %}
+  <!---------------Nav Bar -----------------> {% endcomment %}
+  <div class="flex-container-1">
+    <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
+      <a href="#"> Register</a>
+    </div>
+
+    <div class="flex-item-1 toggle-btn" id="flex-item-17" onclick="myFunction()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="flex-item-1 cross-btn" id="flex-item-19" onclick="myFunction()">
+      <span>╳</span>
+    </div>
+
+    <div class="flex-item-1" id="flex-item-11">
+      <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
+    </div>
+
+    <div class="flex-item-1" id="flex-item-12">Alcheringa</div>
+
+    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
+      <a href="#"> About Us</a>
+    </div> {% endcomment %}
+
+    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-14">
+      <a href="#"> Contact</a>
+    </div> {% endcomment %}
+
+    {% comment %} <div class="flex-item-1 disapp_in_mobview" id="flex-item-15">
+      <a href="#"> Schedule</a>
+    </div> {% endcomment %}
+
+    <div class="flex-item-1 disapp_in_mobview" id="flex-item-16">
+      <a href="{% url 'landing-page' %}" style="padding: 4px 18px 4px 18px"> Home</a>
+    </div>
+  </div>
+  <!---- Registration image ---->
+  <div id="background-image">
+    <div id="register-image">
+      <img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
+    </div>
+    <a href="{% url 'register_single' %}">
+      <div id="individual" class="box">
+        <div class="text  indiv"><b>Solo Competition</b></div>
       </div>
-    <!---- Registration image ---->
-    <div id="background-image">
-        <div id="register-image">
-            <img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8% ; margin-left: 20%;">
-        </div>
-        <a href="{% url 'register_single' %}">
-            <div id="individual" class="box">
-                <div class="text  indiv"><b>Individual</b></div>
-            </div>
-        </a>
-        <a href="">
-            <div id="team" class="box">
-                <div class="text"><b>Team</b></div>
-            </div>
-        </a>
+    </a>
+    <a href="">
+      <div id="team" class="box">
+        <div class="text indiv"><b>Group Competition</b></div>
+      </div>
+    </a>
+  </div>
+  <!--Registration image over-->
+  <br><br>
+  <div class="reg-form-all">
+    <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
+    <div class="page-heading">
+      <h1 class="text-4xl " style="font-weight: 700;">Team Competition</h1>
+      <br>
+      <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
     </div>
-    <!--Registration image over-->
-    <br><br>
-    <div class="reg-form-all">
-        <!-- check boxes ||  https://codepen.io/quinlo/pen/ReMRXz -->
-        <div class="page-heading">
-            <h1 class="text-4xl " style="font-weight: 700;">Registration for Team</h1>
-            <br>
-            <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
-        </div>
-    </div>
-    <!-- Backend Code -->
-    <!--<div style="padding-right:300px;">
+  </div>
+  <!-- Backend Code -->
+  <!--<div style="padding-right:300px;">
             <div>
                 <div
                     style="font-size:25px;padding-top: 20px;padding-left: 40px;display: grid;grid-template-columns: 200px 0px;">
@@ -826,312 +1072,391 @@ a {
                 </div>
             </div>
         </div> -->
-        <!-- Backend Code Ends -->
-    <form method="post" id="personForm">
-        {% csrf_token %}
-        <div id="hidden">
-            <input type="hidden" name="number" value=2 id="num">
+  <!-- Backend Code Ends -->
+  <form method="post" id="personForm">
+    {% csrf_token %}
+    <div id="hidden">
+      <input type="hidden" name="number" value=2 id="num" />
+    </div>
+    <div class="form">
+      <div class="row-view">
+        <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
+          <br>
+          <div class="input-text-field-1">
+            {{ form.city }}
+          </div>
         </div>
-        <div class="form">
-            <div class="row-view">
-                <div class="sections m-5"><span class="head-style">Select city<span class="red-star"> *</span></span>
-                    <br>
-                    <div class="input-text-field-1">
-                        {{ form.city }}
-                    </div>
-                </div>
-                <div class="sections m-5">
-                    <div id="check-container">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="row-view">
-                <div class="sections m-5">
-                    <div>
-                        <span class="head-style">Team Name<span class="red-star"> *</span></span>
-                        <br>
-                        <!-- <input type="text" id="team-name" class="input-text-field " required> -->
-                        <input type="text" name="name" maxlength="50" class="input-text-field " required id="id_name">
-                    </div>
-                </div>
-                <div class="sections m-5"></div>
-            </div>
-            <div class="row-view">
-                <div class="sections mx-5 mt-5">
-                    <div style="font-size: 120%;font-weight: bold;">Head's data:</div>
-                </div>
-                <div class="sections mx-5 mt-5"></div>
-            </div>
-            <div class="row-view">
-                <div class="sections m-5">
-                    <div>
-                        <span class="head-style">Name<span class="red-star"> *</span></span>
-                        <br>
-                        <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
-                        <input type="text" name="name0" maxlength="50" class="input-text-field " required id="id_name">
-                    </div>
-                    <br><br><br>
-                    <div>
-                        <span class="head-style">Contact Number<span class="red-star"> *</span></span>
-                        <br>
-                        <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
-                        <input type="text" name="phoneNo0" class="input-text-field " maxlength="50" required id="id_name">
-                    </div>
-                    <br><br><br>
-                    <div>
-                        <span class="head-style">Degree<span class="red-star"> *</span></span>
-                        <br>
-                        <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                        <select class="input-text-field" name="degree0" id="degree" required> 
-                            <option class="drop-down">Degree</option>
-                            <option value="btech">B.Tech</option>
-                            <option value="mtech">M.Tech</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <br><br><br>
-                    <div>
-                        <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
-                        <br>
-                        <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
-                        <input type="number" name="year0" class="input-text-field " maxlength="4" required id="id_year">
-                    </div>
-                </div>
-                <div class="sections m-5">
-                    <div>
-                        <span class="head-style">Gender<span class="red-star"> *</span></span>
-                        <br>
-                        <select class="input-text-field " name="gender0" id="gender_m_0" required>
-                            <option class="drop-down">Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <br><br><br>
-                    <div>
-                        <span class="head-style">E-mail<span class="red-star"> *</span></span>
-                        <br>
-                        <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                        <input type="email" name="email0" class="input-text-field " maxlength="254" required id="id_email">
-                    </div>
-                    <br><br><br>
-                    <div>
-                        <span class="head-style">College Name<span class="red-star"> *</span></span>
-                        <br>
-                        <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                        <input type="text" name="collegename0" class="input-text-field " maxlength="254" required id="id_collegename">
-                    </div>
-                </div>
-        
-        
-            </div>
-            <div class="row-view">
-                <div class="sections mx-5 mt-5"></div>
-            </div>
-            <div id="main">
-                <div class="row-view">
-                    <div class="sections mx-5 mt-5">
-                        <div style="font-size: 120%;font-weight: bold;">Member 1:</div>
-                    </div>
-                    <div class="sections">
-                    </div>
-                </div>
-                <div class="row-view">
-                    <div class="sections m-5">
-                        <div>
-                            <span class="head-style">Name<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
-                            <input type="text" name="name1" class="input-text-field " maxlength="50" required id="id_name">
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">Contact Number<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="number" id="cont_num_m_1" class="input-text-field " required> -->
-                            <input type="text" name="phoneNo1" class="input-text-field " maxlength="50" required id="id_name">
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">Degree<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                            <select class="input-text-field" name="degree1" required>
-                                <option class="drop-down">Degree</option>
-                                <option value="btech">B.Tech</option>
-                                <option value="mtech">M.Tech</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <input type="checkbox" style="margin-top: 12px" name="samedegree1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
-                            <input type="number" name="year1" class="input-text-field " maxlength="4" required id="id_year">
-                            <input type="checkbox" style="margin-top: 12px" name="sameyear1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
-                            
-                        </div>
-                    </div>
-                    <div class="sections m-5">
-                        <div>
-                            <span class="head-style">Gender<span class="red-star"> *</span></span>
-                            <br>
-                            <select class="input-text-field " name="gender1" id="gender_m_1" required>
-                                <option class="drop-down">Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">E-mail<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="email" id="email_m_1" class="input-text-field " required> -->
-                            <input type="email" name="email1" class="input-text-field " maxlength="254" required id="id_email">
-                        </div>
-                        <br><br><br>
-                        <div>
-                            <span class="head-style">College Name<span class="red-star"> *</span></span>
-                            <br>
-                            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                            <input type="text" name="collegename1" class="input-text-field " value="" maxlength="254" required id="id_collegename">
-                            <input type="checkbox" style="margin-top: 12px" name="samecollege1" onchange="samefunc(1)"><label style="margin-left:5px">Same as Head</label>
-                        </div>
-                    </div>
-        
-        
-                </div>
-            </div>
-            <div class="row-view">
-                <div class="sections mx-5 mt-5">
-                    <button class="add-member-button" id="button1">
-                        <i class="fa-solid fa-plus"></i> <i class="fa-solid fa-user"
-                            style="margin-left: -5px;margin-right: 10px;"></i>Add member</button>
-                </div>
-                <div class="sections mx-5 mt-5"></div>
-            </div>
+        <div class="sections m-5">
+          <div id="check-container">
+
+          </div>
+        </div>
+      </div>
+      <div class="row-view">
+        <div class="sections m-5">
+          <div>
+            <span class="head-style">Team Name<span class="red-star"> *</span></span>
             <br>
-            <div class="row-view">
-                <button class=" register-button">Register</button>
-            </div>
+            <!-- <input type="text" id="team-name" class="input-text-field " required> -->
+            <input type="text" name="name" maxlength="50" class="input-text-field " required id="id_name" placeholder="Team Name">
+          </div>
         </div>
-</form>
-</div>
-<div style="height: 120px;"></div>
-
-
-<!---------------Registeration form ENDS ----------------->
-
-<!--FOOTER-->
-    <div id="footer">
-
-        <div id="contact">
-            <div id="phone">
-                <div id="phone-icon">
-                    <img src="{% static "images\phone.png" %}" width="15" height="15">
-                </div>
-                <div id="phone-no">19-0000-0000</div>
+        <div class="sections m-5"></div>
+      </div>
+      <div class="row-view">
+        <div class="sections mx-5 mt-5">
+          <div style="font-size: 120%;font-weight: bold;">Leader's data:</div>
+        </div>
+        <div class="sections mx-5 mt-5"></div>
+      </div>
+      <div class="row-view">
+        <div class="sections m-5">
+          <div>
+            <span class="head-style">Name<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="text" id="name_m_0" class="input-text-field " required> -->
+            <input type="text" name="name0" maxlength="50" class="input-text-field " required id="id_name" placeholder="Name">
+          </div>
+          <br><br><br>
+          <div>
+            <span class="head-style">Contact Number<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="number" id="cont_num_m_0" class="input-text-field " required> -->
+            <div style="display:flex; width: 100%;">
+              <input type="text" name="countryCode0" class="input-text-field " maxlength="5" required
+                id="id_name_country" style="width: 40px; margin-right: 10px;" placeholder="+12">
+              <input type="text" name="phoneNo0" class="input-text-field " maxlength="50" required id="id_name" placeholder="Contact Number(e.g. 123456789)">
             </div>
-            <div id="website">
-                <div id="mail">
-                    <img src="{% static "images\mail.png" %}" height="15">
-                </div>
-                <div id="alcher-link"><a href="https://www.alcheringa.in/">alcheringa.in</a></div>
-            </div>
 
+          </div>
+          <br><br><br>
+          <div>
+            <span class="head-style">Degree<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+            <select class="input-text-field" name="degree0" id="degree" required>
+              <option class="drop-down">Degree</option>
+              <option value="btech">B.Tech</option>
+              <option value="mtech">M.Tech</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <br><br><br>
+          <div>
+            <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+            <input type="number" name="year0" class="input-text-field " maxlength="4" required id="id_year" placeholder="Graduation Year">
+          </div>
+        </div>
+        <div class="sections m-5">
+          <div>
+            <span class="head-style">Gender<span class="red-star"> *</span></span>
+            <br>
+            <select class="input-text-field " name="gender0" id="gender_m_0" required>
+              <option class="drop-down">Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <br><br><br>
+          <div>
+            <span class="head-style">E-mail<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+            <input type="email" name="email0" class="input-text-field " maxlength="254" required id="id_email" placeholder="Email">
+          </div>
+          <br><br><br>
+          <div>
+            <span class="head-style">College Name<span class="red-star"> *</span></span>
+            <br>
+            <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+            <input type="text" name="collegename0" class="input-text-field " maxlength="254" required
+              id="id_collegename" placeholder="College Name">
+          </div>
         </div>
 
-        <div id="social-media">
+
+      </div>
+      <div class="row-view">
+        <div class="sections mx-5 mt-5"></div>
+      </div>
+      <div id="main">
+        <div class="row-view">
+          <div class="sections mx-5 mt-5">
+            <div style="font-size: 120%;font-weight: bold;">Member 1:</div>
+          </div>
+          <div class="sections">
+          </div>
+        </div>
+        <div class="row-view">
+          <div class="sections m-5">
             <div>
-                <p>Social Media</p>
+              <span class="head-style">Name<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+              <input type="text" name="name1" class="input-text-field " maxlength="50" required id="id_name" placeholder="Name">
             </div>
-            <div id="logos">
-                <div id="insta">
-                    <a href="https://www.alcheringa.in/"><img src="{% static "images\insta.png" %}"></a>
-                </div>
-                <div id="fb">
-                    <a href="https://www.alcheringa.in/"><img src="{% static "images\fb.png" %}"></a>
-                </div>
-                <div id="twitter">
-                    <a href="https://www.alcheringa.in/"><img src="{% static "images\twitter.png" %}"></a>
-                </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">Contact Number<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="number" id="cont_num_m_1" class="input-text-field " required> -->
+              <div style="display:flex; width: 100%;">
+                <input type="text" name="countryCode1" class="input-text-field " maxlength="5" required
+                  id="id_name_country" style="width: 40px; margin-right: 10px;" placeholder="+12">
+                <input type="text" name="phoneNo1" class="input-text-field " maxlength="50" required id="id_name" placeholder="Contact Number(e.g. 123456789)">
+              </div>
             </div>
-        </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">Degree<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+              <select class="input-text-field" name="degree1" required>
+                <option class="drop-down">Degree</option>
+                <option value="btech">B.Tech</option>
+                <option value="mtech">M.Tech</option>
+                <option value="other">Other</option>
+              </select>
+              <input type="checkbox" style="margin-top: 12px" name="samedegree1" onchange="samefunc(1)"><label
+                style="margin-left:5px">Same as Leader</label>
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
+              <input type="number" name="year1" class="input-text-field " maxlength="4" required id="id_year" placeholder="Graduation Year">
+              <input type="checkbox" style="margin-top: 12px" name="sameyear1" onchange="samefunc(1)"><label
+                style="margin-left:5px">Same as Leader</label>
 
-        <div id="email">
-            <div id="email-us">E-mail Us</div>
-            <div id="mail-address">
-                <div><input type="text" id="email-input"></div>
-                <div><button id="send-button">SEND</button></div>
             </div>
-        </div>
+          </div>
+          <div class="sections m-5">
+            <div>
+              <span class="head-style">Gender<span class="red-star"> *</span></span>
+              <br>
+              <select class="input-text-field " name="gender1" id="gender_m_1" required>
+                <option class="drop-down">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">E-mail<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="email" id="email_m_1" class="input-text-field " required> -->
+              <input type="email" name="email1" class="input-text-field " maxlength="254" required id="id_email" placeholder="Email">
+            </div>
+            <br><br><br>
+            <div>
+              <span class="head-style">College Name<span class="red-star"> *</span></span>
+              <br>
+              <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
+              <input type="text" name="collegename1" class="input-text-field " value="" maxlength="254" required
+                id="id_collegename" placeholder="College Name">
+              <input type="checkbox" style="margin-top: 12px" name="samecollege1" onchange="samefunc(1)"><label
+                style="margin-left:5px">Same as Leader</label>
+            </div>
+          </div>
 
+
+        </div>
+      </div>
+      <div class="row-view">
+        <div class="sections mx-5 mt-5">
+          <button class="add-member-button" id="button1">
+            <i class="fa-solid fa-plus"></i> <i class="fa-solid fa-user"
+              style="margin-left: -5px;margin-right: 10px;"></i>Add member</button>
+        </div>
+        <div class="sections mx-5 mt-5"></div>
+      </div>
+      <div class="row-view">
+        <div id="alert" style="margin-left:-20rem;margin-top:10px;"></div>
+      </div>
+      <br>
+      <div class="row-view">
+        <button id="register_btn" class="register-button">Register</button>
+      </div>
+    </div>
+  </form>
+  </div>
+  <div style="height: 120px;"></div>
+
+
+  <!---------------Registeration form ENDS ----------------->
+
+ <!--FOOTER-->
+
+  <div class="container0" style="  height: 100px;">
+    <div class="container1">
+      <img src="{%static 'city\images\Mask group.png' %}" />
     </div>
 
-    <script src="{% static 'form/button.js' %}"></script>
-    <script>
-        let city = document.getElementById("id_city")
-        city.addEventListener("change", (e) => {
-            const city_id = e.target.value
+    <!-- -->
+    <div class="container2">
+      <div class="alcher">
+        <div>
+          <h1 class="footer_text" id="highway" style="font-size:72px ; font-weight:600">Highway</h1>
+        </div>
+        <div>
+          <h1 class="footer_text" style="font-size:72px ; font-weight:600">to</h1>
+        </div>
+        <div>
+          <h1 class="footer_text"  style="font-size:72px ; font-weight:600" id="alcher">Alcher</h1>
+        </div>
+      </div>
+      <div class="contactinfo">
+        <h1 id="contact" style="margin:0;font-size: 30px; font-weight: 600;">Contact Us</h1>
+        <div class="names">
+          <div class="Siddhant">
+            <h2 id="sid" style="font-weight: 600; font-size: 16px;">Siddhant Singh</h2>
+            <h3 id="pr1" style="font-weight: 600;">PR Head</h3>
+            <p>+91-9310859978</p>
+          </div>
+          <div class="Akshara">
+            <h2 id="akshara" style="font-weight: 600; font-size: 16px;">Danda Akshara</h2>
+            <h3 id="pr2" style="font-weight: 600;">PR Head</h3>
+            <p>+91-9908991939</p>
+          </div>
+          <div class="Quasim">
+            <h2 id="quasim" style="font-weight: 600; font-size: 16px;">Quasim Khan</h2>
+            <h3 id="pr3" style="font-weight: 600;">Media and Outreach Head</h3>
+            <p>+91-7763959688</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-            fetch("{% url 'load_competitions' %}", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    "X-Requested-With": "XMLHttpRequest"
-                },
-                body: JSON.stringify({ "city_id": city_id})
-            })
-                .then(data => {
-                    return data.text()
-                })
-                .then(data => {
-                    console.log(data)
-                    console.log(city.value)
-                    document.getElementById("check-container").innerHTML = data
-                })
+    <div class="container3">
+      <div class="video">
+        <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
+          <h1 id="discover" style="margin-bottom:0; font-weight: 600;margin-left: 10px;">Discover Alcheringa</h1>
+          <div class="class-iframe" >
+            <iframe class="size-iframe" src="https://youtu.be/byhtsRBr2VY" style="width: 100%;"></iframe>
+            <hr style="border: 3px solid #f29e6d; transform: translate(0, -1px);" >
+          </div>
+        </div>
+        <div class="follow">
+          <div>
+            <h1 id="follow-us" style="margin-bottom:20px;margin-left: 10px;font-size: 2em;font-weight: 600; margin-top: 60px;">Follow us </h1>
+          </div>
+          <div class="icons">
+            <div style="margin-right: 6px;margin-left: 10px;">
+              <a href="https://www.instagram.com/alcheringaiitg/" target="_blank"><img src="{%static 'city\images\instagram (4).png' %}"
+                  width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/" target="_blank"><img
+                  src="{%static 'city\images\linkedin (2).png' %}" width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.facebook.com/alcheringaiitg" target="_blank"><img src="{%static 'city\images\facebook.png' %}"
+                  width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://twitter.com/alcheringaiitg" target="_blank"><img src="{%static 'city\images\twit.png' %}"
+                  width="36px" /></a>
+            </div>
+            <div style="margin-right: 6px;">
+              <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><img src="{%static 'city\images\youtube.png' %}"
+                  width="36px" /></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  </div>
+
+  </div>
+  <script>
+    let index = 0;
+    let city = document.getElementById("id_city")
+    city.addEventListener("change", (e) => {
+      const city_id = e.target.value
+
+      fetch("{% url 'load_competitions_team' %}", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        body: JSON.stringify({ "city_id": city_id })
+      })
+        .then(data => {
+          return data.text()
         })
-        function onlyOne(checkbox) {
-            var checkboxes = document.getElementsByName('checkbox')
-            checkboxes.forEach((item) => {
-                if (item !== checkbox) item.checked = false
-            })
-        }
-        
-        function samefunc(e){
-            const samecollege=document.getElementsByName("samecollege"+e)[0]
-            const samedegree=document.getElementsByName("samedegree"+e)[0]
-            const sameyear=document.getElementsByName("sameyear"+e)[0]
-            console.log(samecollege.checked)
-            console.log(samedegree)
-            console.log(sameyear)
-            
-                if(samecollege.checked){
-                    const headcollege=document.getElementsByName("collegename0")[0].value
-                    document.getElementsByName("collegename"+e)[0].value=headcollege
-                }
-                if(samedegree.checked){
-                    const headdegree=document.getElementsByName("degree0")[0].value
-                    document.getElementsByName("degree"+e)[0].value=headdegree  
-                }
-                if(sameyear.checked){
-                    const headyear=document.getElementsByName("year0")[0].value
-                    document.getElementsByName("year"+e)[0].value=headyear 
-            } 
-              
-        }
-            
-        
-        
-        
-        
+        .then(data => {
+          document.getElementById("check-container").innerHTML = data
+        })
+    })
+    let compet=document.getElementById
+    let max_participants=0;
+    let min_participants=0;
+    function onlyOne(checkbox) {
+      fetch("{% url 'load_minmax' %}", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        body: JSON.stringify({ "comp_id": checkbox.value })
+      })
+        .then(data=>{
+          return data.json()
+        })
+        .then(data=>{
+            max_participants=Number(data.maxuser)
+            min_participants=Number(data.minuser)
 
-    </script>
+        })
+      var checkboxes = document.getElementsByName('checkbox')
+      checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+      })
+    }
+
+    function samefunc(e) {
+      const samecollege = document.getElementsByName("samecollege" + e)[0]
+      const samedegree = document.getElementsByName("samedegree" + e)[0]
+      const sameyear = document.getElementsByName("sameyear" + e)[0]
+
+      if (samecollege.checked) {
+        const headcollege = document.getElementsByName("collegename0")[0].value
+        document.getElementsByName("collegename" + e)[0].value = headcollege
+      }
+      if (samedegree.checked) {
+        const headdegree = document.getElementsByName("degree0")[0].value
+        document.getElementsByName("degree" + e)[0].value = headdegree
+      }
+      if (sameyear.checked) {
+        const headyear = document.getElementsByName("year0")[0].value
+        document.getElementsByName("year" + e)[0].value = headyear
+      }
+
+    }
+    // let max_participants=5
+    const count1 = document.querySelector("#num");
+        // console.log(count1.value)
+        // if(count1.value < max_participants){
+        //   alert_div.innerHTML=`<p>hiii</p>`
+        // }
+
+
+
+
+
+
+  </script>
+  <script src="{% static 'form/button.js' %}"></script>
 </body>
 
 </html>
