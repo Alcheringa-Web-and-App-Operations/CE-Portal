@@ -417,9 +417,9 @@ background-color: #f2e9e9;
 
 .sponsers {
   font-family: "Franklin Gothic Medium", sans-serif;
+  background-color: #f2e9e9;
   /* overflow-x: hidden !important;
    height: 100vh; */
-
 }
 
 .aboutus-sponsors {
@@ -1057,8 +1057,8 @@ p {
 .rule-btn {
   padding: 6px 20px 6px 20px;
   background: transparent;
-  border: 2px solid rgb(242,68,5);
-  color: rgb(242,68,5);
+  border: 2px solid rgb(242, 68, 5);
+  color: rgb(242, 68, 5);
 }
 
 @media (max-width: 1230px) and (min-width: 1040px) {
