@@ -135,16 +135,16 @@
     <div style="height: 20px"></div>
   </div>
 
-  <div id="mobileview" style="margin-top: 3%">
+  <div id="mobileview" style="margin-top: 0%">
     <h1 id="competition" data-aos="zoom-in">Competitions</h1>
     {% for comp in competitions %}
     <div id="card1" class="card">
-      <div class="coontainer">
+      <div class="coontainer" style="background: transparent; text-align: center;">
         <img src="{{comp.competitionImage1.url}}" alt="Snow" id="cardimg1">
-        <div class="top-left" style="background-color: transparent;">
+        <div class="top-left" style="background-color: transparent; text-align: center;">
           <div
-            style="background-color: rgb(22, 22, 22, 0.8); color: #F29E6D; font-size: 180%; margin: 0%; padding: 10px;border-radius: 5px;">
-            <p style="color: #F29E6D;">{{comp.competitionName}}</p>
+            style="color: #F29E6D; font-size: 180%; margin: 0%; padding: 10px;border-radius: 5px;">
+            <p style="color: #F29E6D; text-align: center;">{{comp.competitionName}}</p>
           </div>
         </div>
         <div class="top-left-onhover">
@@ -154,12 +154,8 @@
         <div class="top-right">
           <h2 style="background-color: black;"><i class="bi bi-info-circle" style="background-color:black;"></i></h2>
         </div>
-        <div class="bottom-right">
-          <button type="button" class="mv-btn">Register</button>
-          <button type="button" class="mv-btn">Rule Booklet</button>
-        </div>
-        <span class="bottom-center" style="">
-          <span style="background-color: transparent; color: #F29E6D; font-family: 'Coolvetica';
+        <span class="bottom-center">
+          <span style="background-color: transparent; color: #F29E6D;
                         font-weight: 900;
                         font-size: 8vw;">
             {{comp.competitionName}}</span>
