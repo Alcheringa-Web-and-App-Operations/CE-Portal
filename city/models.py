@@ -41,6 +41,7 @@ class Competition(models.Model):
     competitionDescription = models.TextField()
     competitionImage1 = models.ImageField(default='dcomp1.jpg',upload_to='competition_pics')
     competitionImage2 = models.ImageField(default='dcomp2.jpg',upload_to='competition_pics')
+    rule_booklet = models.FileField(upload_to='booklets', blank = True)
     background_img=models.ImageField(default='dcity.jpg',upload_to='competition_background_images')
     minimum_user=models.CharField(max_length=1,default='1')
     maximum_user=models.CharField(max_length=2,default='10')

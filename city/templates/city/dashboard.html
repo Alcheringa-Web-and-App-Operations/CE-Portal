@@ -98,7 +98,7 @@
           <div style="display:flex" data-aos="fade-up" data-aos-delay="300">
             <a href="{% url 'register_single' %}" style="text-decoration:none"><button type="button"
                 class="btn register-btn">Register</button></a>
-            <a href="https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf"
+            <a href="/media/{{ comp.rule_booklet }}"
               style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule
                 Booklet</button></a>
           </div>
@@ -124,7 +124,7 @@
           <div style="display:flex" data-aos="fade-up" data-aos-delay="300">
             <a href="{% url 'register_single' %}" style="text-decoration:none"><button type="button"
                 class="btn register-btn">Register</button></a>
-            <a href="https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf"
+            <a href="/media/{{ comp.rule_booklet }}"
               style="text-decoration:none" target="_blank"><button type="button" class="btn rule-btn">Rule
                 Booklet</button></a>
           </div>
@@ -169,7 +169,7 @@
             <div style="background-color: #F24405;">Register</div>
           </button></a>
         <div style="margin-top: 8px">
-          <a href="https://www.math.ncku.edu.tw/~rchen/2016%20Teaching/Chapter%202_Fourier%20Transform.pdf"
+          <a href="/media/{{ comp.rule_booklet }}"
             style="text-decoration: none;"><button type="button" class="onshowbtn"
               style=" color: #F24405; border: 1px solid #F24405;background-color: white;">
               <div style="">Rule Booklet</div>
@@ -355,33 +355,16 @@
       <br />
       <div class="heading" data-aos="fade-up">Sponsors</div>
 
-      <div class="marquee-body" style="z-index: 100" data-aos="zoom-in">
+      <!-- <div class="marquee-body" style="z-index: 100" data-aos="zoom-in">
         <div class="marquee">
           <ul class="marquee-content">
             <li>
-              <img src="{%static 'city/images/sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/sponser3.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/sponser2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/art1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/art2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/palette.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
+              <img src="{%static 'city/images/iubat.jpg' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
+      <center><a href= "https://iubat.edu" target="_blank"><img src="{%static 'city/images/iubat.jpg' %}" alt="pr-sample23" style="width: 230px;" /></a></center>
       <br /><br /><br />
     </div>
   </div>

@@ -23,7 +23,7 @@ from django.conf.urls.static import serve
 urlpatterns = [
     path('', include('city.urls')),
     path('admin65G9fKjL/', admin.site.urls),
-    path('users/',include('users.urls') ),
+    path('registration/',include('users.urls') ),
 ]
 
 if settings.DEBUG:

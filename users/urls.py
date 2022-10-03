@@ -3,9 +3,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('register-single/', views.register_single, name='register_single'),
+    path('solo/', views.register_single, name='register_single'),
     # path('<int:pk>/', views.person_update_view, name='person_change'),
-    path('register-team/', views.teamForm, name='register_team'),
+    path('group/', views.teamForm, name='register_team'),
     path('success/', views.success, name='success'),
     
     
