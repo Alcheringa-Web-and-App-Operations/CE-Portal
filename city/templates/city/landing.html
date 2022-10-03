@@ -52,60 +52,28 @@
     </div>
   </nav>
   <div class="LandingPage">
-    <div class="city margin1000 lap" data-aos="zoom-in">
-      {% comment %} <div class="india">
-        <img src="{%static 'city\images\india.svg' %}" alt="">
-        <!-- <button style="position:relative;left:-300px;top:-100px;">Hello</button> -->
-
-        {% for city in cities %}
-        <div
-          style="font-size:180%;margin-left:{{ city.position.logoLeft }};margin-top:{{ city.position.logoTop }};position:absolute;"
-          id="{{ city.cityName }}marker">
-          <a href="">
-            <p style="font-size:17px ;margin-left: -8px;position:fixed;top:{{ city.position.textTop }};display: none;"
-              id="{{ city.cityName }}text">{{ city.cityName }}</p>
-          </a>
-          <a href="{% url 'dashboard-template' city.id %}"><i class="fa fa-map-marker" id="{{ city.cityName }}"
-              style="position:absolute;"
-              onmouseover="enlargeIcon('{{ city.cityName }}'),showName('{{ city.cityName }}text')"
-              onmouseout="resizeElement('{{ city.cityName }}'),vanishName('{{ city.cityName }}text')"></i></a>
-        </div>
-        {% endfor %}
-
-
-        <!-- <div style="font-size:180%;margin-left:26%;margin-top:-20%;position:absolute;" id="delhimarker">
-          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:130px;display: none;" id="delhitext">Delhi</p></a>
-          <a href="{% url 'dashboard-template' 1 %}"><i class="fa fa-map-marker"  id="delhi" style="position:absolute;" onmouseover="enlargeIcon('delhi'),showName('delhitext')" onmouseout="resizeElement('delhi'),vanishName('delhitext')"></i></a>
-        </div>
-        <div style="font-size:180%;margin-left:8%;margin-top:-10%;position:absolute;" id="goamarker">
-          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:200px;display: none;" id="goatext">Goa</p></a>
-          <a href="{% url 'dashboard-template' 2 %}"><i class="fa fa-map-marker"  id="goa" style="position:absolute;" onmouseover="enlargeIcon('goa'),showName('goatext')" onmouseout="resizeElement('goa'),vanishName('goatext')"></i></a>
-        </div>
-        <div style="font-size:180%;margin-left:11%;margin-top:-14%;position:absolute;" id="mumbaimarker">
-          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:160px;display: none;" id="mumbaitext">Mumbai</p></a>
-          <a href="{% url 'dashboard-template' 3 %}"><i class="fa fa-map-marker"  id="mumbai" style="position:absolute;"  onmouseover="enlargeIcon('mumbai'),showName('mumbaitext')" onmouseout="resizeElement('mumbai'),vanishName('mumbaitext')"></i></a>
-        </div>
-        <div style="font-size:180%;margin-left:33%;margin-top:2%;position:absolute;" id="kolmarker">
-          <a href=""><p style="font-size:17px ;margin-left: -8px;position:fixed;top:270px;display: none;" id="koltext">Kolkata</p></a>
-          <a href="{% url 'dashboard-template' 4 %}"><i class="fa fa-map-marker" id="kol" style="position:absolute;" onmouseover="enlargeIcon('kol'),showName('koltext')" onmouseout="resizeElement('kol'),vanishName('koltext')"></i></a>
-        </div> -->
-
-
-        <div>
-
-        </div>
-      </div> {% endcomment %}
+   <div class="city margin1000 lap" data-aos="zoom-in">
       {% for city in cities %}
-        <div class="delhi"  style="display:grid;top:{{ city.position.logoTop }};left:{{ city.position.logoLeft }};position: absolute;z-index:10;">
-          <img src="{% static 'city/images/delhi.png'%}" id="delhi" style="width:40px;display: none;">
-          <img src="{% static 'city/images/Ellipse_410.png' %}" style="" onmouseover="displayState()">
-          
+        <div id="{{ city.cityName }}name" style="background-color:white;color:black;width:40px;height:30px;border-radius:15px;display:none;font-size:10px;position:absolute;top:{{ city.position.textTop }}">
+          {{ city.cityName }}
+        </div>
+        <div
+          style="font-size:180%;margin-left:{{ city.position.logoLeft }};margin-top:{{ city.position.logoTop }};position:absolute;z-index:7;"
+          id="{{ city.cityName }}marker">
+          <a href="{% url 'dashboard-template' city.id %}">
+            <img src="{% static 'city/images/Ellipse_410.png' %}" onmouseover="displayState('{{ city.cityName }}name')"
+            onmouseout="removeState('{{ city.cityName }}name')">
+          </a>
         </div>
       {% endfor %}
       <script>
-        function displayState()
+        function displayState(id)
         {
-          document.getElementById("delhi").style.display="block";
+          document.getElementById(id).style.display="block";
+        }
+        function removeState(id)
+        {
+          document.getElementById(id).style.display="none";
         }
       </script>
     
