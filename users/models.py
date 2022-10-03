@@ -7,7 +7,7 @@ from city.models import City,Competition
 class Person(models.Model):
     name = models.CharField(max_length=124)
     countrycode = models.CharField(max_length = 4, null=True)
-    contactno=models.IntegerField(max_length=40,null=True)
+    contactno=models.IntegerField(null=True)
     email=models.EmailField(max_length=40,null=True)
     solo = models.BooleanField(default=1)
     

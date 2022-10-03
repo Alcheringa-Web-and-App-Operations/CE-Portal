@@ -7,7 +7,7 @@ class City(models.Model):
     
     cityName = models.CharField(max_length=100)
     cityImage = models.ImageField(default='dcity.jpg',upload_to='city_pics')
-    cityCompetitions = models.ManyToManyField('Competition')
+    cityCompetitions = models.ManyToManyField('Competition', blank = True, null = True)
     position=models.OneToOneField("Position",on_delete=models.CASCADE, null=True, blank = True)
     competitionDate=models.DateField(null=True)
     cityComp=models.ManyToManyField('CityComp',blank=True)

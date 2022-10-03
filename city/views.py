@@ -17,6 +17,8 @@ def dashboard(request,pk) :
         'compe':city.cityComp.all()
       
     }
+    if not city.cityCompetitions.all():
+        return render(request, 'city/comingsoon.html',data)
     return render(request, 'city/dashboard.html',data)
 
 def my_redirect(request):
