@@ -127,9 +127,9 @@ STATICFILES_DIRS = [
 
 DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
 STATICFILES_STORAGE = "minio_storage.storage.MinioStaticStorage"
-MINIO_STORAGE_ENDPOINT =os.environ.get('minio_endpoint')
-MINIO_STORAGE_ACCESS_KEY = os.environ.get('minio_access')
-MINIO_STORAGE_SECRET_KEY = os.environ.get('minio_secret')
+MINIO_STORAGE_ENDPOINT ='bucket-alcher.alcheringa.in'
+MINIO_STORAGE_ACCESS_KEY = 'alcheradmin'
+MINIO_STORAGE_SECRET_KEY = '()89*$_&aBxz'
 MINIO_STORAGE_USE_HTTPS = True
 MINIO_STORAGE_MEDIA_BUCKET_NAME = 'alchercemedia'
 MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
