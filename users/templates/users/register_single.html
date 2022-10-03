@@ -45,43 +45,48 @@
   }
 
   #flex-item-13 a:hover {
-    color: white;
+    /* color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
     border-style: groove;
-    border-color: #031059;
+    border-color: #031059; */
+    text-decoration: underline;
   }
 
   #flex-item-14 a:hover {
-    color: white;
+    /* color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
     border-style: groove;
-    border-color: #031059;
+    border-color: #031059; */
+    text-decoration: underline;
   }
 
   #flex-item-15 a:hover {
-    color: white;
+    /* color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
     border-style: groove;
-    border-color: #031059;
+    border-color: #031059; */
+    text-decoration: underline;
   }
 
   #flex-item-16 a:hover {
-    color: white;
+    /* color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
     border-style: groove;
-    border-color: #031059;
+    border-color: #031059; */
+    text-decoration: underline;
   }
 
   #flex-item-18 a:hover {
-    color: white;
+    /* color: white;
     background-color: rgba(242, 68, 5, 1);
     transition: 0.4s;
     border-style: groove;
-    border-color: #031059;
+    border-color: #031059; */
+    text-decoration: underline;
   }
 
   .flex-item-1 a:link {
@@ -1127,11 +1132,11 @@ font-size: 30px;
       <img src="{% static 'images/imagelogo.png' %}" alt="logo" />
     </div>
 
-    <div class="flex-item-1" id="flex-item-12"><a href="{% url 'my_redirect'%}"  target="_blank">Alcheringa</a></div>
+    <div class="flex-item-1" id="flex-item-12"><a href="{% url 'my_redirect'%}" target="_blank">Alcheringa</a></div>
 
     <div class="flex-item-1 disapp_in_mobview" id="flex-item-13">
       <a href="{% url 'landing-page' %}" style="padding: 8px 18px 8px 18px"> Home</a>
-    </div> 
+    </div>
   </div>
 
   {% for message in messages %}
@@ -1289,7 +1294,7 @@ font-size: 30px;
 
   <div class="container0" style="height: 100px!important;">
     <div class="container1">
-      <img src="{%static 'city\images\Mask group.png' %}" style="transform: scale(1.9)translate(35px, 15px);"  />
+      <img src="{%static 'city\images\Mask group.png' %}" style="transform: scale(1.9)translate(35px, 15px);" />
     </div>
 
     <!-- -->
@@ -1302,7 +1307,7 @@ font-size: 30px;
           <h1 class="footer_text" style="font-size:72px ; font-weight:600">to</h1>
         </div>
         <div>
-          <h1 class="footer_text"  style="font-size:72px ; font-weight:600;" id="alcher">Alcher</h1>
+          <h1 class="footer_text" style="font-size:72px ; font-weight:600;" id="alcher">Alcher</h1>
         </div>
       </div>
       <div class="contactinfo" style="line-height: 25px;">
@@ -1331,35 +1336,37 @@ font-size: 30px;
       <div class="video">
         <div style="margin-bottom:80px;margin-top: 30px;display: flex;flex-direction: column;">
           <h1 id="discover" style="margin-bottom:0; font-weight: 600;margin-left: 10px;">Discover Alcheringa</h1>
-          <div class="class-iframe" >
+          <div class="class-iframe">
             <iframe class="size-iframe" src="https://youtu.be/byhtsRBr2VY" style="width: 100%;"></iframe>
-            <hr style="border: 3px solid #f29e6d; transform: translate(0, -1px);" >
+            <hr style="border: 3px solid #f29e6d; transform: translate(0, -1px);">
           </div>
         </div>
         <div class="follow">
           <div>
-            <h1 id="follow-us" style="margin-bottom:20px;margin-left: 10px;font-size: 2em;font-weight: 600; margin-top: 60px;">Follow us </h1>
+            <h1 id="follow-us"
+              style="margin-bottom:20px;margin-left: 10px;font-size: 2em;font-weight: 600; margin-top: 60px;">Follow us
+            </h1>
           </div>
           <div class="icons">
             <div style="margin-right: 6px;margin-left: 10px;">
-              <a href="https://www.instagram.com/alcheringaiitg/" target="_blank"><img src="{%static 'city\images\instagram (4).png' %}"
-                  width="36px" /></a>
+              <a href="https://www.instagram.com/alcheringaiitg/" target="_blank"><img
+                  src="{%static 'city\images\instagram (4).png' %}" width="36px" /></a>
             </div>
             <div style="margin-right: 6px;">
               <a href="https://www.linkedin.com/company/alcheringaiitguwahati/mycompany/" target="_blank"><img
                   src="{%static 'city\images\linkedin (2).png' %}" width="36px" /></a>
             </div>
             <div style="margin-right: 6px;">
-              <a href="https://www.facebook.com/alcheringaiitg" target="_blank"><img src="{%static 'city\images\facebook.png' %}"
-                  width="36px" /></a>
+              <a href="https://www.facebook.com/alcheringaiitg" target="_blank"><img
+                  src="{%static 'city\images\facebook.png' %}" width="36px" /></a>
             </div>
             <div style="margin-right: 6px;">
               <a href="https://twitter.com/alcheringaiitg" target="_blank"><img src="{%static 'city\images\twit.png' %}"
                   width="36px" /></a>
             </div>
             <div style="margin-right: 6px;">
-              <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><img src="{%static 'city\images\youtube.png' %}"
-                  width="36px" /></a>
+              <a href="https://www.youtube.com/c/AlcheringaIITG" target="_blank"><img
+                  src="{%static 'city\images\youtube.png' %}" width="36px" /></a>
             </div>
 
           </div>
