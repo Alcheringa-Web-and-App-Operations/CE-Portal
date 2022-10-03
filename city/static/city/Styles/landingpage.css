@@ -278,7 +278,7 @@ html {
 
 @media (min-width: 1320px) {
   .highwayToAlcher {
-    margin-top: 20%;
+    margin-top: 10%;
     font-size: 130%;
   }
 
@@ -387,6 +387,23 @@ a {
   height: 7vh;
 }
 
+svg path:hover
+{
+    fill:#2E4EA2;
+    cursor: pointer;
+}
+.delhi path:hover
+{
+    display: grid;
+}
+
+.svg-container {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    z-index: 6;
+  }
+
 .city {
   height: 87vh;
   width: 98vw;
@@ -491,6 +508,7 @@ a {
   line-height: 10vw;
   margin-top: 50px;
   color: #fff3f9;
+  z-index:5;
   padding-left: -20vw;
 }
 
