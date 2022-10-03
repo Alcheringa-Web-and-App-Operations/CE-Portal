@@ -54,7 +54,7 @@
   <div class="LandingPage">
    <div class="city margin1000 lap" data-aos="zoom-in">
       {% for city in cities %}
-        <div id="{{ city.cityName }}name" style="background-color:white;color:black;width:fit-content;height:fit-content;border-radius:10px;display:none;font-size:15px;position:absolute;left:calc({{ city.position.logoLeft }});top:calc({{ city.position.logoTop }});z-index:7;padding:2px 5px 2px 5px;font-weight:bold;margin-top:-10px;">
+        <div id="{{ city.cityName }}name" style="background-color:white;color:black;width:fit-content;height:fit-content;border-radius:15px;display:none;font-size:18px;position:absolute;left:calc({{ city.position.logoLeft }});top:calc({{ city.position.logoTop }});z-index:7;padding:5px 12px 5px 12px;font-weight:bold;margin-top:-25px;transform: translate(9px,0)">
           <i class="fa fa-map-marker">
           </i>
           {{ city.cityName }}
