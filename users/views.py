@@ -42,7 +42,7 @@ def register_single(request):
                 for competition2 in competition:
                     curr_user.competition.add(competition2)
                 curr_user.save()
-                return redirect('success')
+            return redirect('success')
 
     # for comp in competitions:               
     #     single.competition.add(comp)
