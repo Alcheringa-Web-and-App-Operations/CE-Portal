@@ -14,7 +14,14 @@
   font-family: Coolvetica;
   font-weight: 200;
 }
+.sponsers_logo
+{
+  
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
 
+}
 #competition {
   text-align: center;
   font-size: 65px;

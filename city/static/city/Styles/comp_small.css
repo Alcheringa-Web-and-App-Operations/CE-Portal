@@ -11,7 +11,14 @@
   padding-bottom: 20px;
   padding-top: 10px;
 }
+.sponsers_logo
+{
+  
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
 
+}
 #competition {
   text-align: center;
   font-family: Coolvetica;
