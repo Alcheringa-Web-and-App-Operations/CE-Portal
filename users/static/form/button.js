@@ -26,7 +26,6 @@ add.addEventListener('click',target=>{
     target.preventDefault()
     if(count.value>=max_participants){
         add.disabled=true
-        
         console.log(curr_members)
         alert_div.innerHTML=`Maximum number of members added for this competition.`
     }
@@ -63,11 +62,11 @@ add.addEventListener('click',target=>{
             </div>
             <br><br><br>
             <div>
-                <span class="head-style">Degree<span class="red-star"> *</span></span>
+                <span class="head-style">Program Enrolled<span class="red-star"> *</span></span>
                 <br>
                 <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
                 <select class="input-text-field" name="degree${i}" required>
-                    <option class="drop-down">Degree</option>
+                    <option class="drop-down">Program Enrolled</option>
                     <option value="btech">B.Tech</option>
                     <option value="mtech">M.Tech</option>
                     <option value="other">Other</option>
@@ -77,10 +76,10 @@ add.addEventListener('click',target=>{
             </div>
             <br><br><br>
             <div>
-                <span class="head-style">Year of Graduation<span class="red-star"> *</span></span>
+                <span class="head-style">Year of Passing<span class="red-star"> *</span></span>
                 <br>
                 <!-- <input type="text" id="name_m_1" class="input-text-field " required> -->
-                <input type="number" name="year${i}" class="input-text-field " maxlength="4" required id="id_year" placeholder="Graduation Year">
+                <input type="number" name="year${i}" class="input-text-field " maxlength="4" required id="id_year" placeholder="Year of Passing">
                 <input type="checkbox" style="margin-top: 12px" name="sameyear${i}" onchange="samefunc(${i})"><label style="margin-left:5px">Same as Leader</label>
             </div>
         </div>
@@ -103,10 +102,10 @@ add.addEventListener('click',target=>{
             </div>
             <br><br><br>
             <div>
-                <span class="head-style">College Name<span class="red-star"> *</span></span>
+                <span class="head-style">Institute Name<span class="red-star"> *</span></span>
                 <br>
                 <!-- <input type="email" id="email_m_0" class="input-text-field " required> -->
-                <input type="text" name="collegename${i}" class="input-text-field " maxlength="254" required id="id_collegename" placeholder="College Name">
+                <input type="text" name="collegename${i}" class="input-text-field " maxlength="254" required id="id_collegename" placeholder="Institute Name">
                 <input type="checkbox" style="margin-top: 12px" name="samecollege${i}" onchange="samefunc(${i})"><label style="margin-left:5px">Same as Leader</label>
 
             </div>
