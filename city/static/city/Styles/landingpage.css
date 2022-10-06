@@ -141,7 +141,7 @@ html {
   /* padding: 6px 12px 6px;
   border-width: 0.5px;
   border-style: groove;
-  border-color: #031059; */.
+  border-color: #031059; */
   text-decoration: underline;
 }
 
@@ -577,7 +577,14 @@ svg path:hover
 .aboutus-sponsors {
   background: url("../images/aboutussponsers.svg");
 }
+.sponsers_logo
+{
+  
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
 
+}
 
 
 .Heading {
