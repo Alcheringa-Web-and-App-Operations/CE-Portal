@@ -16,9 +16,37 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>Alcheringa</title>
 </head>
+<style>
+.city-container{
+  background-image: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0)
+      ),
+      url('{{ city.cityImage.url }}');
+    background-size: contain;
+    width: 100%;
+    height: calc(0.40 * 100vw);
+    background-size:cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+}
 
+@media screen and (min-width: 1024px) {     
+  .city-container{
+    height: 90vh;
+  } 
+  .flex-container-1{
+    height:10vh;
+  }
+}
+</style>
 <body>
-  <!---------------Nav Bar ----------------->
+  {% comment %} <!---------------Nav Bar -----------------> {% endcomment %}
+
   <div class="flex-container-1">
     <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
       <a href="{% url 'register_single' %}"> Register</a>
@@ -64,23 +92,7 @@
   </div>
 
   <!--************************** City ***********************************-->
-  <div class="city-container" style="
-    background-image: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0)
-      ),
-      url('{{ city.cityImage.url }}');
-    background-size: contain;
-    width: 100%;
-    height: calc(0.40 * 100vw);
-    background-size:cover;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-
-  " data-aos="zoom-in">
+  <div class="city-container"data-aos="zoom-in">
     <div class="city-link">
       Not your city? <a href="{% url 'landing-page' %}">Click here.</a>
     </div>
