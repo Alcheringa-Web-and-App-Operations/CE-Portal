@@ -137,16 +137,16 @@ STATICFILES_DIRS = [
 ]
 
 
-# DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
-# STATICFILES_STORAGE = "minio_storage.storage.MinioStaticStorage"
-# MINIO_STORAGE_ENDPOINT =os.environ.get('minio_endpoint')
-# MINIO_STORAGE_ACCESS_KEY = os.environ.get('minio_access')
-# MINIO_STORAGE_SECRET_KEY = os.environ.get('minio_secret')
-# MINIO_STORAGE_USE_HTTPS = True
-# MINIO_STORAGE_MEDIA_BUCKET_NAME = 'alchercemedia'
-# MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
-# MINIO_STORAGE_STATIC_BUCKET_NAME = 'alchercestatic'
-# MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
+DEFAULT_FILE_STORAGE = "minio_storage.storage.MinioMediaStorage"
+STATICFILES_STORAGE = "minio_storage.storage.MinioStaticStorage"
+MINIO_STORAGE_ENDPOINT =os.environ.get('minio_endpoint')
+MINIO_STORAGE_ACCESS_KEY = os.environ.get('minio_access')
+MINIO_STORAGE_SECRET_KEY = os.environ.get('minio_secret')
+MINIO_STORAGE_USE_HTTPS = True
+MINIO_STORAGE_MEDIA_BUCKET_NAME = 'alchercemedia'
+MINIO_STORAGE_AUTO_CREATE_MEDIA_BUCKET = True
+MINIO_STORAGE_STATIC_BUCKET_NAME = 'alchercestatic'
+MINIO_STORAGE_AUTO_CREATE_STATIC_BUCKET = True
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
