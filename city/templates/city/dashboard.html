@@ -17,35 +17,33 @@
   <title>Alcheringa</title>
 </head>
 <style>
-.city-container{
-  background-image: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0)
-      ),
-      url('{{ city.cityImage.url }}');
+  .city-container {
+    background-image: linear-gradient(to top,
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0)),
+    url('{{ city.cityImage.url }}');
     background-size: contain;
     width: 100%;
-    height: calc(0.40 * 100vw);
-    background-size:cover;
+    height: calc(0.50 * 100vw);
+    background-size: cover;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    
-}
 
-@media screen and (min-width: 1024px) {     
-  .city-container{
-    height: 90vh;
-  } 
-  .flex-container-1{
-    height:10vh;
   }
-}
+
+  @media screen and (min-width: 1024px) {
+
+    .flex-container-1 {
+      height: 10vh;
+    }
+  }
 </style>
+
 <body>
-  {% comment %} <!---------------Nav Bar -----------------> {% endcomment %}
+  {% comment %}
+  <!---------------Nav Bar -----------------> {% endcomment %}
 
   <div class="flex-container-1">
     <div class="flex-item-1 disapp_in_compview" id="flex-item-18">
@@ -92,7 +90,7 @@
   </div>
 
   <!--************************** City ***********************************-->
-  <div class="city-container"data-aos="zoom-in">
+  <div class="city-container" data-aos="zoom-in">
     <div class="city-link">
       Not your city? <a href="{% url 'landing-page' %}">Click here.</a>
     </div>
@@ -154,8 +152,7 @@
       <div class="coontainer" style="background: transparent; text-align: center;">
         <img src="{{comp.competitionImage1.url}}" alt="Snow" id="cardimg1">
         <div class="top-left" style="background-color: transparent; text-align: center;">
-          <div
-            style="color: #F29E6D; font-size: 180%; margin: 0%; padding: 10px;border-radius: 5px;">
+          <div style="color: #F29E6D; font-size: 180%; margin: 0%; padding: 10px;border-radius: 5px;">
             <p style="color: #F29E6D; text-align: center;">{{comp.competitionName}}</p>
           </div>
         </div>
@@ -377,11 +374,14 @@
         </div>
       </div> -->
       <div class="sponsers_logo">
-        <center><a  href= "https://iubat.edu" target="_blank"><img src="{%static 'city/images/iubat.jpg' %}" alt="pr-sample23" style="width: 230px;" /></a></center>
-        <center><a  href= "https://www.facebook.com/bridalxposebd" target="_blank"  ><img  src="{%static 'city/images/Bridal_xpose.png' %}" alt="pr-sample23" style="width: 230px;background-color:black;;" /></a></center>
-      </div>      <br /><br /><br />
+        <center><a href="https://iubat.edu" target="_blank"><img src="{%static 'city/images/iubat.jpg' %}"
+              alt="pr-sample23" style="width: 230px;" /></a></center>
+        <center><a href="https://www.facebook.com/bridalxposebd" target="_blank"><img
+              src="{%static 'city/images/Bridal_xpose.png' %}" alt="pr-sample23"
+              style="width: 230px;background-color:black;;" /></a></center>
+      </div>
+      <br /><br /><br />
     </div>
-  </div>
   </div>
 
   <!--FOOTER-->
