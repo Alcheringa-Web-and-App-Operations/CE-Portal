@@ -15,6 +15,31 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>Alcheringa</title>
+
+  <style>
+    .city-container {
+      background-image: linear-gradient(to top,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0)),
+      url('{{ city.cityImage.url }}');
+      background-size: contain;
+      width: 100%;
+      height: calc(0.50 * 100vw);
+      background-size: cover;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+
+    }
+
+    @media screen and (min-width: 1024px) {
+
+      .flex-container-1 {
+        height: 10vh;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -175,11 +200,14 @@
           </ul>
         </div>
       </div> -->
-<div class="sponsers_logo">
-      <center><a  href= "https://iubat.edu" target="_blank"><img src="{%static 'city/images/iubat.jpg' %}" alt="pr-sample23" style="width: 230px;" /></a></center>
-      <center><a  href= "https://www.facebook.com/bridalxposebd" target="_blank"  ><img  src="{%static 'city/images/Bridal_xpose.png' %}" alt="pr-sample23" style="width: 230px;background-color:black;;" /></a></center>
-    </div>
-    <br /><br /><br />
+      <div class="sponsers_logo">
+        <center><a href="https://iubat.edu" target="_blank"><img src="{%static 'city/images/iubat.jpg' %}"
+              alt="pr-sample23" style="width: 230px;" /></a></center>
+        <center><a href="https://www.facebook.com/bridalxposebd" target="_blank"><img
+              src="{%static 'city/images/Bridal_xpose.png' %}" alt="pr-sample23"
+              style="width: 230px;background-color:black;;" /></a></center>
+      </div>
+      <br /><br /><br />
     </div>
   </div>
   </div>
