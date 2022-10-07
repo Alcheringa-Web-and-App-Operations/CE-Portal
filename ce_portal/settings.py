@@ -79,20 +79,20 @@ WSGI_APPLICATION = 'ce_portal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 
-    #    'ENGINE': 'django.db.backends.postgresql',
+       'ENGINE': 'django.db.backends.postgresql',
 
-    #     'NAME': os.environ.get('db_name'),
+        'NAME': os.environ.get('db_name'),
 
-    #     'USER': os.environ.get('db_user'),
+        'USER': os.environ.get('db_user'),
 
-    #     'PASSWORD': os.environ.get('db_password'),
+        'PASSWORD': os.environ.get('db_password'),
 
-    #     'HOST': os.environ.get('db_host'),
+        'HOST': os.environ.get('db_host'),
 
-    #     'PORT': os.environ.get('db_port')
+        'PORT': os.environ.get('db_port')
     }
 }
 
