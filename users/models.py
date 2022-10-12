@@ -12,7 +12,7 @@ class Person(models.Model):
     solo = models.BooleanField(default=1)
     
 
-    city = models.ForeignKey(City, on_delete=models.SET_NULL, blank=True, null=True,default=None)
+    city = models.ForeignKey(City, on_delete=models.SET_NULL,default=None,null=True)
     competition= models.ManyToManyField(Competition, blank=True,default=None)
     college_name=models.TextField(max_length=30, blank=True,null=True,default='')
     degree=models.TextField(max_length=10, blank=True,null=True,default='B.Tech')
