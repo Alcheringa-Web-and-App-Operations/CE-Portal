@@ -1281,7 +1281,7 @@ font-size: 30px;
                     <button>REgister</button>
                 </div> -->
         <div class="row-view">
-          <button class=" register-button">Register</button>
+          <button class=" register-button" id="register_btn">Register</button>
         </div>
       </div>
     </div>
@@ -1400,7 +1400,6 @@ font-size: 30px;
   let city = document.getElementById("id_city")
   city.addEventListener("change", (e) => {
     const city_id = e.target.value
-
     fetch("{% url 'load_competitions_single' %}", {
       method: "POST",
       headers: {
@@ -1413,18 +1412,19 @@ font-size: 30px;
         return data.text()
       })
       .then(data => {
-        console.log(data)
-        console.log(city.value)
+        {% comment %} console.log(data)
+        console.log(city.value) {% endcomment %}
         document.getElementById("check-container").innerHTML = data
       })
   })
-
-  function selectComp(e) {
-    console.log(e);
+  let regbtn=document.getElementById("register_btn")
+  regbtn.disabled=true;
+  function onlyOne(checkbox) {
+    regbtn.disabled=true;
     var checkboxes = document.getElementsByName('checkbox');
     checkboxes.forEach((item) => {
-      if (item !== checkbox) {
-        console.log(item.value, item.checked)
+      if (item.checked!=false) {
+        regbtn.disabled=false;
       }
     })
   }

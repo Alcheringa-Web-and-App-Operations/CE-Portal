@@ -1331,9 +1331,10 @@
           document.getElementById("check-container").innerHTML = data
         })
     })
-    let compet = document.getElementById
     let max_participants = 0;
     let min_participants = 0;
+    let regbtn=document.getElementById("register_btn")
+    regbtn.disabled=true;
     function onlyOne(checkbox) {
       fetch("{% url 'load_minmax' %}", {
         method: "POST",
@@ -1353,8 +1354,16 @@
         })
       var checkboxes = document.getElementsByName('checkbox')
       checkboxes.forEach((item) => {
-        if (item !== checkbox) item.checked = false
+        if (item !== checkbox){
+          item.checked = false
+        } 
+
       })
+      if(checkbox.checked){
+        regbtn.disabled=false;
+      }else{
+        regbtn.disabled=true;
+      }
     }
 
     function samefunc(e) {
