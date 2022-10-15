@@ -39,6 +39,22 @@
         height: 10vh;
       }
     }
+    
+    @media (min-width: 401px){
+  .scroll{
+    width: 80%;
+  }
+}
+@media (max-width: 400px){
+  .scroll{
+    width: 140%;
+    
+    transform: scale(.7) translateX(50);
+
+  } 
+}
+    
+    
   </style>
 </head>
 
@@ -156,47 +172,33 @@
     <div class="sponsers" id="sponsors">
       <br />
       <div class="heading" data-aos="fade-up">Sponsors</div>
+ <div class="scroll" style="margin: auto; ">
+      <marquee behavior="scroll" direction="left" scrollamount="12" >
+           
+        <div class="sponsers_logo" style="display: flex; align-items: center; justify-content:space-between; transform: scale(.7);">
+                <div><a href="https://iubat.edu" target="_blank"><img src="{%static 'city/images/iubat.jpg' %}"
+                      alt="pr-sample23" style="width: 230px;margin:40px" /></a></div>
+                     
+                <div ><a href="https://www.facebook.com/bridalxposebd" target="_blank"><img
+                      src="{%static 'city/images/Bridal_xpose.png' %}" alt="pr-sample23"
+                      style="width: 230px;background-color:black;margin:40px" /></a></div>
+                      
+                      <div style=" width: 230px;background-color:white; height: 60px;margin:40px; display: flex; align-items: center;"><a href="https://www.shomoyeralo.com" target="_blank"><img
+                        src="{%static 'city/images/Logo copy.png' %}" alt="pr-sample23"
+                        style="width: 230px;background-color:white;  height: 40px; " /></a></div>
+                     
+                        <div style="transform:scale(1.15) scaleY(1.1) ;"><a href="https://www.fashionrunwaybd.com/?fbclid=IwAR3ekvysHIIXOHN2yJ3wiic9BoIF2mWwxYYNqg7d2XSS4TdhdaFolEtIAfY " target="_blank"><img
+                          src="{%static 'city/images/CCI-Logo-_1_.png' %}" alt="pr-sample23"
+                          style="width: 230px;background-color:white;margin:40px; " /></a></div>
+                         <div style="transform:scaleX(1.05) ;"><a href="https://www.facebook.com/tanjidsmusichub" target="_blank"><img
+                            src="{%static 'city/images/Judging Partner.png' %}" alt="pr-sample23"
+                            style="width: 230px;margin:40px; background-color:white;" /></a></div>
 
-      <!-- <div class="marquee-body" style="z-index: 100" data-aos="zoom-in">
-        <div class="marquee">
-          <ul class="marquee-content">
-            <li>
-              <img src="{%static 'city/images/sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/sponser3.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/sponser2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/art1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/art2.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/palette.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-            <li>
-              <img src="{%static 'city/images/sponser1.png' %}" alt="pr-sample23" style="width: 350px; height: 200px" />
-            </li>
-          </ul>
-        </div>
-      </div> -->
-          <div class="sponsers_logo" style="display: flex; align-items: center; justify-content:space-evenly; flex-wrap: wrap; transform: scale(.7);">
-        <div><a href="https://iubat.edu" target="_blank"><img src="{%static 'city/images/iubat.jpg' %}"
-              alt="pr-sample23" style="width: 230px; margin-top:20px; margin-bottom:20px;" /></a></div>
-        <div ><a href="https://www.facebook.com/bridalxposebd" target="_blank"><img
-              src="{%static 'city/images/Bridal_xpose.png' %}" alt="pr-sample23"
-              style="width: 230px;background-color:black;margin-top:20px;margin-bottom:20px;" /></a></div>
-              <div style=" width: 230px;background-color:white; height: 60px;margin-top:20px; margin-bottom:40px; display: flex; align-items: center;"><a href="https://www.shomoyeralo.com" target="_blank"><img
-                src="{%static 'city/images/Logo copy.png' %}" alt="pr-sample23"
-                style="width: 230px;background-color:white;  height: 40px; " /></a></div>
-                <div style="transform:scale(1.15) ;"><a href="https://www.fashionrunwaybd.com/?fbclid=IwAR3ekvysHIIXOHN2yJ3wiic9BoIF2mWwxYYNqg7d2XSS4TdhdaFolEtIAfY " target="_blank"><img
-                  src="{%static 'city/images/CCI-Logo-_1_.png' %}" alt="pr-sample23"
-                  style="width: 230px;background-color:white;margin-top:20px;margin-bottom:20px; " /></a></div>
       </div>
+    </marquee>
+
+
+    </div>
       <br /><br /><br />
     </div>
   </div>
