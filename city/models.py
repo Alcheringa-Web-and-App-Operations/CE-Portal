@@ -12,6 +12,7 @@ class City(models.Model):
     position=models.OneToOneField("Position",on_delete=models.CASCADE, null=True, blank = True)
     competitionDate=models.DateField(null=True)
     cityComp=models.ManyToManyField('CityComp',blank=True)
+    comingsoon=models.BooleanField(default=False)
    
 
     def __str__(self):
