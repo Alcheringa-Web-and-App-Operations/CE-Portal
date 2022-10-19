@@ -1289,14 +1289,15 @@
   let city = document.getElementById("id_city")
   city.addEventListener("change", (e) => {
     const city_id = e.target.value
-    fetch("{% url 'load_competitions_single' %}", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-        "X-Requested-With": "XMLHttpRequest"
-      },
-      body: JSON.stringify({ "city_id": city_id })
-    })
+    if(city_id!=0){
+      fetch("{% url 'load_competitions_single' %}", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          "X-Requested-With": "XMLHttpRequest"
+        },
+        body: JSON.stringify({ "city_id": city_id })
+      })
       .then(data => {
         return data.text()
       })
@@ -1305,6 +1306,7 @@
         console.log(city.value) {% endcomment %}
         document.getElementById("check-container").innerHTML = data
       })
+    }
   })
   let regbtn=document.getElementById("register_btn")
   regbtn.disabled=true;
