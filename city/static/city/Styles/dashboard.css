@@ -712,20 +712,33 @@ background-color: #f2e9e9;
   justify-content: space-evenly;
   padding-bottom: 30px;
 }
-.heading69 {
-  background-color: #f2e9e9;
-  width: 100vw;
-  height: 50px;
-  font-family: "Coolvetica";
+.heading69 , .date69{
+  width: 75vw;
+  font-family: "Franklin Gothic Medium", sans-serif;
   font-weight: 400;
   font-size: 40px;
   line-height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10%;
-
   box-sizing: border-box;
+  
+}
+.heading69{
+  border-top:5px solid #f2e9e9;
+  border-right:5px solid #f2e9e9;
+  border-left:5px solid #f2e9e9;
+  background-color: #f4d6d6;
+  font-size: 50px;
+  height: 80px;
+  margin-top: 10%;
+}
+.date69{
+  border:5px solid #f2e9e9;
+  background-color: black;
+  color: white;
+  height: 80px;
+  margin-bottom: 5%;
 }
 .main69 {
   display: flex;
@@ -737,14 +750,13 @@ background-color: #f2e9e9;
 .black-boxes69 {
   width: 75vw;
   box-sizing: border-box;
-  height: 25vh;
-  background-color: black;
+  height: 24vh;
+  background-color: transparent;
   color: white;
   padding: 5vw;
-
   display: flex;
   flex-direction: column;
-  border: 2px solid white;
+  border: 5px solid white;
 }
 .items69 {
   display: flex;
@@ -756,11 +768,13 @@ background-color: #f2e9e9;
 .dates69 {
   font-size: 36px;
   font-weight: normal;
-  margin-bottom: 20px;
+  margin-bottom: 6%;
 }
 .itema69 {
   display: flex;
-  justify-content: space-between;
+  font-size:25px;
+  justify-content: space-between; 
+  color: #f4d6d6;
 }
 
 @media (max-width: 825px) {
