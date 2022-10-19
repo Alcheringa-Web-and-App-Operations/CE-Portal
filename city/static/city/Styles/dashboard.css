@@ -479,7 +479,7 @@ background-color: #f2e9e9;
   border-spacing: 0px;
 }
 
-.table {
+.table1 {
   height: 100vh;
   background-image: url("../images/geet.svg");
   font-size: 30px;
@@ -491,7 +491,7 @@ background-color: #f2e9e9;
   justify-content: center;
 }
 
-.table table {
+.table1 table {
   width: 85vw;
   height: 70vh;
 }
