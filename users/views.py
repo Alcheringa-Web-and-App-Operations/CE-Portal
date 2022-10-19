@@ -10,17 +10,21 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 
-# print(email_lsist)
+# print(email_list)
 def register_single(request):
     data = request.POST
     form = PersonCreationForm()
     single = Person(pk = request.user.pk,name = data.get('name'))
     if request.method == 'POST':
+        print("hiii1")
         form = PersonCreationForm(data)
         if form.is_valid():
+            print("hiii")
             email_list = Person.objects.values_list('email',flat=True)
             email = request.POST['email']
             competition1 = request.POST.getlist('checkbox')
+            city=request.POST['city']
+            print(city)
             competition = Competition.objects.filter(id__in=competition1).all()
             if Person.objects.filter(email=email):
                 curr_user = Person.objects.filter(email=email).first()
