@@ -1039,12 +1039,12 @@
     <div id="register-image" style="width: 100vw;">
       <center><img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8%;"></center>
     </div>
-    <a href="{% url 'register_single' %}">
+    <a href="{% url 'register_single' cityVal %}">
       <div id="individual" class="box" style="background-color: #F29E6D;">
         <div class="text  indiv"><b>Solo Competition</b></div>
       </div>
     </a>
-    <a href="{% url 'register_team' %}">
+    <a href="{% url 'register_team' cityVal %}">
       <div id="team" class="box" style="">
         <div class="text indiv"><b>Group Competition</b></div>
       </div>
@@ -1287,26 +1287,28 @@
     element5.classList.toggle("alternate2");
   }
   let city = document.getElementById("id_city")
-  city.addEventListener("change", (e) => {
-    const city_id = e.target.value
+  const competition_list=(value)=>{
+    const city_id = value
     if(city_id!=0){
       fetch("{% url 'load_competitions_single' %}", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          "X-Requested-With": "XMLHttpRequest"
-        },
-        body: JSON.stringify({ "city_id": city_id })
-      })
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        "X-Requested-With": "XMLHttpRequest"
+      },
+      body: JSON.stringify({ "city_id": city_id })
+    })
       .then(data => {
         return data.text()
       })
       .then(data => {
-        {% comment %} console.log(data)
-        console.log(city.value) {% endcomment %}
         document.getElementById("check-container").innerHTML = data
       })
-    }
+  }
+  }
+    
+  city.addEventListener("change",(e)=>{
+    competition_list(e.target.value)
   })
   let regbtn=document.getElementById("register_btn")
   regbtn.disabled=true;
@@ -1319,6 +1321,14 @@
       }
     })
   }
+  {% if cityVal %}
+  console.log({{cityVal}})
+  console.log(city.children[city.children.length-2])
+    if({{cityVal}} <= city.children[city.children.length-2].value){
+      document.getElementById("id_city").value=({{cityVal}});
+      competition_list({{cityVal}})
+    }
+  {% endif %}
 </script>
 
 </html>

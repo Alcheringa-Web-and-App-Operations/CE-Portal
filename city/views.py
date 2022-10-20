@@ -14,8 +14,8 @@ def dashboard(request,pk) :
         'city' : city,
         'competitions': city.cityCompetitions.all(),
         'range' : enumerate(city.cityCompetitions.all()),
-        'compe':city.cityComp.all()
-      
+        'compe':city.cityComp.all(),
+        'cityVal':pk
     }
     if not city.cityCompetitions.all():
         return render(request, 'city/comingsoon.html',data)

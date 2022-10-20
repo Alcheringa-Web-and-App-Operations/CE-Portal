@@ -9,17 +9,16 @@ import json
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-
 # print(email_list)
-def register_single(request):
+def register_single(request,cityVal=0):
+    # if len(str(request.META.get('HTTP_REFERER')).split("dashboard/"))>1:
+    #     cityVal=(request.META.get('HTTP_REFERER')).split("dashboard/")[1]
     data = request.POST
     form = PersonCreationForm()
     single = Person(pk = request.user.pk,name = data.get('name'))
     if request.method == 'POST':
-        print("hiii1")
         form = PersonCreationForm(data)
         if form.is_valid():
-            print("hiii")
             email_list = Person.objects.values_list('email',flat=True)
             email = request.POST['email']
             competition1 = request.POST.getlist('checkbox')
@@ -50,7 +49,7 @@ def register_single(request):
 
     # for comp in competitions:               
     #     single.competition.add(comp)
-    return render(request, 'users/register_single.html', {'form': form})
+    return render(request, 'users/register_single.html', {'form': form,"cityVal":cityVal})
 
 
 # def person_update_view(request, pk):
@@ -111,7 +110,7 @@ def load_minmax(request):
 def success(request):
     return render(request, 'users/success.html')
 
-def teamForm(request):
+def teamForm(request,cityVal=0):
     data = request.POST
     if request.method == 'POST':
         form = EntryFormTeams(request.POST)
@@ -144,7 +143,7 @@ def teamForm(request):
             # print(data)
     else:
         form = EntryFormTeams()
-        return render(request, 'team/team.html',{'form': form})
+        return render(request, 'team/team.html',{'form': form,"cityVal":cityVal})
 
 def my_redirect(request):
     return redirect("https://alcheringa.in")

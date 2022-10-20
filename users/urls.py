@@ -3,9 +3,12 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('solo/', views.register_single, name='register_single'),
+    path('solo/', views.register_single, name='register_single_mt'), 
+    path('solo/<int:cityVal>/', views.register_single, name='register_single'),
     # path('<int:pk>/', views.person_update_view, name='person_change'),
-    path('group/', views.teamForm, name='register_team'),
+    path('group/', views.teamForm, name='register_team_mt'),
+    path('group/<int:cityVal>/', views.teamForm, name='register_team'),
+
     path('success/', views.success, name='success'),
     
     

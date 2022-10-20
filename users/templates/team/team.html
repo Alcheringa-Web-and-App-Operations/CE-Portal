@@ -975,12 +975,12 @@
     <div id="register-image" style="width: 100vw;">
       <center><img src="{% static 'images/Registration.png' %}" alt="" width="70%" style="margin-top: 8%;"></center>
     </div>
-    <a href="{% url 'register_single' %}">
+    <a href="{% url 'register_single' cityVal %}">
       <div id="individual" class="box">
         <div class="text  indiv"><b>Solo Competition</b></div>
       </div>
     </a>
-    <a href="">
+    <a href="{% url 'register_team' cityVal %}">
       <div id="team" class="box">
         <div class="text indiv"><b>Group Competition</b></div>
       </div>
@@ -1314,8 +1314,8 @@
   <script>
     let index = 0;
     let city = document.getElementById("id_city")
-    city.addEventListener("change", (e) => {
-      const city_id = e.target.value
+    const competition_list=(value) => {
+      const city_id = value
 
       fetch("{% url 'load_competitions_team' %}", {
         method: "POST",
@@ -1331,7 +1331,14 @@
         .then(data => {
           document.getElementById("check-container").innerHTML = data
         })
+    }
+
+
+    city.addEventListener("change",(e)=>{
+      competition_list(e.target.value)
     })
+
+
     let max_participants = 0;
     let min_participants = 0;
     let regbtn=document.getElementById("register_btn")
@@ -1407,10 +1414,14 @@
       var element5 = document.getElementById("flex-item-19");
       element5.classList.toggle("alternate2");
     }
-
-
-
-
+    {% if cityVal %}
+    console.log({{cityVal}})
+    console.log(city.children[city.children.length-2])
+      if({{cityVal}} <= city.children[city.children.length-2].value){
+        document.getElementById("id_city").value=({{cityVal}});
+        competition_list({{cityVal}})
+      }
+    {% endif %}
   </script>
   <script src="{% static 'form/button.js' %}"></script>
 </body>
