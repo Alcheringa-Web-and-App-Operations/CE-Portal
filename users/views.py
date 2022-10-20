@@ -148,3 +148,8 @@ def teamForm(request):
 
 def my_redirect(request):
     return redirect("https://alcheringa.in")
+
+def cedetails(request):
+    users_singles=Person.objects.all()
+    users_team=Team.objects.all()
+    return render(request, 'users/user_details.html',{'users_singles':users_singles,'users_team':users_team})
