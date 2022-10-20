@@ -5,14 +5,13 @@ from .models import Person, Competition,City, Team
 EXTRA_CHOICES = [
 ('0', 'Select City'),
 ]
-choices=[]
 class PersonCreationForm(forms.ModelForm):
-    # city=forms.ModelMultipleChoiceField(widget=forms.Select(),queryset=City.objects.filter(comingsoon=False).all())
     city=forms.ChoiceField(label='Select City',choices=(),widget=forms.Select(),initial='0')
     def __init__(self, *args, **kwargs):
         super(PersonCreationForm, self).__init__(*args, **kwargs)
         choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).all()]
         choices.extend(EXTRA_CHOICES)
+        choices.reverse()
         self.fields['city'].choices = choices
     
     def clean_city(self):
@@ -32,6 +31,7 @@ class EntryForm(forms.ModelForm):
         super(EntryForm, self).__init__(*args, **kwargs)
         choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).all()]
         choices.extend(EXTRA_CHOICES)
+        choices.reverse()
         self.fields['city'].choices = choices
 
     def clean_city(self):
@@ -50,6 +50,7 @@ class EntryFormTeams(forms.ModelForm):
         super(EntryFormTeams, self).__init__(*args, **kwargs)
         choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).all()]
         choices.extend(EXTRA_CHOICES)
+        choices.reverse()
         self.fields['city'].choices = choices
 
     def clean_city(self):

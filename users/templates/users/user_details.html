@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Details</title>
+    <style>
+        table, th, td {
+  border:1px solid black;
+}
+    </style>
+</head>
+<body>
+    <!-- singles -->
+    <div style="margin:10vw">
+        <div style="text-align:center;font-size: x-large;font-weight: bold;margin-bottom: 2%;">Singles</div>
+        <table style="width:80%;margin:auto">
+            <tr>
+                <th>Sl No.</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Gender</th>
+              <th>City</th>
+              <th>Competition</th>
+              <th>Graduation Year</th>
+              <th>College Name</th>
+              <th>Degree</th>
+            </tr>
+
+            {% for user in users_singles %}
+            {% if user.competition.all %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.countrycode}}-{{user.contactno}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.city}}</td>
+                <td>
+                {% for comp in user.competition.all %}
+                    {{comp}}
+                {% endfor %}
+                </td>
+                <td>{{user.yearofgraduation}}</td>
+                <td>{{user.college_name}}</td>
+                <td>{{user.degree}}</td>
+            </tr>
+        {% endif %}
+
+            {% endfor %}
+          
+          </table>
+    </div>
+
+    <!-- team  -->
+    <div style="margin:10vw">
+        <div style="text-align:center;font-size: x-large;font-weight: bold;margin-bottom: 2%;">Team</div>
+        <table style="width:80%;margin:auto">
+            <tr>
+                <th>Sl No.</th>
+              <th>Team Name</th>
+              <th>Team Members</th>
+              <th>City</th>
+              <th>Competition</th>
+            </tr>
+
+            {% for user in users_team %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{user.name}}</td>
+                <td>
+                    {% for user in user.members.all %}
+                        {{user}}<br>
+                    {% endfor %}
+                </td>                
+                <td>{{user.city}}</td>
+                <td>{{user.competition}}</td>
+            </tr>
+            {% endfor %}
+          
+          </table>
+    </div>
+</body>
+</html>
