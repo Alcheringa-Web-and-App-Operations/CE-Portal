@@ -1415,12 +1415,8 @@
       element5.classList.toggle("alternate2");
     }
     {% if cityVal %}
-    console.log({{cityVal}})
-    console.log(city.children[city.children.length-2])
-      if({{cityVal}} <= city.children[city.children.length-2].value){
-        document.getElementById("id_city").value=({{cityVal}});
-        competition_list({{cityVal}})
-      }
+    document.getElementById("id_city").value=({{cityVal}});
+    competition_list({{cityVal}})
     {% endif %}
   </script>
   <script src="{% static 'form/button.js' %}"></script>

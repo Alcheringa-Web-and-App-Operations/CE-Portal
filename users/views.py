@@ -16,6 +16,12 @@ def register_single(request,cityVal=0):
     data = request.POST
     form = PersonCreationForm()
     single = Person(pk = request.user.pk,name = data.get('name'))
+    if City.objects.filter(id=cityVal).exists():
+        availCity=City.objects.filter(id=cityVal).first().comingsoon
+        if availCity:
+            cityVal=0
+    else:
+        cityVal=0
     if request.method == 'POST':
         form = PersonCreationForm(data)
         if form.is_valid():
@@ -112,6 +118,12 @@ def success(request):
 
 def teamForm(request,cityVal=0):
     data = request.POST
+    if City.objects.filter(id=cityVal).exists():
+        availCity=City.objects.filter(id=cityVal).first().comingsoon
+        if availCity:
+            cityVal=0
+    else:
+        cityVal=0
     if request.method == 'POST':
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
