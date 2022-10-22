@@ -37,12 +37,14 @@ def register_single(request,cityVal=0):
                     curr_user.competition.add(competition2)
                 if (email in email_list):
                     curr_user_comp = curr_user.competition.all()
-                    if (competition2 in curr_user_comp):
-                        # print("already registered, dont register again")
-                        messages.error(request,f'Already registered for these competitions.')
-                    else:
-                        # print("merge it")
-                        curr_user.competition.add(competition2)
+                         if (email in email_list):
+                    curr_user_comp = curr_user.competition.all()
+                    # if (competition2 in curr_user_comp):
+                    #     # print("already registered, dont register again")
+                    #     messages.error(request,f'Already registered for these competitions.')
+                    # else:
+                    #     # print("merge it")
+                    curr_user.competition.add(competition2)
             else:
                 form.save()
                 curr_user = Person.objects.filter(email=email).first()
