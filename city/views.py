@@ -24,4 +24,7 @@ def dashboard(request,pk) :
 def my_redirect(request):
     return redirect("https://alcheringa.in")
 
+def sponsors(request):
+    return render(request, 'city/sponsors.html')
+
 # Create your views here.
