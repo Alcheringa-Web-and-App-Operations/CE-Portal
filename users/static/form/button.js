@@ -5,14 +5,12 @@ const alert_div= document.querySelector("#alert");
 const register_btn= document.querySelector("#register_btn");
 
 
-console.log(max_participants)
 var i=2
 
 var curr_members = 2;
 var req_members= min_participants - curr_members;
 register_btn.addEventListener("click",e=>{
     var req_members= min_participants - curr_members;
-
     if(req_members>0){
         alert_div.innerHTML=`Add atleast ${req_members} more members in your Team to register for this competition.`
         register_btn.disabled=true
@@ -20,17 +18,13 @@ register_btn.addEventListener("click",e=>{
 })
 
 
-add.addEventListener('click',target=>{
-    console.log(max_participants)
-    console.log(min_participants)
+add.addEventListener('click',target=>{   
     target.preventDefault()
     if(count.value>=max_participants){
         add.disabled=true
-        console.log(curr_members)
         alert_div.innerHTML=`Maximum number of members added for this competition.`
     }
     if(count.value<max_participants){
-        console.log('temp')
         form.insertAdjacentHTML('beforeend',`<div id="${i}"><div class="row-view" >
         <div id="h${i}" class="member" >
             <div >
@@ -57,7 +51,7 @@ add.addEventListener('click',target=>{
                 <div style="display:flex; width: 100%;">
                 <input type="text" name="countryCode${i}" class="input-text-field " maxlength="5" required
                   id="id_name_country" style="width: 40px; margin-right: 10px;" placeholder="+12">
-                <input type="text" name="phoneNo${i}" class="input-text-field " maxlength="50" required id="id_name" placeholder="Contact Number(e.g. 123456789)">
+                <input type="text" name="phoneNo${i}" class="input-text-field " maxlength="50" required id="phoneNo${i}" placeholder="Contact Number(e.g. 123456789)">
               </div>
             </div>
             <br><br><br>
@@ -157,7 +151,7 @@ add.addEventListener('click',target=>{
     }
     if(req_members>0){
         alert_div.innerHTML=`Add atleast ${req_members} more members in your Team to register for this competition.`
-        console.log(req_members)
+
         register_btn.disabled=true
         }
     else{
@@ -173,25 +167,7 @@ function del(div) {
 
 function remove(div){
     del(div)
-    for (let j = div + 1; j < i; j++) {
 
-        document.getElementById("h" + j).innerHTML = `<div>
-        <div style="font-size: 120%;font-weight: bold;" >Member ${j - 1}:</div>
-    </div>
-    <div>
-        <button class="add-member-button" onclick= remove(${j - 1})>
-            <i class="fa fa-minus-circle mr-2"></i>Delete member</button> 
-    </div>`;
-        document.getElementById(j).setAttribute("id", j - 1)
-        document.getElementById("h" + j).setAttribute("id", `h${j - 1}`)
-        document.getElementById("name" + j).setAttribute("name", `name${j - 1}`)
-        document.getElementById("phoneNo" + j).setAttribute("name", `phoneNo${j - 1}`)
-        document.getElementById("email" + j).setAttribute("name", `email${j - 1}`)
-        document.getElementById("name" + j).setAttribute("id", j - 1)
-        document.getElementById("phoneNo" + j).setAttribute("id", j - 1)
-        document.getElementById("email" + j).setAttribute("id", j - 1)
-
-    }
     i--
     count.value = i
     req_members++
@@ -207,6 +183,25 @@ function remove(div){
     else{
         alert_div.innerHTML=``
         register_btn.disabled=false
+        }
+        for (let j = div + 1; j < i+1; j++) {
+
+            document.getElementById("h"+j).innerHTML = `<div>
+                <div style="font-size: 120%;font-weight: bold;" >Member ${j - 1}:</div>
+                </div>
+                <div>
+                <button class="add-member-button" onclick= remove(${j - 1})>
+                    <i class="fa fa-minus-circle mr-2"></i>Delete member</button> 
+                </div>`;
+            document.getElementById(j).setAttribute("id", j - 1)
+            document.getElementById("h" + j).setAttribute("id", `h${j - 1}`)
+            document.getElementById("name" + j).setAttribute("name", `name${j - 1}`)
+            document.getElementById("phoneNo" + j).setAttribute("name", `phoneNo${j - 1}`)
+            document.getElementById("email" + j).setAttribute("name", `email${j - 1}`)
+            document.getElementById("name" + j).setAttribute("id", `name${j - 1}`)
+            document.getElementById("phoneNo" + j).setAttribute("id",`phoneNo${j - 1}`)
+            document.getElementById("email" + j).setAttribute("id",`email${j - 1}`)
+    
         }
     // console.log("upated value: " + req_members)
 }
