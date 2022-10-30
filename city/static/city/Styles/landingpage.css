@@ -1426,6 +1426,10 @@ font-size: 30px;
 }
  */
 
+ .sponsers {
+  display: none;
+ }
+
 /******************** Contact ***********************/
 
 .contact-box {
@@ -1459,6 +1463,10 @@ font-size: 30px;
 }
 
 @media (min-width: 768px) {
+
+  .sponsers {
+    display: block;
+  }
   .contact-card {
     padding-left: 8px;
     padding-right: 8px;
