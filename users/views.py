@@ -125,7 +125,6 @@ def teamForm(request):
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
         team = Team(name = data.get('name'),competition=competition,city=city)
         team.save()
-        team = Team.objects.all().last()
         for i in range( int(data.get('number'))):
             if data.get('name' + str(i)) == "":
                 continue
@@ -137,8 +136,8 @@ def teamForm(request):
                     querySet.solo = 0
                 else:
                     applicant.save()
-                team.members.add(Person.objects.all().last().id)
-        return redirect('success')    
+                team.members.add(applicant)
+                return redirect('success')    
         # person=get_object_or_404(Person)
         # if post.favourites.filter(id=request.user.id).exists():
         #     print()
@@ -150,7 +149,7 @@ def teamForm(request):
             # print(data)
     else:
         form = EntryFormTeams()
-        return render(request, 'team/team.html',{'form': form})
+    return render(request, 'team/team.html',{'form': form})
 
 def my_redirect(request):
     return redirect("https://alcheringa.in")
