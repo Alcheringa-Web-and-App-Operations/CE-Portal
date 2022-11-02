@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 
 # Create your views here.
@@ -12,11 +13,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 # print(email_list)
 def register_single(request,cityVal=0):
-    # if len(str(request.META.get('HTTP_REFERER')).split("dashboard/"))>1:
-    #     cityVal=(request.META.get('HTTP_REFERER')).split("dashboard/")[1]
     data = request.POST
     form = PersonCreationForm()
-    single = Person(pk = request.user.pk,name = data.get('name'))
     if City.objects.filter(id=cityVal).exists():
         availCity=City.objects.filter(id=cityVal).first().comingsoon
         if availCity:
@@ -26,33 +24,22 @@ def register_single(request,cityVal=0):
     if request.method == 'POST':
         form = PersonCreationForm(data)
         if form.is_valid():
-            email_list = Person.objects.values_list('email',flat=True)
             email = request.POST['email']
             competition1 = request.POST.getlist('checkbox')
             city=request.POST['city']
-            print(city)
+            city = City.objects.get(id=city)
             competition = Competition.objects.filter(id__in=competition1).all()
-            if Person.objects.filter(email=email):
-                curr_user = Person.objects.filter(email=email).first()
-                for competition2 in competition:
-                    curr_user.competition.add(competition2)
-                if (email in email_list):
-                    curr_user_comp = curr_user.competition.all()
-                    # if (competition2 in curr_user_comp):
-                    #     # print("already registered, dont register again")
-                    #     messages.error(request,f'Already registered for these competitions.')
-                    # else:
-                    #     # print("merge it")
-                    curr_user.competition.add(competition2)
-            else:
-                form.save()
-                curr_user = Person.objects.filter(email=email).first()
-                curr_user.gender = request.POST['gender']
-                curr_user.degree = request.POST['degree']
-                for competition2 in competition:
-                    curr_user.competition.add(competition2)
-                curr_user.save()
-                return redirect('success')
+            name = request.POST['name']
+            countrycode = request.POST['countrycode']
+            contactno=request.POST['contactno']
+            college_name=request.POST['college_name']
+            degree=request.POST['degree']
+            gender=request.POST['gender']
+            yearofgraduation=request.POST['yearofgraduation']
+            for competition2 in competition:
+                person = Person(name = name, email = email,city = city,competition = competition2,countrycode = countrycode,contactno = contactno,college_name = college_name,degree = degree,gender = gender,yearofgraduation = yearofgraduation)
+                person.save()
+            return redirect('success')
 
     # for comp in competitions:               
     #     single.competition.add(comp)
@@ -131,13 +118,9 @@ def teamForm(request):
             else:
                 
                 applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city, countrycode = data.get('countryCode' + str(i)), contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)),yearofgraduation=data.get('year'+str(i)), solo = 0)
-                querySet = Person.objects.filter(email = data.get('email' + str(i)))
-                if querySet:
-                    querySet.solo = 0
-                else:
-                    applicant.save()
+                applicant.save()
                 team.members.add(applicant)
-                return redirect('success')    
+        return redirect('success')    
         # person=get_object_or_404(Person)
         # if post.favourites.filter(id=request.user.id).exists():
         #     print()
