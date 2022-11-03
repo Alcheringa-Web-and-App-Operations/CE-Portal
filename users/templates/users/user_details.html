@@ -30,7 +30,7 @@
             </tr>
 
             {% for user in users_singles %}
-            {% if user.competition.all %}
+            {% if user.competition %}
             <tr>
                 <td>{{ forloop.counter }}</td>
                 <td>{{user.name}}</td>
@@ -38,11 +38,7 @@
                 <td>{{user.countrycode}}-{{user.contactno}}</td>
                 <td>{{user.gender}}</td>
                 <td>{{user.city}}</td>
-                <td>
-                {% for comp in user.competition.all %}
-                    {{comp}}
-                {% endfor %}
-                </td>
+                <td>{{user.competition}}</td>
                 <td>{{user.yearofgraduation}}</td>
                 <td>{{user.college_name}}</td>
                 <td>{{user.degree}}</td>
