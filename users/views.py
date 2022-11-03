@@ -38,7 +38,10 @@ def register_single(request,cityVal=0):
             yearofgraduation=request.POST['yearofgraduation']
             for competition2 in competition:
                 person = Person(name = name, email = email,city = city,competition = competition2,countrycode = countrycode,contactno = contactno,college_name = college_name,degree = degree,gender = gender,yearofgraduation = yearofgraduation)
-                person.save()
+                if(Person.objects.filter(email=email).filter(city=city).filter(competition=competition2)):
+                    continue
+                else:
+                    person.save()
             return redirect('success')
 
     # for comp in competitions:               
@@ -110,17 +113,24 @@ def teamForm(request):
         form = EntryFormTeams(request.POST)
         city = City.objects.filter(id = data.get('city')).first()
         competition = Competition.objects.filter(id = request.POST['checkbox']).first()
-        team = Team(name = data.get('name'),competition=competition,city=city)
-        team.save()
+        members_email_list=[]
         for i in range( int(data.get('number'))):
-            if data.get('name' + str(i)) == "":
-                continue
-            else:
-                
-                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city, countrycode = data.get('countryCode' + str(i)), contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)),yearofgraduation=data.get('year'+str(i)), solo = 0)
-                applicant.save()
-                team.members.add(applicant)
-        return redirect('success')    
+            members_email_list.append((data.get('email' + str(i))))
+        print(members_email_list)
+        if not (len(members_email_list) == len(set(members_email_list))):
+            messages.error(request,"Team Members should have unique Email-IDs")
+        else:
+            team = Team(name = data.get('name'),competition=competition,city=city)
+            team.save()
+            for i in range( int(data.get('number'))):
+                if data.get('name' + str(i)) == "":
+                    continue
+                else:
+                    
+                    applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city, countrycode = data.get('countryCode' + str(i)), contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)),yearofgraduation=data.get('year'+str(i)), solo = 0)
+                    applicant.save()
+                    team.members.add(applicant)
+            return redirect('success')    
         # person=get_object_or_404(Person)
         # if post.favourites.filter(id=request.user.id).exists():
         #     print()

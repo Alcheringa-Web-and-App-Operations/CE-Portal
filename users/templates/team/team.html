@@ -940,6 +940,14 @@
       height: 50px;
     }
   }
+  .alert{
+    background-color: #f8d7da;
+    color: #721c24;
+    border-width: 2px;
+    border-radius: 0.25rem;
+    border-color: #f5c6cb;
+    padding: 0.75rem 1.25rem;
+  }
 </style>
 
 <body>
@@ -994,6 +1002,9 @@
       <h1 class="text-4xl " style="font-weight: 700;">Group Competition</h1>
       <br>
       <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
+      {% for mess in messages %}
+      <div class="alert">{{ mess }}</div>
+      {% endfor %}
     </div>
   </div>
   <form method="post" id="personForm">
@@ -1316,7 +1327,7 @@
     let city = document.getElementById("id_city")
     city.addEventListener("change", (e) => {
       const city_id = e.target.value
-
+      if(city_id!=0){
       fetch("{% url 'load_competitions_team' %}", {
         method: "POST",
         headers: {
@@ -1331,6 +1342,9 @@
         .then(data => {
           document.getElementById("check-container").innerHTML = data
         })
+      }else{
+        document.getElementById("check-container").innerHTML = ''
+      }
     })
     let max_participants = 0;
     let min_participants = 0;
