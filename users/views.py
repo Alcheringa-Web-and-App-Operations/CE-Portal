@@ -131,24 +131,33 @@ def teamForm(request,cityVal=0):
         competition2 = Competition.objects.filter(id__in=competition1).all()
 
         team = Team(name = data.get('name'),competition=competition,city=city)
-        team.save()
-        team = Team.objects.all().last()
+        
+        members_email_list=[]
         for i in range( int(data.get('number'))):
-            if data.get('name' + str(i)) == "":
-                continue
-            else:
-                applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,countrycode = data.get('countryCode' + str(i)), contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)),yearofgraduation=data.get('year'+str(i)), solo = 0)
-                querySet = Person.objects.filter(email = data.get('email' + str(i)))
-                if querySet:
-                    querySet.solo = 0
+            members_email_list.append((data.get('email' + str(i))))
+        print(members_email_list)
+        if not (len(members_email_list) == len(set(members_email_list))):
+            messages.error(request,"Team Members should have unique Email-IDs")
+        else:
+            team.save()
+            team = Team.objects.all().last()
+            for i in range( int(data.get('number'))):
+                if data.get('name' + str(i)) == "":
+                    continue
                 else:
-                    applicant.save()
-                appl = Person.objects.filter(email = data.get('email' + str(i))).first()
-                for comp in competition2:
-                    appl.competition.add(comp)
-                appl.save()
-                team.members.add(appl)
-        return redirect('success')    
+                    applicant = Person(name = data.get('name' + str(i)), email = data.get('email' + str(i)),city=city,countrycode = data.get('countryCode' + str(i)), contactno = data.get('phoneNo' + str(i)),college_name=data.get('collegename' + str(i)),gender=data.get('gender' + str(i)),yearofgraduation=data.get('year'+str(i)), solo = 0)
+                    querySet = Person.objects.filter(email = data.get('email' + str(i)))
+                    if querySet:
+                        querySet.solo = 0
+                    else:
+                        applicant.save()
+                    appl = Person.objects.filter(email = data.get('email' + str(i))).first()
+                    for comp in competition2:
+                        appl.competition.add(comp)
+                    appl.save()
+                    team.members.add(appl)
+            return redirect('success')    
+
         # person=get_object_or_404(Person)
         # if post.favourites.filter(id=request.user.id).exists():
         #     print()
@@ -160,7 +169,7 @@ def teamForm(request,cityVal=0):
             # print(data)
     else:
         form = EntryFormTeams()
-        return render(request, 'team/team.html',{'form': form,"cityVal":cityVal})
+    return render(request, 'team/team.html',{'form': form,"cityVal":cityVal})
 
 def my_redirect(request):
     return redirect("https://alcheringa.in")

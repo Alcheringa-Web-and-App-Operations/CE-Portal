@@ -995,6 +995,11 @@
       <br>
       <span> All fields marked with <span class="red-star">*</span> are mandatory</span>
     </div>
+    <div>
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+    </div>
   </div>
   <form method="post" id="personForm">
     {% csrf_token %}
