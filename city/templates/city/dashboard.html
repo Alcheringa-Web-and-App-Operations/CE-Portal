@@ -196,6 +196,10 @@
 
 
   <div>
+    {% if city.scheduleImage%}
+      <img src="{{ city.scheduleImage.url }}" style="width:100vw;">
+    {% else %}
+
     <div class="table1" id="schedule1" data-aos="zoom-in">
       <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
         <!-- <caption>Life Expectancy By Current Age</caption> -->
@@ -294,9 +298,8 @@
 
 
     <h3 style="position: relative;top:10px;color:white;">Coming Soon</h3>
-   
 
-
+    {%endif%}
     {%endif%}
   </div>
 

@@ -1349,7 +1349,7 @@
     let max_participants = 0;
     let min_participants = 0;
     let regbtn=document.getElementById("register_btn")
-    regbtn.disabled=true;
+    let regbtn_state=0;
     function onlyOne(checkbox) {
       fetch("{% url 'load_minmax' %}", {
         method: "POST",
@@ -1375,9 +1375,9 @@
 
       })
       if(checkbox.checked){
-        regbtn.disabled=false;
+        regbtn_state=1
       }else{
-        regbtn.disabled=true;
+        regbtn_state=0
       }
     }
 
@@ -1424,7 +1424,17 @@
 
 
 
+    const alert_div=document.getElementById("alert")
 
+    register_btn.addEventListener("click",(e)=>{
+        if(city.value==0){
+            e.preventDefault()
+            alert_div.innerHTML="Please Choose a City"
+        }else if(regbtn_state==0){
+            e.preventDefault()
+            alert_div.innerHTML="Please Choose a Competition"
+        }
+    })
   </script>
   <script src="{% static 'form/button.js' %}"></script>
 </body>

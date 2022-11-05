@@ -1052,7 +1052,7 @@
   </div>
   <!--Registration image over-->
 
-  <!---------------Registeration form  STARTS ----------------->
+  <!-- -------------Registeration form  STARTS --------------- -->
   <br><br>
 
   <form method="POST" id="personForm">
@@ -1165,6 +1165,9 @@
 
         </div>
         <br>
+        <div class="row-view">
+          <div id="alert" style="margin-left:-20rem;margin-top:10px;"></div>
+        </div>
         <!-- <div class="row-view">
                     <input type="submit" value="Register">
                     <button>REgister</button>
@@ -1311,16 +1314,26 @@
     }
   })
   let regbtn=document.getElementById("register_btn")
-  regbtn.disabled=true;
+  let regbtn_state=0;
   function onlyOne(checkbox) {
-    regbtn.disabled=true;
+    regbtn_state=0
     var checkboxes = document.getElementsByName('checkbox');
     checkboxes.forEach((item) => {
       if (item.checked!=false) {
-        regbtn.disabled=false;
+        regbtn_state=1
       }
     })
   }
-</script>
+const alert_div=document.getElementById("alert")
 
+register_btn.addEventListener("click",(e)=>{
+    if(city.value==0){
+        e.preventDefault()
+        alert_div.innerHTML="Please Choose a City"
+    }else if(regbtn_state==0){
+        e.preventDefault()
+        alert_div.innerHTML="Please Choose a Competition"
+    }
+})
+</script>
 </html>
