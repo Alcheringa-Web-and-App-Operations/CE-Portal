@@ -9,7 +9,8 @@ class PersonCreationForm(forms.ModelForm):
     city=forms.ChoiceField(label='Select City',choices=(),widget=forms.Select(),initial='0')
     def __init__(self, *args, **kwargs):
         super(PersonCreationForm, self).__init__(*args, **kwargs)
-        choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).all()]
+        choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).filter(completionstatus=False).all()]
+        print(choices)
         choices.extend(EXTRA_CHOICES)
         choices.reverse()
         self.fields['city'].choices = choices
@@ -29,7 +30,7 @@ class EntryForm(forms.ModelForm):
     city=forms.ChoiceField(label='Select City',choices=(),widget=forms.Select(),initial='0')
     def __init__(self, *args, **kwargs):
         super(EntryForm, self).__init__(*args, **kwargs)
-        choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).all()]
+        choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).filter(completionstatus=False).all()]
         choices.extend(EXTRA_CHOICES)
         choices.reverse()
         self.fields['city'].choices = choices
@@ -48,7 +49,7 @@ class EntryFormTeams(forms.ModelForm):
     city=forms.ChoiceField(label='Select City',choices=(),widget=forms.Select(),initial='0')
     def __init__(self, *args, **kwargs):
         super(EntryFormTeams, self).__init__(*args, **kwargs)
-        choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).all()]
+        choices = [(city.id, (city)) for city in City.objects.filter(comingsoon=False).filter(completionstatus=False).all()]
         choices.extend(EXTRA_CHOICES)
         choices.reverse()
         self.fields['city'].choices = choices

@@ -14,6 +14,7 @@ class City(models.Model):
     cityComp=models.ManyToManyField('CityComp',blank=True)
     comingsoon=models.BooleanField(default=False)
     scheduleImage=models.ImageField(upload_to='schedule_pics',blank=True)
+    completionstatus=models.BooleanField(default=False)
    
 
     def __str__(self):
