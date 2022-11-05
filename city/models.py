@@ -13,6 +13,7 @@ class City(models.Model):
     competitionDate=models.DateField(null=True)
     cityComp=models.ManyToManyField('CityComp',blank=True)
     comingsoon=models.BooleanField(default=False)
+    completionstatus=models.BooleanField(default=False)
    
 
     def __str__(self):

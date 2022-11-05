@@ -19,6 +19,8 @@ def dashboard(request,pk) :
     }
     if not city.cityCompetitions.all():
         return render(request, 'city/comingsoon.html',data)
+    elif(city.completionstatus==True):
+        return render(request,'city/over.html',data)
     return render(request, 'city/dashboard.html',data)
 
 def my_redirect(request):
@@ -26,5 +28,7 @@ def my_redirect(request):
 
 def sponsors(request):
     return render(request, 'city/sponsors.html')
+
+
 
 # Create your views here.
