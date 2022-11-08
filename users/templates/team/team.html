@@ -1348,7 +1348,7 @@
     })
     let max_participants = 0;
     let min_participants = 0;
-    let regbtn=document.getElementById("register_btn")
+    {% comment %} let regbtn=document.getElementById("register_btn") {% endcomment %}
     let regbtn_state=0;
     function onlyOne(checkbox) {
       fetch("{% url 'load_minmax' %}", {
@@ -1424,7 +1424,6 @@
 
 
 
-    const alert_div=document.getElementById("alert")
 
     register_btn.addEventListener("click",(e)=>{
         if(city.value==0){
