@@ -795,6 +795,9 @@ background-color: #f2e9e9;
   #schedule2 {
     display: none;
   }
+  #date{
+    display: none;
+  }
 }
 
 /************** About Alcheringa *****************/

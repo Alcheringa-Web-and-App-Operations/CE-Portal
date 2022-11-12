@@ -93,7 +93,8 @@
   <!--************************** City ***********************************-->
   <div class="city-container" data-aos="zoom-in">
     <div class="city-link" style="text-align: center;font-size: 1.5vw;">
-      <span style="font-size: 4vw;font-weight: bold!important; transform: translate(0,-6px);">Venue - {{ city.venue }}</span><br>
+      <span style="font-size: 3.5vw;font-weight: bold!important; transform: translate(0,-6px);">Venue - {{ city.venue }}</span><br>
+      <span id="date" style="font-size: 3.5vw;font-weight: bold!important; transform: translate(0,-6px);">Date-{{city.competitionDate}}</span><br>
       Not your city? <a href="{% url 'landing-page' %}">Click here.</a>
     </div>
   </div>
@@ -202,7 +203,6 @@
 
     <div class="table1" id="schedule1" data-aos="zoom-in">
       <table style="border: 5px solid #F2E9E9; border-spacing: 0px;">
-        <!-- <caption>Life Expectancy By Current Age</caption> -->
         <tr style="margin: 0px; padding:0px; border-spacing :0px;">
           <th colspan="8" class="Schedule">Schedule</th>
 
@@ -275,9 +275,9 @@
       
 
       {% if compe %}
-      <div class="date69" >
+      <!-- <div class="date69" >
         {{city.competitionDate}}
-      </div>
+      </div> -->
       <div class="main69">
 
         {% for schd in compe %}
